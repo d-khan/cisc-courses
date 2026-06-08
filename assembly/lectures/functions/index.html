@@ -1,0 +1,1102 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Functions in Assembly Language - Miramar Computer Science Courses</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#functions-in-assembly-language" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Miramar Computer Science Courses" class="md-header__button md-logo" aria-label="Miramar Computer Science Courses" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Miramar Computer Science Courses
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Functions in Assembly Language
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Miramar Computer Science Courses" class="md-nav__button md-logo" aria-label="Miramar Computer Science Courses" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Miramar Computer Science Courses
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+     
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/syllabus.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C/C++ Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    C/C++ Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/syllabus.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Structures in C++
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Structures in C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intermediate Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Intermediate Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/syllabus.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assembly Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Assembly Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="functions-in-assembly-language">Functions in Assembly Language</h1>
+<p>When a function is called, a stack frame is created to support the function’s execution. The stack frame contains the function’s local variables and the arguments passed to the function by its caller. The frame also contains housekeeping information that allows the called function (the callee) to return to the caller safely. The exact contents and layout of the stack vary by processor architecture and function call convention.</p>
+<p>The stack is a last in, first out (LIFO) structure, the data stored first is retrieved last. Values are placed onto the stack via <code>push</code> and removed via <code>pop</code>.</p>
+<p>To keep track of the stack, the system uses the base pointer <code>ebp</code> and the stack pointer <code>esp</code>, whereas <code>esp</code> points to the top of the stack and <code>ebp</code> points to the bottom of the stack. In the Intel architecture, as the program adds data to the stack, the stack grows downward from high to low. When items are removed from the stack, the stack shrinks upward from low to high memory. When a word value is pushed onto the stack, the memory address of <code>esp</code> decreases by 2 bytes, and when a word value is popped off the stack, the memory address of <code>esp</code> increases by 2 bytes. When a double word value is pushed onto/popped off the stack, the memory address of <code>esp</code> decreases/increases by 4 bytes.</p>
+<p><img width="400" alt="image" src="https://user-images.githubusercontent.com/11669149/235361036-c88c7910-a6e7-4946-8a92-4d002bd078ed.png"></p>
+<p>So when we say “top of the stack” on x86, we actually mean the lowest address in the memory area occupied by the stack.</p>
+<p>To push new data onto the stack, we use the <code>push</code> instruction. What <code>push</code> does is first decrement <code>esp</code> by 4, and then store its operand in the location <code>esp</code> points to.</p>
+<div class="highlight"><pre><span></span><code>push eax
+;means
+sub esp,4
+mov [esp],eax
+</code></pre></div>
+<p>Similarly, the <code>pop</code> instruction takes a value off the top of the stack and places it in its operand, increasing the stack pointer afterwards.</p>
+<div class="highlight"><pre><span></span><code>pop eax
+;means
+mov eax,[esp]
+add esp,4
+</code></pre></div>
+<p>The function has three components: function prologue, function body, and function epilogue. The purpose of the function prologue is to save the previous state of the program and set up the stack for the function's local variables. The function body is usually responsible for some unique and specific task. This part of the function may contain various instructions, branches (jumps) to other functions, etc. The function epilogue is used to restore the program’s state to its initial.</p>
+<p>Let’s take a look at an example</p>
+<div class="highlight"><pre><span></span><code>;;; ;------------------------------------------------------
+;;; ;------------------------------------------------------
+;;; ; _foobar: needs 3 arguments. The arguments are pushed onto the stack before calling this function.
+;;; ;
+;;; ; Examples:
+;;; ;          push    110
+;;; ;          push    45
+;;; ;          push    67
+;;; ;          call _foobar
+;;; ;
+;;; ;REGISTERS MODIFIED: EAX
+;;; ;------------------------------------------------------
+;;; ;------------------------------------------------------
+_foobar:
+    ; ebp must be preserved across calls. Since
+    ; this function modifies it, it must be
+    ; saved.
+    ;
+    push    ebp
+
+    ; From now on, ebp points to the current stack
+    ; frame of the function
+    ;
+    mov     ebp, esp
+
+    ; Make space on the stack for local variables
+    ;
+    sub     esp, 16
+
+    ; eax &lt;-- a. eax += 2. then store eax in xx
+    ;
+    mov     eax, DWORD[ebp+8]
+    add     eax, 2
+    mov     DWORD[ebp-4], eax
+
+    ; eax &lt;-- b. eax += 3. then store eax in yy
+    ;
+    mov     eax, DWORD[ebp+12]
+    add     eax, 3
+    mov     DWORD[ebp-8], eax
+
+    ; eax &lt;-- c. eax += 4. then store eax in zz
+    ;
+    mov     eax, DWORD[ebp+16]
+    add     eax, 4
+    mov     DWORD[ebp-12], eax
+
+    ; add xx + yy + zz and store it in sum
+    ;
+    mov     eax, DWORD[ebp-8]
+    mov     edx, DWORD[ebp-4]
+    lea     eax, [edx+eax]
+    add     eax, DWORD[ebp-12]
+    mov     DWORD[ebp-16], eax
+
+    ; Compute final result into eax, which
+    ; stays there until return
+    ;
+    mov     eax, DWORD[ebp-4]
+    imul    eax, DWORD[ebp-8]
+    imul    eax, DWORD[ebp-12]
+    add     eax, DWORD[ebp-16]
+
+    ; The leave instruction here is equivalent to:
+    ;
+    ;   mov esp, ebp
+    ;   pop ebp
+    ;
+    ; Which cleans the allocated locals and restores
+    ; ebp.
+    ;
+    leave
+    ret
+
+section .text
+        global _start
+_start:
+     push    34
+     push    59
+     push    98
+     call    _foobar
+
+     mov     eax, 1
+     int     0x80
+</code></pre></div>
+<p>Let's examine the stack</p>
+<div class="highlight"><pre><span></span><code>push 34
+push 59
+push 98
+</code></pre></div>
+<p>First, three values are pushed onto the stack.</p>
+<p><img width="300" alt="image" src="https://user-images.githubusercontent.com/11669149/235361551-b326ea44-48b3-4aa5-aad4-cda7931068d8.png"></p>
+<div class="highlight"><pre><span></span><code>call _foobar
+</code></pre></div>
+<p>Next, we call the function _foobar. To return to the caller, a function must have the correct return address. <code>call</code> instruction will push the return address onto the stack before jumping to the target address.</p>
+<p><img width="574" alt="image" src="https://user-images.githubusercontent.com/11669149/235361745-97ad8b0f-a99a-4392-b175-c1a4a12aef65.png"></p>
+<div class="highlight"><pre><span></span><code>push ebp
+</code></pre></div>
+<p>This instruction saves the value of register <code>ebp</code> to the stack.</p>
+<p><img width="600" alt="image" src="https://user-images.githubusercontent.com/11669149/235361927-748e2315-0a14-40e3-9a5f-6b1e0d276c77.png"></p>
+<div class="highlight"><pre><span></span><code>mov ebp,esp
+</code></pre></div>
+<p>This instruction will make register <code>ebp</code> point to the same location as register <code>esp</code>.</p>
+<p><img width="600" alt="image" src="https://user-images.githubusercontent.com/11669149/235362005-dbb1e8f4-c8f5-4814-8f97-d026e32c8d7a.png"></p>
+<div class="highlight"><pre><span></span><code>sub esp,16
+</code></pre></div>
+<p>This instruction makes empty space on the stack for local variables.</p>
+<p><img width="611" alt="image" src="https://user-images.githubusercontent.com/11669149/235362176-1989991d-2df3-43dc-ba4c-8c3d630027dc.png"></p>
+<div class="highlight"><pre><span></span><code>mov     eax, DWORD[ebp+8]
+add     eax, 2
+mov     DWORD[ebp-4], eax
+</code></pre></div>
+<p><img width="623" alt="image" src="https://user-images.githubusercontent.com/11669149/235362256-26c08f60-cfa3-4148-801f-702b11ceb2c5.png"></p>
+<div class="highlight"><pre><span></span><code>mov     eax, DWORD[ebp+12]
+add     eax, 3
+mov     DWORD[ebp-8], eax
+</code></pre></div>
+<p><img width="609" alt="image" src="https://user-images.githubusercontent.com/11669149/235363168-340e9f06-ee90-47a6-9783-98be521983c1.png"></p>
+<div class="highlight"><pre><span></span><code>mov     eax, DWORD[ebp+16]
+add     eax, 4
+mov     DWORD[ebp-12], eax
+</code></pre></div>
+<p><img width="609" alt="image" src="https://user-images.githubusercontent.com/11669149/235363284-6fa58895-ab23-4ab7-a917-59552332c211.png"></p>
+<div class="highlight"><pre><span></span><code>mov     eax, DWORD[ebp-8]
+mov     edx, DWORD[ebp-4]
+lea     eax, [edx+eax]
+add     eax, DWORD[ebp-12]
+mov     DWORD[ebp-16], eax
+</code></pre></div>
+<p><img width="644" alt="image" src="https://user-images.githubusercontent.com/11669149/235363410-2fe6e0f1-46cf-433f-a591-a7fa8a79d129.png"></p>
+<div class="highlight"><pre><span></span><code>mov     eax, DWORD[ebp-4]
+imul    eax, DWORD[ebp-8]
+imul    eax, DWORD[ebp-12]
+add     eax, DWORD[ebp-16]
+</code></pre></div>
+<p><img width="631" alt="image" src="https://user-images.githubusercontent.com/11669149/235363508-81f44053-fb52-47b6-b5c3-025ae3866604.png"></p>
+<div class="highlight"><pre><span></span><code>leave
+</code></pre></div>
+<p>After executing the instruction above, local variables will be removed from the stack, register <code>esp</code> will point to the return address, and register <code>ebp</code> will return to its initial value.</p>
+<p><img width="637" alt="image" src="https://user-images.githubusercontent.com/11669149/235363569-6ff08c90-0aa9-4077-b38b-c4281ced3260.png"></p>
+<div class="highlight"><pre><span></span><code>ret
+</code></pre></div>
+<p>The <code>ret</code> instruction pops the return address off the stack and returns control from a function to the calling program.</p>
+<p><img width="454" alt="image" src="https://user-images.githubusercontent.com/11669149/235363610-29ad5bca-7103-42f4-a88c-b43a1df591ae.png"></p>
+<h2>Concept Check</h2>
+
+<h3>Q1. Stack Growth Direction</h3>
+
+<p>
+In the x86 architecture, when values are pushed onto the stack, does the stack grow toward higher memory addresses or lower memory addresses?
+</p>
+
+<details>
+<summary>Show Answer</summary>
+
+<p>
+The x86 stack grows downward in memory.
+</p>
+
+<p>
+Each PUSH operation decreases the value stored in the ESP register.
+</p>
+
+<p><strong>Answer:</strong> The stack grows toward lower memory addresses.</p>
+
+</details>
+
+<hr>
+
+<h3>Q2. PUSH Instruction</h3>
+
+<p>
+What happens internally when the following instruction executes?
+</p>
+
+<pre><code>
+push eax
+</code></pre>
+
+<details>
+<summary>Show Answer</summary>
+
+<p>
+The PUSH instruction performs two operations:
+</p>
+
+<pre><code>
+sub esp,4
+mov [esp],eax
+</code></pre>
+
+<p>
+First, ESP is decremented by 4 bytes. Then the contents of EAX are stored at the new stack location.
+</p>
+
+<p><strong>Answer:</strong> ESP decreases by 4 and the value in EAX is stored on the stack.</p>
+
+</details>
+
+<hr>
+
+<h3>Q3. POP Instruction</h3>
+
+<p>
+Assume the top of the stack contains the value 25. What will be the value of EAX after executing the following instruction?
+</p>
+
+<pre><code>
+pop eax
+</code></pre>
+
+<details>
+<summary>Show Answer</summary>
+
+<p>
+POP copies the value at the top of the stack into EAX and then increases ESP by 4 bytes.
+</p>
+
+<p>
+Since the top of the stack contains 25:
+</p>
+
+<pre><code>
+eax = 25
+</code></pre>
+
+<p><strong>Answer:</strong> EAX will contain 25.</p>
+
+</details>
+
+<hr>
+
+<h3>Q4. Function Prologue</h3>
+
+<p>
+What is the purpose of the following function prologue?
+</p>
+
+<pre><code>
+push ebp
+mov ebp, esp
+sub esp,16
+</code></pre>
+
+<details>
+<summary>Show Answer</summary>
+
+<p>
+The function prologue:
+</p>
+
+<ul>
+<li>Saves the caller's base pointer (EBP).</li>
+<li>Creates a new stack frame for the current function.</li>
+<li>Allocates 16 bytes of space for local variables.</li>
+</ul>
+
+<p><strong>Answer:</strong> It saves the previous stack frame and allocates memory for local variables.</p>
+
+</details>
+
+<hr>
+
+<h3>Q5. Function Arguments</h3>
+
+<p>
+Consider the following instructions:
+</p>
+
+<pre><code>
+push 110
+push 45
+push 67
+call _foobar
+</code></pre>
+
+<p>
+Inside the function, which argument is accessed using <code>[ebp+8]</code>?
+</p>
+
+<details>
+<summary>Show Answer</summary>
+
+<p>
+Arguments are pushed onto the stack in reverse order.
+</p>
+
+<p>
+Stack layout after the call:
+</p>
+
+<pre><code>
+[ebp+8]  = 67
+[ebp+12] = 45
+[ebp+16] = 110
+</code></pre>
+
+<p><strong>Answer:</strong> The value 67 is accessed using <code>[ebp+8]</code>.</p>
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/semester.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

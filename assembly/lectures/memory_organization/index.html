@@ -1,0 +1,1490 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Memory basics - Miramar Computer Science Courses</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#memory-basics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Miramar Computer Science Courses" class="md-header__button md-logo" aria-label="Miramar Computer Science Courses" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Miramar Computer Science Courses
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Memory basics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Miramar Computer Science Courses" class="md-nav__button md-logo" aria-label="Miramar Computer Science Courses" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Miramar Computer Science Courses
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+     
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/syllabus.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C/C++ Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    C/C++ Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/syllabus.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Structures in C++
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Structures in C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intermediate Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Intermediate Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/syllabus.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assembly Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Assembly Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#memory-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory size
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory technologies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory technologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sram-technology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SRAM technology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dram-technology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DRAM technology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flash-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flash memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disk-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disk memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cache memory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cache memory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#handling-cache-misses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handling cache misses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-writes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handling writes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rom-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ROM design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chip-economics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chip economics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept Check
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept Check">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 6
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 7
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 8
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 9
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 10
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="memory-basics">Memory basics</h1>
+<div class="admonition info">
+<p class="admonition-title">Learning Outcomes</p>
+<p><strong>By the end of this lecture, you should be able to:</strong></p>
+<ul>
+<li>Differentiate between volatile and non-volatile memory.</li>
+<li>Explain the memory hierarchy and why it improves performance.</li>
+<li>Describe RAM, ROM, cache memory, and auxiliary storage.</li>
+<li>Explain temporal and spatial locality.</li>
+<li>Calculate hit ratio and miss ratio.</li>
+<li>Compare SRAM and DRAM technologies.</li>
+<li>Explain how cache memory works.</li>
+<li>Describe direct-mapped cache organization.</li>
+<li>Explain cache hits, misses, tags, and valid bits.</li>
+<li>Compare write-through and write-back cache policies.</li>
+<li>Describe ROM technologies including PROM, EPROM, EEPROM, and Flash.</li>
+<li>Explain how memory technologies affect computer performance and cost.</li>
+</ul>
+</div>
+<p>A memory unit is a collection of storage units or devices together. The memory unit stores the binary information in the form of bits. Generally, memory/storage is classified into two categories:</p>
+<ul>
+<li><strong>Volatile Memory</strong>: This loses its data, when power is switched off.</li>
+<li><strong>Non-Volatile Memory</strong>: This permanent storage does not lose data when power is switched off.</li>
+</ul>
+<p><img width="619" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/d9b28d0f-8377-4194-85cf-75eca9d1809b"></p>
+<p>The hierarchy of components can visualize the total memory capacity of a computer. The memory hierarchy system consists of all storage devices in a computer system, from the slow Auxiliary Memory to the fast Main Memory and smaller Cache memory.</p>
+<p><strong>Auxillary memory</strong> access time is generally <strong>1000 times</strong> that of the main memory. Hence it is at the bottom of the hierarchy.</p>
+<p>The <strong>main memory</strong> occupies the central position because it is equipped to communicate directly with the CPU and with auxiliary memory devices through the Input/output processor (I/O).</p>
+<p>When the program not residing in the main memory is needed by the CPU, they are brought in from auxiliary memory. Programs not currently required in main memory are transferred into auxiliary memory to provide space in main memory for other currently used programs.</p>
+<p>The <strong>cache memory</strong> is used to store program data that is currently being executed in the CPU. The approximate access time ratio between cache memory and main memory is about <strong>1 to 7~10</strong></p>
+<p>Each memory type is a collection of numerous memory locations. To access data from any memory, first, it must be located, and then the data is read from the memory location. The following are the methods to access information from memory locations:</p>
+<ol>
+<li><strong>Random Access</strong>: Main memories are random access memories, with each memory location having a unique address. Using this unique address, any memory location can be reached in the same amount of time in any order.</li>
+<li><strong>Sequential Access</strong>: This method allows memory access in a sequence or in order.</li>
+<li><strong>Direct Access</strong>: In this mode, information is stored in tracks, each having a separate read/write head.</li>
+</ol>
+<p>The memory unit communicating directly within the CPU, Auxiliary, and Cache memory is called main memory. It is the central storage unit of the computer system. It is a large and fast memory used to store data during computer operations. Main memory comprises <strong>RAM</strong> and <strong>ROM</strong>, with RAM-integrated circuit chips holding a significant share.</p>
+<ul>
+<li>RAM: Random Access Memory</li>
+<li><strong>DRAM</strong>: Dynamic RAM comprises capacitors and transistors and must be refreshed every 10~100 ms. It is slower and cheaper than SRAM.</li>
+<li><strong>SRAM</strong>: Static RAM has a six-transistor circuit in each cell and retains data until powered off.</li>
+<li><strong>NVRAM</strong>: Non-Volatile RAM retains its data, even when turned off—for example, Flash memory.</li>
+<li>ROM: Read Only Memory is non-volatile and more like permanent information storage. It also stores the <strong>bootstrap loader</strong> program to load and start the operating system when the computer is turned on. <strong>PROM</strong>(Programmable ROM), <strong>EPROM</strong>(Erasable PROM), and <strong>EEPROM</strong>(Electrically Erasable PROM) are some commonly used ROMs.</li>
+</ul>
+<p>Devices that provide backup storage are called auxiliary memory. **For example, Magnetic disks and tapes are commonly used auxiliary devices. Other devices used as auxiliary memory are magnetic drums, magnetic bubble memory, and optical disks.</p>
+<p>It is not directly accessible to the CPU, and is accessed using the Input/Output channels.</p>
+<p>The data or contents of the main memory used repeatedly by the CPU are stored in the cache memory so that we can easily access that data in a shorter time.</p>
+<p>Whenever the CPU needs to access memory, it first checks the cache memory. If the data is not found in cache memory, the CPU moves onto the main memory. It also transfers blocks of recent data into the cache and deletes the old data in the cache to accommodate the new one.</p>
+<p>The performance of cache memory is measured in terms of a quantity called <strong>hit ratio</strong>. When the CPU refers to memory and finds the word in the cache, it is said to produce a <strong>hit</strong>. If the word is not found in the cache, it is in the main memory, then it counts as a <strong>miss</strong>.</p>
+<p>The ratio of the number of hits to the total CPU references to memory is called the hit ratio. <span class="arithmatex">\(Hit Ratio = Hit/(Hit + Miss)\)</span>.</p>
+<p>It is also known as <strong>content addressable memory (CAM)</strong>. It is a memory chip in which each bit position can be compared. The content is compared in each bit cell, allowing speedy table lookup. Since the entire chip can be compared, contents are randomly stored without considering the addressing scheme. These chips have less storage capacity than regular memory chips.</p>
+<p>From the earliest days of computing, programmers have wanted unlimited amounts of fast memory. The topics covered in the lecture aid programmers by creating that illusion. Before we look at creating the illusion, let's consider a simple analogy that illustrates the key principles and mechanisms that we use.</p>
+<p>Suppose you were a student writing a term paper on important historical developments in computer hardware. You are sitting at a desk in a library with a collection of books that you have pulled from the shelves and are examining. You find that several of the important computers that you need to write about are described in the books you have, but there is nothing about the EDSAC. Therefore, you go back to the shelves and look for an additional book. You find a book on early British computers that covers the EDSAC. Once you have a good selection of books on the desk in front of you, there is a good probability that many of the topics you need can be found in them, and you may spend most of your time just using the books on the desk without going back to the shelves. Having several books on the desk in front of you saves time compared to having only one book there and constantly having to go back to the shelves to return it and take out another.</p>
+<p>The same principle allows us to create the illusion of a large memory that we can access as fast as a very small memory. Just as you did not need to access all the books in the library at once with equal probability, a program does not access all of its code or data at once with equal probability. Otherwise, it would be impossible to make most memory accesses fast and still have large memory in computers, just as it would be impossible for you to fit all the library books on your desk and still find what you wanted quickly.</p>
+<p>This underlies both the way in which you did your work in the library and the way that programs operate. The principle of locality states that programs access a relatively small portion of their address space at any instant of time, just as you accessed a very small portion of the library's collection. There are two different types of locality:</p>
+<ul>
+<li><em>Temporal locality</em> (locality in time): if an item is referenced, it will tend to be referenced again soon. If you recently brought a book to your desk to look at, you will probably need to look at it again soon.</li>
+<li><em>Spatial locality</em> (locality in space): if an item is referenced, items whose addresses are close by will tend to be referenced soon. For example, when you brought out the book on early English computers to find out about the EDSAC, you also noticed that there was another book shelved next to it about early mechanical computers, so you also brought back that book and, later on, found something useful in that book. Libraries put books on the same topic together on the same shelves to increase spatial locality. We'll see how memory hierarchies use spatial locality a little later in this chapter.</li>
+</ul>
+<p><strong>Temporal locality</strong>: The locality principle stating that if a data location is referenced then it will tend to be referenced again soon.</p>
+<p><strong>Spatial locality</strong>: The locality principle stating that if a data location is referenced, data locations with nearby addresses will tend to be referenced soon.</p>
+<p>Just as accesses to books on the desk naturally exhibit locality, locality in programs arises from simple and natural program structures. For example, most programs contain loops, so instructions and data are likely to be accessed repeatedly, showing high amounts of temporal locality. Since instructions are normally accessed sequentially, programs also show high spatial locality. Accesses to data also exhibit a natural spatial locality. For example, sequential accesses to elements of an array or a record will naturally have high degrees of spatial locality.</p>
+<p>We take advantage of the principle of locality by implementing the memory of a computer as a <em>memory hierarchy</em>. A memory hierarchy consists of multiple levels of memory with different speeds and sizes. The faster memories are more expensive per bit than the slower memories and thus are smaller.</p>
+<p>By implementing the memory system as a hierarchy, the user has the illusion of a memory that is as large as the largest level of the hierarchy, but can be accessed as if it were all built from the fastest memory. Flash memory has replaced disks in many personal mobile devices, and may lead to a new level in the storage hierarchy for desktop and server computers.</p>
+<p><img width="549" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/02ebf98f-50b1-45e4-b351-b0db917632ac"></p>
+<p>The data is similarly hierarchical: a level closer to the processor is generally a subset of any level further away, and all the data is stored at the lowest level. By analogy, the books on your desk form a subset of the library you are working in, which is in turn a subset of all the libraries on campus. Furthermore, as we move away from the processor, the levels take progressively longer to access, just as we might encounter in a hierarchy of campus libraries.</p>
+<p>A memory hierarchy can consist of multiple levels, but data is copied between only two adjacent levels at a time, so we can focus our attention on just two levels. The upper level—the one closer to the processor—is smaller and faster than the lower level, since the upper level uses technology that is more expensive. The figure below shows that the minimum unit of information that can be either present or not present in the two-level hierarchy is called a <em>block</em> or a <em>line</em>; in our library analogy, a block of information is one book.</p>
+<p><strong>Block (or line)</strong>: The minimum unit of information that can be either present or not present in a cache.</p>
+<p><img width="305" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/36895b86-bf6a-47f9-9e21-3c1f38f7f76d"></p>
+<ol>
+<li>A memory hierarchy can consist of multiple levels. The upper level—the one closer to the processor—is smaller and faster than the lower level.</li>
+<li>Within each level, the unit of information that is present or not is called a block or a line.</li>
+<li>Usually we transfer an entire block when we copy something between levels.</li>
+</ol>
+<p>If the data requested by the processor appears in some block in the upper level, this is called a <em>hit</em> (analogous to your finding the information in one of the books on your desk). If the data is not found in the upper level, the request is called a <em>miss</em>. The lower level in the hierarchy is then accessed to retrieve the block containing the requested data. (Continuing our analogy, you go from your desk to the shelves to find the desired book.) The <em>hit rate</em>, or <em>hit ratio</em>, is the fraction of memory accesses found in the upper level; it is often used as a measure of the performance of the memory hierarchy. The <em>miss rate</em> (1 - hit rate) is the fraction of memory accesses not found in the upper level.</p>
+<p><strong>Hit rate</strong>: The fraction of memory accesses found in a level of the memory hierarchy.</p>
+<p><strong>Miss rate</strong>: The fraction of memory accesses not found in a level of the memory hierarchy.</p>
+<p>Since performance is the major reason for having a memory hierarchy, the time to service hits and misses is important. <em>Hit time</em> is the time to access the upper level of the memory hierarchy, which includes the time needed to determine whether the access is a hit or a miss (that is, the time needed to look through the books on the desk). The <em>miss penalty</em> is the time to replace a block in the upper level with the corresponding block from the lower level, plus the time to deliver this block to the processor (or the time to get another book from the shelves and place it on the desk). Because the upper level is smaller and built using faster memory parts, the hit time will be much smaller than the time to access the next level in the hierarchy, which is the major component of the miss penalty. (The time to examine the books on the desk is much smaller than the time to get up and get a new book from the shelves.)</p>
+<p><strong>Hit time</strong>: The time required to access a level of the memory hierarchy, including the time needed to determine whether the access is a hit or a miss.</p>
+<p><strong>Miss penalty</strong>: The time required to fetch a block into a level of the memory hierarchy from the lower level, including the time to access the block, transmit it from one level to the other, insert it in the level that experienced the miss, and then pass the block to the requestor.</p>
+<p>As we will, the concepts used to build memory systems affect many other aspects of a computer, including how the operating system manages memory and I/O, how compilers generate code, and even how applications use the computer. Of course, because all programs spend much of their time accessing memory, the memory system is necessarily a major factor in determining performance. The reliance on memory hierarchies to achieve performance has meant that programmers, who are trained to think of memory as a flat, random access storage device, need to understand that memory is a hierarchy to get good performance.</p>
+<p>Since memory systems are critical to performance, computer designers devote a great deal of attention to these systems and develop sophisticated mechanisms for improving the performance of the memory system. We will discuss the major conceptual ideas, although we use many simplifications and abstractions to keep the material manageable in length and complexity.</p>
+<blockquote>
+<p>Programs exhibit both temporal locality, the tendency to reuse recently accessed data items, and spatial locality, the tendency to reference data items that are close to other recently accessed items. Memory hierarchies take advantage of temporal locality by keeping more recently accessed data items closer to the processor. Memory hierarchies take advantage of spatial locality by moving blocks consisting of multiple contiguous words in memory to upper levels of the hierarchy.</p>
+<p>The figure below shows that a memory hierarchy uses smaller and faster memory technologies close to the processor. Thus, accesses that hit in the highest level of the hierarchy can be processed quickly. Accesses that miss go to lower levels of the hierarchy, which are larger but slower. If the hit rate is high enough, the memory hierarchy has an effective access time close to that of the highest (and fastest) level and a size equal to that of the lowest (and largest) level.</p>
+</blockquote>
+<p>In most systems, the memory is a true hierarchy, meaning that data cannot be present in level <em>i</em> unless it is also present in level <em>i</em> + 1.</p>
+<p><img width="490" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/d1b63217-407f-4b00-b692-23d72e5eb536"></p>
+<p>This structure, with the appropriate operating mechanisms, allows the processor to have an access time that is determined primarily by level 1 of the hierarchy and yet have a memory as large as level <em>n</em>. Although the local disk is normally the bottom of the hierarchy, some systems use tape or a file server over a local area network as the next levels of the hierarchy.</p>
+<h2 id="memory-size">Memory size</h2>
+<p>A memory's size may be specified in various ways.</p>
+<ul>
+<li><em>4096x32</em>: Indicates the number of words, and the bits per word.</li>
+<li><em>131,072 bits</em>: Indicates the total number of bits.</li>
+<li><em>16,384 bytes</em>: Indicates the total number of bytes (a byte is 8 bits).</li>
+<li><em>16 KBytes (or 16 KB)</em>: Approximate number of bytes. The K is the metric kilo, for 1,000. Note: This method is common <em>but inaccurate</em>, because 16 Kbytes means 16,000 bytes rather than the actual 16,384 bytes.</li>
+<li><em>128 Kbits (or 128 Kb)</em>: Indicates the total number of bits. Again, this method is common <em>but inaccurate</em>.</li>
+</ul>
+<p>Memory sizes are commonly measured in MB (megabytes, or 1 million bytes)), GB (gigabytes, or 1 billion bytes), or TB (terabytes, or 1 trillion bytes). Ex: A 16 GB memory. The uppercase B means bytes (like GB), while lowercase b means bits (like Gb).</p>
+<p>Memory sizes are powers of 2, so metric prefixes like kilo, mega, and giga, which are powers of 10, are inaccurate. Alternative prefixes, known as <strong>IEC prefixes</strong>, exist like kibi (<span class="arithmatex">\(2^{10}\)</span> or 1024), mebi (<span class="arithmatex">\(2^{20}\)</span>  or 1,048,576), gibi (<span class="arithmatex">\(2^{30}\)</span> or 1,073,741,824), and tebi (<span class="arithmatex">\(2^{40}\)</span> or 1,099,511,627,776). In kibi, the ki refers to the metric prefix kilo, and the bi to "binary". A kibi is abbreviated Ki, as in 1 KiB for 1 kibibyte. Likewise for other IEC prefixes.</p>
+<p>When metric prefixes are used, those prefixes are known to actually refer to the nearest power of 2, so a kilobyte is known to mean 1024 bytes (a kibibyte) and not 1000 bytes.</p>
+<h2 id="memory-technologies">Memory technologies</h2>
+<p>There are four primary technologies used today in memory hierarchies. Main memory is implemented from DRAM (<em>dynamic random access memory</em>), while levels closer to the processor (caches) use SRAM (<em>static random access memory</em>). DRAM is less costly per bit than SRAM, although it is substantially slower. The price difference arises because DRAM uses significantly less area per bit of memory, and DRAMs thus have larger capacity for the same amount of silicon; the speed difference arises from several factors. The third technology is flash memory. This nonvolatile memory is the secondary memory in Personal Mobile Devices. The fourth technology, used to implement the largest and slowest level in the hierarchy in servers, is magnetic disk. The access time and price per bit vary widely among these technologies, as the table below shows, using typical values for 2020:</p>
+<p><img width="628" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/21e212a5-8926-47f0-9a82-d53520e510e6"></p>
+<p><img width="632" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/b490c057-566f-430a-8a66-75c74eae256b"></p>
+<ol>
+<li>Memory systems are implemented as a hierarchy.</li>
+<li>Closer memory levels are implemented with faster technologies, while lower memory levels are implemented with slower technologies with larger capacity.</li>
+<li>Data requested by the processor similarly moves between levels.</li>
+</ol>
+<h3 id="sram-technology">SRAM technology</h3>
+<p>SRAMs are simply integrated circuits that are memory arrays with (usually) a single access port that can provide either a read or a write. SRAMs have a fixed access time to any datum, though the read and write access times may differ.</p>
+<p>SRAMs don't need to refresh and so the access time is very close to the cycle time. SRAMs typically use six to eight transistors per bit to prevent the information from being disturbed when read. SRAM needs only minimal power to retain the charge in standby mode.</p>
+<p>In the past, most PCs and server systems used separate SRAM chips for either their primary, secondary, or even tertiary caches. Today, thanks to Moore's Law, all levels of caches are integrated onto the processor chip, so the market for separate SRAM chips has nearly evaporated.</p>
+<h3 id="dram-technology">DRAM technology</h3>
+<p>In a SRAM, as long as power is applied, the value can be kept indefinitely. In a dynamic RAM (DRAM), the value kept in a cell is stored as a charge in a capacitor. A single transistor is then used to access this stored charge, either to read the value or to overwrite the charge stored there. Because DRAMs use only a single transistor per bit of storage, they are much denser and cheaper per bit than SRAM. As DRAMs store the charge on a capacitor, it cannot be kept indefinitely and must periodically be refreshed. That is why this memory structure is called dynamic, as opposed to the static storage in an SRAM cell.</p>
+<p>To refresh the cell, we merely read its contents and write it back. The charge can be kept for several milliseconds. If every bit had to be read out of the DRAM and then written back individually, we would constantly be refreshing the DRAM, leaving no time for accessing it. Fortunately, DRAMs use a two-level decoding structure, and this allows us to refresh an entire <em>row</em> (which shares a word line) with a read cycle followed immediately by a write cycle.</p>
+<p><img width="595" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/b35dd85e-400b-4e53-86e6-739c07422c9c"></p>
+<ol>
+<li>Modern DRAMs are organized in banks, typically four for DDR4.</li>
+<li>Each bank consists of a series of rows. Sending a PRE (precharge) command opens or closes a bank.</li>
+<li>A row address is sent with an Act (activate), which causes the row to transfer to a buffer.</li>
+<li>When the row is in the buffer, it can be transferred by successive column addresses at whatever the width of the DRAM is (typically 4, 8, or 16 bits in DDR4) or by specifying a block transfer and the starting address.</li>
+<li>Each command, as well as block transfers, is synchronized with a clock.</li>
+</ol>
+<p>The improvements in access time have been slower but continuous, and cost roughly tracks density improvements, although cost is often affected by other issues, such as availability and demand. The cost per gibibyte is not adjusted for inflation. Price source is https://jcmit.net/memoryprice.htm</p>
+<p><img width="740" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/a4abbb02-b15e-40be-bf69-7757c35bbd90"></p>
+<p>The row organization that helps with refresh also helps with performance. To improve performance, DRAMs buffer rows for repeated access. The buffer acts like an SRAM; by changing the address, random bits can be accessed in the buffer until the next row access. This capability improves the access time significantly, since the access time to bits in the row is much lower. Making the chip wider also improves the memory bandwidth of the chip. When the row is in the buffer, it can be transferred by successive addresses at whatever the width of the DRAM is (typically 4, 8, or 16 bits), or by specifying a block transfer and the starting address within the buffer.</p>
+<p>To further improve the interface to processors, DRAMs added clocks and are properly called synchronous DRAMs or SDRAMs. The advantage of SDRAMs is that the use of a clock eliminates the time for the memory and processor to synchronize. The speed advantage of synchronous DRAMs comes from the ability to transfer the bits in the burst without having to specify additional address bits. Instead, the clock transfers the successive bits in a burst. The fastest version is called <em>Double Data Rate</em> (<em>DDR</em>) SDRAM. The name means data transfers on both the rising <em>and</em> falling edge of the clock, thereby getting twice as much bandwidth as you might expect based on the clock rate and the data width. The latest version of this technology is called DDR4. A DDR4-3200 DRAM can do 3200 million transfers per second, which means it has a 1600-MHz clock.</p>
+<p>Sustaining that much bandwidth requires clever organization <em>inside</em> the DRAM. Instead of just a faster row buffer, the DRAM can be internally organized to read or write from multiple <em>banks</em>, with each having its own row buffer. Sending an address to several banks permits them all to read or write simultaneously. For example, with four banks, there is just one access time and then accesses rotate between the four banks to supply four times the bandwidth. This rotating access scheme is called <em>address interleaving</em>.</p>
+<p>Although personal mobile devices like the iPad use individual DRAMs, memory for servers is commonly sold on small boards called <em>dual inline memory modules</em> (DIMMs). DIMMs typically contain 4-16 DRAMs, and they are normally organized to be 8 bytes wide for server systems. A DIMM using DDR4-3200 SDRAMs could transfer at 8 × 3200 = 25,600 megabytes per second. Such DIMMs are named after their bandwidth: PC25600. Since a DIMM can have so many DRAM chips that only a portion of them are used for a particular transfer, we need a term to refer to the subset of chips in a DIMM that share common address lines. To avoid confusion with the internal DRAM names of row and banks, we use the term <em>memory rank</em> for such a subset of chips in a DIMM.</p>
+<p>SRAM is faster than DRAM, but DRAM is denser and cheaper. SRAM is thus typically used by processors for small fast on-chip cache, while DRAM is used for the larger main memory off-chip. Also, processors and SRAM are made using different chip design processes than DRAM, so putting DRAM on-chip with a processor is rare.</p>
+<p><img width="626" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/6a68ae52-b0d6-476e-890b-b6cdf73a0fc8"></p>
+<ol>
+<li>SRAM read/writes are about 10x faster than for DRAM.</li>
+<li>But DRAM's are about 5x denser (using only 1 transistor/cell). Because of the density and mass production, DRAM's are about 100x cheaper too.</li>
+<li>Thus, SRAM is used primarily for a processor's small but fast cache or other small on-chip memory, while DRAM is used for a processor's large main memory off-chip.</li>
+</ol>
+<h3 id="flash-memory">Flash memory</h3>
+<p><strong>Flash memory</strong> is a type of <em>electrically erasable programmable read-only memory</em> (EEPROM).</p>
+<p>Unlike disks and DRAM, but like other EEPROM technologies, writes can wear out flash memory bits. To cope with such limits, most flash products include a controller to spread the writes by remapping blocks that have been written many times to less trodden blocks. This technique is called <em>wear leveling</em>. With wear leveling, personal mobile devices are very unlikely to exceed the write limits in the flash. Such wear leveling lowers the potential performance of flash, but it is needed unless higher-level software monitors block wear. Flash controllers that perform wear leveling can also improve yield by mapping out memory cells that were manufactured incorrectly.</p>
+<h3 id="disk-memory">Disk memory</h3>
+<p>As the figure below shows, a magnetic hard disk consists of a collection of platters, which rotate on a spindle at 5400 to 15,000 revolutions per minute. The metal platters are covered with magnetic recording material on both sides, similar to the material found on a cassette or videotape. To read and write information on a hard disk, a movable <em>arm</em> containing a small electromagnetic coil called a <em>read-write head</em> is located just above each surface. The entire drive is permanently sealed to control the environment inside the drive, which, in turn, allows the disk heads to be much closer to the drive surface. The diameter of today's disks is 2.5 or 3.5 inches, and there are typically one or two platters per drive today.</p>
+<p>Each disk surface is divided into concentric circles, called <em>tracks</em>. There are typically tens of thousands of tracks per surface. Each track is in turn divided into <em>sectors</em> that contain the information; each track may have thousands of sectors. Sectors are typically 512 to 4096 bytes in size. The sequence recorded on the magnetic media is a sector number, a gap, the information for that sector including error correction code, a gap, the sector number of the next sector, and so on.</p>
+<p><strong>Track</strong>: One of thousands of concentric circles that make up the surface of a magnetic disk.</p>
+<p><strong>Sector</strong>: One of the segments that make up a track on a magnetic disk; a sector is the smallest amount of information that is read or written on a disk.</p>
+<p>The disk heads for each surface are connected together and move in conjunction, so that every head is over the same track of every surface. The term <em>cylinder</em> is used to refer to all the tracks under the heads at a given point on all surfaces.</p>
+<p>To access data, the operating system must direct the disk through a three-stage process. The first step is to position the head over the proper track. This operation is called a <em>seek</em>, and the time to move the head to the desired track is called the seek time.</p>
+<p><strong>Seek</strong>: The process of positioning a read/write head over the proper track on a disk.</p>
+<p>Disk manufacturers report minimum seek time, maximum seek time, and average seek time in their manuals. The first two are easy to measure, but the average is open to wide interpretation because it depends on the seek distance. The industry calculates average seek time as the sum of the time for all possible seeks divided by the number of possible seeks. Average seek times are usually advertised as 3 ms to 13 ms, but, depending on the application and scheduling of disk requests, the actual average seek time may be only 25% to 33% of the advertised number because of locality of disk references. This locality arises both because of successive accesses to the same file and because the operating system tries to schedule such accesses together.</p>
+<p>Once the head has reached the correct track, we must wait for the desired sector to rotate under the read/write head. This time is called the <em>rotational latency</em> or <em>rotational delay</em>. The average latency to the desired information is halfway around the disk. Disks rotate at 5400 RPM to 15,000 RPM. The average rotational latency at 5400 RPM is</p>
+<p><img width="677" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/af3684d8-2ce8-46ee-b2a1-a68569be079d"></p>
+<p><strong>Rotational latency</strong>: Also called <strong>rotational delay</strong>. The time required for the desired sector of a disk to rotate under the read/write head; usually assumed to be half the rotation time.</p>
+<p>The last component of a disk access, <em>transfer time</em>, is the time to transfer a block of bits. The transfer time is a function of the sector size, the rotation speed, and the recording density of a track. Transfer rates in 2020 were between 150 and 250 MB/sec.</p>
+<p>One complication is that most disk controllers have a built-in cache that stores sectors as they are passed over; transfer rates from the cache are typically higher, and were up to 1500 MB/sec (12 Gbit/sec) in 2020.</p>
+<p>The assumptions of the sector-track-cylinder model above are that nearby blocks are on the same track, blocks in the same cylinder take less time to access since there is no seek time, and some tracks are closer than others. The reason for the change was the raising of the level of the disk interfaces. To speed-up sequential transfers, these higher-level interfaces organize disks more like tapes than like random access devices. The logical blocks are ordered in serpentine fashion across a single surface, trying to capture all the sectors that are recorded at the same bit density to try to get best performance. Hence, sequential blocks may be on different tracks.</p>
+<p>In summary, the two primary differences between magnetic disks and semiconductor memory technologies are that disks have a slower access time because they are mechanical devices—flash latency is 1000 times as fast and DRAM is 100,000 times as fast—yet they are cheaper per bit because they have very high storage capacity at a modest cost—disks are 6 to 300 times cheaper. Magnetic disks are nonvolatile like flash, but unlike flash there is no write wear-out problem. However, flash is much more rugged and hence a better match to the jostling inherent in personal mobile devices.</p>
+<h2 id="cache-memory">Cache memory</h2>
+<p>In our library example, the desk acted as a cache—a safe place to store things (books) that we needed to examine. <em>Cache</em> was the name chosen to represent the level of the memory hierarchy between the processor and main memory in the first commercial computer to have this extra level. Today, although this remains the dominant use of the word <em>cache</em>, the term is also used to refer to any storage managed to take advantage of locality of access. Caches first appeared in research computers in the early 1960s and in production computers later in that same decade; every general-purpose computer built today from servers to low-power embedded processors, includes caches.</p>
+<p>In this section, we begin by looking at a very simple cache in which the processor requests are each one word and the blocks also consist of a single word. The figure below shows such a simple cache, before and after requesting a data item that is not initially in the cache. Before the request, the cache contains a collection of recent references <span class="arithmatex">\(X_1 , X_2 , …, X_{n-1}\)</span> , and the processor requests a word <span class="arithmatex">\(X_n\)</span> that is not in the cache. This request results in a miss, and the word <span class="arithmatex">\(X_n\)</span> is brought from memory into the cache.</p>
+<p><img width="390" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/7e5c5111-adb2-4b15-ba4d-74acdcf70389"></p>
+<p>This reference causes a miss that forces the cache to fetch <span class="arithmatex">\(X_n\)</span> from memory and insert it into the cache.</p>
+<p><strong>Direct-mapped cache</strong>: A cache structure in which each memory location is mapped to exactly one location in the cache.</p>
+<p>If the number of entries in the cache is a power of 2, then modulo can be computed simply by using the low-order <span class="arithmatex">\(log_2\)</span> (cache size in blocks) bits of the address. Thus, an 8-block cache uses the three lowest bits (8 = <span class="arithmatex">\(2^3\)</span>) of the block address. For example, the figure below shows how the memory addresses between <span class="arithmatex">\(1_{10}\)</span> <span class="arithmatex">\((00001_2)\)</span> and <span class="arithmatex">\(29_{10}\)</span> <span class="arithmatex">\((11101_2)\)</span> map to locations <span class="arithmatex">\(1_{10}\)</span> <span class="arithmatex">\((001_{2}\)</span>) and <span class="arithmatex">\(5_{10}\)</span> <span class="arithmatex">\((101_2)\)</span> in a direct-mapped cache of eight words.</p>
+<p><img width="723" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/55281c9b-4534-4f14-9763-7242932f6c6f"></p>
+<ol>
+<li>Because there are eight words in the cache, an address X maps to the direct-mapped cache word X modulo 8.</li>
+<li>If the number of entries is a power of 2, then modulo can be computed simply by using the low-order log_2 (cache size in blocks) bits of the address.</li>
+<li>Each cache location can contain the contents of a number of different memory locations. Addresses 00001_2, 01001_2, 10001_2, and 11001_2 all map to entry 001_2 of the cache.</li>
+<li>Addresses 00101_2, 01101_2, 10101_2, and 11101_2 all map to entry 101_2 of the cache.</li>
+</ol>
+<p>Because each cache location can contain the contents of a number of different memory locations, how do we know whether the data in the cache corresponds to a requested word? That is, how do we know whether a requested word is in the cache or not? We answer this question by adding a set of <em>tags</em> to the cache. The tags contain the address information required to identify whether a word in the cache corresponds to the requested word. The tag needs only to contain the upper portion of the address, corresponding to the bits that are not used as an index into the cache. For example, in the above figure we need only have the upper 2 of the 5 address bits in the tag, since the lower 3-bit index field of the address selects the block. Architects omit the index bits because they are redundant, since by definition the index field of any address of a cache block must be that block number.</p>
+<p><strong>Tag</strong>: A field in a table used for a memory hierarchy that contains the address information required to identify whether the associated block in the hierarchy corresponds to a requested word.</p>
+<p>We also need a way to recognize that a cache block does not have valid information. For instance, when a processor starts up, the cache does not have good data, and the tag fields will be meaningless. Even after executing many instructions, some of the cache entries may still be empty. Thus, we need to know that the tag should be ignored for such entries. The most common method is to add a <em>valid bit</em> to indicate whether an entry contains a valid address. If the bit is not set, there cannot be a match for this block.</p>
+<p><strong>Valid bit</strong>: A field in the tables of a memory hierarchy that indicates that the associated block in the hierarchy contains valid data.</p>
+<p><img width="710" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/e9f8b919-ad88-4202-8e09-cf8eb4ddf647">
+<img width="703" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/8c3a8f0b-95e6-4ab5-b673-c5b76141473b">
+<img width="738" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/c590ffb4-0bc3-4fad-9056-08a4780a6aba">
+<img width="705" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/449d9edf-2ae8-4f15-8006-854b45f29fac">
+<img width="674" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/f796cef0-07d8-44ca-9fb6-af1254bfffa8">
+<img width="700" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/b0a490e8-f3fb-49cf-bf46-24f413952936"></p>
+<ol>
+<li>The three lowest bits of the memory reference are used to determine which cache block the memory reference is mapped to.</li>
+<li>The corresponding tag is compared to the upper 2 bits of the memory reference to determine if the word in the cache corresponds to the requested word.</li>
+<li>The valid bit indicates that the cache entry contains valid information. A cache hit occurs if the valid bit is set and the tag matches the upper bits of the memory reference.</li>
+<li>A cache miss occurs if the requested word is not in the cache.</li>
+<li>Upon a miss, the requested word is fetched from memory and inserted into the cache.</li>
+<li>A cache miss also occurs if the cache block does not contain valid data, which would also result in fetching the requested word from memory.</li>
+</ol>
+<p>In general, handling reads is a little simpler than handling writes, since reads do not have to change the contents of the cache. After seeing the basics of how reads work and how cache misses can be handled, we'll examine the cache designs for real computers and detail how these caches handle writes.</p>
+<blockquote>
+<p>Caching is perhaps the most important example of the big idea of <strong>prediction</strong>. It relies on the principle of locality to try to find the desired data in the higher levels of the memory hierarchy, and provides mechanisms to ensure that when the prediction is wrong it finds and uses the proper data from the lower levels of the memory hierarchy. The hit rates of the cache prediction on modern computers are often higher than 95%.</p>
+</blockquote>
+<p>We know where to look in the cache for each possible address: the low-order bits of an address can be used to find the unique cache entry to which the address could map. The figure below shows how a referenced address is divided into</p>
+<ul>
+<li>A <em>tag field</em>, which is used to compare with the value of the tag field of the cache</li>
+<li>A <em>cache index</em>, which is used to select the block</li>
+</ul>
+<p>This cache holds 1024 words or 4 KiB. We assume 32-bit addresses in this chapter. The tag from the cache is compared against the upper portion of the address to determine whether the entry in the cache corresponds to the requested address. Because the cache has 210 (or 1024) words and a block size of one word, 10 bits are used to index the cache, leaving 32 - 10 - 2 = 20 bits to be compared against the tag. If the tag and upper 20 bits of the address are equal and the valid bit is on, then the request hits in the cache, and the word is supplied to the processor. Otherwise, a miss occurs.</p>
+<p><img width="540" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/ded663fb-97ec-4c3b-a407-f65bf3faa307"></p>
+<p>Larger blocks exploit spatial locality to lower miss rates. As the figure below shows, increasing the block size usually decreases the miss rate. The miss rate may go up eventually if the block size becomes a significant fraction of the cache size, because the number of blocks that can be held in the cache will become small, and there will be a great deal of competition for those blocks. As a result, a block will be bumped out of the cache before many of its words are accessed. Stated alternatively, spatial locality among the words in a block decreases with a very large block; consequently, the benefits in the miss rate become smaller.</p>
+<p>Note that the miss rate actually goes up if the block size is too large relative to the cache size. Each line represents a cache of different size. (This figure is independent of associativity, discussed soon.)</p>
+<p><img width="614" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/e71275bf-db36-49db-9010-6dee77a87833"></p>
+<p>A more serious problem associated with just increasing the block size is that the cost of a miss increases. The miss penalty is determined by the time required to fetch the block from the next lower level of the hierarchy and load it into the cache. The time to fetch the block has two parts: the latency to the first word and the transfer time for the rest of the block. Clearly, unless we change the memory system, the transfer time—and hence the miss penalty—will likely increase as the block size increases. Furthermore, the improvement in the miss rate starts to decrease as the blocks become larger. The result is that the increase in the miss penalty overwhelms the decrease in the miss rate for blocks that are too large, and cache performance thus decreases. Of course, if we design the memory to transfer larger blocks more efficiently, we can increase the block size and obtain further improvements in cache performance.</p>
+<h3 id="handling-cache-misses">Handling cache misses</h3>
+<p>Before we look at the cache of a real system, let's see how the control unit deals with <em>cache misses</em>. The control unit must detect a miss and process the miss by fetching the requested data from memory (or, as we shall see, a lower-level cache). If the cache reports a hit, the computer continues using the data as if nothing happened.</p>
+<p><strong>Cache miss</strong>: A request for data from the cache that cannot be filled because the data is not present in the cache.</p>
+<p>Modifying the control of a processor to handle a hit is trivial; misses, however, require some extra work. The cache miss handling is done in collaboration with the processor control unit and with a separate controller that initiates the memory access and refills the cache. The processing of a cache miss creates a pipeline stall as opposed to an interrupt, which would require saving the state of all registers. For a cache miss, we can stall the entire processor, essentially freezing the contents of the temporary and programmer-visible registers, while we wait for memory. More sophisticated out-of-order processors can allow execution of instructions while waiting for a cache miss.</p>
+<p>Let's look a little more closely at how instruction misses are handled; the same approach can be easily extended to handle data misses. If an instruction access results in a miss, then the content of the Instruction register is invalid. To get the proper instruction into the cache, we must be able to instruct the lower level in the memory hierarchy to perform a read. Since the program counter is incremented in the first clock cycle of execution, the address of the instruction that generates an instruction cache miss is equal to the value of the program counter minus 4. Once we have the address, we need to instruct the main memory to perform a read. We wait for the memory to respond (since the access will take multiple clock cycles), and then write the words containing the desired instruction into the cache.</p>
+<p>We can now define the steps to be taken on an instruction cache miss:</p>
+<ol>
+<li>Send the original PC value (current PC - 4) to the memory.</li>
+<li>Instruct main memory to perform a read and wait for the memory to complete its access.</li>
+<li>Write the cache entry, putting the data from memory in the data portion of the entry, writing the upper bits of the address (from the ALU) into the tag field, and turning the valid bit on if it was not on already.</li>
+<li>Restart the instruction execution at the first step, which will refetch the instruction, this time finding it in the cache.</li>
+</ol>
+<p>The control of the cache on a data access is essentially identical: on a miss, we simply stall the processor until the memory responds with the data.</p>
+<h3 id="handling-writes">Handling writes</h3>
+<p>Writes work somewhat differently. Suppose on a store instruction, we wrote the data into only the data cache (without changing main memory); then, after the write into the cache, memory would have a different value from that in the cache. In such a case, the cache and memory are said to be inconsistent. The simplest way to keep the main memory and the cache consistent is always to write the data into both the memory and the cache. This scheme is called <em>write-through</em>.</p>
+<p><strong>Write-through</strong>: A scheme in which writes always update both the cache and the next lower level of the memory hierarchy, ensuring that data is always consistent between the two.</p>
+<p>The other key aspect of writes is what occurs on a write miss. We first fetch the words of the block from memory. After the block is fetched and placed into the cache, we can overwrite the word that caused the miss into the cache block. We also write the word to main memory using the full address.</p>
+<p>Although this design handles writes very simply, it would not provide very good performance. With a write-through scheme, every write causes the data to be written to main memory. These writes will take a long time, likely at least 100 processor clock cycles, and could slow down the processor considerably. For example, suppose 10% of the instructions are stores. If the CPI without cache misses was 1.0, spending 100 extra cycles on every write would lead to a CPI of 1.0 + 100 × 10% = 11, reducing performance by more than a factor of 10.</p>
+<p>One solution to this problem is to use a <em>write buffer</em>. A write buffer stores the data while it is waiting to be written to memory. After writing the data into the cache and into the write buffer, the processor can continue execution. When a write to main memory completes, the entry in the write buffer is freed. If the write buffer is full when the processor reaches a write, the processor must stall until there is an empty position in the write buffer. Of course, if the rate at which the memory can complete writes is less than the rate at which the processor is generating writes, no amount of buffering can help, because writes are being generated faster than the memory system can accept them.</p>
+<p><strong>Write buffer</strong>: A queue that holds data while the data is waiting to be written to memory.</p>
+<p>The rate at which writes are generated may also be less than the rate at which the memory can accept them, and yet stalls may still occur. This can happen when the writes occur in bursts. To reduce the occurrence of such stalls, processors usually increase the depth of the write buffer beyond a single entry.</p>
+<p>The alternative to a write-through scheme is a scheme called <em>write-back</em>. In a write-back scheme, when a write occurs, the new value is written only to the block in the cache. The modified block is written to the lower level of the hierarchy when it is replaced. Write-back schemes can improve performance, especially when processors can generate writes as fast or faster than the writes can be handled by main memory; a write-back scheme is, however, more complex to implement than write-through.</p>
+<p><strong>Write-back</strong>: A scheme that handles writes by updating values only to the block in the cache, then writing the modified block to the lower level of the hierarchy when the block is replaced.</p>
+<h2 id="rom-design">ROM design</h2>
+<p>Flip-flops, SRAMs, and DRAMs lose stored bits when electrical power is removed (<em>volatile</em> memory). In contrast, <strong>ROM</strong> (read-only memory) retains stored bits when power is removed (<em>non-volatile</em> memory), by using technology that usually has slow writes, so writes are less frequent than reads; hence the term "read-only" (a misnomer when writing is in fact possible). Writing to a ROM is called <strong>programming</strong> the ROM.</p>
+<p>Bit storage in a ROM commonly uses a <strong>floating-gate transistor</strong> having a special region where electrons can be trapped, staying there even without power. Applying a large positive voltage traps the electrons (programming). A large negative voltage frees the electrons (erasing). Applying such large voltages long enough to trap or free electrons is slow, which is why writing a ROM is slow.</p>
+<p><img width="632" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/564fb158-2fa6-4116-8924-919190bdd01e">
+<img width="632" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/2f6ad7c7-ad1b-492b-b392-0bcfa81a607a">
+<img width="632" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/f801cc2e-0957-40a6-8b00-41e268ceb138">
+<img width="615" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/1cba5e11-08af-44cf-92fe-077291ea33c8">
+<img width="640" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/22c872df-ed66-4a3b-9d90-f4f89d018aa6"></p>
+<ol>
+<li>A normal transistor does not conduct when the gate input is 0, and conducts when the gate is 1.</li>
+<li>A floating-gate transistor has a special region called a floating-gate. The transistor can work like a normal transistor.</li>
+<li>A large positive voltage causes electrons to tunnel into the special region. When that voltage is removed, the electrons are trapped. The transistor has been "programmed".</li>
+<li>Now, the transistor won't conduct even with a 1 at the gate. The negative electrons "block" the positive 1 from switching the transistor to conduct.</li>
+<li>In a ROM, for an address, one word line will be 1. The data lines become 0 for unprogrammed transistors, and 1 for programmed transistors (uses special circuitry).</li>
+</ol>
+<p>Numerous ROM types exist.</p>
+<ul>
+<li><strong>Mask-programmed ROM</strong>: The word line to bit line connections are hardwired during chip manufacturing, and can never be changed.</li>
+<li><strong>OTP ROM</strong> (one-time programmable ROM): The word line to bit line connections have a fuse that can be "blown" to break the connection. A user can program the device only once.</li>
+<li><strong>EPROM</strong> (erasable programmable ROM): Programming uses large positive voltage to trap electrons in a floating-gate transistor, but erasing is done by placing the chip under ultraviolet light to provide the energy to free the trapped electrons. This ROM type preceded the more convenient EEPROM.</li>
+<li><strong>EEPROM</strong> (electrically-erasable programmable ROM): Programming uses large positive voltage to trap electrons in a floating-gate transistor, and erasing uses a large negative voltage.</li>
+<li><strong>Flash</strong>: Programming uses large positive voltage to trap electrons in a floating-gate transistor, and erasing uses a large negative voltage to quickly erase entire blocks of locations at one time, like a "flash".</li>
+</ul>
+<h2 id="chip-economics">Chip economics</h2>
+<p>A <strong>chip</strong> (aka <strong>integrated circuit</strong> or <strong>IC</strong>) is a digital circuit manufactured on a fingernail-sized piece of silicon, typically placed inside a black or silver insulating package.</p>
+<p><strong>Non-recurring engineering</strong> (or <strong>NRE</strong>) cost is the cost to design and set up a computer chip for manufacturing. Due to the complexity of modern chips having billions of transistors, NRE costs may be tens or hundreds of millions of dollars. That cost adds to a chip's cost, depending on the number of chips made. Ex: NRE cost for a chip may be USD 10,000,000. If 10,000 chips are made, USD 10,000,000/10,000 = USD 1000 needs to be added per chip to cover NRE cost. But if 1,000,000 chips are made, only USD 10,000,000/1,000,000 = USD 10 need be added. Thus, mass-producing a chip allows for lower chip costs, since NRE cost can be spread.</p>
+<p>The chip manufacturing process simultaneously creates multiple identical chips on a silicon wafer (a round silicon slice), and then each chip is cut out. The manufacturing process may take hours or days and is costly. Unfortunately, a wafer may have defects, like a broken wire, that render some chips unusable. <strong>Yield</strong> is the percentage of chips that are usable and free from significant defects. Ex: If 40 of 50 chips on a wafer are usable, yield is 40/50 = 80%. Larger chips are more likely to enclose a defect and thus have lower yield.</p>
+<p><img width="645" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/bec86254-b20a-4403-a122-1fe3e6aebe0f">
+<img width="481" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/f979730d-a74e-46df-b011-eba9f051354b">
+<img width="614" alt="image" src="https://github.com/d-khan/assembly/assets/11669149/b2e3e853-031a-4738-ac32-cd06463b785e"></p>
+<h2 id="summary">Summary</h2>
+<p>Memory plays a crucial role in system's performance. There are different types of memory and selection of memory depends upon the application. If you are into gaming, you would go for latest generation of DDR memory for both CPU and graphics cards with maximum possible frequency available on the market and the compatibility with the CPU and the motherboard. However, the fastest RAMs for gaming machines might not be reliable and does require reset after several days. Remember, reliability, volatile or non-volatile, read/write speed, capacity, form factor are key design variables and finding a balance is a challenge for engineers.</p>
+<p>We discussed the simplest of caches: a direct-mapped cache with a one-word block. In such a cache, both hits and misses are simple, since a word can go in exactly one location and there is a separate tag for every word. To keep the cache and memory consistent, a write-through scheme can be used, so that every write into the cache also causes memory to be updated. The alternative to write-through is a write-back scheme that copies a block back to memory when it is replaced.</p>
+<p>To take advantage of spatial locality, a cache must have a block size larger than one word. The use of a larger block decreases the miss rate and improves the efficiency of the cache hardware by reducing the amount of tag storage relative to the amount of data storage in the cache. Although a larger block size decreases the miss rate, it can also increase the miss penalty. If the miss penalty increased linearly with the block size, larger blocks could easily lead to lower performance.</p>
+<p>To avoid performance loss, the bandwidth of main memory is increased to transfer cache blocks more efficiently. Common methods for increasing bandwidth external to the DRAM are making the memory wider and interleaving. DRAM designers have steadily improved the interface between the processor and memory to increase the bandwidth of burst mode transfers to reduce the cost of larger cache block sizes.</p>
+<h2 id="concept-check"><strong>Concept Check</strong></h2>
+<h3 id="question-1">Question 1</h3>
+<p>Why is cache memory placed between the CPU and main memory?</p>
+<p>A. To increase storage capacity only<br />
+B. To reduce memory access time<br />
+C. To replace RAM completely<br />
+D. To store operating systems permanently</p>
+<details>
+<summary>Show Answer</summary>
+
+Answer: B. To reduce memory access time
+
+Cache memory stores frequently accessed data closer to the CPU, reducing average memory access time.
+
+</details>
+
+<hr />
+<h3 id="question-2">Question 2</h3>
+<p>Which type of locality is demonstrated by repeatedly accessing the same variable inside a loop?</p>
+<p>A. Spatial locality<br />
+B. Sequential locality<br />
+C. Temporal locality<br />
+D. Direct locality</p>
+<details>
+<summary>Show Answer</summary>
+
+Answer: C. Temporal locality
+
+Temporal locality states that recently accessed data is likely to be accessed again soon.
+
+</details>
+
+<hr />
+<h3 id="question-3">Question 3</h3>
+<p>A cache recorded 900 hits and 100 misses. What is the hit ratio?</p>
+<p>A. 0.10<br />
+B. 0.50<br />
+C. 0.90<br />
+D. 1.00</p>
+<details>
+<summary>Show Answer</summary>
+
+Answer: C. 0.90
+
+Hit Ratio = Hits / (Hits + Misses)
+
+Hit Ratio = 900 / (900 + 100)
+
+Hit Ratio = 0.90
+
+</details>
+
+<hr />
+<h3 id="question-4">Question 4</h3>
+<p>Which statement correctly compares SRAM and DRAM?</p>
+<p>A. SRAM is slower and cheaper than DRAM.<br />
+B. DRAM does not require refreshing.<br />
+C. SRAM is faster but more expensive than DRAM.<br />
+D. DRAM is used primarily for CPU cache.</p>
+<details>
+<summary>Show Answer</summary>
+
+Answer: C. SRAM is faster but more expensive than DRAM.
+
+SRAM uses more transistors per bit and is commonly used for cache memory.
+
+</details>
+
+<hr />
+<h3 id="question-5">Question 5</h3>
+<p>What is the purpose of the valid bit in a cache entry?</p>
+<p>A. Stores part of the memory address<br />
+B. Indicates whether the cache block contains valid data<br />
+C. Stores parity information<br />
+D. Counts cache hits</p>
+<details>
+<summary>Show Answer</summary>
+
+Answer: B. Indicates whether the cache block contains valid data.
+
+A cache entry cannot be considered a hit unless its valid bit is set.
+
+</details>
+
+<hr />
+<h3 id="question-6">Question 6</h3>
+<p>A direct-mapped cache contains 16 blocks. Which cache block will memory address 45 map to?</p>
+<p>A. 13<br />
+B. 14<br />
+C. 15<br />
+D. 12</p>
+<details>
+<summary>Show Answer</summary>
+
+Answer: A. 13
+
+Cache Index = Address mod Cache Size
+
+45 mod 16 = 13
+
+Therefore, memory address 45 maps to cache block 13.
+
+</details>
+
+<hr />
+<h3 id="question-7">Question 7</h3>
+<p>A cache has a hit rate of 95%. Which statement is true?</p>
+<p>A. Every memory access requires main memory access.<br />
+B. 95% of memory accesses are satisfied by the cache.<br />
+C. The cache is always full.<br />
+D. The miss penalty is zero.</p>
+<details>
+<summary>Show Answer</summary>
+
+Answer: B. 95% of memory accesses are satisfied by the cache.
+
+Only 5% of accesses require fetching data from lower levels of the memory hierarchy.
+
+</details>
+
+<hr />
+<h3 id="question-8">Question 8</h3>
+<p>Why can increasing cache block size eventually reduce performance?</p>
+<p>A. Larger blocks always reduce hit rate.<br />
+B. Larger blocks increase CPU clock frequency.<br />
+C. Larger blocks increase miss penalty and reduce the number of blocks that fit in the cache.<br />
+D. Larger blocks eliminate spatial locality.</p>
+<details>
+<summary>Show Answer</summary>
+
+Answer: C. Larger blocks increase miss penalty and reduce the number of blocks that fit in the cache.
+
+Very large blocks can increase transfer time and create more cache conflicts.
+
+</details>
+
+<hr />
+<h3 id="question-9">Question 9</h3>
+<p>A processor uses a write-through cache policy. What happens during a write operation?</p>
+<p>A. Data is written only to cache.<br />
+B. Data is written only to main memory.<br />
+C. Data is written to both cache and main memory.<br />
+D. Data is discarded after being written.</p>
+<details>
+<summary>Show Answer</summary>
+
+Answer: C. Data is written to both cache and main memory.
+
+Write-through keeps cache and memory consistent at all times.
+
+</details>
+
+<hr />
+<h3 id="question-10">Question 10</h3>
+<p>A program sequentially processes every element of a large array. Which type of locality is primarily being exploited?</p>
+<p>A. Temporal locality only<br />
+B. Spatial locality only<br />
+C. Both temporal and spatial locality equally<br />
+D. No locality</p>
+<details>
+<summary>Show Answer</summary>
+
+Answer: B. Spatial locality only
+
+Adjacent array elements are stored in nearby memory locations, making spatial locality the dominant factor.
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/semester.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
