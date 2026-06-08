@@ -1,4 +1,4 @@
-<script src="javascripts/course.js"></script>
+<script src="../javascripts/course.js"></script>
 
 <div class="course-dashboard">
 
