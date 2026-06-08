@@ -1,0 +1,267 @@
+.course-dashboard {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ===================== */
+/* HERO */
+/* ===================== */
+.course-hero::before {
+    content: "";
+    position: absolute;
+    bottom: -65px;
+    left: -5%;
+    width: 110%;
+    height: 70px;
+    background: rgba(255, 255, 255, .05);
+    border-radius: 50%;
+}
+
+.course-hero {
+    background: linear-gradient(
+            135deg,
+            #143f99 0%,
+            #1f66c2 100%
+    );
+    color: white;
+    border-radius: 24px 24px 0 0;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
+}
+
+.hero-left {
+    flex: 1;
+}
+
+.course-code {
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: .9;
+    margin-bottom: .1rem;
+    margin-left: 1rem;
+}
+
+.course-title {
+    font-size: 2.5rem !important;
+    font-weight: 700;
+    line-height: 1.1;
+    color: white !important;
+    margin-bottom: 0.25rem;
+    margin-left: 1rem !important;
+}
+
+.course-professor {
+    font-size: 0.85rem;
+    opacity: .9;
+    margin-top: 0rem;
+    margin-left: 1rem;
+}
+
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* ===================== */
+/* TOPIC */
+/* ===================== */
+.topic-section {
+    background: linear-gradient(
+            135deg,
+            #0b45d8,
+            #05289c
+    );
+    color: white;
+    margin-top: -20px;
+    border-radius: 0 0 24px 24px;
+    padding: 2rem 2rem 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.topic-card {
+    flex: 1;
+}
+
+.topic-divider {
+    width: 1px;
+    height: 120px;
+    background: rgba(255, 255, 255, .3);
+    margin: 0 2rem;
+}
+
+.topic-label {
+    opacity: .8;
+    font-size: .9rem;
+}
+
+.topic-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: .5rem 0;
+}
+
+.topic-description {
+    opacity: .9;
+}
+
+/* ===================== */
+/* CARDS */
+/* ===================== */
+.dashboard-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.75rem;
+    margin-top: 1rem;
+    border: 1px solid #edf1f7;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .06);
+}
+
+.dashboard-card h2 {
+    margin-top: 0;
+    font-weight: 700 !important;
+}
+
+/* ===================== */
+/* ANNOUNCEMENTS */
+/* ===================== */
+.announcement-item,
+.upcoming-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+    margin-left: -10px;
+}
+
+.announcement-icon {
+    color: #2563eb;
+    font-size: 1.5rem;
+    margin-right: 12px;
+}
+
+.announcement-item:last-child,
+.upcoming-item:last-child {
+    border-bottom: none;
+}
+
+.date-box {
+    width: 60px;
+    min-width: 60px;
+    text-align: center;
+    border-radius: 10px;
+    background: #eef2ff;
+    padding: .1rem;
+    font-weight: bold;
+    color: #0b45d8;
+}
+
+.green {
+    background: #eaf8ec;
+    color: #1f8a3a;
+}
+
+/* ===================== */
+/* QUICK LINKS */
+/* ===================== */
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.quick-link {
+    background: #f8fafc;
+    border-radius: 16px;
+    min-height: 120px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .2s ease;
+}
+
+.quick-link:hover {
+    transform: translateY(-3px);
+    background: #eef2ff;
+}
+
+.quick-link-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.quick-link-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #3f51b5;
+}
+
+/* ===================== */
+/* CALENDAR */
+/* ===================== */
+.hero-right {
+    display: flex;
+    align-items: center;
+}
+
+.calendar-card {
+    width: 100px;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    margin-right: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .18);
+}
+
+.calendar-month {
+    background: #ef4339;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: .1rem;
+    letter-spacing: 1px;
+}
+
+.calendar-day {
+    background: white;
+    color: #222;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    padding-top: 8px;
+    line-height: 1;
+}
+
+.calendar-weekday {
+    background: white;
+    color: #555;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: .2rem;
+}
+
+.calendar-footer {
+    background: #f4f6fb;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+    padding: .3rem;
+    color: #0d47a1;
+    font-weight: 700;
+    font-size: 0.8rem;
+}

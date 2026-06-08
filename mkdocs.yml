@@ -1,0 +1,46 @@
+site_name: Miramar Computer Science Courses
+
+theme:
+  name: material
+
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/course.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/semester.js
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - " ": index.md
+
+  - Python Programming:
+      - Syllabus: python/syllabus.md
+
+
+  - C/C++ Programming:
+      - Syllabus: cpp/syllabus.md
+
+
+  - Data Structures in C++:
+      - Syllabus: data-structures/syllabus.md
+
+
+  - Intermediate Java:
+      - Syllabus: java/syllabus.md
+
+
+  - Assembly Language:
+      - Dashboard: assembly/index.md
+      - Syllabus: assembly/syllabus.md
+      - Lectures & Labs: assembly/8_weeks_semester.md
+  

@@ -1,0 +1,473 @@
+.md-grid {
+    max-width: 90rem;
+}
+
+.dashboard-layout {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 0.5rem;
+
+    flex-wrap: wrap;
+}
+
+.support-card {
+    width: 100%;
+
+    max-width: 480px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 1rem;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+    font-family: Arial, sans-serif;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    align-self: flex-start;
+
+    gap: 1rem;
+
+    margin-top: 0;
+
+    margin-left: -60px;
+}
+
+.support-title {
+    font-size: 1.6rem;
+
+    font-weight: 700;
+
+    color: #0d47a1;
+
+    line-height: 1.2;
+}
+
+.support-text {
+    color: #555;
+
+    line-height: 1.5;
+
+    font-size: 0.8rem;
+}
+
+.ticket-button {
+
+    background: linear-gradient(135deg, #0d47a1, #1976d2);
+
+    color: white !important;
+
+    font-size: 1.1rem;
+
+    text-decoration: none !important;
+
+    padding: 0.3rem;
+
+    margin-top: -5px;
+
+    border-radius: 12px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    display: block;
+
+    cursor: pointer;
+
+    transition: 0.3s !important;
+}
+
+.ticket-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 18px rgba(25,118,210,0.30);
+}
+
+.ticket-status-title {
+    font-size: 0.9rem;
+
+    font-weight: 700;
+
+    color: #0d47a1;
+
+    letter-spacing: 1px;
+
+}
+
+.ticket-stats {
+    display: flex;
+
+    gap: 0.75rem;
+}
+
+.ticket-box {
+    flex: 1;
+
+    border-radius: 16px;
+
+    padding: 0.2rem 0.5rem;
+
+    min-height: 80px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    margin-top: -10px;
+}
+
+.pending-box {
+    background: #fff5e8;
+}
+
+.response-box {
+    background: #eef4ff;
+}
+
+.ticket-label {
+    font-size: 0.9rem;
+
+    color: #555;
+
+    margin-bottom: 0.35rem;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+.ticket-sub-label {
+    font-size: 0.8rem;
+
+    color: #777;
+
+    font-weight: 500;
+}
+
+.ticket-value {
+    font-size: 1.5rem;
+
+    font-weight: 700;
+}
+
+.pending-box .ticket-value {
+    color: #ff6b00;
+}
+
+.response-box .ticket-value {
+    color: #0d47a1;
+}
+
+#response-trend {
+    cursor: help;
+}
+
+.ticket-check-wrapper {
+    margin-top: -5px;
+
+    padding: 0.65rem;
+
+    border-radius: 14px;
+
+    background: #f7faff;
+
+    border: 1px solid #dbe7ff;
+}
+
+/* ===================================== */
+/* SECTION TITLE                         */
+/* ===================================== */
+
+.ticket-toggle-button {
+    width: 100%;
+
+    background: transparent;
+
+    border: none;
+
+    padding: 0;
+
+    margin-bottom: 0.45rem;
+
+    color: #0d47a1;
+
+    font-size: 1rem;
+
+    font-weight: 700;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+/* ===================================== */
+/* LOOKUP BOX                            */
+/* ===================================== */
+
+.ticket-lookup-box {
+    margin-top: 0.4rem;
+}
+
+/* ===================================== */
+/* INPUT + BUTTON                        */
+/* ===================================== */
+
+.ticket-search-row {
+    display: flex;
+
+    gap: 0.2rem;
+
+    align-items: center;
+}
+
+/* ===================================== */
+/* INPUT                                 */
+/* ===================================== */
+
+.ticket-input {
+    flex: 1;
+
+    max-width: 195px;
+
+    padding: 0.75rem 0.9rem;
+
+    border-radius: 10px;
+
+    border: 1px solid #ccc;
+
+    font-size: 0.85rem;
+
+    box-sizing: border-box;
+
+    margin-left: -2px;
+}
+
+.ticket-input::placeholder {
+
+    color: #999;
+    font-size: 0.85rem;
+    opacity: 1;
+}
+
+/* ===================================== */
+/* BUTTON                                */
+/* ===================================== */
+
+.ticket-search-button {
+
+    padding: 0.75rem 1.3rem;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: linear-gradient(135deg, #0d47a1, #1976d2);
+
+    color: white;
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition: 0.3s ease;
+
+    margin-left: 11px;
+}
+
+.ticket-search-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 18px rgba(25, 118, 210, 0.30);
+}
+
+/* ===================================== */
+/* RESULT BOX                            */
+/* ===================================== */
+
+.ticket-result-box {
+    margin-top: 0;
+
+    border-radius: 12px;
+
+    background: #eef8f0;
+
+    border: 1px solid #cde7d1;
+
+    opacity: 0;
+
+    transform: translateY(-12px);
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    transition: opacity 0.35s ease,
+    transform 0.35s ease,
+    max-height 0.35s ease,
+    margin-top 0.35s ease,
+    padding 0.35s ease;
+
+    padding: 0 0.8rem;
+}
+
+.ticket-result-box.show {
+    opacity: 1;
+
+    transform: translateY(0);
+
+    max-height: 220px;
+
+    margin-top: 0.8rem;
+
+    padding: 0.8rem;
+
+    pointer-events: auto;
+}
+
+/* ===================================== */
+/* RESULT TITLE                          */
+/* ===================================== */
+
+.ticket-result-title {
+    font-size: 0.9rem;
+
+    font-weight: 700;
+
+    color: #1b5e20;
+
+    margin-bottom: 0.2rem;
+
+    line-height: 1.4;
+}
+
+/* ===================================== */
+/* RESULT TEXT                           */
+/* ===================================== */
+
+.ticket-result-text {
+    font-size: 0.8rem;
+
+    color: #555;
+
+    line-height: 1.4;
+}
+
+
+/* ===================================== */
+/* REFRESH TIMER                         */
+/* ===================================== */
+
+.ticket-status-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: -5px;
+}
+
+#refresh-timer {
+
+    font-size: 0.75rem;
+
+    color: #777;
+
+    letter-spacing: 1px;
+
+    font-weight: 600;
+}
+/* ===================================== */
+/* MOBILE                                */
+/* ===================================== */
+
+@media (max-width: 768px) {
+    .ticket-search-row {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 0.7rem;
+
+        width: 100%;
+    }
+
+    .ticket-input {
+        width: 100%;
+
+        max-width: 260px;
+    }
+
+    .ticket-search-button {
+        width: 100%;
+
+        max-width: 260px;
+
+        padding: 0.75rem 1rem;
+
+        border: none;
+
+        border-radius: 10px;
+
+        background: linear-gradient(135deg, #0d47a1, #1976d2);
+
+        color: white;
+
+        font-size: 0.85rem;
+
+        font-weight: 700;
+
+        cursor: pointer;
+
+        box-sizing: border-box;
+    }
+}
+
+/* Lecture Pages */
+
+.md-typeset h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.md-typeset h2 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.md-typeset {
+    line-height: 1.7;
+}
+
+.md-typeset ul li,
+.md-typeset ol li {
+    margin-bottom: 0.4rem;
+}
+
