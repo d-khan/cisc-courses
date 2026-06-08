@@ -1,4 +1,4 @@
-<script src="/javascripts/dashboard.js"></script>
+<script src="javascripts/dashboard.js"></script>
 
 <div class="dashboard-layout">
 

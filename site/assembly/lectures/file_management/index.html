@@ -1,0 +1,1230 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>File management - Miramar Computer Science Courses</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#file-management" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Miramar Computer Science Courses" class="md-header__button md-logo" aria-label="Miramar Computer Science Courses" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Miramar Computer Science Courses
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              File management
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Miramar Computer Science Courses" class="md-nav__button md-logo" aria-label="Miramar Computer Science Courses" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Miramar Computer Science Courses
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+     
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/syllabus.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C/C++ Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    C/C++ Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/syllabus.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Structures in C++
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Structures in C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intermediate Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Intermediate Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/syllabus.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assembly Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Assembly Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#file-handling-system-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File handling system calls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a file
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating a file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-creating-a-new-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example - creating a new file
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opening-a-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opening a file
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-a-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Writing a file
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Writing a file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-open-and-write-to-a-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example - open and write to a file
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-a-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Closing a file
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Closing a file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-open-write-and-close" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example - open, write, and close
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="file-management">File management</h1>
+<p>The system considers any input or output data as stream of bytes. There are three standard file streams −</p>
+<ul>
+<li>Standard input (stdin),</li>
+<li>Standard output (stdout), and</li>
+<li>Standard error (stderr).</li>
+</ul>
+<p>A <strong>file descriptor</strong> is a 16-bit integer assigned to a file as a file id. When a new file is created, or an existing file is opened, the file descriptor is used for accessing the file.</p>
+<p>The file descriptor of the standard file streams - <strong>stdin, stdout,</strong> and <strong>stderr</strong> are 0, 1, and 2, respectively.</p>
+<p>A <strong>file pointer</strong> specifies the location for a subsequent read/write operation in the file in terms of bytes. Each file is considered a sequence of bytes. Each open file is associated with a file pointer that specifies an offset in bytes relative to the beginning of the file. When a file is opened, the file pointer is set to zero.</p>
+<h2 id="file-handling-system-calls">File handling system calls</h2>
+<p>The following table briefly describes the system calls related to file handling −</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">%eax</th>
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">%ebx</th>
+<th style="text-align: center;">%ecx</th>
+<th style="text-align: center;">%edx</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">sys_fork</td>
+<td style="text-align: center;">struct pt_regs</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">sys_read</td>
+<td style="text-align: center;">unsigned int</td>
+<td style="text-align: center;">char *</td>
+<td style="text-align: center;">size_t</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">sys_write</td>
+<td style="text-align: center;">unsigned int</td>
+<td style="text-align: center;">const char *</td>
+<td style="text-align: center;">size_t</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">sys_open</td>
+<td style="text-align: center;">const char *</td>
+<td style="text-align: center;">int</td>
+<td style="text-align: center;">int</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">sys_close</td>
+<td style="text-align: center;">unsigned int</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">sys_creat</td>
+<td style="text-align: center;">const char *</td>
+<td style="text-align: center;">int</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: center;">19</td>
+<td style="text-align: center;">sys_lseek</td>
+<td style="text-align: center;">unsigned int</td>
+<td style="text-align: center;">off_t</td>
+<td style="text-align: center;">unsigned int</td>
+</tr>
+</tbody>
+</table>
+<h2 id="creating-a-file">Creating a file</h2>
+<p>To create a file, perform the following tasks −</p>
+<ul>
+<li>eax register = 8. This is to call <code>sys_creat()</code></li>
+<li>ebx register = filename</li>
+<li>ecx register = file permissions</li>
+</ul>
+<p>Read about <a href="https://www.redhat.com/sysadmin/linux-file-permissions-explained">file permissions here</a></p>
+<p>The system call returns the file descriptor of the created file in the EAX register; in case of an error, the error code is in the EAX register.</p>
+<h3 id="example-creating-a-new-file">Example - creating a new file</h3>
+<div class="highlight"><pre><span></span><code>SECTION .text
+global  _start
+
+_start:
+
+        mov     ecx, 0711o ; set all permissions to read, write, execute (octal format)
+        mov     ebx, filename       ; filename we will create
+        mov     eax, 8              ; invoke SYS_CREAT (kernel opcode 8)
+        int     0x80                ; call the kernel
+
+        mov     eax,1
+        int     0x80
+
+SECTION .data
+filename db &#39;readme.txt&#39;, 0h    ; the filename to create
+</code></pre></div>
+<p>Compile and run. You should be able to see the <code>readme.txt</code> file. Use <code>ls -l read*</code> command to check the file with permission.</p>
+<h2 id="opening-a-file">Opening a file</h2>
+<p>For opening an existing file, perform the following tasks
+- eax register = 5. This is to call <code>sys_open()</code>
+- ebx register = file name
+- ecx register = file access mode
+- edx register = file permissions</p>
+<p>The system call returns the file descriptor of the created file in the EAX register, in case of error, the error code is in the EAX register.</p>
+<p>Among the file access modes, most commonly used are: read-only (0), write-only (1), and read-write (2).</p>
+<h2 id="writing-a-file">Writing a file</h2>
+<p>For writing to a file, perform the following tasks</p>
+<ul>
+<li>eax register = 4. This is to call <code>sys_write()</code></li>
+<li>ebx register = file descriptor</li>
+<li>ecx register = pointer to the output buffer</li>
+<li>edx register = buffer size (the number of bytes to write)</li>
+</ul>
+<p>The system call returns the actual number of bytes written in the EAX register, in case of error, the error code is in the EAX register.</p>
+<h3 id="example-open-and-write-to-a-file">Example - open and write to a file</h3>
+<div class="highlight"><pre><span></span><code>SECTION .data
+        filename db &#39;readme.txt&#39;, 0h    ; the filename to create
+        contents db &#39;Hello world!&#39;, 0h  ; the contents to write
+
+SECTION .text
+        global  _start
+
+_start:
+        ;file open operation
+        ;assuming that the file has already been created.
+        ;If the readme.txt file is not created, then crrate a file
+        ;using the example above.
+        mov eax, 5                  ;file handling system call
+        mov ebx, filename
+        mov ecx, 1
+        mov edx, 0777o
+        int 0x80
+
+        mov [fd_out],eax
+
+        ;file write operation
+        mov eax, 4                  ;file handling system call
+        mov ebx, [fd_out]   ;file descriptor
+        mov ecx, contents
+        mov edx, 12         ;number of bytes written
+        int 0x80
+
+        mov eax, 1
+        int 0x80
+
+section .bss
+        fd_out resb 1
+</code></pre></div>
+<h2 id="closing-a-file">Closing a file</h2>
+<ul>
+<li>eax register = 6. This is to call <code>sys_close()</code></li>
+<li>ebx register = file descriptor
+  In case of an error, the system call returns the error code in the EAX register.</li>
+</ul>
+<h3 id="example-open-write-and-close">Example - open, write, and close</h3>
+<div class="highlight"><pre><span></span><code>SECTION .data
+        filename db &#39;readme.txt&#39;, 0h    ; the filename to create
+        contents db &#39;Hello world!&#39;, 0h  ; the contents to write
+
+SECTION .text
+        global  _start
+
+_start:
+
+        ;file open operation
+        mov eax, 5                  ;file handling system call
+        mov ebx, filename
+        mov ecx, 1
+        mov edx, 0777o
+        int 0x80
+
+        mov [fd_out],eax
+
+        ;file write operation
+        mov eax, 4                  ;file handling system call
+        mov ebx, [fd_out]   ;file descriptor
+        mov ecx, contents
+        mov edx, 12         ;number of bytes written
+        int 0x80
+
+        ;file close operation
+        mov eax, 6                  ;file handling system call
+        mov ebx, [fd_out]
+        int 0x80
+
+        mov eax, 1
+        int 0x80
+
+section .bss
+        fd_out resb 1
+</code></pre></div>
+<h2>Concept Check</h2>
+
+<h3>Q1. Standard File Streams</h3>
+
+<p>
+What are the file descriptor values associated with the three standard file streams:
+<code>stdin</code>, <code>stdout</code>, and <code>stderr</code>?
+</p>
+
+<details>
+<summary>Show Answer</summary>
+
+<p>
+Linux assigns predefined file descriptors to the standard streams:
+</p>
+
+<ul>
+<li>stdin = 0</li>
+<li>stdout = 1</li>
+<li>stderr = 2</li>
+</ul>
+
+<p><strong>Answer:</strong> stdin = 0, stdout = 1, stderr = 2.</p>
+
+</details>
+
+<hr>
+
+<h3>Q2. Creating a File</h3>
+
+<p>
+Which system call number should be loaded into the EAX register to create a new file?
+</p>
+
+<details>
+<summary>Show Answer</summary>
+
+<p>
+The <code>sys_creat()</code> system call is used to create a file.
+</p>
+
+<pre><code>
+mov eax,8
+</code></pre>
+
+<p><strong>Answer:</strong> EAX must contain 8.</p>
+
+</details>
+
+<hr>
+
+<h3>Q3. Opening a File</h3>
+
+<p>
+In the following code, what access mode is being requested?
+</p>
+
+<pre><code>
+mov eax,5
+mov ebx,filename
+mov ecx,1
+mov edx,0777o
+int 0x80
+</code></pre>
+
+<details>
+<summary>Show Answer</summary>
+
+<p>
+The value stored in ECX specifies the file access mode.
+</p>
+
+<ul>
+<li>0 = Read-only</li>
+<li>1 = Write-only</li>
+<li>2 = Read-write</li>
+</ul>
+
+<p>
+Since ECX contains 1, the file is opened for writing only.
+</p>
+
+<p><strong>Answer:</strong> Write-only access mode.</p>
+
+</details>
+
+<hr>
+
+<h3>Q4. Writing to a File</h3>
+
+<p>
+What is the purpose of the EDX register in the <code>sys_write()</code> system call?
+</p>
+
+<details>
+<summary>Show Answer</summary>
+
+<p>
+The EDX register specifies the number of bytes to write from the buffer.
+</p>
+
+<pre><code>
+mov edx,12
+</code></pre>
+
+<p>
+This means 12 bytes will be written to the file.
+</p>
+
+<p><strong>Answer:</strong> EDX contains the size of the output buffer (number of bytes to write).</p>
+
+</details>
+
+<hr>
+
+<h3>Q5. File Descriptor Storage</h3>
+
+<p>
+After a successful <code>sys_open()</code> call, why is the value in EAX copied into the variable <code>fd_out</code>?
+</p>
+
+<pre><code>
+mov [fd_out],eax
+</code></pre>
+
+<details>
+<summary>Show Answer</summary>
+
+<p>
+The system call returns the file descriptor in EAX.
+</p>
+
+<p>
+The program saves the descriptor so it can be used later for writing to or closing the file.
+</p>
+
+<p><strong>Answer:</strong> The file descriptor is stored for future file operations such as write and close.</p>
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/semester.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

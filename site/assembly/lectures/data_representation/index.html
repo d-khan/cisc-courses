@@ -1,0 +1,1707 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Numbering Systems and Bases - Miramar Computer Science Courses</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#numbering-systems-and-bases" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Miramar Computer Science Courses" class="md-header__button md-logo" aria-label="Miramar Computer Science Courses" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Miramar Computer Science Courses
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Numbering Systems and Bases
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Miramar Computer Science Courses" class="md-nav__button md-logo" aria-label="Miramar Computer Science Courses" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Miramar Computer Science Courses
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+     
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/syllabus.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C/C++ Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    C/C++ Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/syllabus.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Structures in C++
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Structures in C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intermediate Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Intermediate Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/syllabus.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assembly Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Assembly Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-do-computers-use-binary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why do computers use binary?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-only-base-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why only base 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binary-to-decimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Binary to decimal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decimal-to-binary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decimal to binary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hexadecimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hexadecimal
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hexadecimal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="numbering-systems-and-bases">Numbering Systems and Bases</h1>
+<div class="admonition info">
+<p class="admonition-title">Learning Outcomes</p>
+<p><strong>By the end of this lecture, you should be able to:</strong></p>
+<ul>
+<li>Explain why computer systems use binary representation.  </li>
+<li>Convert numbers between binary, decimal, and hexadecimal numbering systems.  </li>
+<li>Describe the relationship between bits, bytes, words, and double words.  </li>
+<li>Apply Boolean logic operators (AND, OR, NOT, NAND, NOR, and XOR) to solve logical problems.  </li>
+<li>Interpret and construct truth tables for logical operations.</li>
+<li>Perform bitwise operations including AND, OR, XOR, NOT, shifts, and rotates.</li>
+<li>Distinguish between signed and unsigned binary representations.</li>
+<li>Represent negative numbers using one's complement and two's complement notation.</li>
+<li>Explain bit numbering, bit weights, and endianness in computer systems.</li>
+<li>Analyze practical applications of bitwise operations in computer architecture and programming.</li>
+</ul>
+</div>
+<h2 id="why-do-computers-use-binary">Why do computers use binary?</h2>
+<ul>
+<li>The short answer: hardware and the laws of physics.</li>
+<li>In the early days of computing, electrical signals were much harder to measure and control precisely.</li>
+<li>Easy to distinguish between an “on” state and an “off” state.</li>
+<li>Modern computers use what’s known as a transistor to perform calculations with binary.</li>
+</ul>
+<h2 id="why-only-base-2">Why only base 2</h2>
+<ul>
+<li>"Why only 0 and 1? Couldn’t you add another digit?”</li>
+<li>To add another digit would mean we would have to distinguish between different levels —not just “off” and “on,” but
+  also states like “on a little bit” and “on a lot.”</li>
+<li>We can’t use ternary logic because of how transistors are stacked in a computer—called “gates”—and how they perform
+  math. Gates take two inputs, operate on them, and return one output.</li>
+<li>Binary math is way easier for a computer than anything else.</li>
+<li>Boolean logic maps easily to binary systems, with True and False represented on and off.</li>
+<li>Gates in your computer operate on boolean logic: they take two inputs and operate on them like AND, OR, XOR, and so
+  on.</li>
+</ul>
+<h2 id="binary-to-decimal">Binary to decimal</h2>
+<ul>
+<li>You can easily convert from binary to decimal by computing the value of 2 raised to the power of its position and then
+  multiplying that by the value of the bit in that position.</li>
+</ul>
+<p><span class="arithmatex">\(10010101_{2} = 1 \times 2^{7} + 0 \times 2^{6} + 0 \times 2^{5} + 1 \times 2^{4} + 0 \times 2^{3} + 1 \times 2^{2} + 0 \times 2^{1} + 1 \times 2^{0}\)</span></p>
+<p><span class="arithmatex">\(128+16+4+1\)</span></p>
+<p><span class="arithmatex">\(149_{10}\)</span></p>
+<h2 id="decimal-to-binary">Decimal to binary</h2>
+<p><span class="arithmatex">\(149_{10}\)</span> divided by 2; the quotient is 74; the remainder is 1</p>
+<p><span class="arithmatex">\(74_{10}\)</span> divided by 2; the quotient is 37; the remainder is 0</p>
+<p><span class="arithmatex">\(37_{10}\)</span> divided by 2; the quotient is 18; the remainder is 1</p>
+<p><span class="arithmatex">\(18_{10}\)</span> divided by 2; the quotient is 9; the remainder is 0</p>
+<p><span class="arithmatex">\(9_{10}\)</span> divided by 2; the quotient is 4; the remainder is 1</p>
+<p><span class="arithmatex">\(4_{10}\)</span> divided by 2; the quotient is 2; the remainder is 0</p>
+<p><span class="arithmatex">\(2_{10}\)</span> divided by 2; the quotient is 1; the remainder is 0</p>
+<p>The <span class="arithmatex">\(149_2\)</span> is 10010101. Start with the lowest quotient and move upward, writing all the remainder.</p>
+<h2 id="hexadecimal">Hexadecimal</h2>
+<ul>
+<li>Sometimes, binary representation comes with so many series of ones and zeros.</li>
+<li>It is convenient to group the bit patterns.</li>
+<li>The hexadecimal has 16 digits, each of which can represent one group of 4 bits.</li>
+<li>The binary to hexadecimal representation is given in the table.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Hexadecimal digit</th>
+<th>Four binary digits (bits)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0000</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0001</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0010</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0011</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0100</td>
+</tr>
+<tr>
+<td>5</td>
+<td>0101</td>
+</tr>
+<tr>
+<td>6</td>
+<td>0110</td>
+</tr>
+<tr>
+<td>7</td>
+<td>0111</td>
+</tr>
+<tr>
+<td>8</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1001</td>
+</tr>
+<tr>
+<td>A</td>
+<td>1010</td>
+</tr>
+<tr>
+<td>B</td>
+<td>1011</td>
+</tr>
+<tr>
+<td>C</td>
+<td>1100</td>
+</tr>
+<tr>
+<td>D</td>
+<td>1101</td>
+</tr>
+<tr>
+<td>E</td>
+<td>1110</td>
+</tr>
+<tr>
+<td>F</td>
+<td>1111</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example">Example</h3>
+<p>Based on the above concepts, practice base conversions (without the help of the Internet, calculator, or computer).
+Remember, when you go for an interview, you will have (most likely) no access to electronics.</p>
+<ol>
+<li>Convert your first and last name in hexadecimal format. For example, Tom Tom in hexadecimal is 546F6D20546F6D.
+   Remember that the name is case-sensitive.</li>
+</ol>
+<p>Hint: Find your name characters in decimal format <a href="https://www.asciitable.com/">using an ASCII table</a>, convert them into
+binary, and finally, hexadecimal. Do not forget to add a space character if you have a space in your name.</p>
+<h1 id="data-organization">Data organization</h1>
+<h2 id="bits-bytes-words-and-double-words">Bits, bytes, words, and double words</h2>
+<ul>
+<li>Sometimes abbreviated as b (lowercase), bit is short for binary digit. It's a single unit of information with a value
+  of either 0 or 1 (off or on, false or true, low or high). Eight bits make a byte. So, if you had two bytes (word), it
+  would be 16 bits (2 x 8=16), and 10 bytes would be 80 bits (10 x 8=80).</li>
+<li>With early computer processors (e.g., 8088 and 80286), the processors were 16-bit processors, which means the
+  processors were capable of working with 16-bit binary numbers (decimal numbers up to 65,535). Anything larger and the
+  computer would need to break up the number into smaller pieces. Later processors were 32-bit, capable of up to 32-bit
+  binary numbers (decimal numbers up to 4,294,967,295). Today’s computers are 64-bit, capable of up to 64-bit binary
+  numbers (decimal numbers over 18 quintillions).</li>
+</ul>
+<h1 id="logical-operations">Logical operations</h1>
+<ul>
+<li>Logical or Boolean operators are often used when evaluating multiple relational expressions to return a single value.</li>
+<li>Three basic logical operators; AND, OR, and NOT.</li>
+<li>For example, if the value of user_name is “student” and the value of the score is 55, then:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Evaluates as</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>score &gt; 100</td>
+<td>False</td>
+</tr>
+<tr>
+<td>user_name == "student"</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2 id="and-or-and-not-operator">AND, OR, and NOT operator</h2>
+<ul>
+<li>Relational expressions can be combined with logical operators to form more complex logic.</li>
+</ul>
+<p><code>User_name is "student"</code></p>
+<p><code>Score is 55</code></p>
+<p><code>game_over is False</code></p>
+<p><strong>Logical operator</strong></p>
+<p>AND</p>
+<p><strong>Function</strong></p>
+<p>Evaluates to True when all of the relational expressions evaluate to True</p>
+<p><strong>An example that evaluates to True</strong></p>
+<p><code>score &gt; 50 AND game_over == False</code></p>
+<p><strong>An example that evaluates False</strong></p>
+<p><code>score &gt; 100 AND user_name == ”student"</code></p>
+<hr />
+<p><strong>Logical operator</strong></p>
+<p>OR</p>
+<p><strong>Function</strong></p>
+<p>Evaluates to True when either or both of the relational expressions evaluate to True</p>
+<p><strong>An example that evaluates True</strong></p>
+<p><code>score &gt; 50 OR user_name == "Terri"</code></p>
+<p><strong>An example that evaluates False</strong></p>
+<p><code>score == 100 OR game_over == True</code></p>
+<hr />
+<p><strong>Logical operator</strong></p>
+<p>NOT</p>
+<p><strong>Function</strong></p>
+<p>Evaluates to True when the relational expression evaluates to False</p>
+<p><strong>An example that evaluates True</strong></p>
+<p><code>NOT user_name == “Terri”</code></p>
+<p><strong>An example that evaluates False</strong></p>
+<p><code>NOT score &gt; 20</code></p>
+<blockquote>
+<p><a href="https://www.servomagazine.com/magazine/article/robotics-how-to-get-started-part-6-logical-and-bit-wise-operators">Review the application of logical operators in the real world</a></p>
+</blockquote>
+<ul>
+<li>To ensure that the relational expressions are evaluated in the correct order, you should use parentheses (brackets) to
+  make the order clear.</li>
+<li>Relational expressions in parentheses will be evaluated first. If there are no parentheses in a relational expression,
+  then the default order of operations or order of precedence is applied:</li>
+</ul>
+<p><strong>Order of precedence</strong></p>
+<ul>
+<li>The NOT operator has the highest precedence, so it is applied first</li>
+<li>Then, the AND operator is applied</li>
+<li>Then, the OR operator is applied</li>
+</ul>
+<h3 id="pseudocode-and">Pseudocode (AND)</h3>
+<div class="highlight"><pre><span></span><code>difficulty = &quot;hard&quot;
+score = 55
+game_over = False
+
+if not game_over then
+        if difficulty == &quot;hard&quot; and score &gt; 60 then
+                print(&quot;Wow, you are doing great!&quot;)
+        elseif (difficulty == &quot;normal&quot; or difficulty == &quot;easy&quot;) and score &gt; 40 then
+                print(&quot;Good stuff, keep it up!&quot;)
+        else
+                print(&quot;Keep going!&quot;)
+        endif
+endif
+</code></pre></div>
+<h2 id="nand-nor-and-xor">NAND, NOR and XOR</h2>
+<ul>
+<li>There are other logical operators which you can create from the combination of AND, OR and NOT operators. For example,
+  NAND. Many programming languages do not provide NAND and NOR as single logical operators.</li>
+<li>NAND = NOT AND also evaluated as NOT (A AND B). This means that an expression evaluates to True when both operands are
+  False or only one is False. If both operands are True, then the output is False.</li>
+<li>NOR = NOT OR also evaluated as NOT (A OR B). This means that an expression evaluates to True when both operands are
+  False. If either operands are True or both are True, then the output is False.</li>
+<li><strong>Order of precedence:</strong> If NAND and NOR are used together in the same expression, NAND will take priority over NOR
+  since AND has higher precedence than OR.</li>
+</ul>
+<h3 id="pseudocode-nand">Pseudocode (NAND)</h3>
+<div class="highlight"><pre><span></span><code>cold = True
+wet = False
+
+if cold nand wet then
+        print(&quot;It is okay to go outside&quot;) //statement A
+else
+        print(&quot;I am going to stay inside&quot;) //statement B
+endif
+</code></pre></div>
+<p>If-then-else is a conditional statement. The statement A executes if the condition is true else statement B.</p>
+<h3 id="truth-table-nand">Truth table (NAND)</h3>
+<p>A table of the outputs from all possible combinations of inputs. Every logical operator has a truth table. For example,
+the two input truth table of NAND is:</p>
+<table>
+<thead>
+<tr>
+<th>Input 1 (cold)</th>
+<th>Input 2 (wet)</th>
+<th>Output (Go outside ?)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>True</td>
+<td>True</td>
+<td>I am going to stay inside</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>Its okay to go outside</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>Its okay to go outside</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>Its okay to go outside</td>
+</tr>
+</tbody>
+</table>
+<h3 id="truth-table-nor">Truth table (NOR)</h3>
+<table>
+<thead>
+<tr>
+<th>Input 1</th>
+<th>Input 2</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The logical XOR (eXclusive OR) operator can be used to form a Boolean expression that evaluates True when only one
+  relational expression is True. If both relational expressions are False or both are True, then the output is False.</li>
+</ul>
+<h3 id="truth-table-xor">Truth table (XOR)</h3>
+<table>
+<thead>
+<tr>
+<th>Input 1</th>
+<th>Input 2</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p>Same inputs, the output is 0; with different inputs, the output is 1.</p>
+<h3 id="properties-of-xor">Properties of XOR</h3>
+<p>There are 4 very important properties of XOR that we will be using. These are formal mathematical terms, but actually,
+the concepts are very simple.</p>
+<ol>
+<li>Commutative  <span class="arithmatex">\(A \oplus B = B \oplus A\)</span></li>
+</ol>
+<p>This is clear from the definition of XOR: it doesn’t matter which way round you order the two inputs.</p>
+<ol>
+<li>Associative <span class="arithmatex">\(A \oplus (B \oplus C)=(A \oplus B) \oplus C\)</span></li>
+</ol>
+<p>This means that XOR operations can be chained together and the order doesn’t matter. If you aren’t convinced of the
+   truth of this statement, try drawing the truth tables.</p>
+<ol>
+<li>Identity element <span class="arithmatex">\(A \oplus 0 = A\)</span></li>
+</ol>
+<p>This means that any value XOR’d with zero is left unchanged.</p>
+<ol>
+<li>Self-inverse <span class="arithmatex">\(A \oplus A = 0\)</span></li>
+</ol>
+<p>This means that any value XOR’d with itself gives zero.</p>
+<p>There are many applications of
+XOR. <a href="https://github.com/d-khan/assembly/blob/main/All%20About%20XOR.pdf">Review the real-world applications</a></p>
+<h1 id="bitwise-operations">Bitwise operations</h1>
+<p>In computer programming, a <strong>bitwise operation</strong> operates on a bit string. It is a fast and simple action, basic to the
+higher-level arithmetic operations, and directly supported by the processor. Most bitwise operations are presented as
+two-operand instructions where the result replaces one of the input operands.</p>
+<p>On simple, low-cost processors, typically, bitwise operations are substantially faster than division, several times
+faster than multiplication, and sometimes significantly faster than addition. While modern processors usually perform
+addition and multiplication just as fast as bitwise operations due to their longer instruction pipelines and other
+architectural design choices, bitwise operations commonly use less power because of the reduced use of resources.</p>
+<h3 id="example-bitwise-not">Example - bitwise NOT</h3>
+<p>The <strong>bitwise NOT</strong>, or <strong>bitwise complement</strong>, is a unary operation that performs logical negation on each bit, forming
+the ones' complement of the given binary value. Bits that are 0 become 1, and those that are 1 become 0. For example:</p>
+<div class="highlight"><pre><span></span><code>NOT     0111    (decimal 7)
+        1000    (decimal 8)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>NOT     10101011    (decimal 171)
+        01010100    (decimal 84)
+</code></pre></div>
+<p>If you perform bitwise NOT to any number, the result would be <strong>two's complement - 1</strong>, or <span class="arithmatex">\(\bar x = -x -1\)</span>,
+where <span class="arithmatex">\(\bar x\)</span> is called the x bar, which represents the NOT operator.</p>
+<h3 id="example-bitwise-and">Example - bitwise AND</h3>
+<p>A <strong>bitwise AND</strong> is a binary operation that takes two equal-length binary representations and performs the logical AND
+operation on each pair of the corresponding bits. Thus, if both bits in the compared position are 1, the bit in the
+resulting binary representation is 1 (1 × 1 = 1); otherwise, the result is 0 (1 × 0 = 0 and 0 × 0 = 0).</p>
+<div class="highlight"><pre><span></span><code>        0101 (decimal 5)
+AND     0011 (decimal 3)
+=       0001 (decimal 1)
+</code></pre></div>
+<p>The operation may be used to determine whether a particular bit is <em>set</em> (1) or <em>cleared</em> (0). For example, given a bit
+pattern 0011 (decimal 3), to determine whether the second bit is set we use a bitwise AND with a bit pattern containing
+1 only in the second bit:</p>
+<div class="highlight"><pre><span></span><code>        0011 (decimal 3)
+AND     0010 (decimal 2)
+=       0010 (decimal 2)
+</code></pre></div>
+<p>Because the result 0010 is non-zero, we know the second bit in the original pattern was set. This is often called bit
+masking. (By analogy, the use of masking tape covers, or masks, portions that should not be altered or portions that are
+not of interest. In this case, the 0 values mask the bits that are not of interest.)</p>
+<p>The bitwise AND may be used to clear selected bits (or flags) of a register in which each bit represents an individual
+Boolean state. This technique efficiently stores a number of Boolean values using as little memory as possible.</p>
+<p>For example, 0110 (decimal 6) can be considered a set of four flags, where the first and fourth flags are clear (0), and
+the second and third flags are set (1). The third flag may be cleared by using a bitwise AND with the pattern that has a
+zero only in the third bit:</p>
+<div class="highlight"><pre><span></span><code>        0110 (decimal 6)
+AND     1011 (decimal 11)
+=       0010 (decimal 2)
+</code></pre></div>
+<p>Because of this property, it becomes easy to check the parity of a binary number by checking the value of the
+lowest-valued bit. Using the example above:</p>
+<div class="highlight"><pre><span></span><code>        0110 (decimal 6)
+AND     0001 (decimal 1)
+=       0000 (decimal 0)
+</code></pre></div>
+<p>Because 6 AND 1 is zero, 6 is divisible by two and, therefore, even.</p>
+<div class="highlight"><pre><span></span><code>        0111 (decimal 7)
+AND     0001 (decimal 1)
+=       0001 (decimal 1)
+</code></pre></div>
+<p>Since 7 AND 1 is non-zero, 7 is not divisible by two; therefore, 7 is not an even number.</p>
+<h3 id="example-bitwise-or">Example - bitwise OR</h3>
+<p>A bitwise OR is a binary operation that takes two bit patterns of equal length and performs the logical inclusive OR
+operation on each pair of corresponding bits. The result in each position is 0 if both bits are 0, while otherwise the
+result is 1. For example:</p>
+<div class="highlight"><pre><span></span><code>        0101 (decimal 5)
+OR      0011 (decimal 3)
+=       0111 (decimal 7)
+</code></pre></div>
+<p>The bitwise OR may be used to set to 1 the selected bits of the register described above. For example, the fourth bit of
+0010 (decimal 2) may be set by performing a bitwise OR with the pattern with only the fourth bit set:</p>
+<div class="highlight"><pre><span></span><code>        0010 (decimal 2)
+OR      1000 (decimal 8)
+=       1010 (decimal 10)
+</code></pre></div>
+<h3 id="example-bitwise-xor">Example - bitwise XOR</h3>
+<p>A bitwise XOR is a binary operation that takes two-bit patterns of equal length and performs the logical exclusive OR
+operation on each pair of corresponding bits. The result in each position is 1 if only one of the bits is 1, but it will
+be 0 if both are 0 or 1. In this we perform the comparison of two bits, being 1 if the two bits are different, and 0 if
+they are the same. For example:</p>
+<div class="highlight"><pre><span></span><code>        0101 (decimal 5)
+XOR     0011 (decimal 3)
+=       0110 (decimal 6)
+</code></pre></div>
+<p>The bitwise XOR may be used to invert selected bits in a register (also called toggle or flip). Any bit may be toggled
+by XORing it with 1. For example, given the bit pattern 0010 (decimal 2) the second and fourth bits may be toggled by a
+bitwise XOR with a bit pattern containing 1 in the second and fourth positions:</p>
+<div class="highlight"><pre><span></span><code>        0010 (decimal 2)
+XOR     1010 (decimal 10)
+=       1000 (decimal 8)
+</code></pre></div>
+<p>Assembly language programmers and optimizing compilers sometimes use XOR as a short-cut to setting the value of a
+register to zero. Performing XOR on a value against itself always yields zero, and on many architectures, this operation
+requires fewer clock cycles and memory than loading a zero value and saving it to the register.</p>
+<div class="highlight"><pre><span></span><code>mov eax,10
+xor eax,eax
+</code></pre></div>
+<p>The above example is written in an assembly language, where eax register is set to 10 at line 1. At line 2, the eax
+register is set to 0 by performing XOR on a value against itself.</p>
+<h1 id="signed-numbering-system">Signed numbering system</h1>
+<p>Up until now, things have been reasonably straightforward. Now it starts to get interesting. There are a few ways to
+represent negative numbers in binary. In normal decimal numbers, we may place a negative sign in front of the number to
+indicate that it is negative. In binary, we don't have this luxury as we are limited to only 1's and 0's.</p>
+<p>We can represent negative numbers in several ways. The simplest is to use the leftmost digit of the number as a special
+value to represent the sign of the number: 0 = positive, 1 = negative. For example, a value of <strong>positive</strong> 12 (decimal)
+would be written as <strong>0</strong>1100 in binary, but <strong>negative</strong> 12 (decimal) would be written as <strong>1</strong>1100. Notice that in
+this system, it is important to show the leading 0 (to indicate a positive value).</p>
+<p>For technical reasons, a different scheme called "two's complement" is often used to represent negative numbers.</p>
+<p>A <strong>ones' complement system</strong> or <strong>ones' complement arithmetic</strong> is a system in which negative numbers are represented
+by the inverse of the binary representations of their corresponding positive numbers. In such a system, a number is
+negated (converted from positive to negative or vice versa) by computing its ones' complement. Let's look at an
+example (again with 8 bits):</p>
+<p>For sign-magnitude</p>
+<ul>
+<li>4 would be represented as: 00000100</li>
+<li>-4 would be represented as: 100000100</li>
+</ul>
+<p>With 1's Complement, we have</p>
+<ul>
+<li>4 would be represented as: 00000100</li>
+<li>-4 would be represented as: 11111011</li>
+</ul>
+<p>Many early computers, including
+the <a href="https://en.wikipedia.org/wiki/UNIVAC_1101">UNIVAC 1101</a>, <a href="https://en.wikipedia.org/wiki/CDC_160">CDC 160</a>, <a href="https://en.wikipedia.org/wiki/CDC_6600">CDC 6600</a>,
+the <a href="https://en.wikipedia.org/wiki/LINC">LINC</a>, the <a href="https://en.wikipedia.org/wiki/PDP-1">PDP-1</a>, and
+the <a href="https://en.wikipedia.org/wiki/UNIVAC_1100/2200_series#1107">UNIVAC 1107</a>, used one's complement arithmetic.
+Successors of the CDC 6600 continued to use one's complement arithmetic until the late 1980s, and the descendants of the
+UNIVAC 1107 (the <a href="https://en.wikipedia.org/wiki/UNIVAC_1100/2200_series">UNIVAC 1100/2200 series</a>) still do, but most
+modern computers use two's complement.</p>
+<p>Two's complement is a mathematical operation to reversibly convert a positive binary number into a negative binary
+number with an equivalent negative value, using the binary digit with the greatest place value as the sign to indicate
+whether the binary number is positive or negative. It is used in computer science as the most common method of
+representing signed (positive, negative, and zero) integers on computers and, more generally, fixed point binary values.</p>
+<p>Two's complement is achieved by:</p>
+<ul>
+<li>Step 1: Start with the equivalent positive number.</li>
+<li>Step 2: inverting (or flipping) all bits – changing every 0 to 1, and every 1 to 0;</li>
+<li>Step 3: Add 1 to the entire inverted number, ignoring any overflow. Failing to ignore overflow will produce the wrong
+  value for the result.</li>
+</ul>
+<p>For example, to calculate the decimal number <strong>−6</strong> in binary:</p>
+<ul>
+<li>
+<p>Step 1: <em>+6</em> in decimal is <em>0110</em> in binary; the leftmost significant bit (the first 0) is the sign. <em>+6</em> is not
+  <em>110</em>, because <em>110</em> in binary is <em>−2</em> in decimal. $<code>(1*-2^2)+(1*2^2)+(0*2^0)=-2</code>$</p>
+</li>
+<li>
+<p>Step 2: flip all bits in <em>0110</em>, giving <em>1001</em></p>
+</li>
+<li>Step 3: add the place value 1 to the flipped number <em>1001</em>, giving <em>1010</em></li>
+</ul>
+<p>To verify that <em>1010</em> has a value of <em>−6</em>, add the place values together but <em>subtract</em> the sign from the final
+calculation. Because the first significant digit is the number sign, it must be subtracted to produce the correct
+result: <span class="arithmatex">\(1010 = (1*−2^3) + (0*2^2) + (1*2^1) + (0*2^0) = 1*−8 + 0 + 1*2 + 0 = −6\)</span></p>
+<p><a href="https://github.com/d-khan/assembly/blob/main/numberingsystems/Adding%20binary%20numbers.pdf">Review binary addition</a></p>
+<h1 id="bit-shifts-and-rotates">Bit shifts and rotates</h1>
+<p>You need to know some connected topics before I start discussing bit shifts and rotates.</p>
+<h2 id="bit-numbering">Bit numbering</h2>
+<p>In computing, bit numbering is the convention used to identify the bit positions in a binary number.</p>
+<p>The least significant bit (LSb) is the bit position in a binary integer representing the binary 1s place of the integer.
+Similarly, the most significant bit (MSb) represents the highest-order place of the binary integer. The LSb is sometimes
+referred to as the low-order bit or right-most bit, due to the convention in positional notation of writing less
+significant digits further to the right. The MSb is similarly referred to as the high-order bit or left-most bit. In
+both cases, the LSb and MSb correlate directly to the least significant digit and most significant digit of a decimal
+integer.</p>
+<h3 id="lsb-example">LSb example</h3>
+<p>1001010<strong>1</strong>    (decimal 149)
+The binary representation of decimal 149, with the LSb on the right-hand side. The LSb represents a value of 1.</p>
+<h3 id="msb-example">MSb example</h3>
+<p><strong>1</strong>0010101    (decimal 149)</p>
+<p>The unsigned binary representation of decimal 149. The MSb represents a value of 128</p>
+<h2 id="bit-weights">Bit weights</h2>
+<p>Every bit position has a weight. The following bits of decimal 149 are written vertically from MSb to LSb. This assumes
+LSb 0-bit numbering.</p>
+<div class="highlight"><pre><span></span><code>1 -&gt; Bit 8 -&gt; 2^7 -&gt; 128 -&gt; This is MSb
+0 -&gt; Bit 7 -&gt; 2^6 -&gt; Since this bit is 0, 2^6 is ignored
+0 -&gt; Bit 6 -&gt; 2^5 -&gt; Since this bit is 0, 2^5 is ignored
+1 -&gt; Bit 5 -&gt; 2^4 -&gt; 16
+0 -&gt; Bit 4 -&gt; 2^3 -&gt; Since this bit is 0, 2^3 is ignored
+1 -&gt; Bit 3 -&gt; 2^2 -&gt; 4
+0 -&gt; Bit 2 -&gt; 2^1 -&gt; Since this bit is 0, 2^1 is ignored
+1 -&gt; Bit 1 -&gt; 2^0 -&gt; 1 -&gt; This is LSb
+</code></pre></div>
+<p>Using the above bit weights, the weight of the MSb is 128. If you add all the bit weights, which are 1s, the answer will
+be a decimal 149. Remember, it is an unsigned decimal number or simply 149. This assumes that you are using LSb 0-bit
+numbering, which means the LSB bit position starts with 0.</p>
+<div class="highlight"><pre><span></span><code>bit positions       1  0  0  1  0  1  0  1
+LSb 0 numbering -&gt;  7  6  5  4  3  2  1  0
+MSb 0 numbering -&gt;  0  1  2  3  4  5  6  7
+</code></pre></div>
+<blockquote>
+<p><strong>Note: As discussed previously, the signed decimal representation of 10010101 (the same example mentioned above) will
+be decimal -107</strong></p>
+</blockquote>
+<p>The value of an unsigned binary integer of LSb-0 bit numbering is</p>
+<div class="arithmatex">\[
+\sum_{i=0}^{N-1}b_i.2^i
+\]</div>
+<p>The value of an unsigned binary integer of MSb-0 bit numbering is</p>
+<div class="arithmatex">\[
+\sum_{i=0}^{N-1}b_i.2^{N-1-i}
+\]</div>
+<p>Where <span class="arithmatex">\(b_i\)</span> denotes the value of the bit with the number <span class="arithmatex">\(i\)</span>, and <span class="arithmatex">\(N\)</span> denotes the number of bits in total.</p>
+<h2 id="endianness">Endianness</h2>
+<p>In computing, endianness is the order or sequence of bytes of a word of digital data in computer memory. Endianness is
+primarily expressed as big-endian (BE) or little-endian (LE). A big-endian system stores the most significant byte of a
+word at the smallest memory address and the least significant byte at the largest. A little-endian system, in contrast,
+stores the least-significant byte at the smallest address. Bi-endianness is a feature supported by numerous computer
+architectures that feature switchable endianness in data fetches and stores or for instruction fetches. Other orderings
+are generically called middle-endian or mixed-endian.</p>
+<h2 id="bit-shifts">Bit shifts</h2>
+<p>The bit shifts are sometimes considered bitwise operations because they treat a value as a series of bits rather than as
+a numerical quantity. In these operations, the digits are moved, or shifted, to the left or right. Registers in a
+computer processor have a fixed width, so some bits will be "shifted out" of the register at one end, while the same
+number of bits are "shifted in" from the other end; the differences between bit shift operators lie in how they
+determine the values of the shifted-in bits.</p>
+<h3 id="arithmetic-shift">Arithmetic shift</h3>
+<p>In an arithmetic shift, the bits that are shifted out of either end are discarded. In a left arithmetic shift, zeros are
+shifted in on the right; in a right arithmetic shift, the sign bit (the MSB in two's complement) is shifted in on the
+left, thus preserving the sign of the operand.</p>
+<p>This example uses an 8-bit register, interpreted as two's complement:</p>
+<div class="highlight"><pre><span></span><code>   00010111 (decimal +23) LEFT-SHIFT
+=  00101110 (decimal +46)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>   10010111 (decimal −105) RIGHT-SHIFT
+=  11001011 (decimal −53)
+</code></pre></div>
+<p><img width="213" alt="Screen Shot 2023-04-29 at 6 42 05 AM" src="https://user-images.githubusercontent.com/11669149/235305981-87c02298-47b4-4642-9fbb-0446e3a26d0b.png"></p>
+<p><img width="178" alt="image" src="https://user-images.githubusercontent.com/11669149/235306016-94a72d13-9267-4315-8452-343444990296.png"></p>
+<h3 id="logical-shift">Logical shift</h3>
+<p>In a <em>logical shift</em>, zeros are shifted in to replace the discarded bits. Therefore, the logical and arithmetic
+left-shifts are exactly the same.</p>
+<p>However, as the logical right-shift inserts value 0 bits into the most significant bit, instead of copying the sign bit,
+it is ideal for unsigned binary numbers, while the arithmetic right-shift is ideal for signed two's complement binary
+numbers.</p>
+<p><img width="389" alt="image" src="https://user-images.githubusercontent.com/11669149/235306399-fa9db0f5-0831-4fed-b717-0640b28b3357.png"></p>
+<h3 id="circular-shift">Circular shift</h3>
+<p>In this operation, sometimes called <em>rotate no carry</em>, the bits are "rotated" as if the left and right ends of the
+register were joined. The value that is shifted into the right during a left-shift is whatever value was shifted out on
+the left, and vice versa for a right-shift operation. This is useful if it is necessary to retain all the existing bits,</p>
+<p><img width="399" alt="image" src="https://user-images.githubusercontent.com/11669149/235306478-418dbb5e-ba91-4a8d-8abb-d70e4fe145cc.png"></p>
+<p><em>Rotate through carry</em> is a variant of the rotate operation, where the bit shifted in (on either end) is the old value
+of the carry flag, and the bit shifted out (on the other end) becomes the new value of the carry flag.</p>
+<p><img width="395" alt="image" src="https://user-images.githubusercontent.com/11669149/235306889-7be39621-fe35-4907-942e-e15a8309c567.png"></p>
+<h3 id="application-of-bitwise-operations">Application of bitwise operations</h3>
+<p>Bitwise operations are necessary particularly in lower-level programming such as device drivers, low-level graphics,
+communications protocol packet assembly, and decoding.</p>
+<p>Although machines often have efficient built-in instructions for performing arithmetic and logical operations, all these
+operations can be performed by combining the bitwise operators and zero-testing in various ways. For example, here is a
+pseudocode implementation of ancient Egyptian multiplication showing how to multiply two arbitrary integers a and b (a
+greater than b) using only bitshifts and addition:</p>
+<div class="highlight"><pre><span></span><code>c ← 0
+while b ≠ 0
+    if (b and 1) ≠ 0
+        c ← c + a
+    left shift a by 1
+    right shift b by 1
+return c
+</code></pre></div>
+<p>Another example is a pseudocode implementation of addition, showing how to calculate a sum of two integers <code>a</code> and <code>b</code>
+using bitwise operators and zero-testing:</p>
+<div class="highlight"><pre><span></span><code>while a ≠ 0
+    c ← b and a
+    b ← b xor a
+    left shift c by 1
+    a ← c
+return b
+</code></pre></div>
+<p>The following is the Python implementation of addition.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">a</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">&amp;</span> <span class="n">b</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">^</span> <span class="n">a</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">b</span>
+</code></pre></div>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li>Computers use binary because electronic circuits can reliably represent two states: on and off.</li>
+<li>Binary, decimal, and hexadecimal are different numbering systems used to represent the same information.</li>
+<li>Every bit position has a weight based on powers of 2, allowing binary numbers to be converted to decimal values.</li>
+<li>Hexadecimal provides a compact and human-readable representation of binary data, where one hexadecimal digit represents four bits.</li>
+<li>A bit is the smallest unit of data; eight bits make a byte, and multiple bytes form larger data types such as words and double words.</li>
+<li>Boolean logic forms the foundation of digital circuits and computer operations.</li>
+<li>Logical operators (AND, OR, NOT, NAND, NOR, and XOR) are used to evaluate conditions and perform decision-making.</li>
+<li>Bitwise operations manipulate individual bits and are widely used in low-level programming, computer architecture, and embedded systems.</li>
+<li>Signed integers are commonly represented using two's complement, which simplifies arithmetic operations in hardware.</li>
+<li>The least significant bit (LSb) and most significant bit (MSb) determine a bit's position and weight within a binary number.</li>
+<li>Endianness defines how multi-byte values are stored in memory and can affect data interpretation across different systems.</li>
+<li>Bit shifts and rotates provide efficient ways to multiply, divide, move, and manipulate binary data.</li>
+<li>Understanding numbering systems, logic operations, and bitwise manipulation is essential for studying assembly language, computer organization, and systems programming.</li>
+</ul>
+<h2 id="concept-check"><strong>Concept Check</strong></h2>
+<h3 id="question-1">Question 1</h3>
+<p>Why do modern computers primarily use binary instead of decimal?</p>
+<details>
+<summary>Show Answer</summary>
+
+Computers use binary because electronic circuits can reliably distinguish between two states: ON and OFF. Binary is easier and more reliable to implement in hardware than systems requiring multiple voltage levels.
+
+</details>
+
+<hr />
+<h3 id="question-2">Question 2</h3>
+<p>Convert the binary number 10010101₂ to decimal.</p>
+<details>
+<summary>Show Answer</summary>
+
+10010101₂ = 2⁷ + 2⁴ + 2² + 2⁰
+
+= 128 + 16 + 4 + 1
+
+= 149₁₀
+
+</details>
+
+<hr />
+<h3 id="question-3">Question 3</h3>
+<p>Convert 149₁₀ to binary.</p>
+<details>
+<summary>Show Answer</summary>
+
+149 ÷ 2 = 74 remainder 1
+
+74 ÷ 2 = 37 remainder 0
+
+37 ÷ 2 = 18 remainder 1
+
+18 ÷ 2 = 9 remainder 0
+
+9 ÷ 2 = 4 remainder 1
+
+4 ÷ 2 = 2 remainder 0
+
+2 ÷ 2 = 1 remainder 0
+
+1 ÷ 2 = 0 remainder 1
+
+Reading the remainders from bottom to top:
+
+10010101₂
+
+</details>
+
+<hr />
+<h3 id="question-4">Question 4</h3>
+<p>What is the hexadecimal equivalent of 11110000₂?</p>
+<details>
+<summary>Show Answer</summary>
+
+1111 = F
+
+0000 = 0
+
+Therefore:
+
+11110000₂ = F0₁₆
+
+</details>
+
+<hr />
+<h3 id="question-5">Question 5</h3>
+<p>What is the result of:</p>
+<p>1010 AND 1100</p>
+<details>
+<summary>Show Answer</summary>
+
+1010
+
+AND
+
+1100
+
+Answer: 1000₂
+
+</details>
+
+<hr />
+<h3 id="question-6">Question 6</h3>
+<p>What is the result of:</p>
+<p>1010 OR 1100</p>
+<details>
+<summary>Show Answer</summary>
+
+1010
+
+OR
+
+1100
+
+Answer: 1110₂
+
+</details>
+
+<hr />
+<h3 id="question-7">Question 7</h3>
+<p>What is the result of:</p>
+<p>1010 XOR 1100</p>
+<details>
+<summary>Show Answer</summary>
+
+1010
+
+XOR
+
+1100
+
+Answer: 0110₂
+
+</details>
+
+<hr />
+<h3 id="question-8">Question 8</h3>
+<p>What is the result of applying NOT to:</p>
+<p>10101010</p>
+<details>
+<summary>Show Answer</summary>
+
+NOT 10101010
+
+= 01010101
+
+</details>
+
+<hr />
+<h3 id="question-9">Question 9</h3>
+<p>What is the two's complement representation of -6 using 4 bits?</p>
+<details>
+<summary>Show Answer</summary>
+
++6 = 0110
+
+Invert bits → 1001
+
+Add 1 → 1010
+
+Answer: 1010₂
+
+</details>
+
+<hr />
+<h3 id="question-10">Question 10</h3>
+<p>A value stored in memory is:</p>
+<p>00010111₂</p>
+<p>What is the result after a left arithmetic shift by one position?</p>
+<details>
+<summary>Show Answer</summary>
+
+00010111
+
+→ 00101110
+
+Decimal:
+
+23 × 2 = 46
+
+Answer: 00101110₂ (46₁₀)
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/semester.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

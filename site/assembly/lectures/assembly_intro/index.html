@@ -1,0 +1,1733 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Introduction to Assembly Language - Miramar Computer Science Courses</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-to-assembly-language" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Miramar Computer Science Courses" class="md-header__button md-logo" aria-label="Miramar Computer Science Courses" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Miramar Computer Science Courses
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction to Assembly Language
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Miramar Computer Science Courses" class="md-nav__button md-logo" aria-label="Miramar Computer Science Courses" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Miramar Computer Science Courses
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+     
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/syllabus.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C/C++ Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    C/C++ Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/syllabus.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Structures in C++
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Structures in C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intermediate Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Intermediate Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/syllabus.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assembly Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Assembly Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audience
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-assembly-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is an Assembly Language?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advantages-of-assembly-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advantages of Assembly Language
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#essential-features-of-pc-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Essential Features of PC Hardware
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local Environment Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Syntax
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assembly-language-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assembly Language Statements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax-of-assembly-language-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntax of Assembly Language Statements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-hello-world-program-in-assembly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Hello World program in assembly
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compiling-and-linking-an-assembly-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compiling and Linking an Assembly Program
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-syscalls-on-x86" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Making Syscalls on X86
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-registers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Registers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allocating-storage-space-for-initialized-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Allocating Storage Space for Initialized Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#allocating-storage-space-for-uninitialized-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Allocating Storage Space for Uninitialized Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constants
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Constants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-equ-directive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The EQU Directive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-assign-directive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The %assign Directive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-define-directive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The %define Directive
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept Check
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept Check">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 6
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 7
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 8
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 9
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 10
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge Question
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Challenge Question">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 11
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduction-to-assembly-language">Introduction to Assembly Language</h1>
+<p>Assembly language is a low-level programming language for a computer or other programmable device specific to a particular computer architecture, unlike most high-level programming languages, which are generally portable across multiple systems. Assembly language is converted into executable machine code by a utility program called an assembler like NASM, MASM, etc.</p>
+<h2 id="audience">Audience</h2>
+<p>This tutorial has been designed for those who want to learn the basics of assembly programming from scratch. This tutorial will give you enough understanding of assembly programming that you can take yourself to higher levels of expertise.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Before proceeding with this tutorial, you should have a basic understanding of Computer Programming terminologies. Basic knowledge of any programming language will help you understand the Assembly programming concepts and move fast on the learning track.</li>
+<li>Conversion of numbering systems.</li>
+</ul>
+<h2 id="what-is-an-assembly-language">What is an Assembly Language?</h2>
+<p>Each personal computer has a microprocessor that manages the computer's arithmetical, logical, and control activities.</p>
+<p>Each family of processors has its own set of instructions for handling various operations, such as getting input from the keyboard, displaying information on the screen, and performing different other jobs. This set of instructions is called 'machine language instructions.</p>
+<p>A processor understands only machine language instructions, which are strings of 1's and 0's. However, machine language needs to be more obscure and complex for software development. So, the low-level assembly language is designed for a specific family of processors representing various symbolic code instructions and a more understandable form.</p>
+<h2 id="advantages-of-assembly-language">Advantages of Assembly Language</h2>
+<p>Having an understanding of assembly language makes one aware of</p>
+<ul>
+<li>How programs interface with OS, processor, and BIOS;</li>
+<li>How data is represented in memory and other external devices;</li>
+<li>How the processor accesses and executes instructions;</li>
+<li>How instructions to access and process data;</li>
+<li>How a program accesses external devices.</li>
+</ul>
+<p>Other advantages of using assembly language are −</p>
+<ul>
+<li>It requires less memory and execution time;</li>
+<li>It allows hardware-specific complex jobs more easily;</li>
+<li>It is suitable for time-critical jobs;</li>
+<li>It is most suitable for writing interrupt service routines and other memory resident programs.</li>
+</ul>
+<h2 id="essential-features-of-pc-hardware">Essential Features of PC Hardware</h2>
+<p>The main internal hardware of a PC consists of processor, memory, and registers. Registers are processor components that hold data and addresses. To execute a program, the system copies it from the external device into the internal memory. Then, the processor executes the program instructions.</p>
+<p>The fundamental unit of computer storage is a bit; it could be ON (1) or OFF (0), and a group of 8 related bits makes a byte on most modern computers.</p>
+<p>So, the parity bit is used to make the number of bits in a byte odd. If the parity is even, the system assumes that there had been a parity error (though rare), which might have been caused due to hardware fault or electrical disturbance.</p>
+<p>The processor supports the following data sizes −</p>
+<ul>
+<li>Word: a 2-byte data item</li>
+<li>Doubleword: a 4-byte (32-bit) data item</li>
+<li>Quadword: an 8-byte (64-bit) data item</li>
+<li>Paragraph: a 16-byte (128-bit) area</li>
+<li>Kilobyte: 1024 bytes</li>
+<li>Megabyte: 1,048,576 bytes</li>
+</ul>
+<h2 id="local-environment-setup">Local Environment Setup</h2>
+<p>Assembly language depends upon the instruction set architecture and the process. In this tutorial, we focus on Intel-32 processors like Pentium. To follow this tutorial, make sure you have watched the <a href="https://youtu.be/4IZSh1WVyi8">video</a>.</p>
+<h2 id="basic-syntax">Basic Syntax</h2>
+<p>An assembly program can be divided into three sections −</p>
+<ul>
+<li>
+<p>The data section,</p>
+</li>
+<li>
+<p>The bss section, and</p>
+</li>
+<li>
+<p>The text section.</p>
+</li>
+</ul>
+<p>The <strong>data section</strong> is used for declaring initialized data or constants. This data does not change at runtime. In this section, you can declare values, file names, buffer sizes, and various constant values.</p>
+<p>The syntax for declaring the data section is −</p>
+<p><code>section.data</code></p>
+<p>The bss section is used for declaring variables. The syntax for declaring bss section is</p>
+<p><code>section.bss</code></p>
+<p>The text section is used for keeping the actual code. This section must begin with the declaration global _start, which tells the kernel where the program execution begins.</p>
+<p>The syntax for declaring text section is −</p>
+<div class="highlight"><pre><span></span><code>section.text
+    global _start
+_start:
+</code></pre></div>
+<p>Assembly language comment begins with a semicolon (;). It may contain any printable character, including blank. It can appear on a line by itself, like –</p>
+<div class="highlight"><pre><span></span><code>;This program displays a message on the screen
+</code></pre></div>
+<p>or, on the same line along with an instruction, like –</p>
+<div class="highlight"><pre><span></span><code>add eax, ebx   ; adds ebx to eax
+</code></pre></div>
+<h2 id="assembly-language-statements">Assembly Language Statements</h2>
+<p>Assembly language programs consist of three types of statements −</p>
+<ul>
+<li>Executable instructions or instructions,</li>
+<li>Assembler directives or pseudo-ops, and</li>
+<li>Macros.</li>
+</ul>
+<p>The executable instructions or instructions tell the processor what to do. Each instruction consists of an operation code (opcode). Each executable instruction generates one machine language instruction.</p>
+<p>The assembler directives or pseudo-ops tell the assembler about the various aspects of the assembly process. Unfortunately, these are non-executable and do not generate machine language instructions.</p>
+<p>Macros are a text substitution mechanism.</p>
+<h2 id="syntax-of-assembly-language-statements">Syntax of Assembly Language Statements</h2>
+<p>Assembly language statements are entered one statement per line. Each statement follows the following format.</p>
+<div class="highlight"><pre><span></span><code>[label]   mnemonic   [operands]   [;comment]
+</code></pre></div>
+<p>The fields in the square brackets are optional. A basic instruction has two parts, the first is the name of the instruction (or the mnemonic), which is to be executed, and the second is the operands or the parameters of the command.</p>
+<h2 id="the-hello-world-program-in-assembly">The Hello World program in assembly</h2>
+<p>The following assembly language code displays the 'Hello World' string on the screen.</p>
+<div class="highlight"><pre><span></span><code>section .text
+   global _start        ;must be declared for linker (ld)
+                ;global is used to export the _start label. 
+                ;This will be the entry point to the program. 
+
+_start:             ;tells linker entry point
+   mov  eax,4       ;system call number (sys_write)
+   mov  ebx,1       ;file descriptor (stdout)
+   mov  ecx,msg     ;message to write, A pointer to the variable &#39;msg&#39;
+   mov  edx,len     ;message length
+   int  0x80        ;call kernel
+
+   mov  eax,1       ;system call number (sys_exit)
+   int  0x80        ;call kernel
+
+section .data
+msg db &#39;Hello, world!&#39;, 0xa     ;string to be printed
+                ;Declare a label &quot;msg&quot; which has 
+                                ;our string we want to print. 
+                                ;for reference: 0xa = &quot;\n&quot; (line feed) 
+                                ;db = define byte
+len equ $ - msg             ;length of the string
+                ;len&quot; will calculate the current 
+                ;offset minus the &quot;msg&quot; offset. 
+                ;this should give us the size of &quot;msg&quot;.
+                            ;len equals current offset - msg
+</code></pre></div>
+<h2 id="compiling-and-linking-an-assembly-program">Compiling and Linking an Assembly Program</h2>
+<p><a href="https://youtu.be/4IZSh1WVyi8">How to execute your first assembly language code</a></p>
+<h2 id="making-syscalls-on-x86">Making Syscalls on X86</h2>
+<p>Syscalls offer a method to invoke and use functionality in the operating system. For example, syscalls are launched on x86 Linux by invoking an interrupt instruction with the hex value of <code>0x80</code> (int 0x80).  Before invoking this interrupt, however, you need to set up everything for the syscall. This is because the calling convention for syscalls differs on other architectures, including x86_64, which uses the SYSCALL instruction instead of INT 0x80.</p>
+<blockquote>
+<p><strong>This tutorial is focused on 32-bit x86.</strong></p>
+</blockquote>
+<p>After the syscall number is set and the registers are loaded with the parameters needed, calling the instruction INT 0x80 will execute the syscall.  If the syscall returns a value, it will be placed in EAX.  For example, opening a file should return a file descriptor or error code in EAX.</p>
+<h2 id="data-registers">Data Registers</h2>
+<p>Four 32-bit data registers are used for arithmetic, logical, and other operations. These 32-bit registers can be used in three ways −</p>
+<ul>
+<li>Complete 32-bit data registers: EAX, EBX, ECX, EDX.</li>
+<li>The lower halves of the 32-bit registers can be used as four 16-bit data registers: AX, BX, CX, and DX.</li>
+<li>Lower and higher halves of the abovementioned four 16-bit registers can be used as eight 8-bit data registers: AH, AL, BH, BL, CH, CL, DH, and DL.</li>
+</ul>
+<p>Some of these data registers have a specific use in arithmetical operations.</p>
+<p><strong>AX is the primary accumulator</strong> for input/output and most arithmetic instructions. For example, in a multiplication operation, one operand is stored in EAX or AX, or AL register according to the size of the operand.</p>
+<p><strong>BX is the base register</strong>, which could be used in indexed addressing.</p>
+<p><strong>CX is known as the count register</strong>, as the ECX, CX registers to store the loop count in iterative operations.</p>
+<p><strong>DX is known as the data register</strong>. It is also used in input/output operations. It is also used with AX register and DX for multiply and divide operations involving large values.</p>
+<h2 id="code-description">Code description</h2>
+<p><strong>Line 7:</strong> We will first set EAX to the syscall number we want to invoke.  As mentioned in our previous section, the syscall number on 32-bit x86 Linux for the write syscall was 4. Therefore, we use a MOV instruction (short for a move) to load the immediate value of 4 into the register EAX, containing the syscall number we want to run.  The syntax for the move instruction in NASM is “MOV <destination>, <source>”.</p>
+<p><strong>Lines 8-10:</strong> These instructions are set parameters for the write syscalls.  The register EBX  needs to contain the file descriptor integer that we want to write to, ECX needs to contain a pointer to the data buffer we want to write to the file descriptor, and EDX needs to contain the number of bytes from the data buffer we want to write out to the file descriptor.  It’s pretty straightforward using MOV instructions to do this.</p>
+<p><strong>Lines 13-14:</strong> Calling <em>sys_exit</em> at the end of all our programs will mean the kernel knows precisely when to terminate the process and return memory to the general pool, thus avoiding an error.</p>
+<p><strong>Lines 16+</strong>: We use the msg and len variables.  These variables enable us to update the message, and the message length should also be automatically updated.</p>
+<h2 id="variables">Variables</h2>
+<p>NASM provides various <strong>define directives</strong> for reserving storage space for variables. The define assembler directive is used for the allocation of storage space. It can be used to reserve and initialize one or more bytes.</p>
+<h3 id="allocating-storage-space-for-initialized-data">Allocating Storage Space for Initialized Data</h3>
+<p>The syntax for storage allocation statement for initialized data is −</p>
+<p><code>[variable-name]    define-directive    initial-value   [,initial-value]...</code></p>
+<p>where <em>variable-name</em> is the identifier for each storage space. The assembler associates an offset value for each variable name defined in the data segment.</p>
+<p>There are five basic forms of the define directive −</p>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Purpose</th>
+<th>Storage space</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DB</td>
+<td>Define Byte</td>
+<td>Allocates 1 byte</td>
+</tr>
+<tr>
+<td>DW</td>
+<td>Define Word</td>
+<td>Allocates 2 bytes</td>
+</tr>
+<tr>
+<td>DD</td>
+<td>Define Doubleword</td>
+<td>Allocates 4 bytes</td>
+</tr>
+<tr>
+<td>DQ</td>
+<td>Define Quadword</td>
+<td>Allocates 8 bytes</td>
+</tr>
+<tr>
+<td>DT</td>
+<td>Define Ten Bytes</td>
+<td>Allocates 10 bytes</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>choice      DB  &#39;y&#39;
+number      DW  12345
+neg_number  DW  -12345
+big_number  DQ  123456789
+real_number1    DD  1.234
+real_number2    DQ  123.456
+</code></pre></div>
+<p>Please note that −</p>
+<ul>
+<li>Each byte of character is stored in hexadecimal.</li>
+<li>Each decimal value is automatically converted to its 16-bit binary equivalent and stored as a hexadecimal number.</li>
+<li>Processor uses the little-endian byte ordering.</li>
+<li>Negative numbers are converted to its 2's complement representation.</li>
+<li>Short and long floating-point numbers are represented using 32 or 64 bits, respectively.</li>
+</ul>
+<p>The following program shows the use of define directive −</p>
+<div class="highlight"><pre><span></span><code>section .text
+   global _start          ;must be declared for linker (gcc)
+
+_start:                   ;tell linker entry point
+   mov  edx,1         ;message length
+   mov  ecx,choice        ;message to write
+   mov  ebx,1         ;file descriptor (stdout)
+   mov  eax,4         ;system call number (sys_write)
+   int  0x80          ;call kernel
+
+   mov  eax,1         ;system call number (sys_exit)
+   int  0x80          ;call kernel
+
+section .data
+choice DB &#39;y&#39;
+</code></pre></div>
+<p>When the above code is compiled and executed, it produces the following result −</p>
+<div class="highlight"><pre><span></span><code>y
+</code></pre></div>
+<h3 id="allocating-storage-space-for-uninitialized-data">Allocating Storage Space for Uninitialized Data</h3>
+<p>The reserve directives are used for reserving space for uninitialized data. The reserve directives take a single operand specifying the number of space units to be reserved. Each define directive has a related reserve directive.</p>
+<p>There are five basic forms of the reserve directive −</p>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RESB</td>
+<td>Reserve a Byte</td>
+</tr>
+<tr>
+<td>RESW</td>
+<td>Reserve a Word</td>
+</tr>
+<tr>
+<td>RESD</td>
+<td>Reserve a Doubleword</td>
+</tr>
+<tr>
+<td>RESQ</td>
+<td>Reserve a Quadword</td>
+</tr>
+<tr>
+<td>REST</td>
+<td>Reserve a Ten Bytes</td>
+</tr>
+</tbody>
+</table>
+<p>The following example shows how uninitialized variables are used in AL.</p>
+<div class="highlight"><pre><span></span><code>section .text
+        global _start
+
+_start:
+        mov eax,1                   ;assign eax register to 1
+        mov [result],eax    ;transfer eax content to the variable
+        mov eax,1                   ;set eax register to 1
+        int 0x80                    ;interrupt 0x80
+
+segment .bss
+        result resb 1           ;uninitialized variable result
+</code></pre></div>
+<h2 id="constants">Constants</h2>
+<p>There are several directives provided by NASM that define constants. There are three directives</p>
+<ul>
+<li>EQU</li>
+<li>%assign</li>
+<li>%define</li>
+</ul>
+<h3 id="the-equ-directive">The EQU Directive</h3>
+<p>The <strong>EQU</strong> directive is used for defining constants. The syntax of the EQU directive is as follows −</p>
+<div class="highlight"><pre><span></span><code>CONSTANT_NAME EQU expression
+</code></pre></div>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>TOTAL_STUDENTS equ 50
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>LENGTH equ 20
+WIDTH  equ 10
+AREA   equ length * width
+</code></pre></div>
+<p>Above code segment would define AREA as 200.</p>
+<p>The following example illustrates the use of the EQU directive.</p>
+<div class="highlight"><pre><span></span><code>SYS_EXIT  equ 1
+SYS_WRITE equ 4
+STDIN     equ 0
+STDOUT    equ 1
+section  .text
+   global _start    ;must be declared for using gcc
+
+_start:             ;tell linker entry point
+   mov eax, SYS_WRITE         
+   mov ebx, STDOUT         
+   mov ecx, msg1         
+   mov edx, len1 
+   int 0x80                
+
+   mov eax, SYS_WRITE         
+   mov ebx, STDOUT         
+   mov ecx, msg2         
+   mov edx, len2 
+   int 0x80 
+
+   mov eax, SYS_WRITE         
+   mov ebx, STDOUT         
+   mov ecx, msg3         
+   mov edx, len3 
+   int 0x80
+
+   mov eax,SYS_EXIT    ;system call number (sys_exit)
+   int 0x80            ;call kernel
+
+section  .data
+msg1 db &#39;Hello, programmers!&#39;,0xA,0xD   
+len1 equ $ - msg1           
+
+msg2 db &#39;Welcome to the world of,&#39;, 0xA,0xD 
+len2 equ $ - msg2 
+
+msg3 db &#39;Linux assembly programming! &#39;
+len3 equ $- msg3
+</code></pre></div>
+<p>When the above code is compiled and executed, it produces the following result:</p>
+<div class="highlight"><pre><span></span><code>Hello, programmers!
+Welcome to the world of,
+Linux assembly programming!
+</code></pre></div>
+<h3 id="the-assign-directive">The %assign Directive</h3>
+<p>The <strong>%assign</strong> directive can be used to define numeric constants like the EQU directive. This directive allows redefinition. For example, you may define the constant TOTAL as −</p>
+<div class="highlight"><pre><span></span><code>%assign TOTAL 10
+</code></pre></div>
+<p>Later in the code, you can redefine it as −</p>
+<div class="highlight"><pre><span></span><code>%assign  TOTAL  20
+</code></pre></div>
+<p>This directive is case-sensitive.</p>
+<h3 id="the-define-directive">The %define Directive</h3>
+<p>The <strong>%define</strong> directive allows defining both numeric and string constants. This directive is similar to the #define in C. For example, you may define the constant PTR as −</p>
+<div class="highlight"><pre><span></span><code>%define PTR [EBP+4]
+</code></pre></div>
+<p>The above code replaces <em>PTR</em> by [EBP+4].</p>
+<p>This directive also allows redefinition and it is case-sensitive.</p>
+<h2 id="concept-check"><strong>Concept Check</strong></h2>
+<h3 id="question-1">Question 1</h3>
+<p>What is the primary purpose of an assembler?</p>
+<p>A. Execute assembly language programs directly<br />
+B. Convert assembly language into machine code<br />
+C. Translate assembly language into Python<br />
+D. Optimize operating systems</p>
+<details>
+<summary>Show Answer</summary>
+
+Answer: B. Convert assembly language into machine code
+
+An assembler translates human-readable assembly instructions into machine language instructions that the processor can execute.
+
+</details>
+
+<hr />
+<h3 id="question-2">Question 2</h3>
+<p>Which assembly language section is used for storing initialized data?</p>
+<p>A. .text<br />
+B. .bss<br />
+C. .data<br />
+D. .stack</p>
+<details>
+<summary>Show Answer</summary>
+
+Answer: C. .data
+
+The .data section contains initialized variables and constants whose values are known before program execution.
+
+</details>
+
+<hr />
+<h3 id="question-3">Question 3</h3>
+<p>What is the purpose of the following instruction?</p>
+<div class="highlight"><pre><span></span><code>mov eax, 4
+</code></pre></div>
+<p>A. Add 4 to EAX<br />
+B. Move the contents of EAX to memory<br />
+C. Load the value 4 into EAX<br />
+D. Multiply EAX by 4</p>
+<details>
+<summary>Show Answer</summary>
+
+Answer: C. Load the value 4 into EAX
+
+The MOV instruction copies data from the source operand into the destination operand.
+
+</details>
+
+<hr />
+<h3 id="question-4">Question 4</h3>
+<p>Which register is commonly used as a loop counter in assembly language?</p>
+<p>A. EAX<br />
+B. EBX<br />
+C. ECX<br />
+D. EDX</p>
+<details>
+<summary>Show Answer</summary>
+
+Answer: C. ECX
+
+ECX is known as the count register and is commonly used in loops and repetitive operations.
+
+</details>
+
+<hr />
+<h3 id="question-5">Question 5</h3>
+<p>Which NASM directive reserves one byte of uninitialized memory?</p>
+<p>A. DB<br />
+B. DW<br />
+C. RESB<br />
+D. EQU</p>
+<details>
+<summary>Show Answer</summary>
+
+Answer: C. RESB
+
+RESB reserves one or more bytes of uninitialized storage in the .bss section.
+
+</details>
+
+<hr />
+<h3 id="question-6">Question 6</h3>
+<p>Consider the instruction:</p>
+<div class="highlight"><pre><span></span><code>mov ecx, msg
+</code></pre></div>
+<p>What is actually stored in ECX?</p>
+<p>A. The first character of the string<br />
+B. The length of the string<br />
+C. The memory address of msg<br />
+D. The ASCII value of msg</p>
+<details>
+<summary>Show Answer</summary>
+
+Answer: C. The memory address of msg
+
+The label msg represents the starting address of the string stored in memory.
+
+</details>
+
+<hr />
+<h3 id="question-7">Question 7</h3>
+<p>In the Hello World example, what is the purpose of the following statement?</p>
+<div class="highlight"><pre><span></span><code>len equ $ - msg
+</code></pre></div>
+<p>A. Allocates memory for len<br />
+B. Calculates the string length<br />
+C. Creates a pointer to msg<br />
+D. Reserves a byte in memory</p>
+<details>
+<summary>Show Answer</summary>
+
+Answer: B. Calculates the string length
+
+The symbol $ represents the current location counter. Subtracting msg from it gives the length of the string.
+
+</details>
+
+<hr />
+<h3 id="question-8">Question 8</h3>
+<p>Which registers must be configured before executing the following syscall?</p>
+<div class="highlight"><pre><span></span><code>int 0x80
+</code></pre></div>
+<p>A. Only EAX<br />
+B. Only EBX<br />
+C. Only ECX and EDX<br />
+D. EAX and any registers required by the specific syscall</p>
+<details>
+<summary>Show Answer</summary>
+
+Answer: D. EAX and any registers required by the specific syscall
+
+EAX contains the syscall number, while other registers hold syscall parameters depending on the operation being performed.
+
+</details>
+
+<hr />
+<h3 id="question-9">Question 9</h3>
+<p>Given the declaration:</p>
+<div class="highlight"><pre><span></span><code>number DW 12345
+</code></pre></div>
+<p>How many bytes of memory are allocated?</p>
+<p>A. 1 byte<br />
+B. 2 bytes<br />
+C. 4 bytes<br />
+D. 8 bytes</p>
+<details>
+<summary>Show Answer</summary>
+
+Answer: B. 2 bytes
+
+DW stands for Define Word, and a word is 2 bytes in x86 assembly.
+
+</details>
+
+<hr />
+<h3 id="question-10">Question 10</h3>
+<p>Why is assembly language considered machine-dependent?</p>
+<p>A. It only runs on Linux<br />
+B. It cannot interact with hardware<br />
+C. Each processor architecture has its own instruction set<br />
+D. It requires a compiler</p>
+<details>
+<summary>Show Answer</summary>
+
+Answer: C. Each processor architecture has its own instruction set
+
+Assembly language instructions are tied directly to a processor's architecture and instruction set, making assembly programs generally non-portable across different CPU families.
+
+</details>
+
+<hr />
+<h2 id="challenge-question">Challenge Question</h2>
+<h3 id="question-11">Question 11</h3>
+<p>The following code prints a message to the screen:</p>
+<div class="highlight"><pre><span></span><code>mov eax, 4 
+mov ebx, 1 
+mov ecx, msg 
+mov edx, len 
+int 0x80
+</code></pre></div>
+<p>What is the purpose of register EDX?</p>
+<p>A. Stores the file descriptor<br />
+B. Stores the syscall number<br />
+C. Stores the address of the string<br />
+D. Stores the number of bytes to write</p>
+<details>
+<summary>Show Answer</summary>
+
+Answer: D. Stores the number of bytes to write
+
+For the sys_write syscall:
+
+- EAX = syscall number
+- EBX = file descriptor
+- ECX = address of data
+- EDX = length of data
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/semester.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
