@@ -333,7 +333,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     <style>
 
         .dashboard-card {
-            max-width: 950px;
+            max-width: 900px;
             margin: 2rem 0;
             border-radius: 20px;
             overflow: hidden;
@@ -342,7 +342,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             font-family: Arial, sans-serif;
             position: relative;
             top: -44px;
-            transform: scale(0.80);
             transform-origin: top center;
         }
         
