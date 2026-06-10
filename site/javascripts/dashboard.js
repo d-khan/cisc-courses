@@ -333,7 +333,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     <style>
 
         .dashboard-card {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 2rem 0;
             border-radius: 20px;
             overflow: hidden;
@@ -413,7 +413,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
 
         .semester-title {
-            font-size: 3.8rem;
+            font-size: 3.6rem;
             font-weight: 700;
             line-height: 1;
         }

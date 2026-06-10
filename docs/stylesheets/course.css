@@ -184,13 +184,15 @@
 .quick-link {
     background: #f8fafc;
     border-radius: 16px;
-    min-height: 120px;
+    min-height: 40px !important;
     text-decoration: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: .2s ease;
+    transition:
+            transform 0.5s ease,
+            background-color 0.5s ease;
 }
 
 .quick-link:hover {
@@ -207,6 +209,16 @@
     font-size: 1rem;
     font-weight: 600;
     color: #3f51b5;
+}
+
+.quick-links-support {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.support-link {
+    width: 280px;
 }
 
 /* ===================== */
