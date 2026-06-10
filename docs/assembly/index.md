@@ -127,7 +127,7 @@
     <div class="quick-link-text">Lectures & Labs</div>
 </a>
 
-<a href="#" class="quick-link">
+<a href="./resources/index" class="quick-link">
     <div class="quick-link-icon">🧰</div>
     <div class="quick-link-text">Resources</div>
 </a>

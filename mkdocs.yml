@@ -21,7 +21,7 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
-  - " ": index.md
+  - Dashboard: index.md
 
   - Python Programming:
       - Syllabus: python/syllabus.md
@@ -43,4 +43,6 @@ nav:
       - Dashboard: assembly/index.md
       - Syllabus: assembly/syllabus.md
       - Lectures & Labs: assembly/8_weeks_semester.md
+      - Resources: assembly/resources/index.md
+
   
