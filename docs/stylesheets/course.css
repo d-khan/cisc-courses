@@ -291,7 +291,7 @@
 
 .resource-card {
     width: 300px;
-    height: 260px;   /* fixed card height */
+    height: 300px;   /* fixed card height */
     background: white;
     border-radius: 20px;
     padding: 1.5rem;
