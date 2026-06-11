@@ -190,9 +190,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition:
-            transform 0.5s ease,
-            background-color 0.5s ease;
+    transition: transform 0.5s ease,
+    background-color 0.5s ease;
 }
 
 .quick-link:hover {
@@ -291,11 +290,13 @@
 
 .resource-card {
     width: 300px;
-    height: 300px;   /* fixed card height */
+    height: 350px; /* fixed card height */
     background: white;
     border-radius: 20px;
     padding: 1.5rem;
+    justify-content: flex-start;
     display: flex;
+    justify-content: flex-start;
     flex-direction: column;
 }
 
@@ -311,13 +312,41 @@
     margin-bottom: 1rem;
 }
 
+/* LOGOS */
+
+.resource-logo {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.resource-logo img {
+    max-width: 80px;
+    height: auto;
+}
+
+.linux-logo {
+    margin-bottom: 0.1rem;   /* was 1rem */
+
+}
+
+/* Individual logo sizes */
+
+.linux-logo img {
+    max-width: 120px;
+}
+
+.nrp-logo img {
+    max-width: 220px;
+}
+
 .resource-title {
     font-size: 1.4rem;
     font-weight: 700;
     color: #0d47a1;
     line-height: 1.2;
-    min-height: 3.4rem;   /* reserve space for 2 lines */
+    min-height: 1rem; /* reserve space for 2 lines */
     margin-bottom: 0.75rem;
+    margin-top: 0rem;
 }
 
 .resource-card:hover .resource-title {
@@ -328,9 +357,8 @@
     font-size: 1rem;
     color: #555;
     line-height: 1.5;
-    flex-grow: 1;
     display: -webkit-box;
-    -webkit-line-clamp: 4;   /* max 4 lines */
+    -webkit-line-clamp: 4; /* max 4 lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
