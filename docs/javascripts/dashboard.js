@@ -333,7 +333,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     <style>
 
         .dashboard-card {
-            max-width: 1200px;
+            max-width: 880px;
             margin: 2rem 0;
             border-radius: 20px;
             overflow: hidden;

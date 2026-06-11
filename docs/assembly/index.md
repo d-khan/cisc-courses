@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 <script src="../javascripts/course.js"></script>
 
 <div class="course-dashboard">

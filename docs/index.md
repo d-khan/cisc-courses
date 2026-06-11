@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 <script src="javascripts/dashboard.js"></script>
 
 <div class="dashboard-layout">

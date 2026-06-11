@@ -1,26 +1,27 @@
 .md-grid {
-    max-width: 90rem;
+    max-width: 95rem;
 }
 
 .dashboard-layout {
     display: flex;
     gap: 1rem;
     align-items: flex-start;
+    width: 100%;
 }
 
 #semester-status {
     flex: 4;
     min-width: 0;
 }
+
 .support-card {
-    flex: 1;
-    max-width: 480px;
+    max-width: 500px;
 
     background: white;
 
     border-radius: 20px;
 
-    padding: 1rem;
+    padding: 2rem;
 
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 
@@ -37,8 +38,6 @@
     gap: 1rem;
 
     margin-top: 0;
-
-    margin-left: 0;
 }
 
 .support-title {
@@ -90,7 +89,7 @@
 
     transform: translateY(-2px);
 
-    box-shadow: 0 6px 18px rgba(25,118,210,0.30);
+    box-shadow: 0 6px 18px rgba(25, 118, 210, 0.30);
 }
 
 .ticket-status-title {
@@ -406,28 +405,23 @@
 /* TABLET LAYOUT                         */
 /* ===================================== */
 
-@media (max-width: 1400px) {
+@media (max-width: 1200px) {
 
     .dashboard-layout {
-
-        flex-direction: column !important;
-
+        flex-direction: column;
         align-items: center;
-
     }
 
     #semester-status {
-
         width: 100%;
-
+        max-width: 900px;
     }
 
     .support-card {
-
-        width: auto;
-        max-width: 440px;
+        width: 100%;
+        max-width: 700px;
         align-self: center;
-        margin-top: -80px;
+        margin-top: 1rem;
     }
 
 }
