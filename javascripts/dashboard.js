@@ -660,7 +660,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             </div>
 
             <div>
-                Stay tuned for announcements and updates.
+                <br> Stay tuned for announcements and updates.
             </div>
 
         </div>
