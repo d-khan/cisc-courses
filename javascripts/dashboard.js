@@ -655,12 +655,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         <div class="dashboard-footer">
 
-            <div>
-                <b>Semester duration:</b> ${startFormatted} – ${endFormatted}
+            <div style="text-align: center;">
+                <b>Semester duration:</b> ${startFormatted} – ${endFormatted}<br>
             </div>
 
-            <div>
-                <br> Stay tuned for announcements and updates.
+            <div style="text-align: center;">
+                Stay tuned for announcements and updates.
             </div>
 
         </div>
