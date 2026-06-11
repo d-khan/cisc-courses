@@ -291,17 +291,12 @@
 
 .resource-card {
     width: 300px;
-    min-height: 220px;
+    height: 260px;   /* fixed card height */
     background: white;
     border-radius: 20px;
     padding: 1.5rem;
-    text-decoration: none !important;
-    color: inherit !important;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
-    transition: all 0.25s ease;
-    overflow: hidden;
 }
 
 .resource-card:hover {
@@ -317,12 +312,12 @@
 }
 
 .resource-title {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: #0d47a1;
     line-height: 1.2;
+    min-height: 3.4rem;   /* reserve space for 2 lines */
     margin-bottom: 0.75rem;
-    transition: color 0.25s ease;
 }
 
 .resource-card:hover .resource-title {
@@ -333,7 +328,11 @@
     font-size: 1rem;
     color: #555;
     line-height: 1.5;
-    margin-top: auto;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;   /* max 4 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 /* ===================================== */
