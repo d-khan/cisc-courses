@@ -325,6 +325,7 @@
 }
 
 .linux-logo {
+    margin-top: -0.7rem;
     margin-bottom: 0.1rem;   /* was 1rem */
 
 }

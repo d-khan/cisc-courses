@@ -3,6 +3,11 @@ site_name: Miramar Computer Science Courses
 theme:
   name: material
 
+extra:
+  analytics:
+    provider: google
+    property: G-5SGJZZD5EZ
+
 extra_css:
   - stylesheets/extra.css
   - stylesheets/course.css
