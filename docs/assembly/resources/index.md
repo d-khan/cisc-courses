@@ -17,12 +17,20 @@
     </a>
 
     <!-- LINUX -->
-    <a href="linux-commands/" class="resource-card">
-        <div class="resource-icon">🐧</div>
-        <div class="resource-title">Linux Commands</div>
-        <div class="resource-desc">
-            Essential Linux commands used in this course.
+    <a href="nrp/" class="resource-card">
+
+        <div class="resource-logo">
+            <img src="../../assets/images/Linux-logo.jpg" alt="Linux Logo">
         </div>
+
+        <div class="resource-title">
+            Linux Essentials
+        </div>
+
+        <div class="resource-desc">
+            Learn Linux fundamentals, command-line navigation, file management, permissions, and essential tools for developers.
+        </div>
+
     </a>
 
 </div>
