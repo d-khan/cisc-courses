@@ -7,7 +7,7 @@ window.semesterConfig = {
         semesterEnd: "2026-08-08",
 
         // When go LIVE, change today to null
-        //  today: null
+        today: null
 
-        today: "2026-06-15"
+        // today: "2026-06-15"
 };
