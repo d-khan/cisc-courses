@@ -33,4 +33,21 @@
 
     </a>
 
+    <!-- ASSEMBLY -->
+    <a href="assembly" class="resource-card">
+
+        <div class="resource-logo assembly-logo">
+            <img src="../../assets/images/al-logo.png" alt="Assembly Logo">
+        </div>
+
+        <div class="resource-title">
+            Assembly Language
+        </div>
+
+        <div class="resource-desc">
+            Your hub for assembly language resources.
+        </div>
+
+    </a>
+
 </div>
