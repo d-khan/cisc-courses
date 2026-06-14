@@ -414,15 +414,16 @@
 
     #semester-status {
         width: 100%;
+        max-width: none;
+        flex: none;
     }
 
     .support-card {
         width: 100%;
-        max-width: 700px;
+        max-width: 500px;   /* or 600px if you want it wider */
         align-self: center;
         margin-top: 1rem;
     }
-
 }
 
 /* Lecture Pages */
