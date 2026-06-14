@@ -326,18 +326,28 @@
 
 .linux-logo {
     margin-top: -0.7rem;
-    margin-bottom: 0.1rem;   /* was 1rem */
-
+    margin-bottom: 0.1rem; /* was 1rem */
 }
 
+.assembly-logo {
+    margin-top: -0.9rem;
+    margin-bottom: 0.1rem; /* was 1rem */
+}
+
+
+
 /* Individual logo sizes */
+
+.nrp-logo img {
+    max-width: 220px;
+}
 
 .linux-logo img {
     max-width: 120px;
 }
 
-.nrp-logo img {
-    max-width: 220px;
+.assembly-logo img {
+    max-width: 120px;
 }
 
 .resource-title {
