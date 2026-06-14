@@ -378,8 +378,15 @@
 /* TABLET                                */
 /* ===================================== */
 @media (max-width: 1200px) {
+    .resource-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .resource-card {
-        width: 280px;
+        width: 100%;
+        max-width: 400px;
+        min-height: auto;
     }
 }
 
