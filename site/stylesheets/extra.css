@@ -405,7 +405,7 @@
 /* TABLET LAYOUT                         */
 /* ===================================== */
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
 
     .dashboard-layout {
         flex-direction: column;
