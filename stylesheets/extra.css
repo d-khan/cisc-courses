@@ -421,6 +421,7 @@
     }
 
     .support-card {
+        outline: 3px solid blue;
         width: 100%;
         max-width: 500px;   /* or 600px if you want it wider */
         align-self: center;
