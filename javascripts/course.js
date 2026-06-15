@@ -30,8 +30,8 @@ document.addEventListener(
                 )
                 : new Date();
 
-        semesterStart.setHours(0,0,0,0);
-        semesterEnd.setHours(0,0,0,0);
+        semesterStart.setHours(0, 0, 0, 0);
+        semesterEnd.setHours(0, 0, 0, 0);
 
         // =====================================
         // WEEK CALCULATION
@@ -386,7 +386,23 @@ document.addEventListener(
                     </div>
 
                     <div>
-                        ${announcement.item}
+                        ${
+
+                        announcement.url
+
+                            ? `<a href="${announcement.url}"
+
+                   target="_blank"
+
+                   rel="noopener noreferrer">
+
+                   ${announcement.item}
+
+               </a>`
+
+                            : announcement.item
+
+                    }
                     </div>
 
                 </div>
