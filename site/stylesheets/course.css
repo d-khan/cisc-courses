@@ -377,7 +377,7 @@
 /* ===================================== */
 /* TABLET                                */
 /* ===================================== */
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     .resource-grid {
         flex-direction: column;
         align-items: center;
