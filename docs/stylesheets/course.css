@@ -404,6 +404,67 @@
         margin-bottom: 1rem;
     }
 
+    /* LOGOS */
+
+    .resource-logo {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .resource-logo img {
+        max-width: 80px;
+        height: auto;
+    }
+
+    .linux-logo {
+        margin-top: -0.7rem;
+        margin-bottom: 0.1rem; /* was 1rem */
+    }
+
+    .assembly-logo {
+        margin-top: -0.9rem;
+        margin-bottom: 0.1rem; /* was 1rem */
+    }
+
+
+    /* Individual logo sizes */
+
+    .nrp-logo img {
+        max-width: 220px;
+    }
+
+    .linux-logo img {
+        max-width: 120px;
+    }
+
+    .assembly-logo img {
+        max-width: 120px;
+    }
+
+    .resource-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #0d47a1;
+        line-height: 1.2;
+        min-height: 1rem; /* reserve space for 2 lines */
+        margin-bottom: 0.75rem;
+        margin-top: 0rem;
+    }
+
+    .resource-card:hover .resource-title {
+        color: #1565c0;
+    }
+
+    .resource-desc {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.5;
+        display: -webkit-box;
+        -webkit-line-clamp: 4; /* max 4 lines */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
 
 }
 
