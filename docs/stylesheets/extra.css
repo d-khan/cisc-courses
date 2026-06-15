@@ -424,7 +424,7 @@
         width: 100%;
         max-width: 500px;   /* or 600px if you want it wider */
         align-self: center;
-        margin-top: -1.5rem !important;
+        margin-top: -2.5rem !important;
     }
 }
 
