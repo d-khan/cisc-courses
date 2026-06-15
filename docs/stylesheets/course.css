@@ -335,7 +335,6 @@
 }
 
 
-
 /* Individual logo sizes */
 
 .nrp-logo img {
@@ -379,17 +378,20 @@
 /* ===================================== */
 @media (max-width: 1400px) {
     .resource-grid {
-        flex-direction: row;
-        justify-content: center;
+        display: flex;
         flex-wrap: wrap;
         gap: 1rem;
-    }
+        justify-content: flex-start;
 
-    .resource-card {
-        width: 240px;
-        max-width: 240px;
-        min-height: auto;
     }
+}
+
+.resource-card {
+    width: 100%;
+    max-width: 400px;
+    min-height: auto;
+}
+
 }
 
 /* ===================================== */
