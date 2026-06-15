@@ -382,8 +382,9 @@
         flex-wrap: wrap;
         gap: 1rem;
         justify-content: flex-start;
-
+        margin-top: 1rem;
     }
+
 
     .resource-card {
         width: 300px;
@@ -395,6 +396,12 @@
         display: flex;
         justify-content: flex-start;
         flex-direction: column;
+    }
+
+    .resource-icon {
+        font-size: 2.5rem;
+        line-height: 1;
+        margin-bottom: 1rem;
     }
 
 
