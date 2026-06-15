@@ -410,12 +410,14 @@
     .dashboard-layout {
         flex-direction: column !important;
         align-items: center !important;
+        gap: 0 !important;
     }
 
     #semester-status {
         width: 100%;
         max-width: none;
         flex: none;
+        margin-bottom: 0 !important;
     }
 
     .support-card {
