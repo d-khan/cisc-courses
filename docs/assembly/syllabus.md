@@ -31,7 +31,7 @@ students majoring in computer and information sciences.
 | Course resource | Course contents are available in Canvas <https://sdccd.instructure.com> |
 | Duration        | Jun 15 – Aug 8 2026 (8 weeks)                                           |
 | Professor       | Dr Danish Khan                                                          |
-| Office hours    |                                                                         |
+| Office hours    | Email to schedule an appointment                                        |
 | Contact         | Room M-107P, Office phone: 619-388-7152, Email: dkhan@sdccd.edu         |
 
 ## **Important dates/deadline**
