@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 <div class="resource-grid">
 
     <a href="nrp/" class="resource-card">
