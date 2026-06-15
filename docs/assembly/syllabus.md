@@ -102,13 +102,13 @@ are unable to log in or do not have an account, please submit a support ticket a
 
 ## **Course evaluation schemes**
 
-| Evaluation type           | Out of 100 |
-|:--------------------------|:-----------|
-| Weekly lab assignments    | 20         |
-| Quizzes                   | 10         |
-| Mid term exam             | 20         |
-| Project                   | 20         |
-| Hands-on exam (IN-PERSON) | 30         |
+| Evaluation type        | Out of 100 |
+|:-----------------------|:-----------|
+| Weekly lab assignments | 20         |
+| Quizzes                | 10         |
+| Mid term exam          | 20         |
+| Project                | 20         |
+| Hands-on exam          | 30         |
 
 ## **Late/due work**
 
