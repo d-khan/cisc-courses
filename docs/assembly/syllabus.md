@@ -113,7 +113,7 @@ are unable to log in or do not have an account, please submit a support ticket a
 ## **Official Course Outline**
 
 The official SDCCD course outline can be found
-at [Official SDCCD Course Outline](https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18049?entityType=Course&reportId=493)
+at [CISC 211 Official Course Outline](https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18049?entityType=Course&reportId=493)
 
 > **Please note that the textbooks and course materials listed in the official course outline may differ from those used
 in this section. Refer to this syllabus for the most up-to-date course materials, requirements, and expectations.**
