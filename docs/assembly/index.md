@@ -144,9 +144,10 @@ hide:
         <div class="quick-link-text">Canvas</div>
     </a>
 
-</div>
-
-<div class="quick-links-support">
+    <a href="./faqs/" class="quick-link">
+        <div class="quick-link-icon">❓</div>
+        <div class="quick-link-text">FAQs</div>
+    </a>
 
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeSX7r1qqaSyiVZj6h4BM0IBAlMy_GI00cXVCKmV89JZremg/viewform"
        class="quick-link support-link">
