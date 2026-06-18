@@ -12,6 +12,7 @@
             We will learn Assembly Language concepts step by step.
         </p>   
     </div>
+
 </div>
 
 <div class="faq-item">
@@ -22,10 +23,11 @@
 
     <div class="faq-answer">
         <p>
-            We will primarily use a Linux environment with the NASM assembler.
-            Instructions for setting up the required software are available in the course resources.
+            We will primarily use the <b>National Research Platform (NRP)</b> to access a Linux environment and the NASM assembler. 
+            Please review the Cloud Lab Environment section under Resources on the course website for setup instructions and access information.
         </p>
     </div>
+
 </div>
 
 <div class="faq-item">
@@ -35,8 +37,12 @@
     </button>
 
     <div class="faq-answer">
-        No. Course materials, lecture notes, and learning resources will be provided through the course website and Canvas.
+        <p>
+            No. All course materials, lecture notes, and learning resources will be provided through the course website.
+            A recommended textbook is listed in the syllabus for additional reference, but its use is entirely optional.
+        </p>
     </div>
+
 </div>
 
 <div class="faq-item">
@@ -48,6 +54,7 @@
     <div class="faq-answer">
         Assignments and labs must be submitted through Canvas following the instructions provided in each assignment.
     </div>
+
 </div>
 
 <div class="faq-item">
@@ -59,6 +66,7 @@
     <div class="faq-answer">
         Yes. This course is delivered online. Please review the syllabus and course announcements regularly for important updates.
     </div>
+
 </div>
 
 <div class="faq-item">
@@ -70,6 +78,7 @@
     <div class="faq-answer">
         Start by reviewing the course materials and announcements. If you still need assistance, submit a support ticket using the Course Support link on the dashboard.
     </div>
+
 </div>
 
 <div class="faq-item">
@@ -81,4 +90,5 @@
     <div class="faq-answer">
         Topics include computer organization, assembly language programming, registers, memory addressing, procedures, stack operations, input/output, and machine architecture.
     </div>
+
 </div>
