@@ -8,7 +8,7 @@
 
     <div class="faq-answer">
         <p>
-            No. Prior programming experience is helpful but not required.
+            <b>No</b>. Prior programming experience is helpful but not required.
             We will learn Assembly Language concepts step by step.
         </p>   
     </div>
@@ -38,7 +38,7 @@
 
     <div class="faq-answer">
         <p>
-            No. All course materials, lecture notes, and learning resources will be provided through the course website.
+            <b>No</b>. All course materials, lecture notes, and learning resources will be provided through the course website.
             A recommended textbook is listed in the syllabus for additional reference, but its use is entirely optional.
         </p>
     </div>
@@ -52,7 +52,13 @@
     </button>
 
     <div class="faq-answer">
-        Assignments and labs must be submitted through Canvas following the instructions provided in each assignment.
+        <p>
+            Assignments must be submitted through GitHub. You will need to create a GitHub account and a private repository 
+            for this course. Add your instructor as a collaborator. Once the invitation is accepted, you will be able 
+            to upload your work to the repository. For each assignment, submit your work to GitHub and then submit only 
+            the repository link in Canvas. Detailed instructions for setting up GitHub and submitting assignments 
+            can be found in this video: <a href="https://www.youtube.com/watch?v=zjY-L71A9PE" target="_blank" rel="noopener noreferrer">GitHub Assignment Submission Tutorial</a>.
+        </p>
     </div>
 
 </div>
@@ -64,7 +70,11 @@
     </button>
 
     <div class="faq-answer">
-        Yes. This course is delivered online. Please review the syllabus and course announcements regularly for important updates.
+        <p>
+            <b>Yes</b>. This course is delivered in a 100% asynchronous online format, allowing students to complete coursework according to the published schedule without attending live class sessions.
+            Students are expected to remain actively engaged in the course by completing and submitting weekly assignments on time. Regular participation and timely submission of coursework are essential for demonstrating academic progress. Instructors closely monitor student activity and assignment completion. Students who miss multiple assignments without prior communication or approved accommodations may be subject to administrative withdrawal in accordance with college policies.
+        </p>
+
     </div>
 
 </div>
@@ -76,19 +86,135 @@
     </button>
 
     <div class="faq-answer">
-        Start by reviewing the course materials and announcements. If you still need assistance, submit a support ticket using the Course Support link on the dashboard.
+        <p>
+            Start by reviewing the course materials and announcements. If you still need assistance, submit a support ticket using the Course Support link on the dashboard.
+        </p>        
     </div>
 
 </div>
 
 <div class="faq-item">
     <button class="faq-question">
-        What topics will we cover in this course?
+        Can I submit assignments early if I will be traveling and unable to meet the regular due dates?
         <span class="faq-arrow">⌄</span>
     </button>
 
     <div class="faq-answer">
-        Topics include computer organization, assembly language programming, registers, memory addressing, procedures, stack operations, input/output, and machine architecture.
+        <p>
+            <b>Yes</b>. If you anticipate being unable to submit assignments on time due to travel or other commitments, please contact the professor in advance to discuss available options.
+        </p>
+    </div>
+
+</div>
+
+<div class="faq-item">
+    <button class="faq-question">
+        How much time should I expect to spend on this course each week?
+        <span class="faq-arrow">⌄</span>
+    </button>
+
+    <div class="faq-answer">
+        <p>
+            Students should plan to spend approximately 8–12 hours per week reading course materials, reviewing learning resources, completing labs, and working on assignments.
+        </p>
+    </div>
+
+</div>
+
+<div class="faq-item">
+    <button class="faq-question">
+        What operating system do I need?
+        <span class="faq-arrow">⌄</span>
+    </button>
+
+    <div class="faq-answer">
+        <p>
+            Any modern operating system, including Windows, macOS, or Linux, can be used. Course activities will be completed through the NRP Linux environment, which is accessible through a web browser.
+        </p>
+    </div>
+
+</div>
+
+<div class="faq-item">
+    <button class="faq-question">
+        Can I use AI tools such as ChatGPT?
+        <span class="faq-arrow">⌄</span>
+    </button>
+
+    <div class="faq-answer">
+        <p>
+            AI tools may be used to support learning. However, students are expected to understand, explain, and take responsibility for all submitted work. Please refer to the syllabus for the complete AI policy.
+        </p>
+    </div>
+
+</div>
+
+<div class="faq-item">
+    <button class="faq-question">
+        What happens if I submit an assignment late?
+        <span class="faq-arrow">⌄</span>
+    </button>
+
+    <div class="faq-answer">
+        <p>
+            Late submissions are subject to the course late-work policy outlined in the syllabus. Please review the syllabus for specific deadlines and penalties.
+        </p>
+    </div>
+
+</div>
+
+<div class="faq-item">
+    <button class="faq-question">
+        How will I know what work is due each week?
+        <span class="faq-arrow">⌄</span>
+    </button>
+
+    <div class="faq-answer">
+        <p>
+            Weekly assignments, readings, and announcements are posted on the course website and Canvas. Students are responsible for checking both regularly.
+        </p>
+    </div>
+
+</div>
+
+<div class="faq-item">
+    <button class="faq-question">
+        Do I need a webcam?
+        <span class="faq-arrow">⌄</span>
+    </button>
+
+    <div class="faq-answer">
+        <p>
+            A computer with a webcam and microphone is recommended, as they may be required for project demonstrations, meetings, or identity verification activities.
+        </p>
+    </div>
+
+</div>
+
+<div class="faq-item">
+    <button class="faq-question">
+        Where can I get technical help with GitHub or NRP?
+        <span class="faq-arrow">⌄</span>
+    </button>
+
+    <div class="faq-answer">
+        <p>
+            First review the setup guides and tutorial videos provided on the course website. If you continue to experience difficulties, submit a support ticket using the Course Support link on the dashboard.
+        </p>
+    </div>
+
+</div>
+
+<div class="faq-item">
+    <button class="faq-question">
+        What should I do if I add the course late?
+        <span class="faq-arrow">⌄</span>
+    </button>
+
+    <div class="faq-answer">
+        <p>
+            Begin reviewing the course materials immediately and contact the instructor if you have questions about catching up on missed work.
+        </p>
     </div>
 
 </div>
