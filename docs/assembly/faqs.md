@@ -95,13 +95,13 @@
 
 <div class="faq-item">
     <button class="faq-question">
-        Can I submit assignments early if I will be traveling and unable to meet the regular due dates?
+        Can I submit assignments early if I am unable to meet the due dates?
         <span class="faq-arrow">⌄</span>
     </button>
 
     <div class="faq-answer">
         <p>
-            <b>Yes</b>. If you anticipate being unable to submit assignments on time due to travel or other commitments, please contact the professor in advance to discuss available options.
+            If you anticipate being unable to submit assignments on time due to travel or other commitments, please contact the professor in advance to discuss available options.
         </p>
     </div>
 
