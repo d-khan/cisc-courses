@@ -168,7 +168,7 @@ Since the Assembly Language assembler and related tools used in this course are 
 
 When this happens, you will need to reinstall the required packages. To simplify this process, I have provided a small installation script that automatically installs all necessary course-related packages.
 
-Create a file named install.sh, make it executable, and run it whenever you encounter this situation. The process for creating a file and assigning executable permissions is the same as described earlier in this guide.
+Create a file named **install.sh**, make it executable, and run it whenever you encounter this situation. The process for creating a file and assigning executable permissions is the same as described earlier in this guide.
 
 ```
 #!/bin/bash
