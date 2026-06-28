@@ -76,6 +76,8 @@ more about the deadlines.
 | 8    | 3 Aug      | 7 Aug    | __Project demonstration on Fri 7 Aug__                     |                                                                |
 |      |            | 7 Aug    | __Hands-on exam on Fri 7 Aug at 11:00 am__                 |                                                                |                    
 
+> **Please note that all times are listed in the Pacific Time Zone (PT). Each assessment will become available in Canvas promptly at the scheduled start time indicated above.**
+
 ## **Textbook**
 
 The following textbook is used for this course:
