@@ -81,13 +81,17 @@
 
 <div class="faq-item">
     <button class="faq-question">
-        What should I do if I need help?
+        What should I do if I need course-related or technical assistance?
         <span class="faq-arrow">⌄</span>
     </button>
 
     <div class="faq-answer">
         <p>
-            Start by reviewing the course materials and announcements. If you still need assistance, submit a support ticket using the Course Support link on the dashboard.
+            Start by reviewing the course materials, resources, and announcements available on the course website.
+            If you still need assistance, you can either submit a support ticket using the <strong>Course Support</strong> link on the course dashboard or join the
+            <a href="https://join.slack.com/t/cisc211summer-gti6802/shared_invite/zt-422crv6za-TB2q5At8sRpPpc0FRygqEw" target="_blank" rel="noopener noreferrer">
+            <strong>CISC 211 Slack workspace </strong>
+            </a>
         </p>        
     </div>
 
@@ -186,20 +190,6 @@
     <div class="faq-answer">
         <p>
             A computer with a webcam and microphone is recommended, as they may be required for project demonstrations, meetings, or identity verification activities.
-        </p>
-    </div>
-
-</div>
-
-<div class="faq-item">
-    <button class="faq-question">
-        Where can I get technical help with GitHub or NRP?
-        <span class="faq-arrow">⌄</span>
-    </button>
-
-    <div class="faq-answer">
-        <p>
-            First review the setup guides and tutorial videos provided on the course website. If you continue to experience difficulties, submit a support ticket using the Course Support link on the dashboard.
         </p>
     </div>
 
