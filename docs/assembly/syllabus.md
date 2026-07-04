@@ -15,7 +15,7 @@ passing parameters to subroutine calls. Additional topics include machine archit
 interrupts, control structures, compiling, linking, and printer and disk interfaces. This course is intended for
 students majoring in computer and information sciences.
 
-## **Student learning outcome**
+## **Student learning outcomes**
 
 --8<-- "docs/shared/slos.md"
 
@@ -34,7 +34,7 @@ students majoring in computer and information sciences.
 | Office hours    | Email to schedule an appointment                                        |
 | Contact         | Room M-107P, Office phone: 619-388-7152, Email: dkhan@sdccd.edu         |
 
-## **Important dates/deadline**
+## **Important dates/deadlines**
 
 | **Dates** | **Description**                                                                                                                            |
 |-----------|--------------------------------------------------------------------------------------------------------------------------------------------|
@@ -53,32 +53,31 @@ Please visit
 the [Academic Semester Calendars and Key Dates](https://www.sdccd.edu/students/dates-and-deadlines/index.aspx) to learn
 more about the deadlines.
 
-## **Instructor communication policy**
+## **Communication guidelines**
 
 --8<-- "docs/shared/communication.md"
 
-| Week | Start Week | Due date | Topics                                                     | Hands-on activities                                            |
-|------|------------|----------|------------------------------------------------------------|----------------------------------------------------------------
-| 1    | 15 Jun     | 21 Jun   | Data representation                                        | Encryption/decryption using logical gates                      |
-|      |            |          | Boolean Algebra                                            | Simplify equations using Boolean Algebra                       |
-| 2    | 22 Jun     | 28 Jun   | Memory organization                                        | Understanding Cache memory                                     |
-|      |            |          | Introduction to Assembly Language, variables and constants | Setting up programming environment and writing your first code |
-|      |            |          | __Quiz 1 on Fri 26 Jun at 11:00 am__                       |                                                                |
-| 3    | 29 Jun     | 5 Jul    | Arithmetic instructions                                    | Apply arithmetic instructions using Assembly                   |
-|      |            |          | Logical instructions                                       | Apply logical instructions using Assembly                      |
-| 4    | 6 Jul      | 10 Jul   | __Mid term exam on Fri 10 Jul at 11:00 am__                |
-| 5    | 13 Jul     | 19 Jul   | Condition instructions                                     | Apply conditional instructions using Assembly                  |
-|      |            |          | Loops and Arrays                                           | Apply loops and arrays using Assembly                          |
-| 6    | 20 Jul     | 26 Jul   | Procedures                                                 | Use procedures to optimize Assembly code                       | 
-|      |            |          | Functions                                                  | Use functions to optimize Assembly code                        |
-| 7    | 27 Jul     | 2 Aug    | File management & Project                                  | Perform file read and write operations                         |
-|      |            |          | __Quiz 2 on Fri 31 Jul at 11:00 am__                       |                                                                |
-| 8    | 3 Aug      | 7 Aug    | __Project demonstration on Fri 7 Aug__                     |                                                                |
-|      |            | 7 Aug    | __Hands-on exam on Fri 7 Aug at 11:00 am__                 |                                                                |                    
+## **Course topics**
 
-> **Please note that all times are listed in the Pacific Time Zone (PT). Each assessment will become available in Canvas promptly at the scheduled start time indicated above.**
+| Topics                                                     | Hands-on activities                                            |
+|------------------------------------------------------------|----------------------------------------------------------------|
+| Data representation                                        | Encryption/decryption using logical gates                      |
+| Boolean Algebra                                            | Simplify equations using Boolean Algebra                       |
+| Memory organization                                        | Understanding Cache memory                                     |
+| Introduction to Assembly Language, variables and constants | Setting up programming environment and writing your first code |
+| Arithmetic instructions                                    | Apply arithmetic instructions using Assembly                   |
+| Logical instructions                                       | Apply logical instructions using Assembly                      |
+| Condition instructions                                     | Apply conditional instructions using Assembly                  |
+| Loops and Arrays                                           | Apply loops and arrays using Assembly                          |
+| Procedures                                                 | Use procedures to optimize Assembly code                       | 
+| Functions                                                  | Use functions to optimize Assembly code                        |
+| File management                                            | Perform file read and write operations                         |
 
-## **Textbook**
+**Detailed Course Roadmap:** The semester-specific schedule, including the order of topics, lecture materials, hands-on
+activities, quizzes, and due dates, is available on the [course website](https://d-khan.github.io/cisc-courses/assembly/8_weeks_semester/). Students are responsible for following the
+Course website throughout the semester.
+
+## **Textbooks**
 
 The following textbook is used for this course:
 

@@ -1,4 +1,4 @@
-site_name: Miramar Computer Science Courses
+site_name: Dr. Khan's Computer Science Courses @ San Diego Miramar College
 
 theme:
   name: material
@@ -29,26 +29,20 @@ extra_javascript:
 nav:
   - Dashboard: index.md
 
-  - Python Programming:
+  - CISC 179<br>Python Programming:
       - Syllabus: python/syllabus.md
 
-
-  - C/C++ Programming:
-      - Syllabus: cpp/syllabus.md
-
-
-  - Data Structures in C++:
+  - CISC 187<br>Data Structures in C++:
       - Syllabus: data-structures/syllabus.md
 
-
-  - Intermediate Java:
+  - CISC 191<br>Intermediate Java:
       - Syllabus: java/syllabus.md
 
+  - CISC 192<br>C/C++ Programming:
+      - Syllabus: cpp/syllabus.md
 
-  - Assembly Language:
+  - CISC 211<br>Assembly Language:
       - Dashboard: assembly/index.md
       - Syllabus: assembly/syllabus.md
       - Lectures & Labs: assembly/8_weeks_semester.md
       - Resources: assembly/resources/index.md
-
-  
