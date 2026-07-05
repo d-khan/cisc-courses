@@ -241,6 +241,11 @@ document.addEventListener(
         if (semesterActive) {
 
             document.getElementById(
+                "current-topic-label"
+            ).textContent =
+                "CURRENT WEEK FOCUS";
+
+            document.getElementById(
                 "current-topic"
             ).textContent =
                 currentLecture?.item ||
@@ -294,7 +299,7 @@ document.addEventListener(
                 document.getElementById(
                     "next-topic-label"
                 ).textContent =
-                    `WEEK ${nextWeekNumber} TOPIC`;
+                    `WEEK ${nextWeekNumber} FOCUS`;
 
                 document.getElementById(
                     "next-topic"
@@ -335,6 +340,11 @@ document.addEventListener(
             }
 
         });
+
+        document.getElementById(
+            "announcements-heading"
+        ).textContent =
+            "Current Week Announcements";
 
         const announcements =
             rows.filter(row =>
@@ -414,6 +424,11 @@ document.addEventListener(
 // =====================================
 // WHAT'S COMING UP (NEXT 14 DAYS)
 // =====================================
+
+        document.getElementById(
+            "upcoming-heading"
+        ).textContent =
+            "What's Coming Up (Next 14 Days)";
 
         const fourteenDaysLater =
 
