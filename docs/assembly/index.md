@@ -49,8 +49,9 @@ hide:
 
 <div class="topic-card">
 
-<div class="topic-label">
-    CURRENT WEEK TOPIC
+<div class="topic-label"
+     id="current-topic-label">
+    Retrieving...
 </div>
 
 <div class="topic-name"
@@ -66,7 +67,7 @@ hide:
 
 <div class="topic-label"
      id="next-topic-label">
-    UPCOMING TOPIC
+    Retrieving...
 </div>
 
 <div class="topic-name"
@@ -86,8 +87,8 @@ hide:
     id="announcements-card"
     class="dashboard-card">
 
-<h2>
- Current Week Announcements
+<h2 id="announcements-heading">
+    Retrieving...
 </h2>
 
 <div id="announcements"></div>
@@ -102,8 +103,8 @@ hide:
     id="upcoming-card"
     class="dashboard-card">
 
-<h2>
-    What's Coming Up (Next 14 Days)
+<h2 id="upcoming-heading">
+    Retrieving...
 </h2>
 
 <div id="upcoming"></div>
