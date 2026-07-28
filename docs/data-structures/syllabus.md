@@ -1,15 +1,19 @@
 # **Syllabus (CISC-187 Data Structures in C++)**
 
+## **Welcome to the course!**
+
 Welcome to the course! I look forward to working with you this semester. This course is designed to encourage curiosity,
 problem-solving, and hands-on learning in a supportive and respectful environment. Do not be afraid to make
 mistakes—they are an important part of learning Computer Science.
 
 ## **Course description**
 
-This course is about learning data structures and their implementation. The emphasis is placed on implementing basic
-data structures such as stacks, heaps, queues, lists, linked lists, arrays, trees, hash tables, sorting, searching,
-etc., using C++ programming language. This course is designed for students majoring in computer information systems and
-computer science professionals who want to update their programming skills.
+Data Structures in C++ introduces the fundamental data structures and algorithms used in modern software development.
+Students will learn how to design, implement, and analyze core data structures—including arrays, linked lists, stacks,
+queues, trees, heaps, hash tables, and graphs—using the C++ programming language. The course also covers essential
+searching and sorting algorithms, algorithmic complexity, and techniques for selecting appropriate data structures to
+solve computational problems efficiently. This course is intended for students pursuing Computer Science or Computer
+Information Systems and for programmers seeking to strengthen or refresh their C++ programming skills.
 
 ## **Student learning outcome**
 
@@ -32,36 +36,31 @@ computer science professionals who want to update their programming skills.
 
 --8<-- "docs/shared/dates-deadline.md"
 
-## **Instructor communication policy**
+## **Communication guidelines**
 
 --8<-- "docs/shared/communication.md"
 
-## **Course outline and schedule**
+## **Course topics**
 
-| Week | <div style="width:75px">Week beginning from Monday </div> | Topics                                            | Hands-on activities                                                    | Deadlines |
-|------|-----------------------------------------------------------|---------------------------------------------------|------------------------------------------------------------------------|-----------|
-| 1    | 24 Aug                                                    | Introduction to Data Structures and Algorithms    | Operation on Arrays                                                    | 30 Aug    |
-| 2    | 31 Aug                                                    | Searching and Big O Notation                      | Implement linear and binary search algorithms                          | 6 Sep     |
-| 3    | 7 Sep                                                     | Sorting Algorithms I                              | Time complexity of sorting algorithms                                  | 13 Sep    |
-| 4    | 14 Sep                                                    | Sorting Algorithms II                             | Understand the working of insertion sort algorithm                     | 20 Sep    |
-| 5    | 21 Sep                                                    | Hash tables                                       | Understand the working of hash algorithms                              | 27 Sep    |
-| 6    | 28 Sep                                                    | Stacks and Queues                                 | Perform operations on stacks and queues                                | 4 Oct     |
-| 7    | 5 Oct                                                     | Linked lists                                      | Implement single-ended linked list                                     | 11 Oct    |
-| 8    | 12 Oct                                                    | Binary search trees                               | Understand the working of BST and perform insert and delete operations | 18 Oct    |
-|      |                                                           | Project work                                      |                                                                        | 25 Oct    |
-| 9    | 19 Oct                                                    | Binary heaps                                      | Problem-solving activity on binary heap                                | 25 Oct    |
-| 10   | 26 Oct                                                    | Graphs I                                          | Implement breadth-first and depth-first algorithms                     | 1 Nov     |
-| 11   | 2 Nov                                                     | Graphs II                                         | Problem solving activity on Dijkstra's algorithm                       | 8 Nov     |
-| 12   | 9 Nov                                                     | Recursion                                         | Problem solving activity on recursions                                 | 15 Nov    |
-| 13   | 16 Nov                                                    | Space constraints                                 | Evaluate space complexity algorithms                                   | 22 Nov    |
-| 14   |                                                           | __Thanksgiving break (23 - 29 Nov) - No classes__ |
-| 15   | 30 Nov                                                    | Project work                                      |                                                                        | 13 Dec    |
-| 16   | 7 Dec                                                     | Project work                                      |                                                                        | 13 Dec    |
-| 17   | 14 Dec                                                    | __Final exam on Mon 14 Dec__                      |                                                                        |
-| 18   | 21 Dec                                                    | __End of Fall semester__                          |                                                                        |
+| Topics                                         | Hands-on activities                                                    |
+|------------------------------------------------|------------------------------------------------------------------------|
+| Introduction to Data Structures and Algorithms | Operation on Arrays                                                    |
+| Searching and Big O Notation                   | Implement linear and binary search algorithms                          |
+| Sorting Algorithms I                           | Time complexity of sorting algorithms                                  |
+| Sorting Algorithms II                          | Understand the working of insertion sort algorithm                     |
+| Hash tables                                    | Understand the working of hash algorithms                              |
+| Stacks and Queues                              | Perform operations on stacks and queues                                |
+| Linked lists                                   | Implement single-ended linked list                                     |
+| Binary search trees                            | Understand the working of BST and perform insert and delete operations |
+| Binary heaps                                   | Problem-solving activity on binary heap                                |
+| Graphs I                                       | Implement breadth-first and depth-first algorithms                     |
+| Graphs II                                      | Problem solving activity on Dijkstra's algorithm                       |
+| Recursion                                      | Problem solving activity on recursions                                 |
+| Space constraints                              | Evaluate space complexity algorithms                                   |
 
-> Please note that the course schedule, topics, and deadlines are tentative and may change depending on instructional
-> needs and semester progress.
+**Detailed Course Roadmap:** The semester-specific schedule, including the order of topics, lecture materials, hands-on
+activities, quizzes, and due dates, is available on the [course website](). Students are responsible for following the
+Course website throughout the semester.
 
 ## **Textbook**
 
