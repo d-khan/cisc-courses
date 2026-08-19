@@ -86,9 +86,9 @@ only.
 | Evaluation type        | Out of 100 |
 |:-----------------------|:-----------|
 | Weekly lab assignments | 20         |
-| Discussions            | 20         |
-| Projects               | 40         |
-| Final exam             | 20         |
+| Quizzes                | 20         |
+| Project-1              | 30         |
+| Project-2              | 30         |
 
 ## **Official Course Outline**
 
