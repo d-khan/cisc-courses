@@ -34,7 +34,7 @@ Information Systems and for programmers seeking to strengthen or refresh their C
 
 ## **Important dates/deadline**
 
---8<-- "docs/shared/dates-deadline.md"
+--8<-- "docs/shared/dates_deadlines_Fall.md"
 
 ## **Communication guidelines**
 

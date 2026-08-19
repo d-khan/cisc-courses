@@ -19,6 +19,7 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.arithmatex:
       generic: true
+  - footnotes
 
 extra_javascript:
   - javascripts/semester.js
@@ -33,7 +34,9 @@ nav:
       - Syllabus: python/syllabus.md
 
   - CISC 187<br>Data Structures in C++:
+      - Dashboard: data-structures/index.md
       - Syllabus: data-structures/syllabus.md
+      - Lectures & Labs: data-structures/16_weeks_semester.md
 
   - CISC 191<br>Intermediate Java:
       - Syllabus: java/syllabus.md

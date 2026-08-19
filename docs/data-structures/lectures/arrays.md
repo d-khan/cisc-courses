@@ -55,7 +55,7 @@ Common operations include accessing, updating, searching, inserting, and
 removing data.
 
   -----------------------------------------------------------------------
-Data Structure                      Description
+Data Structure Description
   ----------------------------------- -----------------------------------
 **Record**                          Stores a collection of related
 fields.
@@ -89,7 +89,7 @@ being stored and the operations that the program needs to perform.
 > It is important to select a data structure that performs well for the
 > task being performed.
 
-![Linked lists and arrays](./images/linked-list.png)
+![Linked lists and arrays](../images/linked-list.png)
 
 ## What Are Algorithms?
 
@@ -98,11 +98,11 @@ being stored and the operations that the program needs to perform.
 
 For example, preparing pasta might involve:
 
-1.  Boil water in a pan.
-2.  Add salt and oil.
-3.  Add pasta to the boiling water.
-4.  Check whether the pasta is cooked.
-5.  Drain the water when the pasta is cooked.
+1. Boil water in a pan.
+2. Add salt and oil.
+3. Add pasta to the boiling water.
+4. Check whether the pasta is cooked.
+5. Drain the water when the pasta is cooked.
 
 When applied to computing, an algorithm describes a sequence of steps
 for accomplishing a particular computational task.
@@ -119,21 +119,11 @@ Computational problems occur in many domains, including e-commerce,
 internet technologies, biology, manufacturing, transportation, and
 scientific computing.
 
-  -----------------------------------------------------------------------
-Application Domain      Computational Problem   Common Algorithm
-  ----------------------- ----------------------- -----------------------
-**DNA Analysis**        Find the longest        **Longest Common
-sequence shared by two  Substring**
-DNA sequences.
-
-**Search / Inventory**  Determine whether a     **Binary Search**
-product exists in a     
-sorted collection.
-
-**Navigation**          Determine the shortest  **Dijkstra's Shortest
-route between           Path Algorithm**
-locations.
-  -----------------------------------------------------------------------
+| Application Domain     | Computational Problem                                      | Common Algorithm                       |
+|------------------------|------------------------------------------------------------|----------------------------------------|
+| **DNA Analysis**       | Find the longest sequence shared by two DNA sequences.     | **Longest Common Substring**           |
+| **Search / Inventory** | Determine whether a product exists in a sorted collection. | **Binary Search**                      |
+| **Navigation**         | Determine the shortest route between locations.            | **Dijkstra's Shortest Path Algorithm** |
 
 # Basic Data Structure: Arrays
 
@@ -158,7 +148,7 @@ user_array[3]
 > The **size** of an array describes how many elements it contains. An
 > **index** identifies the position of an element.
 
-![Array to memory mapping](./images/memory_mapping.png)
+![Array to memory mapping](../images/memory_mapping.png)
 
 ## Operations on Arrays
 
@@ -205,7 +195,7 @@ CPU performance. An older 4 GHz processor does not necessarily
 outperform a newer 3 GHz processor because newer architectures may
 perform more work per clock cycle.
 
-# Number of Steps in Array Operations
+## Number of Steps in Array Operations
 
 Let **N** represent the number of elements in an array.
 
@@ -240,12 +230,12 @@ Deleting the first element may require shifting the remaining elements.
 
 ## Array Time Complexity Summary
 
-Operation     Best Case          Worst Case   Big-O Worst Case
-  ----------- ----------- ------------------- ------------------
-Read                  1                   1           **O(1)**
-Insert                1   proportional to N           **O(N)**
-Search                1                   N           **O(N)**
-Delete                1   proportional to N           **O(N)**
+| Operation  | Best Case |        Worst Case | Big-O Worst Case |
+|------------|----------:|------------------:|-----------------:|
+| **Read**   |         1 |                 1 |         **O(1)** |
+| **Insert** |         1 | Proportional to N |         **O(N)** |
+| **Search** |         1 |                 N |         **O(N)** |
+| **Delete** |         1 | Proportional to N |         **O(N)** |
 
 # Conclusion
 
@@ -259,11 +249,11 @@ A programmer should consider both what operations the application needs
 to perform and how the cost of those operations grows as the amount of
 data increases.
 
-In this chapter, you learned:
+In this section, you learned:
 
--   what data structures are,
--   why choosing an appropriate data structure matters,
--   what algorithms are,
--   how arrays organize and access data,
--   how common array operations behave, and
--   why time complexity is important when evaluating algorithms.
+- what data structures are,
+- why choosing an appropriate data structure matters,
+- what algorithms are,
+- how arrays organize and access data,
+- how common array operations behave, and
+- why time complexity is important when evaluating algorithms.
