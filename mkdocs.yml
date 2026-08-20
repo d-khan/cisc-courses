@@ -37,6 +37,7 @@ nav:
       - Dashboard: data-structures/index.md
       - Syllabus: data-structures/syllabus.md
       - Lectures & Labs: data-structures/16_weeks_semester.md
+      - Resources: data-structures/resources/index.md
 
   - CISC 191<br>Intermediate Java:
       - Syllabus: java/syllabus.md

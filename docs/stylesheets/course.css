@@ -412,6 +412,16 @@
     margin-bottom: 0.1rem; /* was 1rem */
 }
 
+.cpp-logo {
+    margin-top: -0.7rem;
+    margin-bottom: 0.1rem;
+}
+
+.jetbrains-logo {
+    margin-top: -1.3rem;
+    margin-bottom: -0.7rem;
+}
+
 /* Individual logo sizes */
 .nrp-logo img {
     max-width: 220px;
@@ -425,6 +435,14 @@
     max-width: 120px;
 }
 
+.cpp-logo img {
+    max-width: 110px;
+}
+
+.jetbrains-logo img {
+    max-width: 230px;
+}
+
 .resource-title {
     font-size: 1.4rem;
     font-weight: 700;
@@ -433,6 +451,7 @@
     min-height: 1rem; /* reserve space for 2 lines */
     margin-bottom: 0.75rem;
     margin-top: 0rem;
+    text-align: center;
 }
 
 .resource-card:hover .resource-title {
@@ -500,6 +519,16 @@
         margin-bottom: 0.1rem; /* was 1rem */
     }
 
+    .cpp-logo {
+        margin-top: -0.7rem;
+        margin-bottom: 0.1rem;
+    }
+
+    .jetbrains-logo {
+        margin-top: -0.7rem;
+        margin-bottom: 0.1rem;
+    }
+
     /* Individual logo sizes */
     .nrp-logo img {
         max-width: 220px;
@@ -513,6 +542,14 @@
         max-width: 120px;
     }
 
+    .cpp-logo {
+        max-width: 120px;
+    }
+
+    .jetbrains-logo {
+        max-width: 120px;
+    }
+
     .resource-title {
         font-size: 1.4rem;
         font-weight: 700;
@@ -521,6 +558,7 @@
         min-height: 1rem; /* reserve space for 2 lines */
         margin-bottom: 0.75rem;
         margin-top: 0rem;
+        text-align: center;
     }
 
     .resource-card:hover .resource-title {

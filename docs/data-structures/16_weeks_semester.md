@@ -13,8 +13,8 @@
 | 10-11 | 26 Oct     | [Graphs](lectures/graphs.md)                                                                               | Implement Breadth-First Search and Depth-First Search Algorithms<br><br>__Activities due: Sun 8 Nov at 11:59 pm__ |
 | 12    | 9 Nov      | [Recursions](lectures/recursions.md)                                                                       | Apply Recursions <br><br>__Activities due: Sun 15 Nov at 11:59 pm__                                               |
 | 13    | 16 Nov     | [Space Constraints](lectures/space-constraints.md)                                                         | Understand Space Constraints in Code Design<br><br>__Activities due: Sun 22 Nov at 11:59 pm__                     |
-| 14-15 | 23 Nov     | Project-2                                                                                                  | __Project-2 due: Sun 6 Dec at 11:59pm__ <br>_Check Canvas for details_                                            |
-| 16    | 7 Dec      |                                                                                                            | __Project Demonstration__ <br> _More details to come..._                                                          |
+| 14-16 | 23 Nov     | Project-2                                                                                                  | __Project-2 due: Sun 6 Dec at 11:59pm__ <br>_Check Canvas for details_                                            |
+| 17    | 14 Dec     |                                                                                                            | __Project Demonstration__ <br> _More details to come..._                                                          |
 
 > **Please note that all times are listed in the Pacific Time Zone (PT). Each assessment will become available in Canvas
 promptly at the scheduled start time indicated above.**
