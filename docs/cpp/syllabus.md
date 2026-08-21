@@ -1,19 +1,20 @@
-# **Syllabus (CISC-187 Data Structures in C++)**
+# **Syllabus (CISC-192 C/C++ Programming)**
 
 ## **Welcome to the course!**
 
-Welcome to the course! I look forward to working with you this semester. This course is designed to encourage curiosity,
-problem-solving, and hands-on learning in a supportive and respectful environment. Do not be afraid to make
-mistakes—they are an important part of learning Computer Science.
+My name is Dr. Danish Khan, and I am excited to begin this educational journey with all of you! Together, we will create
+a supportive and inclusive environment where everyone’s ideas are valued and respected. Your active participation will
+enrich our learning community, and I look forward to getting to know each of you. Let’s make this school year a
+meaningful experience filled with growth, learning, and lasting positive memories!
 
 ## **Course description**
 
-Data Structures in C++ introduces the fundamental data structures and algorithms used in modern software development.
-Students will learn how to design, implement, and analyze core data structures—including arrays, linked lists, stacks,
-queues, trees, heaps, hash tables, and graphs—using the C++ programming language. The course also covers essential
-searching and sorting algorithms, algorithmic complexity, and techniques for selecting appropriate data structures to
-solve computational problems efficiently. This course is intended for students pursuing Computer Science or Computer
-Information Systems and for programmers seeking to strengthen or refresh their C++ programming skills.
+This course provides an introduction to programming using the C++ language. Students will learn fundamental programming
+concepts including data types, operators, control structures, functions, arrays, pointers, and file handling. Emphasis
+is placed on structured and object-oriented programming techniques to design, implement, and test programs. The course
+also covers the organization of standard Input/Output (I/O) classes and the use of modular program design. By the end of
+the course, students will be able to apply C++ programming skills to solve computational problems. This course is
+intended for computer science majors and students seeking a solid foundation in computer programming.
 
 ## **Student learning outcome**
 
@@ -21,16 +22,17 @@ Information Systems and for programmers seeking to strengthen or refresh their C
 
 ## **Course information**
 
-| Course Information | Details                                                         |
-|--------------------|-----------------------------------------------------------------|
-| Course name        | CISC-187 Data Structures in C++                                 |
-| Year               | Fall 2026                                                       |
-| Class ID           | 43391                                                           |
-| Section            | 3001                                                            |
-| Location           | Online                                                          |
-| Duration           | Aug 24 – Dec 21 (16 weeks)                                      |
-| Professor          | Dr Danish Khan                                                  |
-| Contact            | Room M-107P, Office phone: 619-388-7152, Email: dkhan@sdccd.edu |
+| Course Information | Details                                                                               |
+|--------------------|---------------------------------------------------------------------------------------|
+| Course name        | CISC-92 C/C++ Programming                                                             |
+| Year               | Fall 2026                                                                             |
+| Class ID           | 43422                                                                                 |
+| Section            | 3002                                                                                  |
+| Location           | Hyflex (Synchronous inperson or remote); Mons & Weds: 9:35 am - 12:45 pm (Room M:110) |
+| Remote             | <https://sdccd-edu.zoom.us/j/81106030496> (Zoom)                                      |
+| Duration           | Aug 24 – Dec 21 (16 weeks)                                                            |
+| Professor          | Dr Danish Khan                                                                        |
+| Contact            | Room M-107P, Office phone: 619-388-7152, Email: dkhan@sdccd.edu                       |
 
 ## **Important dates/deadline**
 
@@ -42,21 +44,20 @@ Information Systems and for programmers seeking to strengthen or refresh their C
 
 ## **Course topics**
 
-| Topics                                         | Hands-on activities                                                    |
-|------------------------------------------------|------------------------------------------------------------------------|
-| Introduction to Data Structures and Algorithms | Operation on Arrays                                                    |
-| Searching and Big O Notation                   | Implement linear and binary search algorithms                          |
-| Sorting Algorithms I                           | Time complexity of sorting algorithms                                  |
-| Sorting Algorithms II                          | Understand the working of insertion sort algorithm                     |
-| Hash tables                                    | Understand the working of hash algorithms                              |
-| Stacks and Queues                              | Perform operations on stacks and queues                                |
-| Linked lists                                   | Implement single-ended linked list                                     |
-| Binary search trees                            | Understand the working of BST and perform insert and delete operations |
-| Binary heaps                                   | Problem-solving activity on binary heap                                |
-| Graphs I                                       | Implement breadth-first and depth-first algorithms                     |
-| Graphs II                                      | Problem solving activity on Dijkstra's algorithm                       |
-| Recursion                                      | Problem solving activity on recursions                                 |
-| Space constraints                              | Evaluate space complexity algorithms                                   |
+| Topics                                                           | Hands-on activities                                                                                                                                |
+|------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| An overview of computers and programming languages               | Programming with the Problem-Analysis-Coding-Execution Cycle                                                                                       |
+| Basic elements of C++                                            | Apply data types, variables, operators precedence, assignment statements, input-output assignments & debugging                                     |
+| Input/Output                                                     | Write a program which covers I/O streams and standard I/O devices, using predefined functions, output and formatting output, file input and output |
+| Control structures I                                             | Programming exercise which covers if-then-else and switch structures                                                                               |
+| Control structures II                                            | Use while, do, for loops, break and continue statements                                                                                            |
+| User defined functions                                           | Apply programming exercise using void, value returning functions, value parameters, reference variables, scope of variables                        |
+| User defined simple data types                                   | Enumeration type, namespaces and string type                                                                                                       |
+| Arrays and Strings                                               | Single, multidimensional and character arrays                                                                                                      |
+| Records (structs)                                                | Accessing struct members, and arrays vs structs                                                                                                    |
+| Classes and data abstraction                                     | Data abstraction, classes, and abstract data types                                                                                                 |
+| Inheritance and composition                                      | Apply classes, objects and operations                                                                                                              |
+| Pointers, classes, virtual functions, abstract classes and lists | Apply pointer data type, pointer variables, dynamic variables and arrays, abstract classes and pure virtual                                        |
 
 **Detailed Course Roadmap:** The semester-specific schedule, including the order of topics, lecture materials, hands-on
 activities, quizzes, and due dates, is available on the [course website](). Students are responsible for following the
@@ -67,13 +68,12 @@ Course website throughout the semester.
 I recommend following my notes and resources provided on the course site. The following resources are for your reference
 only.
 
-1. Sedgewick, Robert. Algorithms, 4th ed. Addison-Wesley Professional, 2011, ISBN: 032157351X
-2. Mark A. Weiss. Data Structures and Algorithm Analysis in C++, 4th ed. Mark A. Weiss, 2013, ISBN: 0273769383
+D.S. Malik, C++ Programming: Program Design Including Data Structures, 8th ed. Cengage Learning, 2017, ISBN: 1337117560
 
 ## **Software and hardware resources**
 
-- Minimum Laptop/desktop requirements: Intel/AMD CPU, 4GB DDR3/4 generation RAM, 40+GB hard drive, 64-bit OS (
-  Windows/OSX), Microphone, and high-speed Internet.
+- A regular laptop or desktop computer with a reliable internet connection, microphone, and webcam is sufficient for
+  this course.
 - SD Miramar students may check out laptops from the library, dependent on availability
   at <https://sdmiramar.edu/library/materials-checkout>
 
@@ -93,7 +93,7 @@ only.
 ## **Official Course Outline**
 
 The official SDCCD course outline can be found
-at [Official SDCCD Course Outline](https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/17948?entityType=Course&reportId=493)
+at [Official SDCCD Course Outline](https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14396?entityType=Course&reportId=493)
 
 > **Please note that the textbooks listed in the official course outline may differ from the materials used in this
 course section. Refer to this syllabus for the most current course materials and requirements.**

@@ -72,8 +72,8 @@ only.
 
 ## **Software and hardware resources**
 
-- Minimum Laptop/desktop requirements: Intel/AMD CPU, 4GB DDR3/4 generation RAM, 40+GB hard drive, 64-bit OS (
-  Windows/OSX), Microphone, and high-speed Internet.
+- A regular laptop or desktop computer with a reliable internet connection, microphone, and webcam is sufficient for
+  this course.
 - SD Miramar students may check out laptops from the library, dependent on availability
   at <https://sdmiramar.edu/library/materials-checkout>
 

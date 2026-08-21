@@ -43,10 +43,10 @@ nav:
       - Syllabus: java/syllabus.md
 
   - CISC 192<br>C/C++ Programming:
-      - Dashboard: data-structures/index.md
-      - Syllabus: data-structures/syllabus.md
-      - Lectures & Labs: data-structures/16_weeks_semester.md
-      - Resources: data-structures/resources/index.md
+      - Dashboard: cpp/index.md
+      - Syllabus: cpp/syllabus.md
+      - Lectures & Labs: cpp/16_weeks_semester.md
+      - Resources: cpp/resources/index.md
 
   - CISC 211<br>Assembly Language:
       - Dashboard: assembly/index.md
