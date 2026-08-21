@@ -39,11 +39,14 @@ nav:
       - Lectures & Labs: data-structures/16_weeks_semester.md
       - Resources: data-structures/resources/index.md
 
-  - CISC 191<br>Intermediate Java:
+  - CISC 190<br>Java Programming:
       - Syllabus: java/syllabus.md
 
   - CISC 192<br>C/C++ Programming:
-      - Syllabus: cpp/syllabus.md
+      - Dashboard: data-structures/index.md
+      - Syllabus: data-structures/syllabus.md
+      - Lectures & Labs: data-structures/16_weeks_semester.md
+      - Resources: data-structures/resources/index.md
 
   - CISC 211<br>Assembly Language:
       - Dashboard: assembly/index.md

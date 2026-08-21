@@ -1,3 +1,3 @@
-# Intermediate Java
+# Java Programming
 
-Welcome to CISC 191.
+Welcome to CISC 190.
