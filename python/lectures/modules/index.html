@@ -1,0 +1,1823 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>How to make use of a module? - Dr. Khan's Computer Science Courses @ San Diego Miramar College</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-5SGJZZD5EZ"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-5SGJZZD5EZ",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-5SGJZZD5EZ",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-to-make-use-of-a-module" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Dr. Khan&#39;s Computer Science Courses @ San Diego Miramar College" class="md-header__button md-logo" aria-label="Dr. Khan's Computer Science Courses @ San Diego Miramar College" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dr. Khan's Computer Science Courses @ San Diego Miramar College
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              How to make use of a module?
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Dr. Khan&#39;s Computer Science Courses @ San Diego Miramar College" class="md-nav__button md-logo" aria-label="Dr. Khan's Computer Science Courses @ San Diego Miramar College" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Dr. Khan's Computer Science Courses @ San Diego Miramar College
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 179<br>Python Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 179<br>Python Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 187<br>Data Structures in C++
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 187<br>Data Structures in C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 190<br>Java Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 190<br>Java Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 192<br>C/C++ Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 192<br>C/C++ Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 211<br>Assembly Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 211<br>Assembly Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/8_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="how-to-make-use-of-a-module">How to make use of a module?</h1>
+<p>So what is a module? The <a href="https://docs.python.org/3/tutorial/modules.html">Python Tutorial</a> defines it as <strong>a file containing Python definitions and statements</strong>, which can be later imported and used when necessary.</p>
+<p>The handling of modules consists of two different issues:</p>
+<p><img alt="The User vs. Supplier concept" src="https://raw.githubusercontent.com/d-khan/python/refs/heads/main/modules/Screen%20Shot%202025-03-08%20at%207.54.02%20AM.png" /></p>
+<ul>
+<li>the first (probably the most common) happens when you want to use an already existing module, written by someone else, or created by yourself during your work on some complex project - in this case you are the module's <strong>user</strong>;</li>
+<li>the second occurs when you want to create a brand new module, either for your own use, or to make other programmers' lives easier - you are the module's <strong>supplier</strong>.</li>
+</ul>
+<p>Let's discuss them separately.</p>
+<p>First of all, a module is identified by its <strong>name</strong>. If you want to use any module, you need to know the name. A (rather large) number of modules is delivered together with Python itself. You can think of them as a kind of "Python extra equipment".</p>
+<p>All these modules, along with the built-in functions, form the <strong>Python standard library</strong> - a special sort of library where modules play the roles of books (we can even say that folders play the roles of shelves). If you want to take a look at the full list of all "volumes" collected in that library, you can find it here: https://docs.python.org/3/library/index.html.</p>
+<p>Each module consists of entities (like a book consists of chapters). These entities can be functions, variables, constants, classes, and objects. If you know how to access a particular module, you can make use of any of the entities it stores.</p>
+<p><img alt="Accessing modules: math" src="https://raw.githubusercontent.com/d-khan/python/refs/heads/main/modules/Screen%20Shot%202025-03-08%20at%207.57.06%20AM.png" /></p>
+<p>Let's start the discussion with one of the most frequently used modules, named <code>math</code>. Its name speaks for itself - the module contains a rich collection of entities (not only functions) which enable a programmer to effectively implement calculations demanding the use of mathematical functions, like <em>sin()</em> or <em>log()</em>.</p>
+<h1 id="importing-a-module">Importing a module</h1>
+<p>To make a module usable, you must <strong>import</strong> it (think of it like of taking a book off the shelf). Importing a module is done by an instruction named <code>import</code>. Note: <code>import</code> is also a keyword (with all the consequences of this fact).</p>
+<p><img alt="The import keyword" src="https://raw.githubusercontent.com/d-khan/python/refs/heads/main/modules/Screen%20Shot%202025-03-08%20at%207.59.46%20AM.png" /></p>
+<p>Let's assume that you want to use two entities provided by the <code>math</code> module:</p>
+<ul>
+<li>a symbol (constant) representing a precise (as precise as possible using double floating-point arithmetic) value of π (although using a Greek letter to name a variable is fully possible in Python, the symbol is named <strong>pi</strong> - it's a more convenient solution, especially for that part of the world which neither has nor is going to use a Greek keyboard)</li>
+<li>a function named <code>sin()</code> (the computer equivalent of the mathematical <em>sine</em> function)</li>
+</ul>
+<p>Both these entities are available through the <code>math</code> module, but the way in which you can use them strongly depends on how the import has been done.</p>
+<p>The simplest way to import a particular module is to use the import instruction as follows:</p>
+<div class="highlight"><pre><span></span><code>import math
+</code></pre></div>
+<p>The clause contains:</p>
+<ul>
+<li>the <code>import</code> keyword;</li>
+<li>the <strong>name of the module</strong> which is subject to import.</li>
+</ul>
+<p>The instruction may be located anywhere in your code, but it must be placed <strong>before the first use of any of the module's entities</strong>.</p>
+<p>If you want to (or have to) import more than one module, you can do it by repeating the <code>import</code> clause (preferred):</p>
+<div class="highlight"><pre><span></span><code>import math
+
+import sys
+</code></pre></div>
+<p>or by listing the modules after the <code>import</code> keyword, like here:</p>
+<div class="highlight"><pre><span></span><code>import math, sys
+</code></pre></div>
+<p>The instruction imports two modules, first the one named <code>math</code> and then the second named <code>sys</code>.</p>
+<p>The modules' list may be arbitrarily long.</p>
+<h1 id="importing-a-module-continued">Importing a module: continued</h1>
+<p>To continue, you need to become familiar with an important term: <strong>namespace</strong>. Don't worry, we won't go into great detail - this explanation is going to be as short as possible.</p>
+<p>A <strong>namespace</strong> is a space (understood in a non-physical context) in which some names exist and the names don't conflict with each other (i.e., there are not two different objects of the same name). We can say that each social group is a namespace - the group tends to name each of its members in a unique way (e.g., parents won't give their children the same first names).</p>
+<p><img alt="The namespace concept" src="https://raw.githubusercontent.com/d-khan/python/refs/heads/main/modules/Screen%20Shot%202025-03-08%20at%208.01.17%20AM.png" /></p>
+<p>This uniqueness may be achieved in many ways, e.g., by using nicknames along with the first names (it will work inside a small group like a class in a school) or by assigning special identifiers to all members of the group (the US Social Security Number is a good example of such practice).</p>
+<p><strong>Inside a certain namespace, each name must remain unique</strong>. This may mean that some names may disappear when any other entity of an already known name enters the namespace. We'll show you how it works and how to control it, but first, let's return to imports.</p>
+<p>If the module of a specified name <strong>exists and is accessible</strong> (a module is in fact a <strong>Python source file</strong>), Python imports its contents, i.e., <strong>all the names defined in the module become known</strong>, but they don't enter your code's namespace.</p>
+<p>This means that you can have your own entities named <code>sin</code> or <code>pi</code> and they won't be affected by the import in any way.</p>
+<p><img src="https://raw.githubusercontent.com/d-khan/python/refs/heads/main/modules/Screen%20Shot%202025-03-08%20at%208.05.01%20AM.png" alt="The namespace concept: math and pi" style="zoom:50%;" /></p>
+<p>At this point, you may be wondering how to access the <code>pi</code> coming from the <code>math</code> module.</p>
+<p>To do this, you have to qualify the <code>pi</code> with the name of its original module.</p>
+<h1 id="importing-a-module-continued_1">Importing a module: continued</h1>
+<p>Look at the snippet below, this is the way in which you qualify the names of <code>pi</code> and <code>sin</code> with the name of its originating module:</p>
+<div class="highlight"><pre><span></span><code>math.pi
+
+math.sin
+</code></pre></div>
+<p>It's simple, you put:</p>
+<ul>
+<li>the <strong>name of the module</strong> (e.g., <code>math</code>)</li>
+<li>a <strong>dot</strong> (i.e., <code>.</code>)</li>
+<li>the <strong>name of the entity</strong> (e.g., <code>pi</code>)</li>
+</ul>
+<p>Such a form clearly indicates the namespace in which the name exists.</p>
+<p>Note: using this qualification is <strong>compulsory</strong> if a module has been imported by the <code>import</code> module instruction. It doesn't matter if any of the names from your code and from the module's namespace are in conflict or not.</p>
+<p>This first example won't be very advanced - we just want to print the value of <strong>sin(½π)</strong>.</p>
+<p>Look at the code in the editor. This is how we test it.</p>
+<p>The code outputs the expected value: <code>1.0</code>.</p>
+<p>Note: removing any of the two qualifications will make the code erroneous. There is no other way to enter <code>math</code>'s namespace if you did the following:</p>
+<div class="highlight"><pre><span></span><code>import math
+</code></pre></div>
+<h1 id="importing-a-module-continued_2">Importing a module: continued</h1>
+<p>Now we're going to show you how the two namespaces (yours and the module's one) can coexist.</p>
+<p>Take a look at the example in the editor window.</p>
+<p>We've defined our own <code>pi</code> and <code>sin</code> here.</p>
+<p>Run the program. The code should produce the following output:</p>
+<div class="highlight"><pre><span></span><code>0.99999999 1.0
+</code></pre></div>
+<p><strong>output</strong></p>
+<p>As you can see, the entities don't affect each other.</p>
+<h1 id="importing-a-module-continued_3">Importing a module: continued</h1>
+<p>In the second method, the <code>import</code>'s syntax precisely points out which module's entity (or entities) are acceptable in the code:</p>
+<div class="highlight"><pre><span></span><code>from math import pi
+</code></pre></div>
+<p>The instruction consists of the following elements:</p>
+<ul>
+<li>the <code>from</code> keyword;</li>
+<li>the <strong>name of the module</strong> to be (selectively) imported;</li>
+<li>the <code>import</code> keyword;</li>
+<li>the <strong>name or list of names of the entity/entities</strong> which are being imported into the namespace.</li>
+</ul>
+<p>The instruction has this effect:</p>
+<ul>
+<li>the listed entities (and only those ones) are <strong>imported from the indicated module</strong>;</li>
+<li>the names of the imported entities are <strong>accessible without qualification</strong>.</li>
+</ul>
+<p>Note: no other entities are imported. Moreover, you cannot import additional entities using a qualification - a line like this one:</p>
+<div class="highlight"><pre><span></span><code>print(math.e)
+</code></pre></div>
+<p>will cause an error (<code>e</code> is Euler's number: 2.71828...)</p>
+<p>Let's rewrite the previous script to incorporate the new technique.</p>
+<p>Here it is:</p>
+<div class="highlight"><pre><span></span><code>from math import sin, pi
+
+print(sin(pi/2))
+</code></pre></div>
+<p>The output should be the same as previously, as in fact we've used the same entities as before: <code>1.0</code>. Copy the code, paste it in the editor, and run the program.</p>
+<p>Does the code look simpler? Maybe, but the look is not the only effect of this kind of import. Let's show you that.</p>
+<h1 id="importing-a-module-continued_4">Importing a module: continued</h1>
+<p>Look at the code in the editor. Analyze it carefully:</p>
+<ul>
+<li>line 1: carry out the selective import;</li>
+<li>line 3: make use of the imported entities and get the expected result (<code>1.0</code>)</li>
+<li>lines 5 through 12: redefine the meaning of <code>pi</code> and <code>sin</code> - in effect, they supersede the original (imported) definitions within the code's namespace;</li>
+<li>line 15: get <code>0.99999999</code>, which confirms our conclusions.</li>
+</ul>
+<p>Let's do another test. Look at the code below:</p>
+<div class="highlight"><pre><span></span><code>pi = 3.14
+
+def sin(x):
+    if 2 * x == pi:
+        return 0.99999999
+    else:
+        return None
+
+print(sin(pi / 2))
+
+from math import sin, pi
+
+print(sin(pi / 2))
+</code></pre></div>
+<p>Here, we've reversed the sequence of the code's operations:</p>
+<ul>
+<li>lines 1 through 8: define our own <code>pi</code> and <code>sin</code>;</li>
+<li>line 11: make use of them (<code>0.99999999</code> appears on the screen)</li>
+<li>line 13: carry out the import - the imported symbols <strong>supersede their previous definitions within the namespace</strong>;</li>
+<li>line 15: get <code>1.0</code> as a result.</li>
+</ul>
+<h1 id="importing-a-module_1">Importing a module: *</h1>
+<p>In the third method, the <code>import</code>'s syntax is a more aggressive form of the previously presented one:</p>
+<div class="highlight"><pre><span></span><code>from module import *
+</code></pre></div>
+<p>As you can see, the name of an entity (or the list of entities' names) is replaced with a single asterisk (<code>*</code>).</p>
+<p>Such an instruction <strong>imports all entities from the indicated module</strong>.</p>
+<p>Is it convenient? Yes, it is, as it relieves you of the duty of enumerating all the names you need.</p>
+<p>Is it unsafe? Yes, it is - unless you know all the names provided by the module, <strong>you may not be able to avoid name conflicts</strong>. Treat this as a temporary solution, and try not to use it in regular code.</p>
+<h2 id="importing-a-module-the-as-keyword">Importing a module: the as keyword</h2>
+<p>If you use the import module variant and you don't like a particular module's name (e.g., it's the same as one of your already defined entities, so qualification becomes troublesome) you can give it any name you like - this is called <strong>aliasing</strong>.</p>
+<p>Aliasing causes the module to be identified under a different name than the original. This may shorten the qualified names, too.</p>
+<p>Creating an alias is done together with importing the module, and demands the following form of the import instruction:</p>
+<div class="highlight"><pre><span></span><code>import module as alias
+</code></pre></div>
+<p>The "module" identifies the original module's name while the "alias" is the name you wish to use instead of the original.</p>
+<p>Note: <code>as</code> is a keyword.</p>
+<h1 id="importing-a-module-continued_5">Importing a module: continued</h1>
+<p>If you need to change the word <code>math</code>, you can introduce your own name, just like in the example:</p>
+<div class="highlight"><pre><span></span><code>import math as m
+
+print(m.sin(m.pi/2))
+</code></pre></div>
+<p>Note: after successful execution of an aliased import, the <strong>original module name becomes inaccessible</strong> and must not be used.</p>
+<p>In turn, when you use the <code>from module import name</code> variant and you need to change the entity's name, you make an alias for the entity. This will cause the name to be replaced by the alias you choose.</p>
+<p>This is how it can be done:</p>
+<div class="highlight"><pre><span></span><code>from module import name as alias
+</code></pre></div>
+<p>As previously, the original (unaliased) name becomes inaccessible.</p>
+<p>The phrase <code>name as alias</code> can be repeated - use commas to separate the multiplied phrases, like this:</p>
+<div class="highlight"><pre><span></span><code>from module import n as a, m as b, o as c
+</code></pre></div>
+<p>The example may look a bit weird, but it works:</p>
+<div class="highlight"><pre><span></span><code>from math import pi as PI, sin as sine
+
+print(sine(PI/2))
+</code></pre></div>
+<h1 id="key-takeaways">Key takeaways</h1>
+<ol>
+<li>If you want to import a module as a whole, you can do it using the <code>import module_name</code> statement. You are allowed to import more than one module at once using a comma-separated list. For example:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>import mod1
+
+import mod2, mod3, mod4
+</code></pre></div>
+<p>although the latter form is not recommended due to stylistic reasons, and it's better and prettier to express the same intention in more a verbose and explicit form, such as:</p>
+<div class="highlight"><pre><span></span><code>import mod2
+
+import mod3
+
+import mod4
+</code></pre></div>
+<ol>
+<li>If a module is imported in the above manner and you want to access any of its entities, you need to prefix the entity's name using <strong>dot notation</strong>. For example:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>import my_module
+
+result = my_module.my_function(my_module.my_data)
+</code></pre></div>
+<p>The snippet makes use of two entities coming from the <code>my_module</code> module: a function named <code>my_function()</code> and a variable named <code>my_data</code>. Both names <strong>must be prefixed by</strong> <code>my_module.</code> None of the imported entity names conflicts with the identical names existing in your code's namespace.</p>
+<ol>
+<li>You are allowed not only to import a module as a whole, but to import only individual entities from it. In this case, the imported entities <strong>must not be</strong> prefixed when used. For example:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>from module import my_function, my_data
+
+result = my_function(my_data)
+</code></pre></div>
+<p>The above way - despite its attractiveness - is not recommended because of the danger of causing conflicts with names derived from importing the code's namespace.</p>
+<ol>
+<li>The most general form of the above statement allows you to import <strong>all entities</strong> offered by a module:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>from my_module import *
+
+result = my_function(my_data)
+</code></pre></div>
+<p><strong>Note</strong>: this import's variant is not recommended due to the same reasons as previously (the threat of a naming conflict is even more dangerous here).</p>
+<ol>
+<li>You can change the name of the imported entity "on the fly" by using the <code>as</code> phrase of the <code>import</code>. For example:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>from module import my_function as fun, my_data as dat
+
+result = fun(dat)
+</code></pre></div>
+<p><strong>Exercise 1</strong></p>
+<p>You want to invoke the function <code>make_money()</code> contained in the module named <code>mint</code>. Your code begins with the following line:</p>
+<div class="highlight"><pre><span></span><code>import mint 
+</code></pre></div>
+<p>What is the proper form of the function's invocation?</p>
+<p><strong>Answer:</strong> <code>mint.make_money()</code></p>
+<p><strong>Exercise 2</strong></p>
+<p>You want to invoke the function <code>make_money()</code> contained in the module named <code>mint</code>. Your code begins with the following line:</p>
+<div class="highlight"><pre><span></span><code>from mint import make_money  
+</code></pre></div>
+<p>What is the proper form of the function's invocation?</p>
+<p><strong>Answer: </strong><code>make_money()</code></p>
+<p><strong>Exercise 3</strong></p>
+<p>You've written a function named <code>make_money</code> on your own. You need to import a function of the same name from the <code>mint</code> module and don't want to rename any of your previously defined names. Which variant of the <code>import</code> statement may help you with the issue?</p>
+<p><strong>Answer:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># sample solution</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mint</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_money</span> <span class="k">as</span> <span class="n">make_more_money</span>
+</code></pre></div>
+<p><strong>Exercise 4</strong></p>
+<p>What form of the <code>make_money</code> function invocation is valid if your code starts with the following line?</p>
+<div class="highlight"><pre><span></span><code>from mint import * 
+</code></pre></div>
+<p><strong>Answer:</strong> <code>make_money()</code></p>
+<h1 id="working-with-standard-modules">Working with standard modules</h1>
+<p>Before we start going through some standard Python modules, we want to introduce the <code>dir()</code> function to you. It has nothing to do with the <code>dir</code> command you know from Windows and Unix consoles, as <code>dir()</code> doesn't show the contents of a disk directory/folder, but there is no denying that it does something really similar - it is able to reveal all the names provided through a particular module.</p>
+<p>There is one condition: the module has to have been previously imported as a whole (i.e., using the <code>import module</code> instruction - <code>from module</code> is not enough).</p>
+<p>The function returns an <strong>alphabetically sorted list</strong> containing all entities' names available in the module identified by a name passed to the function as an argument:</p>
+<div class="highlight"><pre><span></span><code>dir(module)
+</code></pre></div>
+<p>Note: if the module's name has been aliased, you must use the alias, not the original name.</p>
+<p>Using the function inside a regular script doesn't make much sense, but it is still possible.</p>
+<p>For example, you can run the following code to print the names of all entities within the <code>math</code> module:</p>
+<div class="highlight"><pre><span></span><code>import math
+
+
+
+for name in dir(math):
+
+    print(name, end=&quot;\t&quot;)
+</code></pre></div>
+<p>The example code should produce the following output:</p>
+<div class="highlight"><pre><span></span><code>__doc__ __loader__  __name__    __package__ __spec__    acos    acosh   asin    asinh   atan    atan2   atanh   ceil    copysign    cos cosh    degrees e   erf erfc    exp expm1   fabs    factorial   floor   fmod    frexp   fsum    gamma   hypot   isfinite    isinf   isnan   ldexp   lgamma  log log10   log1p   log2    modf    pi  pow radians sin sinh    sqrt    tan tanh    trunc   
+</code></pre></div>
+<p>Have you noticed these strange names beginning with <code>__</code> at the top of the list? We'll tell you more about them when we talk about the issues related to writing your own modules.</p>
+<p>Some of the names might bring back memories from math lessons, and you probably won't have any problems guessing their meanings.</p>
+<p>Using the <code>dir()</code> function inside a code may not seem very useful - usually you want to know a particular module's contents before you write and run the code.</p>
+<p>Fortunately, you can execute the function <strong>directly in the Python console</strong> (IDLE), without needing to write and run a separate script.</p>
+<p>This is how it can be done:</p>
+<div class="highlight"><pre><span></span><code>import math
+
+dir(math)
+</code></pre></div>
+<p>You should see something similar to this:</p>
+<p><img alt="Python console window - the math module contents" src="https://raw.githubusercontent.com/d-khan/python/refs/heads/main/modules/Screen%20Shot%202025-03-08%20at%208.14.47%20AM.png" /></p>
+<h1 id="selected-functions-from-the-math-module">Selected functions from the math module</h1>
+<p>Let's start with a quick preview of some of the functions provided by the <code>math</code> module.</p>
+<p>We've chosen them arbitrarily, but that doesn't mean that the functions we haven't mentioned here are any less significant. Dive into the modules' depths yourself - we don't have the space or the time to talk about everything in detail here.</p>
+<p>The first group of the <code>math</code>'s functions are connected with <strong>trigonometry</strong>:</p>
+<ul>
+<li><code>sin(x)</code> → the sine of x;</li>
+<li><code>cos(x)</code> → the cosine of x;</li>
+<li><code>tan(x)</code> → the tangent of x.</li>
+</ul>
+<p>All these functions take one argument (an angle measurement expressed in radians) and return the appropriate result (be careful with <code>tan()</code> - not all arguments are accepted).</p>
+<p>Of course, there are also their inversed versions:</p>
+<ul>
+<li><code>asin(x)</code> → the arcsine of x;</li>
+<li><code>acos(x)</code> → the arccosine of x;</li>
+<li><code>atan(x)</code> → the arctangent of x.</li>
+</ul>
+<p>These functions take one argument (mind the domains) and return a measure of an angle in radians.</p>
+<p>To effectively operate on angle measurements, the <code>math</code> module provides you with the following entities:</p>
+<ul>
+<li><code>pi</code> → a constant with a value that is an approximation of π;</li>
+<li><code>radians(x)</code> → a function that converts x from degrees to radians;</li>
+<li><code>degrees(x)</code> → acting in the other direction (from radians to degrees)</li>
+</ul>
+<p>Now look at the code in the editor. The example program isn't very sophisticated, but can you predict its results?</p>
+<p>Apart from the circular functions (listed above) the <code>math</code> module also contains a set of their <strong>hyperbolic analogues</strong>:</p>
+<ul>
+<li><code>sinh(x)</code> → the hyperbolic sine;</li>
+<li><code>cosh(x)</code> → the hyperbolic cosine;</li>
+<li><code>tanh(x)</code> → the hyperbolic tangent;</li>
+<li><code>asinh(x)</code> → the hyperbolic arcsine;</li>
+<li><code>acosh(x)</code> → the hyperbolic arccosine;</li>
+<li><code>atanh(x)</code> → the hyperbolic arctangent.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">radians</span><span class="p">,</span> <span class="n">degrees</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">tan</span><span class="p">,</span> <span class="n">asin</span>
+
+<span class="n">ad</span> <span class="o">=</span> <span class="mi">90</span>
+<span class="n">ar</span> <span class="o">=</span> <span class="n">radians</span><span class="p">(</span><span class="n">ad</span><span class="p">)</span>
+<span class="n">ad</span> <span class="o">=</span> <span class="n">degrees</span><span class="p">(</span><span class="n">ar</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ad</span> <span class="o">==</span> <span class="mf">90.</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ar</span> <span class="o">==</span> <span class="n">pi</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">ar</span><span class="p">)</span> <span class="o">/</span> <span class="n">cos</span><span class="p">(</span><span class="n">ar</span><span class="p">)</span> <span class="o">==</span> <span class="n">tan</span><span class="p">(</span><span class="n">ar</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">asin</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">ar</span><span class="p">))</span> <span class="o">==</span> <span class="n">ar</span><span class="p">)</span>
+</code></pre></div>
+<h1 id="selected-functions-from-the-math-module-continued">Selected functions from the math module: continued</h1>
+<p>Another group of the <code>math</code>'s functions is formed by functions which are connected with <strong>exponentiation</strong>:</p>
+<ul>
+<li><code>e</code> → a constant with a value that is an approximation of Euler's number (e)</li>
+<li><code>exp(x)</code> → finding the value of ex;</li>
+<li><code>log(x)</code> → the natural logarithm of x</li>
+<li><code>log(x, b)</code> → the logarithm of x to base b</li>
+<li><code>log10(x)</code> → the decimal logarithm of x (more precise than <code>log(x, 10)</code>)</li>
+<li><code>log2(x)</code> → the binary logarithm of x (more precise than <code>log(x, 2)</code>)</li>
+</ul>
+<p>Note: the <code>pow()</code> function:</p>
+<ul>
+<li><code>pow(x, y)</code> → finding the value of xy (mind the domains)</li>
+</ul>
+<p>This is a built-in function, and doesn't have to be imported.</p>
+<p>Look at the code in the editor. Can you predict its output?</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">e</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">log</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">exp</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="n">exp</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="o">==</span> <span class="n">exp</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</code></pre></div>
+<h1 id="selected-functions-from-the-math-module-continued_1">Selected functions from the math module: continued</h1>
+<p>The last group consists of some general-purpose functions like:</p>
+<ul>
+<li><code>ceil(x)</code> → the ceiling of x (the smallest integer greater than or equal to x)</li>
+<li><code>floor(x)</code> → the floor of x (the largest integer less than or equal to x)</li>
+<li><code>trunc(x)</code> → the value of x truncated to an integer (be careful - it's not an equivalent either of ceil or floor)</li>
+<li><code>factorial(x)</code> → returns x! (x has to be an integral and not a negative)</li>
+<li><code>hypot(x, y)</code> → returns the length of the hypotenuse of a right-angle triangle with the leg lengths equal to x and y (the same as <code>sqrt(pow(x, 2) + pow(y, 2))</code> but more precise)</li>
+</ul>
+<p>Look at the code in the editor. Analyze the program carefully.</p>
+<p>It demonstrates the fundamental differences between <code>ceil()</code>, <code>floor()</code> and <code>trunc()</code>.</p>
+<p>Run the program and check its output.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">ceil</span><span class="p">,</span> <span class="n">floor</span><span class="p">,</span> <span class="n">trunc</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mf">1.4</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">2.6</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">floor</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">floor</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">floor</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">),</span> <span class="n">floor</span><span class="p">(</span><span class="o">-</span><span class="n">y</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">ceil</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">),</span> <span class="n">ceil</span><span class="p">(</span><span class="o">-</span><span class="n">y</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">trunc</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">trunc</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">trunc</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">),</span> <span class="n">trunc</span><span class="p">(</span><span class="o">-</span><span class="n">y</span><span class="p">))</span>
+</code></pre></div>
+<h1 id="is-there-real-randomness-in-computers">Is there real randomness in computers?</h1>
+<p>Another module worth mentioning is the one named <code>random</code>.</p>
+<p>It delivers some mechanisms allowing you to operate with <strong>pseudorandom numbers</strong>.</p>
+<p>Note the prefix <strong>pseudo</strong> - the numbers generated by the modules may look random in the sense that you cannot predict their subsequent values, but don't forget that they all are calculated using very refined algorithms.</p>
+<p>The algorithms aren't random - they are deterministic and predictable. Only those physical processes which run completely out of our control (like the intensity of cosmic radiation) may be used as a source of actual random data. Data produced by deterministic computers cannot be random in any way.</p>
+<p>A random number generator takes a value called a <strong>seed</strong>, treats it as an input value, calculates a "random" number based on it (the method depends on a chosen algorithm) and produces a <strong>new seed value</strong>.</p>
+<p>The length of a cycle in which all seed values are unique may be very long, but it isn't infinite - sooner or later the seed values will start repeating, and the generating values will repeat, too. This is normal. It's a feature, not a mistake, or a bug.</p>
+<p>The initial seed value, set during the program start, determines the order in which the generated values will appear.</p>
+<p>The random factor of the process may be <strong>augmented by setting the seed with a number taken from the current time</strong> - this may ensure that each program launch will start from a different seed value (ergo, it will use different random numbers).</p>
+<p>Fortunately, such an initialization is done by Python during module import.</p>
+<h1 id="selected-functions-from-the-random-module">Selected functions from the random module</h1>
+<p><strong>The random function</strong></p>
+<p>The most general function named <code>random()</code> (not to be confused with the module's name) <strong>produces a float number <code>x</code> coming from the range <code>(0.0, 1.0)</code></strong> - in other words: (0.0 &lt;= x &lt; 1.0).</p>
+<p>The example program below will produce five pseudorandom values - as their values are determined by the current (rather unpredictable) seed value, you can't guess them:</p>
+<p>``</p>
+<div class="highlight"><pre><span></span><code>from random import random 
+
+for i in range(5): 
+    print(random()) 
+</code></pre></div>
+<p>``</p>
+<p>Run the program. This is what we've got:</p>
+<div class="highlight"><pre><span></span><code>0.9535768927411208 0.5312710096244534 0.8737691983477731 0.5896799172452125 0.02116716297022092
+</code></pre></div>
+<p><strong>The seed function</strong></p>
+<p>The <code>seed()</code> function is able to directly <strong>set the generator's seed</strong>. We'll show you two of its variants:</p>
+<ul>
+<li><code>seed()</code> - sets the seed with the current time;</li>
+<li><code>seed(int_value)</code> - sets the seed with the integer value <code>int_value</code>.</li>
+</ul>
+<p>We've modified the previous program - in effect, we've removed any trace of randomness from the code:</p>
+<div class="highlight"><pre><span></span><code>from random import random, seed
+
+seed(0)
+
+for i in range(5):
+
+    print(random())
+</code></pre></div>
+<p>Due to the fact that the seed is always set with the same value, the sequence of generated values always looks the same.</p>
+<p>Run the program. This is what we've got:</p>
+<div class="highlight"><pre><span></span><code>0.844421851525 0.75795440294 0.420571580831 0.258916750293 0.511274721369
+</code></pre></div>
+<p>And you?</p>
+<p>Note: your values may be slightly different than ours if your system uses more precise or less precise floating-point arithmetic, but the difference will be seen quite far from the decimal point.</p>
+<h1 id="selected-functions-from-the-random-module-continued">Selected functions from the random module: continued</h1>
+<p><strong>The randrange and randint functions</strong></p>
+<p>If you want integer random values, one of the following functions would fit better:</p>
+<ul>
+<li><code>randrange(end)</code></li>
+<li><code>randrange(beg, end)</code></li>
+<li><code>randrange(beg, end, step)</code></li>
+<li><code>randint(left, right)</code></li>
+</ul>
+<p>The first three invocations will generate an integer taken (pseudorandomly) from the range (respectively):</p>
+<ul>
+<li><code>range(end)</code></li>
+<li><code>range(beg, end)</code></li>
+<li><code>range(beg, end, step)</code></li>
+</ul>
+<p>Note the implicit <strong>right-sided exclusion</strong>!</p>
+<p>The last function is an equivalent of <code>randrange(left, right+1)</code> - it generates the integer value <code>i</code>, which falls in the range [left, right] (no exclusion on the right side).</p>
+<p>Look at the code in the editor. This sample program will consequently output a line consisting of three zeros and either a zero or one at the fourth place.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">randrange</span><span class="p">,</span> <span class="n">randint</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</code></pre></div>
+<h1 id="selected-functions-from-the-random-module-continued_1">Selected functions from the random module: continued</h1>
+<p>The previous functions have one important disadvantage - they may produce repeating values even if the number of subsequent invocations is not greater than the width of the specified range.</p>
+<p>Look at the code below - the program very likely outputs a set of numbers in which some elements are not unique:</p>
+<p>``</p>
+<div class="highlight"><pre><span></span><code>from random import randint 
+
+for i in range(10): 
+    print(randint(1, 10), end=&#39;,&#39;) 
+</code></pre></div>
+<p>``</p>
+<p>This is what we got in one of the launches:</p>
+<div class="highlight"><pre><span></span><code>9,4,5,4,5,8,9,4,8,4,
+</code></pre></div>
+<p><strong>sample output</strong></p>
+<p><strong>The choice and sample functions</strong></p>
+<p>As you can see, this is not a good tool for generating numbers in a lottery. Fortunately, there is a better solution than writing your own code to check the uniqueness of the "drawn" numbers.</p>
+<p>It's a function named in a very suggestive way - <code>choice</code>:</p>
+<ul>
+<li><code>choice(sequence)</code></li>
+<li><code>sample(sequence, elements_to_choose)</code></li>
+</ul>
+<p>The first variant chooses a "random" element from the input sequence and returns it.</p>
+<p>The second one builds a list (a sample) consisting of the <code>elements_to_choose</code> element "drawn" from the input sequence.</p>
+<p>In other words, the function chooses some of the input elements, returning a list with the choice. The elements in the sample are placed in random order. Note: the <code>elements_to_choose</code> must not be greater than the length of the input sequence.</p>
+<p>Look at the code below:</p>
+<div class="highlight"><pre><span></span><code>from random import choice, sample
+
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+print(choice(my_list))
+
+print(sample(my_list, 5))
+
+print(sample(my_list, 10))
+</code></pre></div>
+<p>Again, the output of the program is not predictable. Our results looked like this:</p>
+<div class="highlight"><pre><span></span><code>4 [3, 1, 8, 9, 10] [10, 8, 5, 1, 6, 4, 3, 9, 7, 2]
+</code></pre></div>
+<p>Sometimes, it may be necessary to find out information unrelated to Python. For example, you may need to know the location of your program within the greater environment of the computer.</p>
+<p>Imagine your program's environment as a pyramid consisting of a number of layers or platforms.</p>
+<p><img alt="Program's environment layers" src="https://raw.githubusercontent.com/d-khan/python/refs/heads/main/modules/Screen%20Shot%202025-03-08%20at%208.21.10%20AM.png" /></p>
+<p>The layers are:</p>
+<ul>
+<li>your (running) code is located at the top of it;</li>
+<li>Python, or more precisely, its runtime environment, lies directly below it;</li>
+<li>the next layer of the pyramid is filled with the OS (operating system) – Python's environment provides some of its functionalities using the operating system's services; Python, although very powerful, isn't omnipotent – it's forced to use many helpers if it's going to process files or communicate with physical devices;</li>
+<li>
+<p>the bottom-most layer is hardware – the processor (or processors), network interfaces, human interface devices (mouse, keyboards, etc.) and all other machinery needed to make the computer run; the OS knows how to drive it, and uses lots of tricks to conduct all parts in a consistent rhythm.</p>
+</li>
+<li>
+<p><strong>your code</strong> wants to create a file, so it invokes one of Python's functions;</p>
+</li>
+<li><strong>Python</strong> accepts the order, rearranges it to meet local OS requirements, which is like putting the stamp "approved" on your request, and sends it down (this may remind you of a chain of command)</li>
+<li>the <strong>OS</strong> checks if the request is reasonable and valid (e.g., whether the file name conforms to some syntax rules) and tries to create the file; such an operation, seemingly very simple, isn't atomic – it consists of many minor steps taken by...</li>
+<li>the <strong>hardware</strong>, which is responsible for activating storage devices (hard disk, solid state devices, etc.) to satisfy the OS's needs.</li>
+</ul>
+<p>Usually, you're not aware of all that fuss – you want the file to be created and that's that.</p>
+<p>But sometimes you want to know more – for example, the name of the OS which hosts Python, and some characteristics describing the hardware that hosts the OS.</p>
+<p>There is a module providing some means to allow you to know where you are and what components work for you. The module is named <strong>platform</strong>. We'll show you some of the functions it provides to you.</p>
+<h1 id="selected-functions-from-the-platform-module">Selected functions from the platform module</h1>
+<p><strong>The platform function</strong></p>
+<p>The <code>platform</code> module lets you access the underlying platform's data, i.e., hardware, operating system, and interpreter version information.</p>
+<p>There is a function that can show you all the underlying layers in one glance, named <code>platform</code>, too. It just returns a string describing the environment; thus, its output is rather addressed to humans than to automated processing (you'll see it soon).</p>
+<p>This is how you can invoke it:</p>
+<p>``</p>
+<div class="highlight"><pre><span></span><code>platform(aliased = False, terse = False) 
+</code></pre></div>
+<p>And now:</p>
+<ul>
+<li><code>aliased</code> → when set to <code>True</code> (or any non-zero value) it may cause the function to present the alternative underlying layer names instead of the common ones;</li>
+<li><code>terse</code> → when set to <code>True</code> (or any non-zero value) it may convince the function to present a briefer form of the result (if possible)</li>
+</ul>
+<p>We ran our sample program using three different platforms - this is what we got:</p>
+<p><strong>Intel x86 + Windows ® Vista (32 bit)</strong>:</p>
+<div class="highlight"><pre><span></span><code>Windows-Vista-6.0.6002-SP2 Windows-Vista-6.0.6002-SP2 Windows-Vista
+</code></pre></div>
+<p><strong>Intel x86 + Gentoo Linux (64 bit)</strong>:</p>
+<div class="highlight"><pre><span></span><code>Linux-3.18.62-g6-x86_64-Intel-R-_Core-TM-_i3-2330M_CPU_@_2.20GHz-with-gentoo-2.3 Linux-3.18.62-g6-x86_64-Intel-R-_Core-TM-_i3-2330M_CPU_@_2.20GHz-with-gentoo-2.3 Linux-3.18.62-g6-x86_64-Intel-R-_Core-TM-_i3-2330M_CPU_@_2.20GHz-with-glibc2.3.4
+</code></pre></div>
+<p><strong>Raspberry PI2 + Raspbian Linux (32 bit)</strong>:</p>
+<div class="highlight"><pre><span></span><code>Linux-4.4.0-1-rpi2-armv7l-with-debian-9.0 Linux-4.4.0-1-rpi2-armv7l-with-debian-9.0 Linux-4.4.0-1-rpi2-armv7l-with-glibc2.9
+</code></pre></div>
+<p>You can also run the sample program in IDLE on your local machine to check what output you will have.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">platform</span><span class="w"> </span><span class="kn">import</span> <span class="n">platform</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">platform</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">platform</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">platform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</code></pre></div>
+<h1 id="selected-functions-from-the-platform-module-continued">Selected functions from the platform module: continued</h1>
+<p><strong>The machine function</strong></p>
+<p>Sometimes, you may just want to know the generic name of the processor which runs your OS together with Python and your code - a function named <code>machine()</code> will tell you that. As previously, the function returns a string.</p>
+<p>Again, we ran the sample program on three different platforms:</p>
+<p><strong>Intel x86 + Windows ® Vista (32 bit)</strong>:</p>
+<div class="highlight"><pre><span></span><code>x86
+</code></pre></div>
+<hr />
+<p><strong>Intel x86 + Gentoo Linux (64 bit)</strong>:</p>
+<div class="highlight"><pre><span></span><code>x86_64
+</code></pre></div>
+<p><strong>Raspberry PI2 + Raspbian Linux (32 bit)</strong>:</p>
+<div class="highlight"><pre><span></span><code>armv7l
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">platform</span><span class="w"> </span><span class="kn">import</span> <span class="n">machine</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">machine</span><span class="p">())</span>
+</code></pre></div>
+<h1 id="selected-functions-from-the-platform-module-continued_1">Selected functions from the platform module: continued</h1>
+<p><strong>The processor function</strong></p>
+<p>The <code>processor()</code> function returns a string filled with the real processor name (if possible).</p>
+<p>Once again, we ran the sample program on three different platforms:</p>
+<p><strong>Intel x86 + Windows ® Vista (32 bit)</strong>:</p>
+<div class="highlight"><pre><span></span><code>x86
+</code></pre></div>
+<p><strong>Intel x86 + Gentoo Linux (64 bit)</strong>:</p>
+<div class="highlight"><pre><span></span><code>Intel(R) Core(TM) i3-2330M CPU @ 2.20GHz
+</code></pre></div>
+<p><strong>Raspberry PI2 + Raspbian Linux (32 bit)</strong>:</p>
+<div class="highlight"><pre><span></span><code>armv7l
+</code></pre></div>
+<p>Test this on your local machine.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">platform</span><span class="w"> </span><span class="kn">import</span> <span class="n">processor</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">processor</span><span class="p">())</span>
+</code></pre></div>
+<h1 id="selected-functions-from-the-platform-module-continued_2">Selected functions from the platform module: continued</h1>
+<p><strong>The system function</strong></p>
+<p>A function named <code>system()</code> returns the generic OS name as a string.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">platform</span><span class="w"> </span><span class="kn">import</span> <span class="n">system</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">system</span><span class="p">())</span>
+</code></pre></div>
+<p>Our example platforms presented themselves like this:</p>
+<p><strong>Intel x86 + Windows ® Vista (32 bit)</strong>:</p>
+<div class="highlight"><pre><span></span><code>Windows
+</code></pre></div>
+<p><strong>Intel x86 + Gentoo Linux (64 bit)</strong>:</p>
+<div class="highlight"><pre><span></span><code>Linux
+</code></pre></div>
+<p><strong>Raspberry PI2 + Raspbian Linux (32 bit)</strong>:</p>
+<div class="highlight"><pre><span></span><code>Linux
+</code></pre></div>
+<h1 id="selected-functions-from-the-platform-module-continued_3">Selected functions from the platform module: continued</h1>
+<p><strong>The version function</strong></p>
+<p>The OS version is provided as a string by the <code>version()</code> function.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">platform</span><span class="w"> </span><span class="kn">import</span> <span class="n">version</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">version</span><span class="p">())</span>
+</code></pre></div>
+<p>Run the code and check its output. This is what we got:</p>
+<p><strong>Intel x86 + Windows ® Vista (32 bit)</strong>:</p>
+<div class="highlight"><pre><span></span><code>6.0.6002
+</code></pre></div>
+<p><strong>Intel x86 + Gentoo Linux (64 bit)</strong>:</p>
+<div class="highlight"><pre><span></span><code>#1 SMP PREEMPT Fri Jul 21 22:44:37 CEST 2017
+</code></pre></div>
+<p><strong>Raspberry PI2 + Raspbian Linux (32 bit)</strong>:</p>
+<div class="highlight"><pre><span></span><code>#1 SMP Debian 4.4.6-1+rpi14 (2016-05-05)
+</code></pre></div>
+<h1 id="selected-functions-from-the-platform-module-continued_4">Selected functions from the platform module: continued</h1>
+<p><strong>The python_implementation and the python_version_tuple functions</strong></p>
+<p>If you need to know what version of Python is running your code, you can check it using a number of dedicated functions - here are two of them:</p>
+<ul>
+<li>
+<p><code>python_implementation()</code> → returns a string denoting the Python implementation (expect <code>CPython</code> here, unless you decide to use any non-canonical Python branch)</p>
+</li>
+<li></li>
+<li>
+<p><code>python_version_tuple()</code></p>
+<p>returns a three-element tuple filled with:</p>
+</li>
+<li>
+<p>the <strong>major</strong> part of Python's version;</p>
+</li>
+<li>the <strong>minor</strong> part;</li>
+<li>the <strong>patch</strong> level number.</li>
+</ul>
+<p>Our example program produced the following output:</p>
+<div class="highlight"><pre><span></span><code>CPython 3 7 7
+</code></pre></div>
+<p><strong>sample output</strong></p>
+<p>It's very likely that your version of Python will be different.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">platform</span><span class="w"> </span><span class="kn">import</span> <span class="n">python_implementation</span><span class="p">,</span> <span class="n">python_version_tuple</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">python_implementation</span><span class="p">())</span>
+
+<span class="k">for</span> <span class="n">atr</span> <span class="ow">in</span> <span class="n">python_version_tuple</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">atr</span><span class="p">)</span>
+</code></pre></div>
+<h1 id="python-module-index">Python Module Index</h1>
+<p>We have only covered the basics of Python modules here. Python's modules make up their own universe, in which Python itself is only a galaxy, and we would venture to say that exploring the depths of these modules can take significantly more time than getting acquainted with "pure" Python.</p>
+<p>Moreover, the Python community all over the world creates and maintains hundreds of additional modules used in very niche applications like genetics, psychology, or even astrology.</p>
+<p>These modules aren't (and won't be) distributed along with Python, or through official channels, which makes the Python universe broader - almost infinite.</p>
+<p>You can read about all standard Python modules here: https://docs.python.org/3/py-modindex.html.</p>
+<p>Don't worry - you won't need all these modules. Many of them are very specific.</p>
+<p>All you need to do is find the modules you want, and teach yourself how to use them. It's easy.</p>
+<h1 id="key-takeaways_1">Key takeaways</h1>
+<ol>
+<li>A function named <code>dir()</code> can show you a list of the entities contained inside an imported module. For example:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>import os
+
+dir(os)
+</code></pre></div>
+<p>prints out the list of all the <code>os</code> module's facilities you can use in your code.</p>
+<ol>
+<li>The <code>math</code> module couples more than 50 symbols (functions and constants) that perform mathematical operations (like <code>sine()</code>, <code>pow()</code>, <code>factorial()</code>) or providing important values (like <strong>π</strong> and the Euler symbol <strong>e</strong>).</li>
+<li>The <code>random</code> module groups more than 60 entities designed to help you use pseudo-random numbers. Don't forget the prefix "random", as there is no such thing as a real random number when it comes to generating them using the computer's algorithms.</li>
+<li>The <code>platform</code> module contains about 70 functions which let you dive into the underlaying layers of the OS and hardware. Using them allows you to get to know more about the environment in which your code is executed.</li>
+<li><strong>Python Module Index</strong> (https://docs.python.org/3/py-modindex.html is a community-driven directory of modules available in the Python universe. If you want to find a module fitting your needs, start your search there.</li>
+</ol>
+<p><strong>Exercise 1</strong></p>
+<p>What is the expected value of the <code>result</code> variable after the following code is executed?</p>
+<div class="highlight"><pre><span></span><code>import math result = math.e == math.exp(1) 
+</code></pre></div>
+<p><strong>Answer: True</strong></p>
+<p><strong>Exercise 2</strong></p>
+<p>(Complete the sentence) Setting the generator's seed with the same value each time your program is run guarantees that...</p>
+<p><strong>Answer:</strong>.. the pseudo-random values emitted from the <code>random</code> module will be exactly the same.</p>
+<p><strong>Exercise 3</strong></p>
+<p>Which of the <code>platform</code> module's functions will you use to determine the name of the CPU running inside your computer?</p>
+<p><strong>Answer:</strong>The <code>processor()</code> function</p>
+<p><strong>Exercise 4</strong></p>
+<p>What is the expected output of the following snippet?</p>
+<div class="highlight"><pre><span></span><code>import platform print(len(platform.python_version_tuple())) 
+</code></pre></div>
+<p><strong>Answer:</strong> 3</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/semester.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/faq.js"></script>
+      
+    
+  </body>
+</html>

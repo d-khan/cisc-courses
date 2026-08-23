@@ -1,0 +1,2062 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Graphs - Dr. Khan's Computer Science Courses @ San Diego Miramar College</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-5SGJZZD5EZ"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-5SGJZZD5EZ",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-5SGJZZD5EZ",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#graphs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Dr. Khan&#39;s Computer Science Courses @ San Diego Miramar College" class="md-header__button md-logo" aria-label="Dr. Khan's Computer Science Courses @ San Diego Miramar College" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dr. Khan's Computer Science Courses @ San Diego Miramar College
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Graphs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Dr. Khan&#39;s Computer Science Courses @ San Diego Miramar College" class="md-nav__button md-logo" aria-label="Dr. Khan's Computer Science Courses @ San Diego Miramar College" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Dr. Khan's Computer Science Courses @ San Diego Miramar College
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 179<br>Python Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 179<br>Python Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 187<br>Data Structures in C++
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 187<br>Data Structures in C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 190<br>Java Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 190<br>Java Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 192<br>C/C++ Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 192<br>C/C++ Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 211<br>Assembly Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 211<br>Assembly Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/8_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adjacency-and-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adjacency and paths
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphs-vs-trees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graphs vs. Trees
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-of-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applications of graph
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications of graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geographic-maps-and-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geographic maps and navigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#product-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Product recommendations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#social-and-professional-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Social and professional networks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-representations-adjacency-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graph representations: Adjacency lists
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graph representations: Adjacency lists">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advantages-of-adjacency-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advantages of adjacency lists
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-representations-adjacency-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graph representations: Adjacency matrices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graph representations: Adjacency matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysis-of-adjacency-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analysis of adjacency matrices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#breadth-first-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Breadth-first search
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Breadth-first search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graph-traversal-and-breadth-first-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graph traversal and breadth-first search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-social-networking-connection-recommender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Social networking connection recommender
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-find-closest-item-in-a-peer-to-peer-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Find closest item in a peer-to-peer network
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breadth-first-search-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Breadth-first search algorithm
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depth-first-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth-first search
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Depth-first search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graph-traversal-and-depth-first-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graph traversal and depth-first search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#depth-first-search-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth-first search algorithm
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directed-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directed graphs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Directed graphs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path-and-cycles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path and cycles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-cycles-in-directed-graphs-kidney-transplants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example - Cycles in directed graphs: Kidney transplants
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weighted-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weighted graphs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Weighted graphs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path-length-in-weighted-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path length in weighted graphs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negative-edge-weight-cycles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Negative edge weight cycles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dijkstras-shortest-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dijkstra's shortest path
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dijkstra&#39;s shortest path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dijkstras-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dijkstra's algorithm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finding-shortest-path-from-start-vertex-to-destination-vertex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding shortest path from start vertex to destination vertex
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algorithm-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithm efficiency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dijkistras-algoritm-implementation-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dijkistra's algoritm implementation in C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="graphs">Graphs</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Many items in the world are connected, such as computers on a network connected by wires, cities connected by roads, or
+people connected by friendship.</p>
+<p>A <strong>graph</strong> is a data structure for representing connections among items, and consists of vertices connected by edges.</p>
+<ul>
+<li>A <strong>vertex</strong> (or node) represents an item in a graph.</li>
+<li>An <strong>edge</strong> represents a connection between two vertices in a graph.</li>
+</ul>
+<p><img width="625" alt="image" src="https://user-images.githubusercontent.com/11669149/231191507-01a930c9-ff1d-4ded-9ad0-5ccb34522c8f.png"></p>
+<ol>
+<li>Items in the world may have connections, like a computer network.</li>
+<li>A graph's vertices represent items.</li>
+<li>A graph's edges represent connections.</li>
+<li>A graph can represent many different things, like friendships among people. Raj and Maya are friends, but Raj and Jen
+   are not.</li>
+</ol>
+<h3 id="adjacency-and-paths">Adjacency and paths</h3>
+<p>In a graph:</p>
+<ul>
+<li>Two vertices are <strong>adjacent</strong> if connected by an edge.</li>
+<li>A <strong>path</strong> is a sequence of edges leading from a source (starting) vertex to a destination (ending) vertex. The <strong>path
+  length</strong> is the number of edges in the path.</li>
+<li>The <strong>distance</strong> between two vertices is the number of edges on the shortest path between those vertices.</li>
+</ul>
+<p><img width="637" alt="image" src="https://user-images.githubusercontent.com/11669149/231192056-e3422d47-82e1-4b06-8827-186250bec9d6.png"></p>
+<ol>
+<li>Two vertices are adjacent if connected by an edge. PC1 and Server1 are adjacent. PC1 and Server3 are not adjacent.</li>
+<li>A path is a sequence of edges from a source vertex to a destination vertex.</li>
+<li>A path's length is the path's number of edges. Vertex distance is the shortest path length: Distance from PC1 to PC2
+   is 2.</li>
+</ol>
+<h3 id="graphs-vs-trees">Graphs vs. Trees</h3>
+<p>You might have noticed that graphs look similar to trees, which we’ve dealt with in the past few chapters. Indeed,
+<em>trees are a type of graph.</em> Both data structures consist of nodes connected to each other.</p>
+<p>So, what’s the difference between a graph and a tree?
+Here’s the deal: while all trees are graphs, not all graphs are trees.</p>
+<p>Specifically, for a graph to be considered a tree, it cannot have <em>cycles,</em> and all nodes must be <em>connected.</em> Let’s see
+what that means.</p>
+<p>A graph may have nodes that form what is known as a <em>cycle,</em> that is, nodes that reference each other circularly. In the
+example, Alice is friends with Diana, and Diana is connected to Bob, and Bob is connected...to Alice. These three nodes
+form a cycle.</p>
+<p>Trees, on the other hand, are not “allowed” to have cycles. If a graph has a cycle, then it’s not a tree.</p>
+<p><img width="459" alt="image" src="https://user-images.githubusercontent.com/11669149/231199082-e6442358-6ee5-4d34-aad9-c85f753ff10c.png"></p>
+<p>Another characteristic specific to trees is that every node is somehow connect- ed to every other node, even if the
+connections are indirect. However, it’s possible for a graph to not be fully connected.</p>
+<p>See the following graph:</p>
+<p><img width="320" alt="image" src="https://user-images.githubusercontent.com/11669149/231199329-08f200ed-4003-45fb-9c40-ac6c2d4b4f06.png"></p>
+<p>In this social network, we have two pairs of friends. However, no one from either pair are friends with anyone from the
+other pair. Additionally, we can see that Vicky has no friends yet, as perhaps she signed up for this social network
+just minutes ago. With trees, however, there’s never a node that’s disconnected from the rest of the tree.</p>
+<h2 id="applications-of-graph">Applications of graph</h2>
+<h3 id="geographic-maps-and-navigation">Geographic maps and navigation</h3>
+<p>Graphs are often used to represent a geographic map, which can contain information about places and travel routes. Ex:
+Vertices in a graph can represent airports, with edges representing available flights. Edge weights in such graphs often
+represent the length of a travel route, either in total distance or expected time taken to navigate the route. Ex: A map
+service with access to real-time traffic information can assign travel times to road segments.</p>
+<p><img width="705" alt="image" src="https://user-images.githubusercontent.com/11669149/231192913-2e360cb7-3a11-47b1-9529-de7de74b58c6.png"></p>
+<ol>
+<li>A road map can be represented by a graph. Each intersection of roads is a vertex. Destinations like the beach or a
+   house are also vertices.</li>
+<li>Roads between vertices are edges. A map service with realtime traffic information can assign travel times as edge
+   weights.</li>
+<li>A shortest path finding algorithm can be used to find the shortest path starting at the house and ending at the
+   beach.</li>
+</ol>
+<h3 id="product-recommendations">Product recommendations</h3>
+<p>A graph can be used to represent relationships between products. Vertices in the graph corresponding to a customer's
+purchased products have adjacent vertices representing products that can be recommended to the customer.</p>
+<p><img width="581" alt="image" src="https://user-images.githubusercontent.com/11669149/231194304-c357b5ae-782f-4d38-9dbf-4501fcd9951f.png"></p>
+<ol>
+<li>An online shopping service can represent relationships between products being sold using a graph.</li>
+<li>Relationships may be based on the products alone. A game console requires a TV and games, so the game console vertex
+   connects to TV and game products.</li>
+<li>Vertices representing common kitchen products, such as a blender, dishwashing soap, kitchen towels, and oven mitts,
+   are also connected.</li>
+<li>Connections also represent common purchases that occur by chance. Several customers who purchase a Blu-ray player
+   also purchase a blender.</li>
+<li>A customer's purchases can be linked to the product vertices in the graph.</li>
+<li>Adjacent vertices can then be used to provide a list of recommendations to the customer.</li>
+</ol>
+<h3 id="social-and-professional-networks">Social and professional networks</h3>
+<p>A graph may use a vertex to represent a person. An edge in such a graph represents a relationship between 2 people. In a
+graph representing a social network, an edge commonly represents friendship. In a graph representing a professional
+network, an edge commonly represents business conducted between 2 people.</p>
+<p><img width="493" alt="image" src="https://user-images.githubusercontent.com/11669149/231197130-aa3256ad-b0b9-4251-abb7-10343c9eeb11.png"></p>
+<ol>
+<li>In a graph representing a professional network, vertices represent people and edges represent a business connection.</li>
+<li>Tuyet conducts business with Wilford, adding a new edge in the graph. Similarly, Manuel conducts business with Keira.</li>
+<li>The graph can help professionals find new connections. Shayla connects with Octavio through a mutual contact, Manuel.</li>
+</ol>
+<h2 id="graph-representations-adjacency-lists">Graph representations: Adjacency lists</h2>
+<p>Various approaches exist for representing a graph data structure. A common approach is an adjacency list. Recall that
+two vertices are <strong>adjacent</strong> if connected by an edge. In an <strong>adjacency list</strong> graph representation, each vertex has a
+list of adjacent vertices, each list item representing an edge.</p>
+<p><img width="123" alt="image" src="https://user-images.githubusercontent.com/11669149/231197675-479c152d-2aeb-4cfe-a1e2-594af213d192.png"></p>
+<table>
+<thead>
+<tr>
+<th>Vertices</th>
+<th>Adjacent vertices (egdes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>B C</td>
+</tr>
+<tr>
+<td>B</td>
+<td>A C D</td>
+</tr>
+<tr>
+<td>C</td>
+<td>A B</td>
+</tr>
+<tr>
+<td>D</td>
+<td>B</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Each vertex has a list of adjacent vertices for edges. The edge connecting A and B appears in A's list and also in B'
+   s list.</li>
+<li>Each edge appears in the lists of the edge's two vertices.</li>
+</ol>
+<h3 id="advantages-of-adjacency-lists">Advantages of adjacency lists</h3>
+<p>A key advantage of an adjacency list graph representation is a size of O(V + E), because each vertex appears once, and
+each edge appears twice. V refers to the number of vertices, E the number of edges.</p>
+<p>However, a disadvantage is that determining whether two vertices are adjacent is O(V), because one vertex's adjacency
+list must be traversed looking for the other vertex, and that list could have V items. However, in most applications, a
+vertex is only adjacent to a small fraction of the other vertices, yielding a sparse graph. A <strong>sparse graph</strong> has far
+fewer edges than the maximum possible. Many graphs are sparse, like those representing a computer network, flights
+between cities, or friendships among people (every person isn't friends with every other person). Thus, the adjacency
+list graph representation is very common.</p>
+<h2 id="graph-representations-adjacency-matrices">Graph representations: Adjacency matrices</h2>
+<p>Various approaches exist for representing a graph data structure. One approach is an adjacency matrix. Recall that two
+vertices are <strong>adjacent</strong> if connected by an edge. In an <strong>adjacency matrix</strong> graph representation, each vertex is
+assigned to a matrix row and column, and a matrix element is 1 if the corresponding two vertices have an edge or is 0
+otherwise.</p>
+<p><img width="386" alt="image" src="https://user-images.githubusercontent.com/11669149/231199987-89b4e8c7-be50-42bf-bf50-97deca30a924.png"></p>
+<ol>
+<li>Each vertex is assigned to a row and column.</li>
+<li>An edge connecting A and B is a 1 in A's row and B's column.</li>
+<li>Similarly, that same edge is a 1 in B's row and A's column. (The matrix will thus be symmetric.)</li>
+<li>Each edge similarly has two 1's in the matrix. Other matrix elements are 0's (not shown).</li>
+</ol>
+<h3 id="analysis-of-adjacency-matrices">Analysis of adjacency matrices</h3>
+<p>Assuming the common implementation as a two-dimensional array whose elements are accessible in <span class="arithmatex">\(O(1)\)</span>, then an adjacency
+matrix's key benefit is <span class="arithmatex">\(O(1)\)</span> determination of whether two vertices are adjacent: The corresponding element is just
+checked for 0 or 1.</p>
+<p>A key drawback is <span class="arithmatex">\(O(N^2)\)</span> size. Ex: A graph with 1000 vertices would require a 1000 x 1000 matrix, meaning 1,000,000
+elements. An adjacency matrix's large size is inefficient for a sparse graph, in which most elements would be 0's.</p>
+<p>An adjacency matrix only represents edges among vertices; if each vertex has data, like a person's name and address,
+then a separate list of vertices is needed.</p>
+<h2 id="breadth-first-search">Breadth-first search</h2>
+<h3 id="graph-traversal-and-breadth-first-search">Graph traversal and breadth-first search</h3>
+<p>An algorithm commonly must visit every vertex in a graph in some order, known as a <strong>graph traversal</strong>. A *
+<em>breadth-first search</em><em> (BFS) is a traversal that visits a starting vertex, then all vertices of distance 1 from that
+vertex, then of distance 2, and so on, </em><em>without revisiting a vertex.</em>*</p>
+<p><img width="561" alt="image" src="https://user-images.githubusercontent.com/11669149/231230121-5ebf25f3-6a91-40b0-b5bb-d56a1336575e.png"></p>
+<ol>
+<li>Breadth-first search starting at A visits vertices based on distance from A. B and D are distance 1.</li>
+<li>E and F are distance 2 from A. Note: A path of length 3 also exists to F, but <strong>distance metric uses the shortest
+   path</strong>.</li>
+<li>C is distance 3 from A. C is also distance 4 from A, but this is not the shortest path.</li>
+<li>Breadth-first search from A visits A, then vertices of distance 1, then 2, then 3. Note: Visiting order of
+   same-distance vertices doesn't matter.</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> Sometimes, I use the word 'hop' instead of distance. For example, D is one hop away from A, E is two hops
+away from B, and so on.</p>
+</blockquote>
+<h3 id="example-social-networking-connection-recommender"><strong>Example</strong>: Social networking connection recommender</h3>
+<p>Social networking sites like Facebook and LinkedIn use graphs to represent connections among people. For a particular
+user, a site may wish to recommend new connections. One approach does a breadth-first search starting from the user,
+recommending new connections starting at distance 2 (distance 1 people are already connected with the user).</p>
+<p><img width="519" alt="image" src="https://user-images.githubusercontent.com/11669149/231232200-28bed542-0cf8-4480-b528-0308ac4300b5.png"></p>
+<h3 id="example-find-closest-item-in-a-peer-to-peer-network">Example: Find closest item in a peer-to-peer network</h3>
+<p>In a <strong>peer-to-peer network</strong>, computers are connected via a network and may seek and download file copies (such as
+songs or movies) via intermediary computers or routers. For example, one computer may seek the movie "The Wizard of Oz",
+which may exist on 10 computers in a network consisting of 100,000 computers. Finding the closest computer (having the
+fewest intermediaries) yields a faster download. A BFS traversal of the network graph can find the closest computer with
+that movie. The BFS traversal can be set to immediately return if the item sought is found during a vertex visit. Below,
+visiting vertex G finds the movie; BFS terminates, and a download process can begin, involving a path length of 2 (so
+only 1 intermediary). Vertex H also has the movie, but is further from B so wasn't visited yet during BFS. (Note:
+Distances of vertices visited during the BFS from B are shown below for convenience).</p>
+<p><img width="644" alt="image" src="https://user-images.githubusercontent.com/11669149/231232972-0fe2173d-93f1-48cc-a926-41a07fdc6f4d.png"></p>
+<h3 id="breadth-first-search-algorithm">Breadth-first search algorithm</h3>
+<p>An algorithm for breadth-first search enqueues the starting vertex in a queue. While the queue is not empty, the
+algorithm dequeues a vertex from the queue, visits the dequeued vertex, enqueues that vertex's adjacent vertices (if not
+already discovered), and repeats. <a href="https://youtu.be/WD49JkVEmVw">See BFS algorithm in action</a>.</p>
+<div class="highlight"><pre><span></span><code>BFS(startV) {
+   Enqueue startV in frontierQueue
+   Add startV to discoveredSet
+
+   while ( frontierQueue is not empty ) {
+      currentV = Dequeue from frontierQueue
+      &quot;Visit&quot; currentV
+      for each vertex adjV adjacent to currentV {
+         if ( adjV is not in discoveredSet ) {
+            Enqueue adjV in frontierQueue
+            Add adjV to discoveredSet
+         }
+      }
+   }
+}
+</code></pre></div>
+<ol>
+<li>BFS enqueues the start vertex (in this case A) in frontierQueue, and adds A to discoveredSet.</li>
+<li>Vertex A is dequeued from frontierQueue and visited.</li>
+<li>Undiscovered vertices adjacent to A are enqueued in frontierQueue and added to discoveredSet.</li>
+<li>Vertex A's visit is complete. The process continues on to next vertices in the frontierQueue, D and B.</li>
+<li>E is visited. Vertices B and F are adjacent to E, but are already in discoveredSet. So B and F are not again added to
+   frontierQueue or discoveredSet.</li>
+<li>The process continues until frontierQueue is empty. discoveredSet shows the visit order. Note that each vertex's
+   distance from start is shown on the graph.</li>
+</ol>
+<p>When the BFS algorithm first encounters a vertex, that vertex is said to have been <strong>discovered</strong>. In the BFS algorithm,
+the vertices in the queue are called the <strong>frontier</strong>, being vertices thus far discovered but not yet visited. Because
+each vertex is visited at most once, an already-discovered vertex is not enqueued again.</p>
+<p>A "visit" may mean to print the vertex, append the vertex to a list, compare vertex data to a value and return the
+vertex if found, etc.</p>
+<h2 id="depth-first-search">Depth-first search</h2>
+<h3 id="graph-traversal-and-depth-first-search">Graph traversal and depth-first search</h3>
+<p>An algorithm commonly must visit every vertex in a graph in some order, known as a <strong>graph traversal</strong>. A <strong>depth-first
+search</strong> (DFS) is a traversal that visits a starting vertex, then visits every vertex along each path starting from that
+vertex to the path's end before backtracking. <a href="https://youtu.be/nqgLaTt6ZE8">See DFS algorithm in action</a>.</p>
+<h3 id="depth-first-search-algorithm">Depth-first search algorithm</h3>
+<div class="highlight"><pre><span></span><code>DFS(startV) {
+   Push startV to stack
+
+   while ( stack is not empty ) {
+      currentV = Pop stack
+      if ( currentV is not in visitedSet ) {
+         &quot;Visit&quot; currentV
+         Add currentV to visitedSet
+         for each vertex adjV adjacent to currentV
+            Push adjV to stack
+      }
+   }
+}
+</code></pre></div>
+<ol>
+<li>A depth-first search at vertex A first pushes vertex A onto the stack. The first loop iteration then pops vertex A
+   off the stack and assigns currentV with that vertex.</li>
+<li>Vertex A is visited and added to the visited set. Each vertex adjacent to A is pushed onto the stack.</li>
+<li>Vertex B is popped off the stack and processed as the next currentV.</li>
+<li>Vertices F and E are processed similarly.</li>
+<li>Vertices F and B are in the visited set and are skipped after being popped off the stack.</li>
+<li>Vertex C is popped off the stack and visited. All remaining vertices except D are in the visited set.</li>
+<li>Vertex D is the last vertex visited.</li>
+</ol>
+<h2 id="directed-graphs">Directed graphs</h2>
+<p>A <strong>directed graph</strong>, or <strong>digraph</strong>, consists of vertices connected by directed edges. A <strong>directed edge</strong> is a
+connection between a starting vertex and a terminating vertex. In a directed graph, a vertex Y is <strong>adjacent</strong> to a
+vertex X, if there is an edge from X to Y.</p>
+<p>Many graphs are directed, like those representing links between web pages, maps for navigation, or college course
+prerequisites.</p>
+<p><img width="599" alt="image" src="https://user-images.githubusercontent.com/11669149/231902240-b7d9325f-8561-4ed8-b937-c5787af1e939.png"></p>
+<ol>
+<li>Items in the world may have directed connections, like links on a website.</li>
+<li>directed graph's vertices represent items.</li>
+<li>Vertices are connected by directed edges.</li>
+<li>A directed edge represents a connection from a starting vertex to a terminating vertex; the terminating vertex is
+   adjacent to the starting vertex. B is adjacent to A, but A is not adjacent to B.</li>
+<li>A directed graph can represent many things, like airline connections between cities. A flight is available from Los
+   Angeles to Tucson, but not Tucson to Los Angeles.</li>
+</ol>
+<h3 id="path-and-cycles">Path and cycles</h3>
+<p>In a directed graph:</p>
+<ul>
+<li>A <strong>path</strong> is a sequence of directed edges leading from a source (starting) vertex to a destination (ending) vertex.</li>
+<li>A <strong>cycle</strong> is a path that starts and ends at the same vertex. A directed graph is <strong>cyclic</strong> if the graph contains a
+  cycle, and <strong>acyclic</strong> if the graph does not contain a cycle.</li>
+</ul>
+<p><img width="504" alt="image" src="https://user-images.githubusercontent.com/11669149/231904856-b1e731b9-1323-42a9-ba66-f5e77d7b0695.png"></p>
+<ol>
+<li>A path is a sequence of directed edges leading from a source (starting) vertex to a destination (ending) vertex.</li>
+<li>A cycle is a path that starts and ends at the same vertex. A graph can have more than one cycle.</li>
+<li>A cyclic graph contains a cycle. An acyclic graph contains no cycles.</li>
+</ol>
+<h3 id="example-cycles-in-directed-graphs-kidney-transplants">Example - Cycles in directed graphs: Kidney transplants</h3>
+<p>A patient needing a kidney transplant may have a family member willing to donate a kidney but is incompatible. That
+family member is willing to donate a kidney to someone else, as long as their family member also receives a kidney
+donation. Suppose Gregory needs a kidney. Gregory's wife, Eleanor, is willing to donate a kidney but is not compatible
+with Gregory. However, Eleanor is compatible with another patient Joanna, and Joanna's husband Darrell is compatible
+with Gregory. So, Eleanor donates a kidney to Joanna, and Darrell donates a kidney to Gregory, which is an example of a
+2-way kidney transplant. In 2015, a 9-way kidney transplant involving 18 patients was performed within 36 hours (
+Source: <a href="http://www.sfgate.com/health/article/9-way-kidney-swap-involving-18-surgeries-at-2-6307975.php">SF Gate</a>).
+Multiple-patient kidney transplants can be represented as cycles within a directed graph.</p>
+<p><img width="643" alt="image" src="https://user-images.githubusercontent.com/11669149/231905100-4d281911-cf98-4ead-b0da-cc489ba384b2.png"></p>
+<p>In this graph, vertices represent patients, and edges represent compatibility between a patient's family member (shown
+in parentheses) and another patient. An N-way kidney transplant is represented as a cycle with N edges. Due to the
+complexity of coordinating multiple simultaneous surgeries, hospitals and doctors typically try to find the shortest
+possible cycle.</p>
+<h2 id="weighted-graphs">Weighted graphs</h2>
+<p>A <strong>weighted graph</strong> associates a weight with each edge. A graph edge's <strong>weight</strong>, or <strong>cost</strong>, represents some
+numerical value between vertex items, such as flight cost between airports, connection speed between computers, or
+travel time between cities. A weighted graph may be directed or undirected.</p>
+<p><img width="299" alt="image" src="https://user-images.githubusercontent.com/11669149/231905486-22524ec6-ceda-407e-8b96-9ec9aab179e4.png"></p>
+<p>Weighted graphs can be directed. Ex: Edge weights may indicate travel time (hours) between cities; travel times may vary
+by direction.</p>
+<ol>
+<li>A weighted graph associates a numerical weight, or cost, with each edge. Ex: Edge weights may indicate connection
+   speed (Mbps) between computers.</li>
+<li>Weighted graphs can be directed. Ex: Edge weights may indicate travel time (hours) between cities; travel times may
+   vary by direction.</li>
+</ol>
+<h3 id="path-length-in-weighted-graphs">Path length in weighted graphs</h3>
+<p>In a weighted graph, the <strong>path length</strong> is the sum of the edge weights in the path.</p>
+<p><img width="562" alt="image" src="https://user-images.githubusercontent.com/11669149/231905672-d2cad29a-0218-4af4-b0ec-19413c75965f.png"></p>
+<ol>
+<li>A path is a sequence of edges from a source vertex to a destination vertex.</li>
+<li>The path length is the sum of the edge weights in the path.</li>
+<li>The shortest path is the path yielding the lowest sum of edge weights. Ex: The shortest path from Paris to Marseille
+   is 6.</li>
+</ol>
+<h3 id="negative-edge-weight-cycles">Negative edge weight cycles</h3>
+<p>The <strong>cycle length</strong> is the sum of the edge weights in a cycle. A <strong>negative edge weight cycle</strong> has a cycle length less
+than 0. A shortest path does not exist in a graph with a negative edge weight cycle, because each loop around the
+negative edge weight cycle further decreases the cycle length, so no minimum exists.</p>
+<p><img width="681" alt="image" src="https://user-images.githubusercontent.com/11669149/232980652-0c23b4a8-bacf-4631-bd15-70ca4a298a25.png"></p>
+<h2 id="dijkstras-shortest-path">Dijkstra's shortest path</h2>
+<p>Finding the shortest path between vertices in a graph has many applications. Ex: Finding the shortest driving route
+between two intersections can be solved by finding the shortest path in a directed graph where vertices are
+intersections and edge weights are distances. If edge weights instead are expected travel times (possibly based on
+real-time traffic data), finding the shortest path will provide the fastest driving route.</p>
+<p>Dijkstra's algorithm initializes all vertices' distances to infinity (∞), initializes all vertices' predecessors to
+null, and enqueues all vertices into a queue of unvisited vertices. The algorithm then assigns the start vertex's
+distance with 0. While the queue is not empty, the algorithm dequeues the vertex with the shortest distance. For each
+adjacent vertex, the algorithm computes the distance of the path from the start vertex to the current vertex and
+continuing on to the adjacent vertex. If that path's distance is shorter than the adjacent vertex's current distance, a
+shorter path has been found. The adjacent vertex's current distance is updated to the distance of the newly found
+shorter path's distance, and vertex's predecessor pointer is pointed to the current
+vertex. <a href="https://youtu.be/7MLD33ubQzE">See Dijkstra's shortest path algorithm in action</a>.</p>
+<h3 id="dijkstras-algorithm">Dijkstra's algorithm</h3>
+<div class="highlight"><pre><span></span><code>DijkstraShortestPath(startV) {
+   for each vertex currentV in graph {
+      currentV⇢distance = Infinity
+      currentV⇢predV = 0
+      Enqueue currentV in unvisitedQueue
+   }
+
+   // startV has a distance of 0 from itself
+   startV⇢distance = 0
+
+   while (unvisitedQueue is not empty) {
+      // Visit vertex with minimum distance from startV
+      currentV = DequeueMin unvisitedQueue
+
+      for each vertex adjV adjacent to currentV {
+         edgeWeight = weight of edge from currentV to adjV
+         alternativePathDistance = currentV⇢distance + edgeWeight
+
+         // If shorter path from startV to adjV is found,
+         // update adjV&#39;s distance and predecessor
+         if (alternativePathDistance &lt; adjV⇢distance) {
+            adjV⇢distance = alternativePathDistance
+            adjV⇢predV = currentV
+         }
+      }
+   }
+}
+</code></pre></div>
+<ol>
+<li>Each vertex is initialized with distance set to Infinity and the predecessor pointer set to null. Each vertex is
+   enqueued into unvisitedQueue.</li>
+<li>The start vertex's distance is 0. The algorithm visits the start vertex first.</li>
+<li>For each adjacent vertex, if a shorter path from the start vertex to the adjacent vertex is found, the vertex's
+   distance and predecessor pointer are updated.</li>
+<li>B has the shortest path distance, and is dequeued from the queue. The path through B to C is not shorter, so no
+   update occurs. The path through B to D is shorter, so D's distance and predecessor are updated.</li>
+<li>D is then dequeued. The path through D to C is shorter, so C's distance and predecessor pointer are updated.</li>
+<li>C is then dequeued. The path through C to D is not shorter, so no update occurs.</li>
+<li>The algorithm terminates when all vertices are visited. Each vertex's distance is the shortest path distance from the
+   start vertex. The vertex's predecessor pointer points to the previous vertex in the shortest path.</li>
+</ol>
+<h3 id="finding-shortest-path-from-start-vertex-to-destination-vertex">Finding shortest path from start vertex to destination vertex</h3>
+<p>After running Dijkstra's algorithm, the shortest path from the start vertex to a destination vertex can be determined
+using the vertices' predecessor pointers. If the destination vertex's predecessor pointer is not 0, the shortest path is
+traversed in reverse by following the predecessor pointers until the start vertex is reached. If the destination
+vertex's predecessor pointer is null, then a path from the start vertex to the destination vertex does not exist.</p>
+<p><img width="405" alt="image" src="https://user-images.githubusercontent.com/11669149/232973246-69524340-5e6a-4a70-9163-c2bea9c164df.png"></p>
+<ol>
+<li>The vertex's predecessor pointer points to the previous vertex in the shortest path.</li>
+<li>Starting with the destination vertex, the predecessor pointer is followed until the start vertex is reached.</li>
+<li>The vertex's distance is the shortest path distance from the start vertex.</li>
+</ol>
+<h3 id="algorithm-efficiency">Algorithm efficiency</h3>
+<p>If the unvisited vertex queue is implemented using a list, the runtime for Dijkstra's shortest path algorithm is O(V2).
+The outer loop executes V times to visit all vertices. In each outer loop execution, dequeuing the vertex from the queue
+requires searching all vertices in the list, which has a runtime of O(V). For each vertex, the algorithm follows the
+subset of edges to adjacent vertices; following a total of E edges across all loop executions. Given E &lt; V2, the runtime
+is O(V*V + E) = O(V2 + E) = O(V2). Implementing the unvisited vertex queue using a standard binary heap reduces the
+runtime to O((E + V) log V), and using a Fibonacci heap data structure (not discussed in this material) reduces the
+runtime to O(E + V log V).</p>
+<blockquote>
+<p>Dijkstra's shortest path algorithm can be used for unweighted graphs (using a uniform edge weight of 1) and weighted
+graphs with non-negative edges weights. For a directed graph with negative edge weights, Dijkstra's algorithm may not
+find the shortest path for some vertices, so the algorithm should not be used if a negative edge weight exists.</p>
+</blockquote>
+<h3 id="applications">Applications</h3>
+<ol>
+<li>Dijkstra’s algorithm is used as a routing protocol required by the routers to update their forwarding table.</li>
+<li>It is used to find the shortest distance between two locations along the path on google maps.</li>
+<li>It is used in telephone networking to find the shortest path for the nearest transmission switching station.</li>
+<li>Dijkstra’s algorithm finds the shortest path between users measured through handshakes or connections among them.</li>
+<li>Dijkstra’s algorithm minimizes the number of hops in computer networks.</li>
+</ol>
+<h3 id="dijkistras-algoritm-implementation-in-c">Dijkistra's algoritm implementation in C++</h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">miniDist</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">distance</span><span class="p">[],</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">Tset</span><span class="p">[])</span><span class="w"> </span><span class="c1">// finding minimum distance</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">minimum</span><span class="o">=</span><span class="n">INT_MAX</span><span class="p">,</span><span class="n">ind</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">k</span><span class="o">&lt;</span><span class="mi">6</span><span class="p">;</span><span class="n">k</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">Tset</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">==</span><span class="nb">false</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">distance</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">minimum</span><span class="p">)</span><span class="w">      </span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">minimum</span><span class="o">=</span><span class="n">distance</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+<span class="w">            </span><span class="n">ind</span><span class="o">=</span><span class="n">k</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ind</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">DijkstraAlgo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">graph</span><span class="p">[</span><span class="mi">6</span><span class="p">][</span><span class="mi">6</span><span class="p">],</span><span class="kt">int</span><span class="w"> </span><span class="n">src</span><span class="p">)</span><span class="w"> </span><span class="c1">// adjacency matrix </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">distance</span><span class="p">[</span><span class="mi">6</span><span class="p">];</span><span class="w"> </span><span class="c1">// // array to calculate the minimum distance for each node                             </span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">Tset</span><span class="p">[</span><span class="mi">6</span><span class="p">];</span><span class="c1">// boolean array to mark visited and unvisited for each node</span>
+
+
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">&lt;</span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">distance</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">INT_MAX</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Tset</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w">    </span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">distance</span><span class="p">[</span><span class="n">src</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">   </span><span class="c1">// Source vertex distance is set 0               </span>
+
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">&lt;</span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span><span class="w">                           </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="o">=</span><span class="n">miniDist</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span><span class="n">Tset</span><span class="p">);</span><span class="w"> </span>
+<span class="w">        </span><span class="n">Tset</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">&lt;</span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span><span class="w">                  </span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// updating the distance of neighbouring vertex</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">Tset</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">graph</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">distance</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="o">!=</span><span class="n">INT_MAX</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">distance</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="o">+</span><span class="n">graph</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">&lt;</span><span class="n">distance</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+<span class="w">                </span><span class="n">distance</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="n">distance</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="o">+</span><span class="n">graph</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="n">k</span><span class="p">];</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;Vertex</span><span class="se">\t\t</span><span class="s">Distance from source vertex&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">&lt;</span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span><span class="w">                      </span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="kt">char</span><span class="w"> </span><span class="n">str</span><span class="o">=</span><span class="mi">65</span><span class="o">+</span><span class="n">k</span><span class="p">;</span><span class="w"> </span>
+<span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">str</span><span class="o">&lt;&lt;</span><span class="s">&quot;</span><span class="se">\t\t\t</span><span class="s">&quot;</span><span class="o">&lt;&lt;</span><span class="n">distance</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">graph</span><span class="p">[</span><span class="mi">6</span><span class="p">][</span><span class="mi">6</span><span class="p">]</span><span class="o">=</span><span class="p">{</span>
+<span class="w">        </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">}};</span>
+<span class="w">    </span><span class="n">DijkstraAlgo</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">                           </span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="conclusion">Conclusion</h2>
+<p>Graphs are versatile data structures for representing relationships and connections between objects. A graph consists of
+<strong>vertices</strong> representing objects and <strong>edges</strong> representing the connections between them. Depending on the problem,
+graphs can be undirected, directed, or weighted and can be represented using <strong>adjacency lists</strong> or <strong>adjacency matrices
+</strong>.</p>
+<p>Graph traversal algorithms provide systematic ways to explore vertices. <strong>Breadth-first search (BFS)</strong> explores vertices
+level by level and is useful for finding shortest paths in unweighted graphs, while <strong>depth-first search (DFS)</strong>
+explores one path as deeply as possible before backtracking. For weighted graphs with non-negative edge weights,
+<strong>Dijkstra's algorithm</strong> can be used to determine the shortest path between vertices.</p>
+<p>Graphs have many practical applications, including computer networks, navigation systems, social and professional
+networks, recommendation systems, and transportation networks. Understanding how graphs are represented and traversed
+provides the foundation for solving many real-world problems involving relationships, connectivity, and optimal paths.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/semester.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/faq.js"></script>
+      
+    
+  </body>
+</html>

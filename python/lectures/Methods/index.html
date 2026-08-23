@@ -1,0 +1,1499 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Methods in detail - Dr. Khan's Computer Science Courses @ San Diego Miramar College</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-5SGJZZD5EZ"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-5SGJZZD5EZ",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-5SGJZZD5EZ",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#methods-in-detail" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Dr. Khan&#39;s Computer Science Courses @ San Diego Miramar College" class="md-header__button md-logo" aria-label="Dr. Khan's Computer Science Courses @ San Diego Miramar College" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dr. Khan's Computer Science Courses @ San Diego Miramar College
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Methods in detail
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Dr. Khan&#39;s Computer Science Courses @ San Diego Miramar College" class="md-nav__button md-logo" aria-label="Dr. Khan's Computer Science Courses @ San Diego Miramar College" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Dr. Khan's Computer Science Courses @ San Diego Miramar College
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 179<br>Python Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 179<br>Python Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 187<br>Data Structures in C++
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 187<br>Data Structures in C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 190<br>Java Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 190<br>Java Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 192<br>C/C++ Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 192<br>C/C++ Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 211<br>Assembly Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 211<br>Assembly Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/8_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="methods-in-detail">Methods in detail</h1>
+<p>Let's summarize all the facts regarding the use of methods in Python classes.</p>
+<p>As you already know, a <strong>method is a function embedded inside a class</strong>.</p>
+<p>There is one fundamental requirement - a <strong>method is obliged to have at least one parameter</strong> (there are no such thing as parameterless methods - a method may be invoked without an argument, but not declared without parameters).</p>
+<p>The first (or only) parameter is usually named <code>self</code>. We suggest that you follow the convention - it's commonly used, and you'll cause a few surprises by using other names for it.</p>
+<p>The name self suggests the parameter's purpose - <strong>it identifies the object for which the method is invoked</strong>.</p>
+<p>If you're going to invoke a method, you mustn't pass the argument for the <code>self</code> parameter - Python will set it for you.</p>
+<p>The following example shows the difference.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Classy</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;method&quot;</span><span class="p">)</span>
+
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Classy</span><span class="p">()</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">method</span><span class="p">()</span>
+</code></pre></div>
+<p>The code outputs:</p>
+<div class="highlight"><pre><span></span><code>method
+</code></pre></div>
+<p>Note the way we've created the object - we've <strong>treated the class name like a function</strong>, returning a newly instantiated object of the class.</p>
+<p>If you want the method to accept parameters other than <code>self</code>, you should:</p>
+<ul>
+<li>place them after <code>self</code> in the method's definition;</li>
+<li>deliver them during invocation without specifying <code>self</code> (as previously)</li>
+</ul>
+<p>Just like here:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Classy</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">par</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;method:&quot;</span><span class="p">,</span> <span class="n">par</span><span class="p">)</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Classy</span><span class="p">()</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">method</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">method</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">method</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<p>The code outputs:</p>
+<div class="highlight"><pre><span></span><code><span class="n">method</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">method</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">method</span><span class="p">:</span> <span class="mi">3</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Classy</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;method&quot;</span><span class="p">)</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Classy</span><span class="p">()</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">method</span><span class="p">()</span>
+</code></pre></div>
+<p>The <code>self</code> parameter is used <strong>to obtain access to the object's instance and class variables</strong>.</p>
+<p>The example shows both ways of utilizing <code>self</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Classy</span><span class="p">:</span>
+    <span class="n">varia</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">varia</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Classy</span><span class="p">()</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">var</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">method</span><span class="p">()</span>
+</code></pre></div>
+<p>The code outputs:</p>
+<div class="highlight"><pre><span></span><code>2 3
+</code></pre></div>
+<p>The <code>self</code> parameter is also used <strong>to invoke other object/class methods from inside the class</strong>.</p>
+<p>Just like here:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Classy</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">other</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;other&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;method&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">other</span><span class="p">()</span>
+
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Classy</span><span class="p">()</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">method</span><span class="p">()</span>
+</code></pre></div>
+<p>The code outputs:</p>
+<div class="highlight"><pre><span></span><code><span class="n">method</span>
+<span class="n">other</span>
+</code></pre></div>
+<p>If you name a method like this: <code>__init__</code>, it won't be a regular method - it will be a <strong>constructor</strong>.</p>
+<p>If a class has a constructor, it is invoked automatically and implicitly when the object of the class is instantiated.</p>
+<p>The constructor:</p>
+<ul>
+<li>is <strong>obliged to have the <code>self</code> parameter</strong> (it's set automatically, as usual);</li>
+<li><strong>may (but doesn't need to) have more parameters</strong> than just <code>self</code>; if this happens, the way in which the class name is used to create the object must reflect the <code>__init__</code> definition;</li>
+<li><strong>can be used to set up the object</strong>, i.e., properly initialize its internal state, create instance variables, instantiate any other objects if their existence is needed, etc.</li>
+</ul>
+<p>Look at the code below. The example shows a very simple constructor at work.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Classy</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">var</span> <span class="o">=</span> <span class="n">value</span>
+
+<span class="n">obj_1</span> <span class="o">=</span> <span class="n">Classy</span><span class="p">(</span><span class="s2">&quot;object&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">obj_1</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+</code></pre></div>
+<p>Run it. The code outputs:</p>
+<div class="highlight"><pre><span></span><code>object
+</code></pre></div>
+<p>Note that the constructor:</p>
+<ul>
+<li><strong>cannot return a value</strong>, as it is designed to return a newly created object and nothing else;</li>
+<li><strong>cannot be invoked directly either from the object or from inside the class</strong> (you can invoke a constructor from any of the object's subclasses, but we'll discuss this issue later.)</li>
+</ul>
+<p>As <code>__init__</code> is a method, and a method is a function, you can do the same tricks with constructors/methods as you do with ordinary functions.</p>
+<p>The example below shows how to define a constructor with a default argument value. Test it.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Classy</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">var</span> <span class="o">=</span> <span class="n">value</span>
+
+
+<span class="n">obj_1</span> <span class="o">=</span> <span class="n">Classy</span><span class="p">(</span><span class="s2">&quot;object&quot;</span><span class="p">)</span>
+<span class="n">obj_2</span> <span class="o">=</span> <span class="n">Classy</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">obj_1</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">obj_2</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+</code></pre></div>
+<p>The code outputs:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">object</span>
+<span class="kc">None</span>
+</code></pre></div>
+<p>Everything we've said about <strong>property name mangling</strong> applies to method names, too - a method whose name starts with <code>__</code> is (partially) hidden.</p>
+<p>The example shows this effect:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Classy</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">visible</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;visible&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__hidden</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hidden&quot;</span><span class="p">)</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Classy</span><span class="p">()</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">visible</span><span class="p">()</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">obj</span><span class="o">.</span><span class="n">__hidden</span><span class="p">()</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;failed&quot;</span><span class="p">)</span>
+
+<span class="n">obj</span><span class="o">.</span><span class="n">_Classy__hidden</span><span class="p">()</span>
+</code></pre></div>
+<p>The code outputs:</p>
+<div class="highlight"><pre><span></span><code><span class="n">visible</span>
+<span class="n">failed</span>
+<span class="n">hidden</span>
+</code></pre></div>
+<h1 id="the-inner-life-of-classes-and-objects">The inner life of classes and objects</h1>
+<p>Each Python class and each Python object is pre-equipped with a set of useful attributes which can be used to examine its capabilities.</p>
+<p>You already know one of these - it's the <code>__dict__</code> property.</p>
+<p>Let's observe how it deals with methods - look at the code in the given below.</p>
+<p>Run it to see what it outputs. Check the output carefully.</p>
+<p>Find all the defined methods and attributes. Locate the context in which they exist: inside the object or inside the class.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Classy</span><span class="p">:</span>
+    <span class="n">varia</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">var</span> <span class="o">=</span> <span class="mi">2</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__hidden</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Classy</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Classy</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+</code></pre></div>
+<p><code>__dict__</code> is a dictionary. Another built-in property worth mentioning is <code>__name__</code>, which is a string.</p>
+<p>The property contains <strong>the name of the class</strong>. It's nothing exciting, just a string.</p>
+<p>Note: the <code>__name__</code> attribute is absent from the object - <strong>it exists only inside classes</strong>.</p>
+<p>If you want to <strong>find the class of a particular object</strong>, you can use a function named <code>type()</code>, which is able (among other things) to find a class which has been used to instantiate any object.</p>
+<p>Look at the code below, run it, and see for yourself.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Classy</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Classy</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Classy</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+</code></pre></div>
+<p>The code outputs:</p>
+<div class="highlight"><pre><span></span><code>Classy
+Classy
+</code></pre></div>
+<p>Note that a statement like this one:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+</code></pre></div>
+<p>will cause an error.</p>
+<p><code>__module__</code> is a string, too - it <strong>stores the name of the module which contains the definition of the class</strong>.</p>
+<p>Let's check it - run the following code.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Classy</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Classy</span><span class="o">.</span><span class="vm">__module__</span><span class="p">)</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Classy</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__module__</span><span class="p">)</span>
+</code></pre></div>
+<p>The code outputs:</p>
+<div class="highlight"><pre><span></span><code>__main__ __main__
+</code></pre></div>
+<p>As you know, any module named <code>__main__</code> is actually not a module, but the <strong>file currently being run</strong>.</p>
+<p><code>__bases__</code> is a tuple. The <strong>tuple contains classes</strong> (not class names) which are direct superclasses for the class.</p>
+<p>The order is the same as that used inside the class definition.</p>
+<p>We'll show you only a very basic example, as we want to highlight <strong>how inheritance works</strong>.</p>
+<p>Moreover, we're going to show you how to use this attribute when we discuss the objective aspects of exceptions.</p>
+<p>Note: <strong>only classes have this attribute</strong> - objects don't.</p>
+<p>We've defined a function named <code>printbases()</code>, designed to present the tuple's contents clearly.</p>
+<p>Look at the code below. Analyze it and run it. It will output:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">SuperOne</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">SuperTwo</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Sub</span><span class="p">(</span><span class="n">SuperOne</span><span class="p">,</span> <span class="n">SuperTwo</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">printBases</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;( &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__bases__</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;)&#39;</span><span class="p">)</span>
+
+
+<span class="n">printBases</span><span class="p">(</span><span class="n">SuperOne</span><span class="p">)</span>
+<span class="n">printBases</span><span class="p">(</span><span class="n">SuperTwo</span><span class="p">)</span>
+<span class="n">printBases</span><span class="p">(</span><span class="n">Sub</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">(</span> <span class="nb">object</span> <span class="p">)</span>
+<span class="p">(</span> <span class="nb">object</span> <span class="p">)</span>
+<span class="p">(</span> <span class="n">SuperOne</span> <span class="n">SuperTwo</span> <span class="p">)</span>
+</code></pre></div>
+<p>Note: <strong>a class without explicit superclasses points to object</strong> (a predefined Python class) as its direct ancestor.</p>
+<h1 id="investigating-classes">Investigating classes</h1>
+<p>What can you find out about classes in Python? The answer is simple – everything.</p>
+<p>Both reflection and introspection enable a programmer to do anything with any object, no matter where it comes from.</p>
+<p>Analyze the following code.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="p">:</span>        <span class="c1"># line 1</span>
+    <span class="k">pass</span>
+
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>        <span class="c1"># line 5</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>              <span class="c1"># line 6</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>              <span class="c1"># line 7</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">i</span> <span class="o">=</span> <span class="mi">3</span>              <span class="c1"># line 8</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">ireal</span> <span class="o">=</span> <span class="mf">3.5</span>        <span class="c1"># line 9</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">integer</span> <span class="o">=</span> <span class="mi">4</span>        <span class="c1"># line 10</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="mi">5</span>              <span class="c1"># line 11</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">incIntsI</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>    <span class="c1"># line 14</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>    <span class="c1"># line 15</span>
+        <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">):</span>        <span class="c1"># line 16</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>    <span class="c1"># line 17</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>    <span class="c1"># line 18</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">val</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># line 19</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+<span class="n">incIntsI</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+</code></pre></div>
+<p>The function named <code>incIntsI()</code> gets an object of any class, scans its contents in order to find all integer attributes with names starting with i, and increments them by one.</p>
+<p>Impossible? Not at all!</p>
+<p>This is how it works:</p>
+<ul>
+<li>line 1: define a very simple class...</li>
+<li>lines 5 through 11: ... and fill it with some attributes;</li>
+<li>line 14: this is our function!</li>
+<li>line 15: scan the <code>__dict__</code> attribute, looking for all attribute names;</li>
+<li>line 16: if a name starts with i...</li>
+<li>line 17: ... use the <code>getattr()</code> function to get its current value; note: <code>getattr()</code> takes two arguments: an object, and its property name (as a string), and returns the current attribute's value;</li>
+<li>line 18: check if the value is of type integer, and use the function <code>isinstance()</code> for this purpose (we'll discuss this later);</li>
+<li>line 19: if the check goes well, increment the property's value by making use of the <code>setattr()</code> function; the function takes three arguments: an object, the property name (as a string), and the property's new value.</li>
+</ul>
+<p>The code outputs:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;integer&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;ireal&#39;</span><span class="p">:</span> <span class="mf">3.5</span><span class="p">}</span>
+<span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;integer&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;ireal&#39;</span><span class="p">:</span> <span class="mf">3.5</span><span class="p">}</span>
+</code></pre></div>
+<h1 id="key-takeaways">Key takeaways</h1>
+<ol>
+<li>A method is a function embedded inside a class. The first (or only) parameter of each method is usually named <code>self</code>, which is designed to identify the object for which the method is invoked in order to access the object's properties or invoke its methods.</li>
+<li>If a class contains a <strong>constructor</strong> (a method named <code>__init__</code>) it cannot return any value and cannot be invoked directly.</li>
+<li>All classes (but not objects) contain a property named <code>__name__</code>, which stores the name of the class. Additionally, a property named <code>__module__</code> stores the name of the module in which the class has been declared, while the property named <code>__bases__</code> is a tuple containing a class's superclasses.</li>
+</ol>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Sample</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">Sample</span><span class="o">.</span><span class="vm">__name__</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">myself</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My name is &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot; living in a &quot;</span> <span class="o">+</span> <span class="n">Sample</span><span class="o">.</span><span class="vm">__module__</span><span class="p">)</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Sample</span><span class="p">()</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">myself</span><span class="p">()</span>
+</code></pre></div>
+<p>The code outputs:</p>
+<div class="highlight"><pre><span></span><code><span class="n">My</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">Sample</span> <span class="n">living</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">__main__</span>
+</code></pre></div>
+<p><strong>Exercise 1</strong></p>
+<p>The declaration of the <code>Snake</code> class is given below. Enrich the class with a method named <code>increment()</code>, adding <code>1</code> to the <code>victims</code> property.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Snake</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">victims</span> <span class="o">=</span> <span class="mi">0</span>
+</code></pre></div>
+<p>Solution</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Snake</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">victims</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">increment</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">victims</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>
+<p><strong>Exercise 2</strong></p>
+<p>Redefine the <code>Snake</code> class constructor so that is has a parameter to initialize the <code>victims</code> field with a value passed to the object during construction.</p>
+<p>Solution</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Snake</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">victims</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">victims</span> <span class="o">=</span> <span class="n">victims</span>  
+</code></pre></div>
+<p><strong>Exercise 3</strong></p>
+<p>Can you predict the output of the following code?</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Snake</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Python</span><span class="p">(</span><span class="n">Snake</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Python</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="s1">&#39;is a&#39;</span><span class="p">,</span> <span class="n">Snake</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Python</span><span class="o">.</span><span class="vm">__bases__</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="s1">&#39;can be a&#39;</span><span class="p">,</span> <span class="n">Python</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Python is a Snake
+Snake can be a Python
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/semester.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/faq.js"></script>
+      
+    
+  </body>
+</html>

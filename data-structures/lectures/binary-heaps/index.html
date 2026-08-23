@@ -1,0 +1,1878 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Binary heaps - Dr. Khan's Computer Science Courses @ San Diego Miramar College</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-5SGJZZD5EZ"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-5SGJZZD5EZ",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-5SGJZZD5EZ",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#binary-heaps" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Dr. Khan&#39;s Computer Science Courses @ San Diego Miramar College" class="md-header__button md-logo" aria-label="Dr. Khan's Computer Science Courses @ San Diego Miramar College" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dr. Khan's Computer Science Courses @ San Diego Miramar College
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Binary heaps
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Dr. Khan&#39;s Computer Science Courses @ San Diego Miramar College" class="md-nav__button md-logo" aria-label="Dr. Khan's Computer Science Courses @ San Diego Miramar College" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Dr. Khan's Computer Science Courses @ San Diego Miramar College
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 179<br>Python Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 179<br>Python Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 187<br>Data Structures in C++
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 187<br>Data Structures in C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 190<br>Java Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 190<br>Java Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 192<br>C/C++ Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 192<br>C/C++ Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 211<br>Assembly Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 211<br>Assembly Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/8_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#priority-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priority Queue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#heaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heaps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Heaps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-heap-condition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The heap condition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-trees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete trees
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heap-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heap properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heap-insertions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heap insertions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heap-deletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heap deletion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heap-vs-ordered-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heap vs ordered arrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#last-node-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Last node problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays-vs-heaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arrays vs heaps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traversing-an-array-based-heap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traversing an Array-Based Heap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-heap-insertion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example - Heap insertion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-heap-deletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example - Heap deletion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternate-heap-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternate heap implementations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heaps-as-priority-queues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heaps as Priority Queues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="binary-heaps">Binary heaps</h1>
+<p>Now that we’ve discovered the tree, we’ve unlocked many new data structures. In the previous chapter, we focused
+specifically on the binary search tree, but there are also many other types of trees. Like all data structures, each
+type of tree comes with its own benefits and drawbacks, and the trick is knowing which one to harness in a specific
+situation.</p>
+<p>In this chapter, we’ll explore the heap, a type of tree data structure with special powers that can be leveraged for
+specific scenarios, particularly when we want to constantly keep tabs on the greatest or least data element in a
+dataset.</p>
+<p>To appreciate what a heap can do, let’s take a look at a completely different data structure: the priority queue.</p>
+<h2 id="priority-queue">Priority Queue</h2>
+<p>You learned about Queues and discovered that the queue is a list in which items are processed First In, First Out (
+FIFO). Essentially, this means that data is inserted only at the <em>end</em> of the queue, and data is accessed and removed
+only from the <em>front</em> of the queue. In accessing the queue’s data, we precede the order in which the data was inserted.</p>
+<p>A <em>priority queue</em> is a list whose deletions and access are just like a classic queue but whose insertions are like an
+ordered array. We only delete and access data from the <em>front</em> of the priority queue, but when we insert data, we always
+make sure the data remains sorted in a specific order.</p>
+<p>One classic example of where a priority queue is helpful is an application that manages the triage system for a hospital
+emergency room. In the ER, we don’t treat people strictly in the order in which they arrive. Instead, we treat people
+according to the severity of their symptoms. If someone suddenly arrives with a life-threatening injury, that patient
+will be placed at the front of the queue, even if the person with the flu had arrived hours earlier.</p>
+<p>Let’s say our triage system ranked the severity of a patient’s condition on a scale of 1 to 10, with 10 being the most
+critical. Our priority queue may look like this:</p>
+<p><img width="372" alt="image" src="https://user-images.githubusercontent.com/11669149/229823633-5d4b684d-7b45-43cc-92d2-1cc6827c001b.png"  ></p>
+<p>In determining the next patient to treat, we will always select the patient at the front of the priority queue, since
+that person’s need is the most urgent. In this case, the next patient we’d treat is Patient C.</p>
+<p>If a new patient now arrives with a condition severity of 3, we’ll initially place this patient at the appropriate spot
+within the priority queue. We’ll call this person Patient E:</p>
+<p><img width="285" alt="image" src="https://user-images.githubusercontent.com/11669149/229824181-b7c71dc8-cd23-4c74-8403-9033819636d1.png"  ></p>
+<p>The priority queue is an example of an abstract data type. That is, it can be implemented using other, more fundamental
+data structures. One straight- forward way we can implement a priority queue is by using an ordered array. That is, we
+use an array and apply the following constraints:</p>
+<ul>
+<li>When we insert data, we ensure we always maintain proper order.</li>
+<li>Data can only be removed from the end of the array. (This will represent the front of the priority queue.)</li>
+</ul>
+<p>While this approach is straightforward, let’s analyze its efficiency. The priority queue has two primary operations:
+deletions and insertions.</p>
+<p>We’ve seen previously that deleting from the front of an array is <span class="arithmatex">\(O(N)\)</span>, since we have to shift all the data to fill
+the gap created at index 0. However, we’ve cleverly tweaked our implementation to consider the array's end as the
+priority queue's front. This way, we’re always deleting from the end of the array, which is <span class="arithmatex">\(O(1)\)</span>.</p>
+<p>With <span class="arithmatex">\(O(1)\)</span> deletions, our priority queue is in good shape so far. But what about insertions?</p>
+<p>You learned that inserting into an ordered array is <span class="arithmatex">\(O(N)\)</span>, since we have to inspect up to all N elements of the array
+to determine where our new data should go. (Even if we find the correct spot early, we must shift all the remaining data
+to the right.)</p>
+<p>Our array-based priority queue, then, has deletions that are <span class="arithmatex">\(O(1)\)</span> and insertions that are <span class="arithmatex">\(O(N)\)</span>. If we expect there
+to be many items in our priority queue, the <span class="arithmatex">\(O(N)\)</span> insertions may cause some real unwanted drag in our application.</p>
+<p>Because of this, computer scientists discovered another data structure that serves as a more efficient foundation for
+the priority queue. And this data structure is the heap.</p>
+<h2 id="heaps">Heaps</h2>
+<p>There are several types of heaps, but we will focus on the binary heap.</p>
+<p>The binary heap is a specific kind of binary tree. As a reminder, a binary tree is a tree where each node has a maximum
+of two child nodes. (The binary <em>search</em> tree from the last chapter was one specific type of binary tree.)</p>
+<p>Now, binary heaps come in two flavors: the max-heap and the min-heap. We’ll work with the max-heap for now, but as
+you’ll see later, the difference between the two is trivial.</p>
+<p>Going forward, I will refer to this data structure simply as a heap, even though we’re specifically working with a
+binary max heap.</p>
+<p>The <em>heap</em> is a binary tree that maintains the following conditions:</p>
+<ul>
+<li>The value of each node must be greater than each of its descendant nodes. This rule is known as the heap condition.</li>
+<li>The tree must be *complete.</li>
+</ul>
+<p>Let’s break down both conditions, starting with the heap condition.</p>
+<h3 id="the-heap-condition">The heap condition</h3>
+<p>The <em>heap condition</em> says that each node’s value must be greater than each and every one of its descendants.</p>
+<p>For example, the following tree meets the heap condition since each node is greater than any of its descendants, as
+shown below.</p>
+<p><img width="222" alt="image" src="https://user-images.githubusercontent.com/11669149/229826570-7fe8179f-943c-4e7b-9c55-9a8065d905c5.png"></p>
+<p>In this example, the root node of 100 has no descendant that is greater than it. Similarly, the 88 is greater than both
+of its children, and so is the 25.</p>
+<p>The following tree isn’t a valid heap because it doesn’t meet the heap condition:</p>
+<p><img width="225" alt="image" src="https://user-images.githubusercontent.com/11669149/229826793-f7f44cc2-8825-49cb-914b-fb5a5c0f92e0.png"></p>
+<p>As you can see, the 92 is greater than its parent of 88. This violates the heap condition.</p>
+<p>Note how the heap is structured very differently than the binary search tree. Each node’s right child is greater than in
+a binary search tree. In a heap, however, a node <em>never</em> has any descendant that is greater than it.</p>
+<p>We can also construct a heap with the opposite heap condition: each node must contain a <em>smaller</em> value than any of its
+descendants. Such a heap is known as the min-heap, which I mentioned earlier. We will continue to focus on the max-heap,
+where each node must be <em>greater</em> than all of its descendants. Ultimately, whether a heap is a max-heap or a min-heap is
+trivial, as everything else about both heaps is identical; they only have reversed heap conditions. Otherwise, the
+fundamental idea is the same.</p>
+<h3 id="complete-trees">Complete trees</h3>
+<p>Let’s get to the second rule of heaps—that the tree needs to be complete.</p>
+<p>A <em>complete tree</em> is a tree that is completely filled with nodes; no nodes are missing. So, all nodes are there if you
+read each tree level from left to right. However, the bottom row <em>can</em> have empty positions as long as there aren’t any
+nodes to the right of these empty positions. This is best demonstrat- ed with examples.</p>
+<p>The following tree is complete since each level (meaning each row) of the tree is completely filled in with nodes:</p>
+<p><img width="146" alt="image" src="https://user-images.githubusercontent.com/11669149/229831827-6e1fe975-d121-405b-9c34-a7fd2f897d1e.png"></p>
+<p>The following tree is <em>not</em> complete, since it’s missing a node on the third level:</p>
+<p><img width="145" alt="image" src="https://user-images.githubusercontent.com/11669149/229832043-99e2bc49-a117-40fc-8bde-f5d55c7f2e57.png"></p>
+<p>Now, the next tree is considered complete, since its empty positions are limited to the bottom row, and there aren’t any
+nodes found to the right of the empty positions:</p>
+<p><img width="127" alt="image" src="https://user-images.githubusercontent.com/11669149/229832320-b07cd452-5592-4ae1-b4e9-6d2acad5e4dc.png"></p>
+<p>A heap, then, is a tree that meets the heap condition <em>and</em> is also complete. Here is just one more example of a heap:</p>
+<p><img width="376" alt="image" src="https://user-images.githubusercontent.com/11669149/229832511-ee3e0436-7e91-437c-a823-8741221470c1.png"></p>
+<p>This is a valid heap since each node is greater than any of its descendants, and the tree is also complete. While it
+does have some gaps in the bottom row, these gaps are limited to the very right of the tree.</p>
+<h3 id="heap-properties">Heap properties</h3>
+<p>Now that you know what a heap is, let’s examine some of its interesting properties.</p>
+<p>While the heap condition dictates that the heap be ordered a certain way, this ordering is still useless when it comes
+to searching for a value within the heap.</p>
+<p>For example, let’s say that in the above heap, we want to search for the value 3. If we start at the root node of 100,
+should we search among its left or right descendants? In a binary search tree, we’d know that the 3 must be among the
+100’s left descendants. In a heap, however, we all know that the 3 has to be a descendant of the 100 and can’t be its
+ancestor. But we’d have no idea which child node to search next. Indeed, the 3 is among the 100’s <em>right</em> descendants,
+but it could have also easily been among its left descendants.</p>
+<p>Because of this, heaps are said to be <em>weakly ordered</em> compared to binary search trees. While heaps have <em>some</em> order,
+as descendants cannot be greater than their ancestors, this isn’t enough order to make heaps worth searching through.</p>
+<p>Another property of heaps may be obvious by now but is worth calling attention to: the root node will always have the
+greatest value in a heap. (In a min-heap, the root will contain the smallest value.) This is why a heap is a great tool
+for implementing priority queues. We always want to access the value with the greatest priority in the priority queue.
+With a heap, we always know that we can find this in the root node. Thus, the root node will represent the item with the
+highest priority.</p>
+<p>The heap has two primary operations: inserting and deleting. As we noted, searching within a heap would require us to
+inspect each node, so the search is not an operation usually implemented in the context of heaps. (A heap can also have
+an optional “read” operation, which would look at the root node's value.)</p>
+<p>Before we move on to how the heap’s primary operations work, let me define one more term, since it’ll be used heavily in
+the upcoming algorithms.</p>
+<p>The heap has something called a <em>last node.</em> A heap’s <em>last node</em> is the rightmost node in its bottom level.</p>
+<p>In this heap, the 3 is the last node since it’s the rightmost node in the bottom row. Next, let’s get into the heap’s
+primary operations.</p>
+<p><img src="/Users/danish/Library/Application%20Support/typora-user-images/image-20230404075948478.png" alt="image-20230404075948478" style="zoom:50%;" /></p>
+<h3 id="heap-insertions">Heap insertions</h3>
+<p>To insert a new value into the heap, we perform the following algorithm:</p>
+<ol>
+<li>We create a node containing the new value and insert it at the next available rightmost spot in the bottom level.
+   Thus, this value becomes the heap’s last node.</li>
+<li>Next, we compare this new node with its parent node.</li>
+<li>If the new node is greater than its parent node, we swap the new node with the parent node.</li>
+<li>We repeat Step 3, effectively moving the new node up through the heap, until it has a parent whose value is greater
+   than it.</li>
+</ol>
+<p>Let’s see this algorithm in action. Here’s what would happen if we were to insert a 40 into the heap:</p>
+<p>Step 1: We add the 40 as the heap’s last node:</p>
+<p><img width="377" alt="image" src="https://user-images.githubusercontent.com/11669149/229854386-4557761b-3e52-4c1f-a0ac-f2d8eb3149b9.png"></p>
+<p>Note that doing the following would have been incorrect:</p>
+<p><img width="382" alt="image" src="https://user-images.githubusercontent.com/11669149/229854540-22dae107-8134-47ae-9b70-b8813cb81da4.png"></p>
+<p>Placing the 40 as a child of the 12 node makes the tree <em>incomplete,</em> since we’d now have a node to the right of an
+empty position. For a heap to remain a heap, it must always be complete.</p>
+<p>Step 2: We compare the 40 with its parent node, which happens to be the 8. Since the 40 is greater than the 8, we swap
+the two nodes:</p>
+<p><img width="402" alt="image" src="https://user-images.githubusercontent.com/11669149/229854719-e3c523eb-069c-4e72-ad8c-1724d6cd2abe.png"></p>
+<p>Step 3: We compare the 40 with its new parent, the 25. Since the 40 is greater than the 25, we swap them:</p>
+<p><img width="389" alt="image" src="https://user-images.githubusercontent.com/11669149/229854967-1e4c8774-0328-42bb-be03-cdfbf5ba1870.png"></p>
+<p>Step 4: We compare the 40 to its parent, which is the 100. Since the 40 is smaller than the 100, we’re done!</p>
+<p>This process of moving the new node up the heap, is called <em>trickling</em> the node up through the heap. Sometimes it moves
+up to the right, and sometimes to the left, but it always moves up until it settles into the correct position.</p>
+<p>The efficiency of inserting into a heap is <span class="arithmatex">\(O(log N)\)</span>. As discussed before, for N nodes in any binary tree, the tree is
+organized into about <span class="arithmatex">\(log(N)\)</span> rows. Since at most, we’d have to trickle the new value up to the top row, this will
+take <span class="arithmatex">\(log(N)\)</span> steps at most.</p>
+<p>While the insertion algorithm seems pretty straightforward, there’s one little snag. The first step has us place the new
+value as the heap’s last node. But this begs the question: how do we find the spot that will be the last node?</p>
+<p>Let’s take a look again at the heap before we insert the 40:</p>
+<p><img width="391" alt="image" src="https://user-images.githubusercontent.com/11669149/229859384-c50acd42-ce07-4e34-ae43-8056e8024f49.png"></p>
+<p>We know by looking at the diagram that to make the 40 into the last node, we’d make it the right child of the 8, as
+that’s the next available spot in the bottom row.</p>
+<p>However, a computer doesn’t have eyeballs, and doesn’t see the heap as a bunch of rows. All it sees is the root node,
+and can follow links to child nodes. So, how do we create an algorithm for the computer to find the spot for the new
+value?</p>
+<p>Take our example heap. When we start at the root node of 100, do we tell the computer to look among the 100’s right
+descendants to find the next available spot for the new last node?</p>
+<p>While it’s true that in our example heap the next available spot is among the 100’s right descendants, take a look at
+the following alternative heap:</p>
+<p><img width="307" alt="image" src="https://user-images.githubusercontent.com/11669149/229859684-37ece75a-dcba-4064-bcde-bf8f64d55bc2.png"></p>
+<p>In this heap, the next available spot for the new last node would be the 88’s right child, which is among the 100’s
+<em>left</em> descendants.</p>
+<p>Essentially, then, just as it’s impossible to search through a heap, it’s impossible to efficiently find the heap’s last
+node (or next available spot to hold a new last node) without having to inspect each and every node.</p>
+<p>So, how <em>do</em> we find the next available node? I’ll explain this later on, but for now, let’s call this issue the Problem
+of the Last Node.</p>
+<p>In the meantime, let’s explore the heap’s other primary operation, which is deletion.</p>
+<h3 id="heap-deletion">Heap deletion</h3>
+<p>The first thing to know about deleting a value from a heap is that <em>we only ever delete the root node.</em> This is right in
+line with the way a priority queue works, in that we only access and remove the highest-priority item.</p>
+<p>The algorithm for deleting the root node of a heap is as follows:</p>
+<ol>
+<li>Move the <em>last node</em> into where the root node was, effectively removing the original root node.</li>
+<li>Trickle the root node down into its proper place. I’ll explain how trickling down works shortly.</li>
+</ol>
+<p>Let’s say we’re going to remove the root node from the heap</p>
+<p><img width="385" alt="image" src="https://user-images.githubusercontent.com/11669149/229860946-9b407e45-f4d6-429d-86a3-73c5cdb8f561.png"></p>
+<p>In this example, the root node is the 100. To delete it, we overwrite the root by placing the last node there instead.
+In this case, the last node is the 3. So, we move the 3 and place it where the 100 was:</p>
+<p><img width="375" alt="image" src="https://user-images.githubusercontent.com/11669149/229861128-a0cb13a6-923f-4b2f-832c-9feffae19931.png"></p>
+<p>Now, we can’t leave the heap as is, since the heap condition has been violated and since the 3 is currently less than
+some (actually, most) of its descendants. To make things right again, we need to trickle the 3 down until its heap con-
+dition has been restored.</p>
+<p>Trickling down is a tad more complex than trickling up, since each time we trickle a node down, we have two possible
+directions as to where we will trickle it down. That is, we can either swap it with its left child or its right child. (
+When trickling up, on the other hand, each node has only one parent to swap with.)</p>
+<p>Here’s the algorithm for trickling <em>down.</em> For the sake of clarity, we’re going to call the node we’re trickling the
+“trickle node.”</p>
+<ol>
+<li>We check both children of the trickle node and see which one is larger.</li>
+<li>If the trickle node is smaller than the larger of the two child nodes, we swap the trickle node with that larger
+   child.</li>
+<li>We repeat Steps 1 and 2 until the trickle node has no children who are greater than it.</li>
+</ol>
+<p>Let’s see this in action.</p>
+<p>Step 1: The 3, which is the trickle node, currently has two children, the 88 and the 25. The 88 is larger of the two,
+and since the 3 is smaller than the 88, we swap the trickle node with the 88:</p>
+<p><img width="397" alt="image" src="https://user-images.githubusercontent.com/11669149/229861720-91ffa7e8-0843-4bee-bbf5-b183f42a9758.png"></p>
+<p>Step 2: The trickle node now has two new children, the 87 and the 16. The 87 is the larger one, and it is greater than
+the trickle node. So, we swap the trickle node with the 87:</p>
+<p><img width="402" alt="image" src="https://user-images.githubusercontent.com/11669149/229861921-da15c997-6627-4bd7-b491-7ba81fa17060.png"></p>
+<p>Step 3: The trickle node’s children are currently 86 and 50. The 86 is the larger of the two, and it is also greater
+than the trickle node, so we swap the 86 with the trickle node:</p>
+<p><img width="416" alt="image" src="https://user-images.githubusercontent.com/11669149/229862029-656feba8-f02e-4af3-8c45-cb9e6329259f.png"></p>
+<p>At this point, the trickle node has no children that are greater than it. (In fact, it has no children at all.) So,
+we’re done, as the heap condition has been restored.</p>
+<p>The reason why we always swap the trickle node with the <em>greater</em> of its two children is because if we swap it the with
+the smaller one, we’d end up violat- ing the heap condition immediately. Watch what happens when we try to swap the
+trickle node with smaller child.</p>
+<p>Let’s start again with the trickle node of 3 as our root:</p>
+<p><img width="391" alt="image" src="https://user-images.githubusercontent.com/11669149/229862292-ea563209-52df-405d-8722-0ab58aa962fc.png"></p>
+<p>Let’s swap the 3 with the 25, which is the smaller child:</p>
+<p><img width="375" alt="image" src="https://user-images.githubusercontent.com/11669149/229862476-9fa6d36c-439f-4faa-8f88-fae941cbb528.png"></p>
+<p>We’ve now placed the 25 in a situation where it is a parent of the 88. Since the 88 is greater than its parent, the heap
+condition has been broken.</p>
+<p>Like insertion, the time complexity of deletion from a heap is <span class="arithmatex">\(O(log N)\)</span>, as we have to trickle a node from the root
+down through all <span class="arithmatex">\(log(N)\)</span> levels of the heap.</p>
+<h3 id="heap-vs-ordered-arrays">Heap vs ordered arrays</h3>
+<p>Now that you know the efficiency of heaps, let’s see why it’s a great choice for implementing priority queues.</p>
+<p>Here’s a side-by-side comparison of ordered arrays versus heaps:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Ordered Array</th>
+<th>Heap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Insertion</td>
+<td><span class="arithmatex">\(O(N)\)</span></td>
+<td><span class="arithmatex">\(O(logN)\)</span></td>
+</tr>
+<tr>
+<td>Deletion</td>
+<td><span class="arithmatex">\(O(1)\)</span></td>
+<td><span class="arithmatex">\(O(logN)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>At first glance, it seems that it’s a wash. Ordered arrays are slower than heaps regarding insertion but faster than
+heaps for deletion.</p>
+<p>However, heaps are considered to be the better choice, and here’s why.</p>
+<p>While <span class="arithmatex">\(O(1)\)</span> is extremely fast, <span class="arithmatex">\(O(log N)\)</span> is still <em>very</em> fast. And <span class="arithmatex">\(O(N)\)</span>, by comparison, is slow.</p>
+<p>In this light, it becomes clearer as to why the heap is considered the better choice. We’d rather use a data structure
+that is consistently very fast than a data structure that is sometimes extremely fast and sometimes slow.</p>
+<p>It’s worth pointing out that priority queues generally perform insertions and deletions equally. Consider the emergency
+room example, where we expect to treat everyone who comes in. So, we want both our insertions and deletions to be fast.
+If either operation is slow, our priority queue will be inefficient.</p>
+<p>With a heap, we ensure that both of the priority queue’s primary operations—insertion and deletion—perform quickly.</p>
+<h3 id="last-node-problem">Last node problem</h3>
+<p>While the heap deletion algorithm seems straightforward, it once again raises the Problem of the Last Node.</p>
+<p>I explained that the first step of deletion requires us to move the last node and turn it into the root node. But, how
+do we find the last node in the first place?</p>
+<p>Before we solve the Problem of the Last Node, let’s first explore why insertion and deletion are so dependent on the
+last node anyway. Why couldn’t we insert new values elsewhere in the heap? And why, when deleting, can’t we replace the
+root node with some other node other than the last node?</p>
+<p>Now, if you think about it, you’ll realize that if we were to use other nodes, the heap would become incomplete. But
+this begs the next question: why is completeness <em>important</em> for the heap?</p>
+<p>The reason why completeness is important is because we want to ensure our heap remains <em>well-balanced.</em></p>
+<p>To see this clearly, let’s take another look at insertion. Let’s say we have the following heap:</p>
+<p><img width="310" alt="image" src="https://user-images.githubusercontent.com/11669149/229867881-a9d9254e-443f-42be-bee8-bb0a381e2dc5.png"></p>
+<p>If we want to insert a 5 into this heap, the only way to keep the heap well- balanced is by making the 5 the last node,
+in this case, making it a child of the 10:</p>
+<p><img width="310" alt="image" src="https://user-images.githubusercontent.com/11669149/229868010-a1522549-8a68-4b47-ba59-9d66b8188193.png"></p>
+<p>Any alternative to this algorithm would cause imbalance. Say, in an alternative universe, the algorithm was to insert
+the new node into the bottom leftmost node, which we could easily find by traversing the left children until we hit the
+bottom. This would make the 5 a child of the 15:</p>
+<p><img width="359" alt="image" src="https://user-images.githubusercontent.com/11669149/229868118-9b0d061d-d46d-472b-a845-21c64bc88e2c.png"></p>
+<p>Our heap is now somewhat imbalanced, and it’s easy to see how much more imbalanced it would become if we kept inserting
+new nodes at the bottom leftmost spot.</p>
+<p>Similarly, when deleting from a heap, we always turn the last node into the root because, otherwise, the heap can become
+imbalanced. Take again our example heap:</p>
+<p><img width="304" alt="image" src="https://user-images.githubusercontent.com/11669149/229868479-99a33b43-6f93-48f8-8aa3-58f880aad7fb.png"></p>
+<p>If in our alternative universe we always moved the bottom rightmost node into the root position, the 10 would become the
+root node, and we’d end up with an imbalanced heap with a bunch of left descendants and zero right descendants.</p>
+<p>Now, the reason why this balance is so important is because it’s what allows us to achieve <span class="arithmatex">\(O(log N)\)</span> operations. In a
+severely imbalanced tree like the following one, traversing it could take <span class="arithmatex">\(O(N)\)</span> steps instead:</p>
+<p><img width="217" alt="image" src="https://user-images.githubusercontent.com/11669149/229868628-133c2a96-6ce2-442e-b702-83857352636d.png"></p>
+<p>But this brings us back to the Problem of the Last Node. What algorithm would allow us to consistently find the last
+node of any heap? (Again, without having to traverse all N nodes.)</p>
+<p>And this is where our plot takes a sudden twist.</p>
+<h3 id="arrays-vs-heaps">Arrays vs heaps</h3>
+<p>Because finding the last node is so critical to the heap’s operations, and we want to make sure that finding the last
+node is efficient, heaps are <em>usually implemented using arrays.</em></p>
+<p>While until now we always assumed that every tree consists of independent nodes connected to each other with links (just
+like a linked list), you will now see that we can also use an array to implement a heap. That is, the heap itself can be
+an abstract data type that really uses an array under the hood.</p>
+<p>The figure below shows how an array is used to store the values of a heap.</p>
+<p><img width="449" alt="image" src="https://user-images.githubusercontent.com/11669149/229868896-396ad187-b3e5-417a-8e27-efb22875d0ba.png"></p>
+<p>The way this works is that we assign each node to an index within the array. In the previous diagram, the index of each
+node is found in a square below the node. If you look carefully, you’ll see that we assign the index of each node
+according to a specific pattern.</p>
+<p>The root node is always stored at index 0. We then move down a level and go from left to right, assigning each node to
+the next available index in the array. So, on the second level, the left node (88) becomes index 1, and the right node (
+25) becomes index 2. When we reach the end of a level, we move down to the next level and repeat this pattern.</p>
+<p>Now, we’re using an array to implement the heap because it solves the Problem of the Last Node. How?</p>
+<p>When we implement the heap in this fashion, <em>the last node will always be the final element of the array.</em> Since we move
+top down and left to right when assigning each value to the array, the last node will always be the final value in the
+array. The previous example shows that 3, the last node, is the last value in the array.</p>
+<p>Because the last node will always be found at the end of the array, it becomes trivial to find the last node: we need to
+access the final element. In addition, when we insert a new node into the heap, we do so at the end of the array in
+order to make it the last node.</p>
+<h3 id="traversing-an-array-based-heap">Traversing an Array-Based Heap</h3>
+<p>As you’ve seen, the heap’s insertion and deletion algorithms require us to be able to trickle our way through the heap.
+Trickling, in turn, requires us to be able to traverse the heap by accessing a node’s parent or children. But how do we
+move from node to node when all the values are merely stored in an array? Traversing a heap would have been
+straightforward if we could have simply followed each node’s links. But now that the heap is an array under the hood,
+how do we know which nodes are connected to each other?</p>
+<p>There’s an interesting solution to this. It turns out that when we assign the indexes of the heap’s nodes according to
+the pattern described earlier, the following traits of a heap are always true:</p>
+<ul>
+<li>To find the left child of any node, we can use the formula, (index * 2) + 1</li>
+<li>To find the right child of any node, we can use the formula, (index * 2) + 2</li>
+</ul>
+<p>Take another look at the previous diagram and focus on the 16, which is at index 4. To find its left child, we multiply
+its index (4) by 2 and add 1, which yields 9. This means that index 9 is the left child of the node at index 4.</p>
+<p>Similarly, to find the right child of index 4, we multiply the 4 by 2 and add 2, which yields 10. This means that index
+10 is the right child of index 4.</p>
+<p>Because these formulas always work, we’re able to treat our array as a tree.</p>
+<p>Let’s add these two methods to our Heap class:</p>
+<div class="highlight"><pre><span></span><code>def left_child_index(index) 
+    return (index * 2) + 1
+end
+def right_child_index(index) 
+    return (index * 2) + 2
+end
+</code></pre></div>
+<p>Each of these methods accept an index within the array and return the left or right child index, respectively.</p>
+<p>Here’s another important trait of array-based heaps:</p>
+<ul>
+<li>To find a node’s parent, we can use the formula, (index - 1) / 2</li>
+</ul>
+<p>Note that this formula uses integer division, meaning we throw away any numbers beyond the decimal point. For example,
+3 / 2 is considered 1, rather than the more accurate 1.5.</p>
+<p>Again, in our example heap, focus on index 4. If we take that index, subtract 1, and then divide by 2, we get 1. And as
+you can see in the diagram, the parent of the node at index 4 is found at index 1.</p>
+<p>So, now we can add another method to our Heap class:</p>
+<div class="highlight"><pre><span></span><code>def parent_index(index) 
+    return (index - 1) / 2
+end
+</code></pre></div>
+<p>This method accepts an index and calculates the index of its parent node.</p>
+<h3 id="example-heap-insertion">Example - Heap insertion</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// C++ program to insert new element to Heap</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="cp">#define MAX 1000 </span><span class="c1">// Max size of Heap</span>
+
+<span class="c1">// Function to heapify ith node in a Heap</span>
+<span class="c1">// of size n following a Bottom-up approach</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">heapify</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Find parent</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">parent</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// For Max-Heap</span>
+<span class="w">        </span><span class="c1">// If current node is greater than its parent</span>
+<span class="w">        </span><span class="c1">// Swap both of them and call heapify again</span>
+<span class="w">        </span><span class="c1">// for the parent</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">parent</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">swap</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">parent</span><span class="p">]);</span>
+
+<span class="w">            </span><span class="c1">// Recursively heapify the parent node</span>
+<span class="w">            </span><span class="n">heapify</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">parent</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Function to insert a new node to the Heap</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">insertNode</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Key</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Increase the size of Heap by 1</span>
+<span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Insert the element at end of Heap</span>
+<span class="w">    </span><span class="n">arr</span><span class="p">[</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Key</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Heapify the new node following a</span>
+<span class="w">    </span><span class="c1">// Bottom-up approach</span>
+<span class="w">    </span><span class="n">heapify</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// A utility function to print array of size n</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">printArray</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Driver Code</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Array representation of Max-Heap</span>
+<span class="w">    </span><span class="c1">// 10</span>
+<span class="w">    </span><span class="c1">//    /  \</span>
+<span class="c1">    // 5    3</span>
+<span class="w">    </span><span class="c1">//  / \</span>
+<span class="c1">    // 2   4</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">MAX</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">};</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">insertNode</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">printArray</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Final Heap will be:</span>
+<span class="w">    </span><span class="c1">// 15</span>
+<span class="w">    </span><span class="c1">//    /   \</span>
+<span class="c1">    // 5     10</span>
+<span class="w">    </span><span class="c1">//  / \   /</span>
+<span class="w">    </span><span class="c1">// 2   4 3</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="example-heap-deletion">Example - Heap deletion</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// C++ program for implement deletion in Heaps</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="c1">// To heapify a subtree rooted with node i which is</span>
+<span class="c1">// an index of arr[] and n is the size of heap</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">heapify</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">largest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="c1">// Initialize largest as root</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// left = 2*i + 1</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// right = 2*i + 2</span>
+
+<span class="w">    </span><span class="c1">// If left child is larger than root</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">largest</span><span class="p">])</span>
+<span class="w">        </span><span class="n">largest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// If right child is larger than largest so far</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">largest</span><span class="p">])</span>
+<span class="w">        </span><span class="n">largest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// If largest is not root</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">largest</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">swap</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">largest</span><span class="p">]);</span>
+
+<span class="w">        </span><span class="c1">// Recursively heapify the affected sub-tree</span>
+<span class="w">        </span><span class="n">heapify</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">largest</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Function to delete the root from Heap</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">deleteRoot</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Get the last element</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">lastElement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span>
+
+<span class="w">    </span><span class="c1">// Replace root with last element</span>
+<span class="w">    </span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lastElement</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Decrease size of heap by 1</span>
+<span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// heapify the root node</span>
+<span class="w">    </span><span class="n">heapify</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/* A utility function to print array of size n */</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">printArray</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Driver Code</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Array representation of Max-Heap</span>
+<span class="w">    </span><span class="c1">//     10</span>
+<span class="w">    </span><span class="c1">//    /  \</span>
+<span class="c1">    //   5    3</span>
+<span class="w">    </span><span class="c1">//  / \</span>
+<span class="c1">    // 2   4</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">};</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+
+<span class="w">    </span><span class="n">deleteRoot</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">printArray</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="alternate-heap-implementations">Alternate heap implementations</h3>
+<p>Our heap implementation is now complete. It’s worth noting that while we did use an array to implement the heap under
+the hood, it <em>is possible</em> to implement a heap using linked nodes as well. (This alternative implementation uses a
+different trick to solve the Problem of the Last Node, one that involves binary numbers.)</p>
+<p>However, the array implementation is the more common approach, so that is what I presented here. It’s also really
+interesting to see how an array can be used to implement a tree.</p>
+<p>Indeed, it’s possible to use an array to implement any binary tree, such as the binary search tree from the previous
+chapter. However, the heap is the first case of a binary tree where an array implementation provides an advantage, as it
+helps us find the last node easily.</p>
+<h3 id="heaps-as-priority-queues">Heaps as Priority Queues</h3>
+<p>Now that you understand how heaps work, we can circle back to our old friend, the priority queue.</p>
+<p>Again, the primary function of a priority queue is to allow us immediate access to the highest-priority item in the
+queue. In our emergency room example, we want to first address the person with the most serious problem.</p>
+<p>For this reason, a heap is a natural fit for priority queue implementations. The heap gives us immediate access to the
+highest-priority item, which can always be found at the root node. Each time we take care of the highest-priority item (
+and then remove it from the heap), the next-highest item floats to the top of the heap and is on deck to be addressed
+next. And the heap accomplishes this while maintaining very fast insertions and deletions, both of which are <span class="arithmatex">\(O(log N)\)</span>.</p>
+<p>Contrast this to the ordered array, which requires much slower insertions of <span class="arithmatex">\(O(N)\)</span> to ensure that each new value is in
+its proper place.</p>
+<p>It turns out that the heap’s weak ordering <em>is its very advantage.</em> The fact that it doesn’t have to be perfectly
+ordered allows us to insert new values in <span class="arithmatex">\(O(log N)\)</span> time. At the same time, the heap is <em>ordered just enough</em> so that
+we can always access the one item we need at any given time—the heap’s greatest value.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>So far, we’ve seen how different types of trees can optimize different types of problems. Binary search trees kept
+search fast while minimizing the cost of insertions, and heaps were the perfect tool for building priority queues.</p>
+<p>In the next module, we’ll explore another tree used to power some of the most common text-based operations you use
+daily.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/semester.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/faq.js"></script>
+      
+    
+  </body>
+</html>

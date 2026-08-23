@@ -1,0 +1,2811 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Methods in Java - Dr. Khan's Computer Science Courses @ San Diego Miramar College</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-5SGJZZD5EZ"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-5SGJZZD5EZ",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-5SGJZZD5EZ",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#methods-in-java" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Dr. Khan&#39;s Computer Science Courses @ San Diego Miramar College" class="md-header__button md-logo" aria-label="Dr. Khan's Computer Science Courses @ San Diego Miramar College" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dr. Khan's Computer Science Courses @ San Diego Miramar College
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Methods in Java
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Dr. Khan&#39;s Computer Science Courses @ San Diego Miramar College" class="md-nav__button md-logo" aria-label="Dr. Khan's Computer Science Courses @ San Diego Miramar College" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Dr. Khan's Computer Science Courses @ San Diego Miramar College
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 179<br>Python Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 179<br>Python Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 187<br>Data Structures in C++
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 187<br>Data Structures in C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 190<br>Java Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 190<br>Java Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 192<br>C/C++ Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 192<br>C/C++ Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 211<br>Assembly Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 211<br>Assembly Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/8_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-why-use-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Why Use Methods?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-is-a-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. What Is a Method?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-method-header-and-method-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Method Header and Method Body
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-method-signature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Method Signature
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-formal-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Formal Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Arguments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-defining-and-invoking-a-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Defining and Invoking a Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-value-returning-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Value-Returning Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-the-return-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. The return Statement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-using-a-returned-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Using a Returned Value
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Using a Returned Value">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assigned-to-a-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assigned to a variable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#printed-directly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Printed directly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#used-in-an-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Used in an expression
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passed-to-another-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passed to another method
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-void-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. void Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-void-methods-with-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. void Methods with Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-returning-early-from-a-void-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Returning Early from a void Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-parameter-type-and-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Parameter Type and Order
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-pass-by-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Pass by Value
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-why-a-primitive-swap-method-does-not-swap-the-caller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Why a Primitive Swap Method Does Not Swap the Caller
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-method-calls-and-the-call-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. Method Calls and the Call Stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-reusing-methods-from-another-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. Reusing Methods from Another Class
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-modularizing-a-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. Modularizing a Program
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-example-greatest-common-divisor-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20. Example: Greatest Common Divisor Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-example-prime-number-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21. Example: Prime Number Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-example-hexadecimal-digit-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22. Example: Hexadecimal Digit Conversion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-method-overloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        23. Method Overloading
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-what-makes-overloaded-methods-different" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24. What Makes Overloaded Methods Different?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-ambiguous-method-invocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25. Ambiguous Method Invocation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-local-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26. Local Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-variable-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        27. Variable Scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28-scope-in-for-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        28. Scope in for Loops
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#29-avoid-redeclaring-variables-in-nested-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        29. Avoid Redeclaring Variables in Nested Scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30-method-abstraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30. Method Abstraction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31-benefits-of-method-abstraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        31. Benefits of Method Abstraction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-example-random-character-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        32. Example: Random Character Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-stepwise-refinement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        33. Stepwise Refinement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-structure-charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        34. Structure Charts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-top-down-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        35. Top-Down Development
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-bottom-up-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        36. Bottom-Up Development
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-designing-good-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        37. Designing Good Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#38-methods-and-repeated-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        38. Methods and Repeated Logic
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#39-common-error-forgetting-to-return-a-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        39. Common Error: Forgetting to Return a Value
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#40-common-error-incorrect-argument-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        40. Common Error: Incorrect Argument Order
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#41-common-error-expecting-primitive-arguments-to-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        41. Common Error: Expecting Primitive Arguments to Change
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-common-error-confusing-void-and-value-returning-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        42. Common Error: Confusing void and Value-Returning Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-common-error-scope-violations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        43. Common Error: Scope Violations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-testing-methods-independently" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        44. Testing Methods Independently
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-putting-the-concepts-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        45. Putting the Concepts Together
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-your-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Your Understanding
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="methods-in-java">Methods in Java</h1>
+<h2 id="overview">Overview</h2>
+<p>As programs become larger, placing every statement inside <code>main</code> makes
+the code difficult to understand, test, and maintain. <strong>Methods</strong> allow
+a program to be divided into smaller units, where each unit performs a
+specific operation.</p>
+<p>A well-designed method has a clear purpose, accepts only the information
+it needs, and may return a result to its caller. Methods also make it
+possible to reuse logic instead of rewriting the same code in several
+places.</p>
+<hr />
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>After completing this material, you should be able to:</p>
+<ul>
+<li>Define and invoke Java methods.</li>
+<li>Distinguish between formal parameters and arguments.</li>
+<li>Identify a method's name, parameter list, return type, body, and
+    signature.</li>
+<li>Write methods that return values.</li>
+<li>Write <code>void</code> methods that perform an action.</li>
+<li>Explain how primitive values are passed to methods.</li>
+<li>Use methods to reduce repeated code and organize a program into
+    modules.</li>
+<li>Overload methods appropriately.</li>
+<li>Recognize ambiguous method calls.</li>
+<li>Determine the scope of local variables.</li>
+<li>Apply method abstraction to program design.</li>
+<li>Decompose a larger problem into smaller methods using stepwise
+    refinement.</li>
+</ul>
+<hr />
+<h2 id="1-why-use-methods">1. Why Use Methods?</h2>
+<p>Suppose a program needs to calculate the sum of several different
+integer ranges. One approach is to repeat nearly identical loops:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sum</span><span class="p">);</span>
+
+<span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sum</span><span class="p">);</span>
+</code></pre></div>
+<p>The repeated logic can instead be placed in a method:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">sumRange</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">start</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">end</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The method can then be reused:</p>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sumRange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sumRange</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sumRange</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span><span class="w"> </span><span class="mi">45</span><span class="p">));</span>
+</code></pre></div>
+<p>The program becomes shorter and the purpose of the repeated operation
+becomes clearer.</p>
+<hr />
+<h2 id="2-what-is-a-method">2. What Is a Method?</h2>
+<p>A method is a named group of statements designed to perform an
+operation.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">larger</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">second</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">first</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">second</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">first</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">second</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This method receives two integers and returns the larger value.</p>
+<p>A method normally contains several important components:</p>
+<div class="highlight"><pre><span></span><code>modifier  return type  method name  parameter list
+   ↓           ↓            ↓            ↓
+public static int        larger(int first, int second)
+</code></pre></div>
+<p>The statements inside the braces form the <strong>method body</strong>.</p>
+<hr />
+<h2 id="3-method-header-and-method-body">3. Method Header and Method Body</h2>
+<p>Consider:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculateArea</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">area</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The header is:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculateArea</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">)</span>
+</code></pre></div>
+<p>It identifies:</p>
+<ul>
+<li>Modifiers: <code>public static</code></li>
+<li>Return type: <code>double</code></li>
+<li>Method name: <code>calculateArea</code></li>
+<li>Parameter: <code>double radius</code></li>
+</ul>
+<p>The body is:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">area</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The body contains the implementation of the operation.</p>
+<hr />
+<h2 id="4-method-signature">4. Method Signature</h2>
+<p>A method's <strong>signature</strong> consists of:</p>
+<div class="highlight"><pre><span></span><code>method name + parameter list
+</code></pre></div>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">multiply</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+</code></pre></div>
+<p>has the signature:</p>
+<div class="highlight"><pre><span></span><code>multiply(int, int)
+</code></pre></div>
+<p>The return type is not part of the method signature.</p>
+<p>This becomes especially important when working with overloaded methods.</p>
+<hr />
+<h2 id="5-formal-parameters">5. Formal Parameters</h2>
+<p>Variables declared in a method's parameter list are called <strong>formal
+parameters</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">subtract</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">second</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">second</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Here:</p>
+<div class="highlight"><pre><span></span><code>first
+second
+</code></pre></div>
+<p>are formal parameters.</p>
+<p>They receive values when the method is invoked.</p>
+<hr />
+<h2 id="6-arguments">6. Arguments</h2>
+<p>Values supplied when a method is invoked are called <strong>arguments</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">subtract</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span>
+</code></pre></div>
+<p>Here:</p>
+<div class="highlight"><pre><span></span><code>20
+8
+</code></pre></div>
+<p>are arguments.</p>
+<p>They correspond to:</p>
+<div class="highlight"><pre><span></span><code>first = 20
+second = 8
+</code></pre></div>
+<p>The arguments must be compatible with the method's parameter types and
+must appear in the correct order.</p>
+<hr />
+<h2 id="7-defining-and-invoking-a-method">7. Defining and Invoking a Method</h2>
+<p>A method definition describes what the method does.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">number</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>A method invocation requests that operation:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">answer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">square</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+</code></pre></div>
+<p>Execution temporarily transfers to <code>square</code>. After the method finishes,
+its return value is assigned to <code>answer</code>.</p>
+<div class="highlight"><pre><span></span><code>main
+  |
+  | square(7)
+  v
+square
+  |
+  | return 49
+  v
+main
+</code></pre></div>
+<hr />
+<h2 id="8-value-returning-methods">8. Value-Returning Methods</h2>
+<p>A <strong>value-returning method</strong> sends a result back to its caller.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">convertMilesToKilometers</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">miles</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">miles</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.60934</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Invocation:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">km</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">convertMilesToKilometers</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</code></pre></div>
+<p>The method's declared return type must be compatible with the value
+returned.</p>
+<hr />
+<h2 id="9-the-return-statement">9. The <code>return</code> Statement</h2>
+<p>The <code>return</code> statement ends a method and sends a value back to the
+caller.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">cube</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">number</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>For a value-returning method, every possible execution path must return
+an appropriate value.</p>
+<p>A problematic method might be:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">absoluteValue</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="n">number</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>If <code>number</code> is not negative, no value is returned.</p>
+<p>A correct version is:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">absoluteValue</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="n">number</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">number</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="10-using-a-returned-value">10. Using a Returned Value</h2>
+<p>A returned value can be:</p>
+<h3 id="assigned-to-a-variable">Assigned to a variable</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">calculateArea</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="printed-directly">Printed directly</h3>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">calculateArea</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+</code></pre></div>
+<h3 id="used-in-an-expression">Used in an expression</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">totalArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">calculateArea</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">calculateArea</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="passed-to-another-method">Passed to another method</h3>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">round</span><span class="p">(</span><span class="n">calculateArea</span><span class="p">(</span><span class="mi">5</span><span class="p">)));</span>
+</code></pre></div>
+<p>This flexibility makes value-returning methods useful building blocks.</p>
+<hr />
+<h2 id="11-void-methods">11. <code>void</code> Methods</h2>
+<p>A method that does not return a value uses the return type <code>void</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">displayWelcome</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Welcome to Java&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Invoke it with:</p>
+<div class="highlight"><pre><span></span><code><span class="n">displayWelcome</span><span class="p">();</span>
+</code></pre></div>
+<p>A <code>void</code> method performs an action rather than producing a value for use
+in an expression.</p>
+<hr />
+<h2 id="12-void-methods-with-parameters">12. <code>void</code> Methods with Parameters</h2>
+<p>A <code>void</code> method can still receive information.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">printMessage</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">times</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">times</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Invocation:</p>
+<div class="highlight"><pre><span></span><code><span class="n">printMessage</span><span class="p">(</span><span class="s">&quot;Java Methods&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+</code></pre></div>
+<p>Output:</p>
+<div class="highlight"><pre><span></span><code>Java Methods
+Java Methods
+Java Methods
+</code></pre></div>
+<p>The order of the arguments matters because they correspond to the
+parameters by position.</p>
+<hr />
+<h2 id="13-returning-early-from-a-void-method">13. Returning Early from a <code>void</code> Method</h2>
+<p>A <code>void</code> method can use:</p>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="p">;</span>
+</code></pre></div>
+<p>to terminate early.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">printPositive</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>No value follows <code>return</code> because the method's return type is <code>void</code>.</p>
+<hr />
+<h2 id="14-parameter-type-and-order">14. Parameter Type and Order</h2>
+<p>Suppose a method is defined as:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">repeat</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This invocation is valid:</p>
+<div class="highlight"><pre><span></span><code><span class="n">repeat</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+</code></pre></div>
+<p>This is not:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// repeat(5, &quot;Hello&quot;);</span>
+</code></pre></div>
+<p>The compiler compares the arguments with the method's parameter list.</p>
+<p>Correct order and compatible data types are required.</p>
+<hr />
+<h2 id="15-pass-by-value">15. Pass by Value</h2>
+<p>Java passes argument values to method parameters.</p>
+<p>For primitive types, the method receives a copy of the value.</p>
+<p>Consider:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">changeValue</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>and:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+
+<span class="n">changeValue</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+</code></pre></div>
+<p>Output:</p>
+<div class="highlight"><pre><span></span><code>10
+</code></pre></div>
+<p>Changing <code>number</code> does not change <code>x</code>.</p>
+<p>Conceptually:</p>
+<div class="highlight"><pre><span></span><code>x in main:       10
+                  |
+                  | copy value
+                  v
+number in method: 10
+
+number = 100
+
+x in main:       10
+number in method:100
+</code></pre></div>
+<p>The two variables are separate.</p>
+<hr />
+<h2 id="16-why-a-primitive-swap-method-does-not-swap-the-caller">16. Why a Primitive Swap Method Does Not Swap the Caller</h2>
+<p>Consider:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">swap</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">second</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">first</span><span class="p">;</span>
+<span class="w">    </span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">second</span><span class="p">;</span>
+<span class="w">    </span><span class="n">second</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Now:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+
+<span class="n">swap</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+</code></pre></div>
+<p>Output:</p>
+<div class="highlight"><pre><span></span><code>4 9
+</code></pre></div>
+<p>Inside <code>swap</code>, the copies are exchanged. The original variables in the
+caller remain unchanged.</p>
+<hr />
+<h2 id="17-method-calls-and-the-call-stack">17. Method Calls and the Call Stack</h2>
+<p>Each active method call needs its own execution information, including
+parameters and local variables.</p>
+<p>Suppose:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">larger</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>When <code>larger(x, y)</code> is invoked, the caller pauses while the called
+method executes.</p>
+<p>Conceptually:</p>
+<div class="highlight"><pre><span></span><code>larger
+----------------
+first = 8
+second = 3
+
+main
+----------------
+x = 8
+y = 3
+result = ?
+</code></pre></div>
+<p>After <code>larger</code> returns, its method-call information is removed and
+execution continues in <code>main</code>.</p>
+<p>Understanding this process helps explain why local variables in separate
+method calls are independent.</p>
+<hr />
+<h2 id="18-reusing-methods-from-another-class">18. Reusing Methods from Another Class</h2>
+<p>A reusable <code>static</code> method can be called from another class by
+qualifying the method name with the class name.</p>
+<p>Suppose:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">NumberTools</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">larger</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Another class can call:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NumberTools</span><span class="p">.</span><span class="na">larger</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">);</span>
+</code></pre></div>
+<p>This allows related reusable operations to be organized into utility
+classes.</p>
+<hr />
+<h2 id="19-modularizing-a-program">19. Modularizing a Program</h2>
+<p>Methods can divide a larger problem into smaller responsibilities.</p>
+<p>Instead of:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// read data</span>
+<span class="w">    </span><span class="c1">// validate data</span>
+<span class="w">    </span><span class="c1">// calculate results</span>
+<span class="w">    </span><span class="c1">// determine status</span>
+<span class="w">    </span><span class="c1">// print report</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>use:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">readScore</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">valid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">isValidScore</span><span class="p">(</span><span class="n">score</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">valid</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">grade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">determineGrade</span><span class="p">(</span><span class="n">score</span><span class="p">);</span>
+<span class="w">        </span><span class="n">printReport</span><span class="p">(</span><span class="n">score</span><span class="p">,</span><span class="w"> </span><span class="n">grade</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Each method represents one meaningful operation.</p>
+<p>This makes the program easier to read, test, debug, and modify.</p>
+<hr />
+<h2 id="20-example-greatest-common-divisor-method">20. Example: Greatest Common Divisor Method</h2>
+<p>A mathematical operation can be encapsulated in a reusable method.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">gcd</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">second</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">gcd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">divisor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">         </span><span class="n">divisor</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">divisor</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">second</span><span class="p">;</span>
+<span class="w">         </span><span class="n">divisor</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">first</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">divisor</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">            </span><span class="n">second</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">divisor</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">            </span><span class="n">gcd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">divisor</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">gcd</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Invocation:</p>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">gcd</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span><span class="w"> </span><span class="mi">36</span><span class="p">));</span>
+</code></pre></div>
+<p>Output:</p>
+<div class="highlight"><pre><span></span><code>12
+</code></pre></div>
+<p>The caller does not need to know how the divisor search is implemented.</p>
+<hr />
+<h2 id="21-example-prime-number-method">21. Example: Prime Number Method</h2>
+<p>A method can answer a focused yes/no question by returning a <code>boolean</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isPrime</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">divisor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">         </span><span class="n">divisor</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
+<span class="w">         </span><span class="n">divisor</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">divisor</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isPrime</span><span class="p">(</span><span class="mi">29</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;29 is prime.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The method name makes the condition easy to understand.</p>
+<hr />
+<h2 id="22-example-hexadecimal-digit-conversion">22. Example: Hexadecimal Digit Conversion</h2>
+<p>Methods can separate a conversion problem into smaller operations.</p>
+<p>For example, one method can convert a hexadecimal digit to its decimal
+value:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">hexDigitToDecimal</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">digit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">digit</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">digit</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;9&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">digit</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">digit</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">digit</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;F&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">digit</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Another method can use it repeatedly:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">hexToDecimal</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">hex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">decimal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">hex</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hexDigitToDecimal</span><span class="p">(</span>
+<span class="w">            </span><span class="n">Character</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">(</span><span class="n">hex</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+<span class="w">        </span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">decimal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">decimal</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">16</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">decimal</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This illustrates decomposition: one method solves the digit-level
+problem while another solves the complete conversion.</p>
+<hr />
+<h2 id="23-method-overloading">23. Method Overloading</h2>
+<p>Java permits multiple methods to have the same name when their parameter
+lists are different.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">larger</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">larger</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Now:</p>
+<div class="highlight"><pre><span></span><code><span class="n">larger</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">);</span>
+</code></pre></div>
+<p>uses the <code>int</code> version, while:</p>
+<div class="highlight"><pre><span></span><code><span class="n">larger</span><span class="p">(</span><span class="mf">4.5</span><span class="p">,</span><span class="w"> </span><span class="mf">7.2</span><span class="p">);</span>
+</code></pre></div>
+<p>uses the <code>double</code> version.</p>
+<p>This is called <strong>method overloading</strong>.</p>
+<hr />
+<h2 id="24-what-makes-overloaded-methods-different">24. What Makes Overloaded Methods Different?</h2>
+<p>Overloaded methods must have different parameter lists.</p>
+<p>Differences may involve:</p>
+<ul>
+<li>Number of parameters</li>
+<li>Parameter data types</li>
+<li>Order of parameter types</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">display</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">display</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">display</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">display</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p>Changing only the return type is not sufficient.</p>
+<p>This is invalid:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// public static int calculate(int x) { ... }</span>
+<span class="c1">// public static double calculate(int x) { ... }</span>
+</code></pre></div>
+<p>Both methods would have the same signature.</p>
+<hr />
+<h2 id="25-ambiguous-method-invocation">25. Ambiguous Method Invocation</h2>
+<p>Overloading must be designed carefully.</p>
+<p>Suppose:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculate</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculate</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>A call such as:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// calculate(5, 5);</span>
+</code></pre></div>
+<p>can be ambiguous because either overloaded version appears applicable
+through numeric conversion.</p>
+<p>If the compiler cannot determine the most specific method, compilation
+fails.</p>
+<hr />
+<h2 id="26-local-variables">26. Local Variables</h2>
+<p>A variable declared inside a method is a <strong>local variable</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculateTax</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">taxRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.08</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">tax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">taxRate</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">tax</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Here:</p>
+<div class="highlight"><pre><span></span><code>amount
+taxRate
+tax
+</code></pre></div>
+<p>are available only within the region where their declarations are in
+scope.</p>
+<hr />
+<h2 id="27-variable-scope">27. Variable Scope</h2>
+<p><strong>Scope</strong> is the portion of a program in which a variable can be
+referenced.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">example</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// System.out.println(y); // Error</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>x</code> is available through the method block after its declaration.</p>
+<p><code>y</code> exists only inside the <code>if</code> block.</p>
+<hr />
+<h2 id="28-scope-in-for-loops">28. Scope in <code>for</code> Loops</h2>
+<p>A variable declared in the initialization section of a <code>for</code> loop
+belongs to that loop.</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// i cannot be referenced here</span>
+</code></pre></div>
+<p>Two separate, non-nested loops can each declare their own <code>i</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The scopes do not overlap.</p>
+<hr />
+<h2 id="29-avoid-redeclaring-variables-in-nested-scope">29. Avoid Redeclaring Variables in Nested Scope</h2>
+<p>Consider:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">example</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// int value = 20; // Not allowed</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The inner block is nested within the scope of the existing local
+variable.</p>
+<p>Choose distinct names instead:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">adjustedValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="30-method-abstraction">30. Method Abstraction</h2>
+<p>A caller should be able to use a method based on its purpose and
+interface without needing to understand every implementation detail.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">calculateDistance</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">y2</span><span class="p">);</span>
+</code></pre></div>
+<p>The caller needs to know:</p>
+<ul>
+<li>What the method does</li>
+<li>What arguments it requires</li>
+<li>What it returns</li>
+</ul>
+<p>The detailed formula can remain inside the method.</p>
+<p>This is <strong>method abstraction</strong>.</p>
+<p>You can think of the method as a black box:</p>
+<div class="highlight"><pre><span></span><code>        input
+          |
+          v
++--------------------+
+| calculateDistance  |
+| implementation     |
+| hidden inside      |
++--------------------+
+          |
+          v
+        result
+</code></pre></div>
+<hr />
+<h2 id="31-benefits-of-method-abstraction">31. Benefits of Method Abstraction</h2>
+<p>Method abstraction helps a programmer:</p>
+<ul>
+<li>Reuse operations.</li>
+<li>Hide implementation details.</li>
+<li>Reduce complexity.</li>
+<li>Focus on one level of a problem at a time.</li>
+<li>Test individual operations independently.</li>
+<li>Change an implementation without rewriting every caller.</li>
+</ul>
+<p>A descriptive method name also makes code more self-explanatory.</p>
+<hr />
+<h2 id="32-example-random-character-method">32. Example: Random Character Method</h2>
+<p>A general-purpose method can generate a random character between two
+character values:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="nf">randomCharacter</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">last</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="n">first</span><span class="w"> </span><span class="o">+</span>
+<span class="w">        </span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">last</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Specialized methods can reuse it:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="nf">randomLowercaseLetter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">randomCharacter</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;z&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="nf">randomUppercaseLetter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">randomCharacter</span><span class="p">(</span><span class="sc">&#39;A&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;Z&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="nf">randomDigit</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">randomCharacter</span><span class="p">(</span><span class="sc">&#39;0&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;9&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This design places the general calculation in one reusable method and
+gives meaningful names to common specialized operations.</p>
+<hr />
+<h2 id="33-stepwise-refinement">33. Stepwise Refinement</h2>
+<p>Large programming problems are easier to manage when divided into
+smaller problems.</p>
+<p>This process is often called <strong>stepwise refinement</strong> or <strong>divide and
+conquer</strong>.</p>
+<p>Suppose the task is:</p>
+<div class="highlight"><pre><span></span><code>Produce a monthly calendar
+</code></pre></div>
+<p>A first decomposition might be:</p>
+<div class="highlight"><pre><span></span><code>produceCalendar
+├── readInput
+└── printMonth
+</code></pre></div>
+<p>Then:</p>
+<div class="highlight"><pre><span></span><code>printMonth
+├── printMonthTitle
+└── printMonthBody
+</code></pre></div>
+<p>The smaller operations can be refined further:</p>
+<div class="highlight"><pre><span></span><code>printMonthTitle
+└── getMonthName
+
+printMonthBody
+├── getStartDay
+└── getNumberOfDaysInMonth
+</code></pre></div>
+<p>Eventually, each method represents a manageable task.</p>
+<hr />
+<h2 id="34-structure-charts">34. Structure Charts</h2>
+<p>A structure chart can show the relationship among methods before
+implementation begins.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>main
+├── readInput
+├── validateInput
+├── calculateResult
+│   ├── calculateSubtotal
+│   └── calculateAdjustment
+└── displayReport
+</code></pre></div>
+<p>This helps identify:</p>
+<ul>
+<li>Major tasks</li>
+<li>Subtasks</li>
+<li>Method responsibilities</li>
+<li>Opportunities for reuse</li>
+<li>Dependencies between operations</li>
+</ul>
+<p>Designing the method structure before coding can simplify
+implementation.</p>
+<hr />
+<h2 id="35-top-down-development">35. Top-Down Development</h2>
+<p>A <strong>top-down</strong> approach begins with the highest-level method and works
+toward lower-level details.</p>
+<p>A programmer might first write:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">readInput</span><span class="p">();</span>
+<span class="w">    </span><span class="n">processData</span><span class="p">();</span>
+<span class="w">    </span><span class="n">displayResults</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The detailed methods can initially be represented by <strong>stubs</strong>.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">processData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;processData called&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The stub is intentionally incomplete but allows the program's overall
+structure to be compiled and tested while development continues.</p>
+<hr />
+<h2 id="36-bottom-up-development">36. Bottom-Up Development</h2>
+<p>A <strong>bottom-up</strong> approach begins with smaller supporting methods.</p>
+<p>For example, a programmer may implement and test:</p>
+<div class="highlight"><pre><span></span><code>isValidDate
+isLeapYear
+daysInMonth
+</code></pre></div>
+<p>before implementing a larger method that depends on them.</p>
+<p>Each method can be tested independently before being integrated into the
+larger program.</p>
+<p>Both top-down and bottom-up approaches can be useful, and a project may
+combine them.</p>
+<hr />
+<h2 id="37-designing-good-methods">37. Designing Good Methods</h2>
+<p>A useful method should normally perform one clear task.</p>
+<p>Prefer:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isValidScore</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">score</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculateAverage</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">total</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">displayReport</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">average</span><span class="p">)</span>
+</code></pre></div>
+<p>over one very large method containing unrelated responsibilities.</p>
+<p>Good method names should communicate intent.</p>
+<p>Prefer:</p>
+<div class="highlight"><pre><span></span><code><span class="n">calculateTuition</span><span class="p">()</span>
+</code></pre></div>
+<p>instead of:</p>
+<div class="highlight"><pre><span></span><code><span class="n">doStuff</span><span class="p">()</span>
+</code></pre></div>
+<hr />
+<h2 id="38-methods-and-repeated-logic">38. Methods and Repeated Logic</h2>
+<p>Repeated code often indicates an opportunity for a method.</p>
+<p>Instead of:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">area1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">area2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">area3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+</code></pre></div>
+<p>write:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">circleArea</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Then:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">area1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">circleArea</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">area2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">circleArea</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">area3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">circleArea</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
+</code></pre></div>
+<p>If the formula changes, only one implementation needs to be updated.</p>
+<hr />
+<h2 id="39-common-error-forgetting-to-return-a-value">39. Common Error: Forgetting to Return a Value</h2>
+<p>Incorrect:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">larger</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>There is no return value when <code>a &lt;= b</code>.</p>
+<p>Correct:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">larger</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="40-common-error-incorrect-argument-order">40. Common Error: Incorrect Argument Order</h2>
+<p>Suppose:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">divide</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">numerator</span><span class="p">,</span>
+<span class="w">                            </span><span class="kt">double</span><span class="w"> </span><span class="n">denominator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">numerator</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">denominator</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>These calls produce different results:</p>
+<div class="highlight"><pre><span></span><code><span class="n">divide</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="n">divide</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+</code></pre></div>
+<p>Arguments are matched to parameters by position.</p>
+<hr />
+<h2 id="41-common-error-expecting-primitive-arguments-to-change">41. Common Error: Expecting Primitive Arguments to Change</h2>
+<p>Incorrect assumption:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doubleValue</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">value</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Calling:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="n">doubleValue</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
+</code></pre></div>
+<p>does not change <code>number</code>.</p>
+<p>If the transformed value is needed, return it:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">doubleValue</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Then:</p>
+<div class="highlight"><pre><span></span><code><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">doubleValue</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
+</code></pre></div>
+<hr />
+<h2 id="42-common-error-confusing-void-and-value-returning-methods">42. Common Error: Confusing <code>void</code> and Value-Returning Methods</h2>
+<p>A <code>void</code> method cannot be used as though it produces a value.</p>
+<p>Given:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">displayMessage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>this is invalid:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// String message = displayMessage();</span>
+</code></pre></div>
+<p>If a result is needed, define a value-returning method instead.</p>
+<hr />
+<h2 id="43-common-error-scope-violations">43. Common Error: Scope Violations</h2>
+<p>Incorrect:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">90</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">score</span><span class="p">);</span>
+</code></pre></div>
+<p><code>score</code> is no longer in scope outside the block.</p>
+<p>Declare the variable in a wider scope when it must be used later:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">score</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">90</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">score</span><span class="p">);</span>
+</code></pre></div>
+<hr />
+<h2 id="44-testing-methods-independently">44. Testing Methods Independently</h2>
+<p>Small methods are easier to test than one large program.</p>
+<p>Suppose:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isEven</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Test several categories:</p>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">isEven</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">isEven</span><span class="p">(</span><span class="mi">7</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">isEven</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">isEven</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
+</code></pre></div>
+<p>Testing boundary and unusual values can reveal errors before the method
+is integrated into a larger application.</p>
+<hr />
+<h2 id="45-putting-the-concepts-together">45. Putting the Concepts Together</h2>
+<p>The following example separates a simple student-result application into
+focused methods.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StudentResult</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Enter score: &quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isValidScore</span><span class="p">(</span><span class="n">score</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">            </span><span class="kt">char</span><span class="w"> </span><span class="n">grade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">determineGrade</span><span class="p">(</span><span class="n">score</span><span class="p">);</span>
+<span class="w">            </span><span class="n">displayResult</span><span class="p">(</span><span class="n">score</span><span class="p">,</span><span class="w"> </span><span class="n">grade</span><span class="p">);</span>
+
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Invalid score.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isValidScore</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="nf">determineGrade</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">90</span><span class="p">)</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">80</span><span class="p">)</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="sc">&#39;B&#39;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">70</span><span class="p">)</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="sc">&#39;C&#39;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">60</span><span class="p">)</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="sc">&#39;D&#39;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="sc">&#39;F&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">displayResult</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">score</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">grade</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span>
+<span class="w">            </span><span class="s">&quot;Score: %.1f%nGrade: %c%n&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">score</span><span class="p">,</span>
+<span class="w">            </span><span class="n">grade</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This program demonstrates:</p>
+<ul>
+<li>Method definitions</li>
+<li>Method invocation</li>
+<li>Formal parameters</li>
+<li>Arguments</li>
+<li><code>boolean</code> return values</li>
+<li><code>char</code> return values</li>
+<li>A <code>void</code> method</li>
+<li>Method abstraction</li>
+<li>Modular program organization</li>
+</ul>
+<hr />
+<h2 id="check-your-understanding">Check Your Understanding</h2>
+<ol>
+<li>What problem do methods help solve in a large program?</li>
+<li>What is a method header?</li>
+<li>What is a method body?</li>
+<li>What is a method signature?</li>
+<li>Are return types part of method signatures?</li>
+<li>What is a formal parameter?</li>
+<li>What is an argument?</li>
+<li>How are arguments associated with parameters?</li>
+<li>What does the <code>return</code> statement do?</li>
+<li>What is the difference between a value-returning method and a <code>void</code>
+    method?</li>
+<li>Why must every possible execution path of a value-returning method
+    produce a value?</li>
+<li>What happens when a primitive value is passed to a method?</li>
+<li>Why does swapping two primitive parameters inside a method not swap
+    the caller's variables?</li>
+<li>What role does the call stack play during method invocation?</li>
+<li>How can a <code>static</code> method in another class be invoked?</li>
+<li>What is method overloading?</li>
+<li>Can two methods be overloaded by changing only their return types?</li>
+<li>What is an ambiguous method invocation?</li>
+<li>What is the scope of a local variable?</li>
+<li>Why can two separate, non-nested <code>for</code> loops each declare a variable
+    named <code>i</code>?</li>
+<li>What is method abstraction?</li>
+<li>Why is a method sometimes described as a black box?</li>
+<li>What is stepwise refinement?</li>
+<li>What is a method stub?</li>
+<li>How do top-down and bottom-up development differ?</li>
+<li>Why does modular code generally make testing and debugging easier?</li>
+</ol>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/semester.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/faq.js"></script>
+      
+    
+  </body>
+</html>

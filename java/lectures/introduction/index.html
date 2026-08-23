@@ -1,0 +1,2435 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Introduction to Computers, Programs, and Java - Dr. Khan's Computer Science Courses @ San Diego Miramar College</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-5SGJZZD5EZ"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-5SGJZZD5EZ",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-5SGJZZD5EZ",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-to-computers-programs-and-java" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Dr. Khan&#39;s Computer Science Courses @ San Diego Miramar College" class="md-header__button md-logo" aria-label="Dr. Khan's Computer Science Courses @ San Diego Miramar College" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dr. Khan's Computer Science Courses @ San Diego Miramar College
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction to Computers, Programs, and Java
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Dr. Khan&#39;s Computer Science Courses @ San Diego Miramar College" class="md-nav__button md-logo" aria-label="Dr. Khan's Computer Science Courses @ San Diego Miramar College" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Dr. Khan's Computer Science Courses @ San Diego Miramar College
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 179<br>Python Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 179<br>Python Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 187<br>Data Structures in C++
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 187<br>Data Structures in C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 190<br>Java Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 190<br>Java Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 192<br>C/C++ Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 192<br>C/C++ Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 211<br>Assembly Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 211<br>Assembly Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/8_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-computers-and-computing-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Computers and Computing Systems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Computers and Computing Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-central-processing-unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Central Processing Unit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-how-data-is-represented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 How Data Is Represented
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-input-output-and-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Input, Output, and Communication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-computer-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Computer Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Computer Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-machine-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Machine Language
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-assembly-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Assembly Language
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-high-level-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 High-Level Languages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-translating-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Translating Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Translating Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-compiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Compiler
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-interpreter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Interpreter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-operating-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Operating Systems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-introduction-to-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Introduction to Java
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Introduction to Java">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-brief-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Brief History
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-important-characteristics-of-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Important Characteristics of Java
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 Important Characteristics of Java">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-oriented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Object-Oriented
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Distributed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#robust" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Robust
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-neutral-and-portable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture-Neutral and Portable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multithreaded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multithreaded
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynamic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-the-java-development-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. The Java Development Environment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. The Java Development Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-java-development-kit-jdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Java Development Kit (JDK)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-java-virtual-machine-jvm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Java Virtual Machine (JVM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-java-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Java API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-integrated-development-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Integrated Development Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-your-first-java-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Your First Java Program
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Your First Java Program">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-class-declaration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Class Declaration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-the-main-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 The main Method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-displaying-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Displaying Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-how-a-java-program-executes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. How a Java Program Executes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. How a Java Program Executes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-write-the-source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Write the Source Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-compile-the-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Compile the Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-execute-the-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Execute the Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-code-vs-bytecode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source Code vs. Bytecode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-anatomy-of-a-java-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Anatomy of a Java Program
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Anatomy of a Java Program">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Comments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-reserved-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Reserved Words
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Statements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-statement-terminator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Statement Terminator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5 Blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#96-common-special-symbols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.6 Common Special Symbols
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-programming-style-and-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Programming Style and Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Programming Style and Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-use-meaningful-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Use Meaningful Names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-use-consistent-indentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Use Consistent Indentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-use-whitespace-effectively" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Use Whitespace Effectively
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-write-useful-comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Write Useful Comments
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-programming-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Programming Errors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Programming Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-syntax-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Syntax Errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-runtime-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Runtime Errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-logic-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 Logic Errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduction-to-computers-programs-and-java">Introduction to Computers, Programs, and Java</h1>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>After completing this lesson, you should be able to:</p>
+<ul>
+<li>Identify the major components of a computer system.</li>
+<li>Explain how data and program instructions are represented and stored.</li>
+<li>Distinguish among machine language, assembly language, and high-level programming languages.</li>
+<li>Explain the roles of compilers and interpreters.</li>
+<li>Describe the basic function of an operating system.</li>
+<li>Explain the purpose of Java, the Java Development Kit (JDK), the Java Virtual Machine (JVM), and the Java API.</li>
+<li>Write and analyze a simple Java program.</li>
+<li>Explain how Java source code is compiled and executed.</li>
+<li>Recognize important elements of Java syntax, including classes, methods, statements, comments, and blocks.</li>
+<li>Apply basic programming style and documentation practices.</li>
+<li>Distinguish among syntax, runtime, and logic errors.</li>
+</ul>
+<hr />
+<h2 id="1-computers-and-computing-systems">1. Computers and Computing Systems</h2>
+<p>A <strong>computer</strong> is an electronic system that accepts data, processes it according to a set of instructions, stores information, and produces results. Although computers vary greatly in size and purpose, most computer systems contain the same fundamental components.</p>
+<p>A simplified view of a computer system is:</p>
+<div class="highlight"><pre><span></span><code>Input Devices
+     |
+     v
++-----------------------------+
+|            CPU              |
+|       &lt;--&gt; Memory           |
++-----------------------------+
+     |              |
+     v              v
+Output Devices   Storage Devices
+     |
+Communication / Network Devices
+</code></pre></div>
+<p>The components communicate through hardware pathways that allow instructions and data to move throughout the system.</p>
+<h3 id="11-central-processing-unit">1.1 Central Processing Unit</h3>
+<p>The <strong>Central Processing Unit (CPU)</strong> executes the instructions that make a computer program work. It repeatedly retrieves instructions and data from memory, performs the requested operations, and stores or communicates the results.</p>
+<p>CPU clock rates are commonly expressed in <strong>hertz (Hz)</strong>:</p>
+<ul>
+<li>1 kilohertz (kHz) = 1,000 cycles per second</li>
+<li>1 megahertz (MHz) = 1,000,000 cycles per second</li>
+<li>1 gigahertz (GHz) = 1,000,000,000 cycles per second</li>
+</ul>
+<p>Clock speed alone does not determine overall processor performance. Processor architecture, number of cores, cache organization, and workload also affect performance.</p>
+<h3 id="12-memory">1.2 Memory</h3>
+<p><strong>Main memory</strong>, commonly called <strong>RAM</strong>, temporarily stores programs and data that are actively being used.</p>
+<p>Memory is organized as a sequence of storage locations. Each location has an address, allowing the processor to locate information.</p>
+<p>A <strong>bit</strong> is the smallest unit of digital information and can have one of two values:</p>
+<div class="highlight"><pre><span></span><code>0 or 1
+</code></pre></div>
+<p>Eight bits form one <strong>byte</strong>:</p>
+<div class="highlight"><pre><span></span><code>1 byte = 8 bits
+</code></pre></div>
+<p>Programs, numbers, characters, images, and other forms of information are ultimately represented using patterns of bits.</p>
+<p>RAM is normally <strong>volatile</strong>, meaning that its contents are lost when power is removed.</p>
+<h3 id="13-how-data-is-represented">1.3 How Data Is Represented</h3>
+<p>Computers operate using binary information. For example, a character can be represented internally by a numeric code, which is ultimately stored as bits.</p>
+<p>Conceptually:</p>
+<div class="highlight"><pre><span></span><code>Character -&gt; Numeric Encoding -&gt; Binary Representation
+</code></pre></div>
+<p>You normally do not perform this conversion manually when programming in Java. The programming language and computer system manage the underlying representation.</p>
+<h3 id="14-storage">1.4 Storage</h3>
+<p>Long-term information is maintained using <strong>storage devices</strong>. Unlike RAM, persistent storage retains information when power is removed.</p>
+<p>Common examples include:</p>
+<ul>
+<li>solid-state drives (SSDs),</li>
+<li>hard disk drives (HDDs),</li>
+<li>USB flash storage, and</li>
+<li>network or cloud-based storage.</li>
+</ul>
+<p>When a program is executed, relevant instructions and data are generally transferred from persistent storage into main memory so that the processor can work with them efficiently.</p>
+<h3 id="15-input-output-and-communication">1.5 Input, Output, and Communication</h3>
+<p><strong>Input devices</strong> provide information to a computer. Examples include keyboards, pointing devices, cameras, microphones, and sensors.</p>
+<p><strong>Output devices</strong> present results. Examples include displays, printers, speakers, and other devices controlled by a computer.</p>
+<p><strong>Communication devices</strong> allow computers to exchange information across networks. Modern computers typically communicate through wired Ethernet, Wi-Fi, cellular networks, or other networking technologies.</p>
+<hr />
+<h2 id="2-computer-programs">2. Computer Programs</h2>
+<p>Hardware by itself does not determine what tasks a computer performs. A <strong>computer program</strong> is an organized sequence of instructions that directs a computer to perform a particular task.</p>
+<p>Programs are written using <strong>programming languages</strong>.</p>
+<p>Programming languages allow programmers to express algorithms and operations in forms that are more understandable than the binary instructions directly executed by a processor.</p>
+<h3 id="21-machine-language">2.1 Machine Language</h3>
+<p><strong>Machine language</strong> consists of instructions represented in a form that a processor can execute directly.</p>
+<p>A simplified machine instruction might appear as:</p>
+<div class="highlight"><pre><span></span><code>1101101010011010
+</code></pre></div>
+<p>Machine code is difficult for humans to read, write, and maintain. It is also closely tied to a particular processor architecture.</p>
+<h3 id="22-assembly-language">2.2 Assembly Language</h3>
+<p><strong>Assembly language</strong> provides symbolic names for low-level processor instructions.</p>
+<p>For example, an assembly instruction may conceptually resemble:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">ADD</span><span class="w"> </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="no">R2</span><span class="p">,</span><span class="w"> </span><span class="no">R3</span>
+</code></pre></div>
+<p>An <strong>assembler</strong> translates assembly-language instructions into machine code.</p>
+<div class="highlight"><pre><span></span><code>Assembly Source Code
+        |
+        v
+     Assembler
+        |
+        v
+    Machine Code
+</code></pre></div>
+<p>Assembly language is easier for humans to understand than raw machine code, but it remains closely related to the underlying hardware.</p>
+<h3 id="23-high-level-languages">2.3 High-Level Languages</h3>
+<p>A <strong>high-level programming language</strong> allows programmers to describe computations using more expressive and human-readable notation.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="p">;</span>
+</code></pre></div>
+<p>High-level languages allow programmers to focus more on solving problems and less on individual processor instructions.</p>
+<p>Java is a high-level, general-purpose programming language.</p>
+<hr />
+<h2 id="3-translating-programs">3. Translating Programs</h2>
+<p>A processor does not directly execute Java source code. Source code must be translated into a representation that the computer's runtime environment can execute.</p>
+<p>Two important translation approaches are <strong>compilation</strong> and <strong>interpretation</strong>.</p>
+<h3 id="31-compiler">3.1 Compiler</h3>
+<p>A <strong>compiler</strong> translates program code before execution.</p>
+<p>A simplified traditional compilation model is:</p>
+<div class="highlight"><pre><span></span><code>Source Code
+    |
+    v
+ Compiler
+    |
+    v
+Executable / Machine Code
+    |
+    v
+ Execution
+</code></pre></div>
+<p>Compilation can detect many problems before the program begins executing.</p>
+<h3 id="32-interpreter">3.2 Interpreter</h3>
+<p>An <strong>interpreter</strong> processes program instructions through a runtime system rather than producing a conventional native executable as the only execution mechanism.</p>
+<p>Conceptually:</p>
+<div class="highlight"><pre><span></span><code>Source Code
+    |
+    v
+Interpreter
+    |
+    v
+Execution
+</code></pre></div>
+<p>Modern programming environments often combine compilation, interpretation, and runtime optimization. Java is an important example of this hybrid approach.</p>
+<hr />
+<h2 id="4-operating-systems">4. Operating Systems</h2>
+<p>An <strong>operating system (OS)</strong> manages the computer's hardware resources and provides services used by application programs.</p>
+<p>Examples include Windows, macOS, and Linux.</p>
+<p>A simplified software hierarchy is:</p>
+<div class="highlight"><pre><span></span><code>+-----------------------+
+|         User          |
++-----------------------+
+            |
++-----------------------+
+| Application Programs  |
++-----------------------+
+            |
++-----------------------+
+|   Operating System    |
++-----------------------+
+            |
++-----------------------+
+|       Hardware        |
++-----------------------+
+</code></pre></div>
+<p>The operating system is responsible for activities such as:</p>
+<ul>
+<li>managing processor time,</li>
+<li>managing memory,</li>
+<li>organizing files and storage,</li>
+<li>controlling input and output devices,</li>
+<li>supporting networking,</li>
+<li>providing security mechanisms, and</li>
+<li>coordinating multiple running applications.</li>
+</ul>
+<p>As Java programmers, we normally interact with hardware through Java libraries and the operating system rather than controlling hardware directly.</p>
+<hr />
+<h2 id="5-introduction-to-java">5. Introduction to Java</h2>
+<p>Java is a <strong>general-purpose programming language</strong> designed to support the development of reliable and portable software.</p>
+<p>Java has been used in many areas of software development, including server applications, desktop software, enterprise systems, distributed applications, and software running on a wide range of computing devices.</p>
+<h3 id="51-brief-history">5.1 Brief History</h3>
+<p>Java originated at <strong>Sun Microsystems</strong> in the early 1990s. James Gosling was one of the principal designers of the language. The project initially used the name <strong>Oak</strong> and was later renamed <strong>Java</strong>.</p>
+<p>Java was publicly introduced in 1995. Its ability to execute programs across different computing platforms became one of its defining characteristics.</p>
+<p>Sun Microsystems was later acquired by Oracle, which continues to maintain and develop the Java platform.</p>
+<h3 id="52-important-characteristics-of-java">5.2 Important Characteristics of Java</h3>
+<p>Java was designed around several important software-development goals.</p>
+<h4 id="simple">Simple</h4>
+<p>Java provides a comparatively clean programming model and removes several low-level mechanisms that make some other languages more difficult to use safely.</p>
+<h4 id="object-oriented">Object-Oriented</h4>
+<p>Java is fundamentally based on <strong>objects and classes</strong>. Object-oriented programming helps organize large programs into reusable and maintainable software components.</p>
+<p>Later lessons will examine important object-oriented concepts such as:</p>
+<ul>
+<li>encapsulation,</li>
+<li>inheritance, and</li>
+<li>polymorphism.</li>
+</ul>
+<h4 id="distributed">Distributed</h4>
+<p>Java includes extensive networking libraries, making it suitable for programs that communicate across computer networks.</p>
+<h4 id="robust">Robust</h4>
+<p>Java provides mechanisms for detecting programming problems and handling exceptional conditions. Features such as type checking, automatic memory management, and exception handling contribute to program reliability.</p>
+<h4 id="secure">Secure</h4>
+<p>The Java platform includes mechanisms intended to provide controlled program execution and protect system resources.</p>
+<h4 id="architecture-neutral-and-portable">Architecture-Neutral and Portable</h4>
+<p>Java source code is normally compiled into <strong>bytecode</strong> rather than directly into processor-specific machine code.</p>
+<p>The bytecode can execute on systems that provide an appropriate <strong>Java Virtual Machine (JVM)</strong>.</p>
+<p>This idea is commonly summarized as:</p>
+<blockquote>
+<p><strong>Write once, run anywhere.</strong></p>
+</blockquote>
+<h4 id="multithreaded">Multithreaded</h4>
+<p>Java provides built-in support for <strong>multithreading</strong>, allowing multiple activities to make progress within the same application.</p>
+<h4 id="dynamic">Dynamic</h4>
+<p>Java programs can load classes and other program components during execution, supporting flexible and extensible software architectures.</p>
+<hr />
+<h2 id="6-the-java-development-environment">6. The Java Development Environment</h2>
+<p>Several related technologies form the Java development environment.</p>
+<h3 id="61-java-development-kit-jdk">6.1 Java Development Kit (JDK)</h3>
+<p>The <strong>Java Development Kit (JDK)</strong> contains tools required to develop Java programs.</p>
+<p>Important tools include:</p>
+<ul>
+<li>the Java compiler,</li>
+<li>the Java runtime environment and supporting components,</li>
+<li>debugging and diagnostic utilities, and</li>
+<li>other development tools.</li>
+</ul>
+<p>The Java compiler is invoked from the command line using:</p>
+<div class="highlight"><pre><span></span><code>javac
+</code></pre></div>
+<h3 id="62-java-virtual-machine-jvm">6.2 Java Virtual Machine (JVM)</h3>
+<p>The <strong>Java Virtual Machine (JVM)</strong> provides the execution environment for Java bytecode.</p>
+<p>Instead of requiring a Java program to be compiled directly for every processor and operating system combination, the JVM provides an abstraction between the compiled Java program and the underlying system.</p>
+<div class="highlight"><pre><span></span><code>        Java Program
+             |
+             v
+          Bytecode
+             |
+             v
++---------------------------+
+|            JVM            |
++---------------------------+
+             |
+             v
+   Operating System / CPU
+</code></pre></div>
+<p>Different platforms provide their own JVM implementations while executing the same general form of Java bytecode.</p>
+<h3 id="63-java-api">6.3 Java API</h3>
+<p>The <strong>Java Application Programming Interface (API)</strong> is a large collection of predefined classes and methods available to Java programs.</p>
+<p>Instead of implementing every operation yourself, you can use library functionality for tasks such as:</p>
+<ul>
+<li>text processing,</li>
+<li>mathematics,</li>
+<li>collections,</li>
+<li>files,</li>
+<li>networking,</li>
+<li>concurrency, and</li>
+<li>graphical applications.</li>
+</ul>
+<h3 id="64-integrated-development-environment">6.4 Integrated Development Environment</h3>
+<p>An <strong>Integrated Development Environment (IDE)</strong> combines common programming tools in a single application.</p>
+<p>An IDE typically provides:</p>
+<ul>
+<li>source-code editing,</li>
+<li>syntax highlighting,</li>
+<li>code completion,</li>
+<li>compilation,</li>
+<li>execution,</li>
+<li>debugging,</li>
+<li>project management, and</li>
+<li>integration with version-control systems.</li>
+</ul>
+<p>The underlying Java concepts remain the same regardless of the IDE used.</p>
+<hr />
+<h2 id="7-your-first-java-program">7. Your First Java Program</h2>
+<p>Consider the following program:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HelloJava</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello, Java!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>When executed, the program displays:</p>
+<div class="highlight"><pre><span></span><code>Hello, Java!
+</code></pre></div>
+<p>Although the program is small, it contains several important Java concepts.</p>
+<h3 id="71-class-declaration">7.1 Class Declaration</h3>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HelloJava</span>
+</code></pre></div>
+<p>Java programs are organized around <strong>classes</strong>. Here, the class is named <code>HelloJava</code>.</p>
+<p>By convention, Java class names begin with an uppercase letter. When a class name contains multiple words, each word commonly begins with an uppercase letter.</p>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code>HelloJava
+StudentRecord
+TemperatureConverter
+BankAccount
+</code></pre></div>
+<h3 id="72-the-main-method">7.2 The <code>main</code> Method</h3>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+</code></pre></div>
+<p>The <code>main</code> method is the conventional entry point for a basic standalone Java application.</p>
+<p>When the program starts, the JVM invokes this method.</p>
+<p>For now, treat the entire method header as required syntax. The meaning of <code>public</code>, <code>static</code>, <code>void</code>, parameters, and arrays will become clearer as you study later topics.</p>
+<h3 id="73-displaying-output">7.3 Displaying Output</h3>
+<p>The following statement sends text to the console:</p>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello, Java!&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>The text inside quotation marks is a <strong>string literal</strong>.</p>
+<p><code>println</code> displays the information and then moves the cursor to the next line.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Java Programming&quot;</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;First Program&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>produces:</p>
+<div class="highlight"><pre><span></span><code>Java Programming
+First Program
+</code></pre></div>
+<hr />
+<h2 id="8-how-a-java-program-executes">8. How a Java Program Executes</h2>
+<p>Java uses an execution model that separates source code from the underlying computer architecture.</p>
+<p>Suppose the source file is:</p>
+<div class="highlight"><pre><span></span><code>HelloJava.java
+</code></pre></div>
+<p>The overall process is:</p>
+<div class="highlight"><pre><span></span><code>HelloJava.java
+      |
+      | javac
+      v
+HelloJava.class
+      |
+      | JVM
+      v
+Program Executes
+</code></pre></div>
+<h3 id="step-1-write-the-source-code">Step 1: Write the Source Code</h3>
+<p>Java source code is stored in a file with the <code>.java</code> extension.</p>
+<div class="highlight"><pre><span></span><code>HelloJava.java
+</code></pre></div>
+<h3 id="step-2-compile-the-program">Step 2: Compile the Program</h3>
+<p>The Java compiler translates the source code:</p>
+<div class="highlight"><pre><span></span><code>javac<span class="w"> </span>HelloJava.java
+</code></pre></div>
+<p>If compilation succeeds, a bytecode file is produced:</p>
+<div class="highlight"><pre><span></span><code>HelloJava.class
+</code></pre></div>
+<h3 id="step-3-execute-the-program">Step 3: Execute the Program</h3>
+<p>The program can then be started with:</p>
+<div class="highlight"><pre><span></span><code>java<span class="w"> </span>HelloJava
+</code></pre></div>
+<p>Notice that <code>.class</code> is not included in the <code>java</code> command.</p>
+<h3 id="source-code-vs-bytecode">Source Code vs. Bytecode</h3>
+<div class="highlight"><pre><span></span><code>.java file
+   |
+   | Java compiler
+   v
+.class file
+   |
+   | JVM
+   v
+Execution
+</code></pre></div>
+<p>The <code>.java</code> file is written and maintained by the programmer. The <code>.class</code> file contains Java bytecode generated by the compiler.</p>
+<hr />
+<h2 id="9-anatomy-of-a-java-program">9. Anatomy of a Java Program</h2>
+<p>Consider the program again:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Displays a greeting on the console</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HelloJava</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello, Java!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Several fundamental Java language elements appear here.</p>
+<h3 id="91-comments">9.1 Comments</h3>
+<p>A comment beginning with <code>//</code> continues to the end of the line:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Displays a greeting on the console</span>
+</code></pre></div>
+<p>Comments are written for people reading the program. They are ignored as executable instructions.</p>
+<p>Java also supports multi-line comments:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/*</span>
+<span class="cm"> * This program demonstrates</span>
+<span class="cm"> * basic console output.</span>
+<span class="cm"> */</span>
+</code></pre></div>
+<h3 id="92-reserved-words">9.2 Reserved Words</h3>
+<p>Words such as:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span>
+<span class="kd">class</span>
+<span class="nc">static</span>
+<span class="kt">void</span>
+</code></pre></div>
+<p>have predefined meanings in Java. Such words are called <strong>reserved words</strong> or <strong>keywords</strong> and cannot normally be used as programmer-defined names.</p>
+<h3 id="93-statements">9.3 Statements</h3>
+<p>A <strong>statement</strong> represents an action.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello, Java!&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>requests that information be displayed on the console.</p>
+<h3 id="94-statement-terminator">9.4 Statement Terminator</h3>
+<p>Many Java statements end with a semicolon:</p>
+<div class="highlight"><pre><span></span><code><span class="p">;</span>
+</code></pre></div>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Computer Science&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>Forgetting a required semicolon generally results in a compilation error.</p>
+<h3 id="95-blocks">9.5 Blocks</h3>
+<p>A pair of braces creates a <strong>block</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="c1">// statements</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Blocks group related program elements.</p>
+<p>In the example program, one block defines the class and another defines the body of the <code>main</code> method.</p>
+<h3 id="96-common-special-symbols">9.6 Common Special Symbols</h3>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{ }</code></td>
+<td>Defines a block</td>
+</tr>
+<tr>
+<td><code>( )</code></td>
+<td>Used in method declarations and method calls</td>
+</tr>
+<tr>
+<td><code>[ ]</code></td>
+<td>Used with arrays</td>
+</tr>
+<tr>
+<td><code>//</code></td>
+<td>Begins a single-line comment</td>
+</tr>
+<tr>
+<td><code>" "</code></td>
+<td>Encloses a string literal</td>
+</tr>
+<tr>
+<td><code>;</code></td>
+<td>Terminates many Java statements</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="10-programming-style-and-documentation">10. Programming Style and Documentation</h2>
+<p>A program can compile successfully and still be difficult to understand. Good programming style makes code easier to read, test, debug, and maintain.</p>
+<h3 id="101-use-meaningful-names">10.1 Use Meaningful Names</h3>
+<p>Prefer names that communicate purpose.</p>
+<p>Less descriptive:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</code></pre></div>
+<p>More descriptive:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">accountBalance</span><span class="p">;</span>
+</code></pre></div>
+<p>For class names, use names such as:</p>
+<div class="highlight"><pre><span></span><code><span class="n">StudentRecord</span>
+<span class="n">ComputeAverage</span>
+<span class="n">TemperatureConverter</span>
+</code></pre></div>
+<p>rather than vague names such as:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Test</span>
+<span class="n">Thing</span>
+<span class="n">Program1</span>
+</code></pre></div>
+<p>when the class has a specific purpose.</p>
+<h3 id="102-use-consistent-indentation">10.2 Use Consistent Indentation</h3>
+<p>Indent code inside blocks consistently:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Greeting</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Welcome!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Indentation does not replace Java's braces, but it makes program structure visually clear.</p>
+<h3 id="103-use-whitespace-effectively">10.3 Use Whitespace Effectively</h3>
+<p>Whitespace can separate logical sections and improve readability.</p>
+<p>Compare:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Demo</span><span class="w"> </span><span class="p">{</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>with:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Demo</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Both may represent the same structure to the compiler, but the second version is much easier for a person to read.</p>
+<h3 id="104-write-useful-comments">10.4 Write Useful Comments</h3>
+<p>Comments should explain information that is useful to a reader.</p>
+<p>Good comments often explain:</p>
+<ul>
+<li>the purpose of a program,</li>
+<li>the reason for a non-obvious decision,</li>
+<li>assumptions made by an algorithm, or</li>
+<li>important constraints.</li>
+</ul>
+<p>Avoid comments that merely repeat obvious code.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Calculate the final price after applying the discount.</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">finalPrice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">discount</span><span class="p">;</span>
+</code></pre></div>
+<hr />
+<h2 id="11-programming-errors">11. Programming Errors</h2>
+<p>Errors are a normal part of programming. Learning to identify the type of error helps you debug programs systematically.</p>
+<p>Three important categories are:</p>
+<div class="highlight"><pre><span></span><code>Programming Errors
+    |
+    +-- Syntax / Compilation Errors
+    |
+    +-- Runtime Errors
+    |
+    +-- Logic Errors
+</code></pre></div>
+<h3 id="111-syntax-errors">11.1 Syntax Errors</h3>
+<p>A <strong>syntax error</strong> occurs when source code violates the grammatical rules of Java.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SyntaxExample</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello Java&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The semicolon is missing.</p>
+<p>The compiler detects the problem and the program cannot be successfully compiled until the error is corrected.</p>
+<p>Another example is an unterminated string:</p>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello Java);</span>
+</code></pre></div>
+<h3 id="112-runtime-errors">11.2 Runtime Errors</h3>
+<p>A <strong>runtime error</strong> occurs while a program is executing.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RuntimeExample</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="mi">10</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The source code is syntactically valid, but integer division by zero causes an error during execution.</p>
+<h3 id="113-logic-errors">11.3 Logic Errors</h3>
+<p>A <strong>logic error</strong> occurs when a program executes but produces an incorrect result.</p>
+<p>Consider a Celsius-to-Fahrenheit calculation:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TemperatureExample</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">celsius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">35</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">fahrenheit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">9.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">5.0</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">celsius</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">32</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">fahrenheit</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The formula is:</p>
+<div class="highlight"><pre><span></span><code>F = (9 / 5)C + 32
+</code></pre></div>
+<p>If integer arithmetic were used carelessly, the calculation could produce an incorrect result even though the program compiles and runs.</p>
+<p>Logic errors are often more difficult to detect because the computer may not report an error message. Testing and careful reasoning are required to discover them.</p>
+<h2 id="12-summary">12. Summary</h2>
+<p>A computer system combines hardware and software to process information. The CPU executes instructions, memory holds active programs and data, storage preserves information, and input/output and communication devices allow the system to interact with users and other systems.</p>
+<p>Programs are written using programming languages. Machine language operates at the processor level, assembly language provides symbolic low-level instructions, and high-level languages allow programmers to express solutions in a more understandable form.</p>
+<p>Java is a high-level, general-purpose, object-oriented programming language. Java source files use the <code>.java</code> extension. The Java compiler translates source code into <strong>bytecode</strong>, typically stored in <code>.class</code> files. The <strong>Java Virtual Machine (JVM)</strong> executes this bytecode, providing an important layer of portability between Java programs and different computing platforms.</p>
+<p>A basic Java application contains a class and usually a <code>main</code> method that serves as the starting point for execution. Statements perform actions, semicolons terminate many statements, braces organize code into blocks, and comments document programs.</p>
+<p>Finally, programmers should distinguish among three common categories of errors:</p>
+<ul>
+<li><strong>Syntax errors</strong> are detected during compilation.</li>
+<li><strong>Runtime errors</strong> occur during program execution.</li>
+<li><strong>Logic errors</strong> allow the program to run but produce incorrect results.</li>
+</ul>
+<p>Understanding these foundations provides the basis for writing, compiling, executing, and debugging increasingly sophisticated Java programs.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/semester.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/faq.js"></script>
+      
+    
+  </body>
+</html>

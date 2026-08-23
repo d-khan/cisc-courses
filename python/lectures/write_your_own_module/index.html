@@ -1,0 +1,1392 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>What is a package? - Dr. Khan's Computer Science Courses @ San Diego Miramar College</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-5SGJZZD5EZ"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-5SGJZZD5EZ",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-5SGJZZD5EZ",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#what-is-a-package" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Dr. Khan&#39;s Computer Science Courses @ San Diego Miramar College" class="md-header__button md-logo" aria-label="Dr. Khan's Computer Science Courses @ San Diego Miramar College" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dr. Khan's Computer Science Courses @ San Diego Miramar College
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              What is a package?
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Dr. Khan&#39;s Computer Science Courses @ San Diego Miramar College" class="md-nav__button md-logo" aria-label="Dr. Khan's Computer Science Courses @ San Diego Miramar College" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Dr. Khan's Computer Science Courses @ San Diego Miramar College
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 179<br>Python Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 179<br>Python Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 187<br>Data Structures in C++
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 187<br>Data Structures in C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 190<br>Java Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 190<br>Java Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 192<br>C/C++ Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 192<br>C/C++ Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 211<br>Assembly Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 211<br>Assembly Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/8_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="what-is-a-package">What is a package?</h1>
+<p>Writing your own modules doesn't differ much from writing ordinary scripts.</p>
+<p>There are some specific aspects you must be aware of, but it definitely isn't rocket science. You'll see this soon enough.</p>
+<p><img src="https://raw.githubusercontent.com/d-khan/python/refs/heads/main/modules/Screen%20Shot%202025-03-08%20at%206.01.40%20PM.png" alt="The Package-Module-Function concept" style="zoom:20%;" /></p>
+<p>Let's summarize some important issues:</p>
+<ul>
+<li>a <strong>module is a kind of container filled with functions</strong> - you can pack as many functions as you want into one module and distribute it across the world;</li>
+<li>of course, it's generally a good idea not to mix functions with different application areas within one module (just like in a library - nobody expects scientific works to be put among comic books), so group your functions carefully and name the module containing them in a clear and intuitive way (e.g., don't give the name <code>arcade_games</code> to a module containing functions intended to partition and format hard disks)</li>
+<li>making many modules may cause a little mess - sooner or later you'll want to <strong>group your modules</strong> exactly in the same way as you've previously grouped functions - is there a more general container than a module?</li>
+<li>yes, there is - it's a <strong>package</strong>; in the world of modules, a package plays a similar role to a folder/directory in the world of files.</li>
+</ul>
+<h1 id="your-first-module-step-1">Your first module: step 1</h1>
+<p>In this section you're going to be working locally on your machine. Let's start from scratch. Create an empty file, just like this:</p>
+<p><img src="https://raw.githubusercontent.com/d-khan/python/refs/heads/main/modules/Screen%20Shot%202025-03-08%20at%206.11.42%20PM.png" alt="Creating a module.py file" style="zoom:50%;" /></p>
+<p>You will need two files to repeat these experiments. The first of them will be the module itself. It's empty now. Don't worry, you're going to fill it with actual code soon.</p>
+<p>We've named the file module.py. Not very creative, but simple and clear.</p>
+<h2 id="your-first-module-step-2">Your first module: step 2</h2>
+<p>The second file contains the code using the new module. Its name is main.py. Its content is very brief so far:</p>
+<p><img src="https://raw.githubusercontent.com/d-khan/python/refs/heads/main/modules/Screen%20Shot%202025-03-08%20at%206.12.09%20PM.png" alt="Creating a main.py file containing the import module instruction" style="zoom:50%;" /></p>
+<div class="highlight"><pre><span></span><code>import module
+</code></pre></div>
+<p>Note: <strong>both files have to be located in the same folder</strong>. We strongly encourage you to create an empty, new folder for both files. Some things will be easier then.</p>
+<p>Launch IDLE (or any other IDE you prefer) and run the main.py file. What do you see?</p>
+<p>You should see nothing. This means that Python has successfully imported the contents of the module.py file.</p>
+<p>It doesn't matter that the module is empty for now. The very first step has been done, but before you take the next step, we want you to take a look into the folder in which both files exist.</p>
+<p>Do you notice something interesting?</p>
+<p>A new subfolder has appeared - can you see it? Its name is <strong>pycache</strong>. Take a look inside. What do you see?</p>
+<p>There is a file named (more or less) module.cpython-xy.pyc where x and y are digits derived from your version of Python (e.g., they will be 3 and 8 if you use Python 3.8).</p>
+<p>The name of the file is the same as your module's name (module here). The part after the first dot says which Python implementation has created the file (CPython here) and its version number. The last part (pyc) comes from the words <em>Python</em> and <em>compiled</em>.</p>
+<p>You can look inside the file - the content is completely unreadable to humans. It has to be like that, as the file is intended for Python's use only.</p>
+<p>When Python imports a module for the first time, it <strong>translates its contents into a somewhat compiled shape</strong>.</p>
+<p>The file doesn't contain machine code - it's internal Python <strong>semi-compiled code</strong>, ready to be executed by Python's interpreter. As such a file doesn't require lots of the checks needed for a pure source file, the execution starts faster, and runs faster, too.</p>
+<p>Thanks to that, every subsequent import will go quicker than interpreting the source text from scratch.</p>
+<p>Python is able to check if the module's source file has been modified (in this case, the pyc file will be rebuilt) or not (when the pyc file may be run at once). As this process is fully automatic and transparent, you don't have to keep it in mind.</p>
+<h1 id="your-first-module-step-3">Your first module: step 3</h1>
+<p>Now we've put a little something into the module file:</p>
+<p><img src="https://raw.githubusercontent.com/d-khan/python/refs/heads/main/modules/Screen%20Shot%202025-03-08%20at%206.15.30%20PM.png" alt="Updating the module.py file" style="zoom:50%;" /></p>
+<div class="highlight"><pre><span></span><code>print(&quot;I like to be a module.&quot;)
+</code></pre></div>
+<p>Can you notice any differences between a module and an ordinary script? There are none so far.</p>
+<p>It's possible to run this file like any other script. Try it for yourself.</p>
+<p>What happens? You should see the following line inside your console:</p>
+<div class="highlight"><pre><span></span><code>I like to be a module.
+</code></pre></div>
+<h2 id="your-first-module-step-4">Your first module: step 4</h2>
+<p>Let's go back to the main.py file:</p>
+<p><img src="https://raw.githubusercontent.com/d-khan/python/refs/heads/main/modules/Screen%20Shot%202025-03-08%20at%206.15.43%20PM.png" alt="The main.py file containing the import module instruction" style="zoom:50%;" /></p>
+<div class="highlight"><pre><span></span><code>import module
+</code></pre></div>
+<p>Run it. What do you see? Hopefully, you see something like this:</p>
+<div class="highlight"><pre><span></span><code>I like to be a module.
+</code></pre></div>
+<p>What does it actually mean?</p>
+<p>When a module is imported, its content is <strong>implicitly executed by Python</strong>. It gives the module the chance to initialize some of its internal aspects (e.g., it may assign some variables with useful values).</p>
+<p>Note: the <strong>initialization takes place only once</strong>, when the first import occurs, so the assignments done by the module aren't repeated unnecessarily.</p>
+<p>Imagine the following context:</p>
+<ul>
+<li>there is a module named mod1;</li>
+<li>there is a module named mod2 which contains the <code>import mod1</code> instruction;</li>
+<li>there is a main file containing the <code>import mod1</code> and <code>import mod2</code> instructions.</li>
+</ul>
+<p>At first glance, you may think that mod1 will be imported twice - fortunately, <strong>only the first import occurs</strong>. Python remembers the imported modules and silently omits all subsequent imports.</p>
+<h2 id="your-first-module-step-5">Your first module: step 5</h2>
+<p>Python can do much more. It also creates a variable called <code>__name__</code>.</p>
+<p>Moreover, each source file uses its own, separate version of the variable - it isn't shared between modules.</p>
+<p>We'll show you how to use it. Modify the module a bit:</p>
+<p><img src="https://raw.githubusercontent.com/d-khan/python/refs/heads/main/modules/Screen%20Shot%202025-03-08%20at%206.15.56%20PM.png" alt="Updating the module.py file" style="zoom:50%;" /></p>
+<div class="highlight"><pre><span></span><code>print(&quot;I like to be a module.&quot;)
+
+print(__name__)
+</code></pre></div>
+<p>Now run the module.py file. You should see the following lines:</p>
+<div class="highlight"><pre><span></span><code>I like to be a module __main__
+</code></pre></div>
+<p>Now run the main.py file. And? Do you see the same as us?</p>
+<div class="highlight"><pre><span></span><code>I like to be a module module
+</code></pre></div>
+<p>We can say that:</p>
+<ul>
+<li>when you run a file directly, its <code>__name__</code> variable is set to <code>__main__</code>;</li>
+<li>when a file is imported as a module, its <code>__name__</code> variable is set to the file's name (excluding .py)</li>
+</ul>
+<h2 id="your-first-module-step-6">Your first module: step 6</h2>
+<p>This is how you can make use of the <code>__main__</code> variable in order to detect the context in which your code has been activated:</p>
+<p><img src="https://raw.githubusercontent.com/d-khan/python/refs/heads/main/modules/Screen%20Shot%202025-03-08%20at%206.16.09%20PM.png" alt="Updating the module.py file" style="zoom:50%;" /></p>
+<div class="highlight"><pre><span></span><code>if __name__ == &quot;__main__&quot;:
+
+    print(&quot;I prefer to be a module.&quot;)
+
+else:
+
+    print(&quot;I like to be a module.&quot;)
+</code></pre></div>
+<p>There's a cleverer way to utilize the variable, however. If you write a module filled with a number of complex functions, you can use it to place a series of tests to check if the functions work properly.</p>
+<p>Each time you modify any of these functions, you can simply run the module to make sure that your amendments didn't spoil the code. These tests will be omitted when the code is imported as a module.</p>
+<h1 id="your-first-module-step-7">Your first module: step 7</h1>
+<p>This module will contain two simple functions, and if you want to know how many times the functions have been invoked, you need a counter initialized to zero when the module is being imported.</p>
+<p>You can do it this way:</p>
+<p><img src="https://raw.githubusercontent.com/d-khan/python/refs/heads/main/modules/Screen%20Shot%202025-03-08%20at%206.20.41%20PM.png" alt="Updating the module.py file" style="zoom:50%;" /></p>
+<div class="highlight"><pre><span></span><code>counter = 0
+
+
+
+if __name__ == &quot;__main__&quot;:
+
+    print(&quot;I prefer to be a module.&quot;)
+
+else:
+
+    print(&quot;I like to be a module.&quot;)
+</code></pre></div>
+<h2 id="your-first-module-step-8">Your first module: step 8</h2>
+<p>Introducing such a variable is absolutely correct, but may cause important <strong>side effects</strong> that you must be aware of.</p>
+<p>Take a look at the modified main.py file:</p>
+<p><img src="https://raw.githubusercontent.com/d-khan/python/refs/heads/main/modules/Screen%20Shot%202025-03-08%20at%206.20.51%20PM.png" alt="Updating the main.py file" style="zoom:50%;" /></p>
+<div class="highlight"><pre><span></span><code>import module
+
+print(module.counter)
+</code></pre></div>
+<p>As you can see, the main file tries to access the module's counter variable. Is this legal? Yes, it is. Is it usable? It may be very usable. Is it safe?</p>
+<p>That depends - if you trust your module's users, there's no problem; however, you may not want the rest of the world to see your <strong>personal/private variable</strong>.</p>
+<p>Unlike many other programming languages, Python has no means of allowing you to hide such variables from the eyes of the module's users.</p>
+<p>You can only inform your users that this is your variable, that they may read it, but that they should not modify it under any circumstances.</p>
+<p>This is done by preceding the variable's name with <code>_</code> (one underscore) or <code>__</code> (two underscores), but remember, it's only a <strong>convention</strong>. Your module's users may obey it or they may not.</p>
+<p>Of course, we'll follow the convention. Now let's put two functions into the module - they'll evaluate the sum and product of the numbers collected in a list.</p>
+<p>In addition, let's add some ornaments there and remove any superfluous remnants.</p>
+<h2 id="your-first-module-step-9">Your first module: step 9</h2>
+<p>Okay. Let's write some brand new code in our module.py file. The updated module is ready here:</p>
+<div class="highlight"><pre><span></span><code>#!/usr/bin/env python3 
+
+&quot;&quot;&quot; module.py - an example of a Python module &quot;&quot;&quot;
+
+__counter = 0
+
+def suml(the_list):
+    global __counter
+    __counter += 1
+    the_sum = 0
+    for element in the_list:
+        the_sum += element
+    return the_sum
+
+def prodl(the_list):
+    global __counter    
+    __counter += 1
+    prod = 1
+    for element in the_list:
+        prod *= element
+    return prod
+
+if __name__ == &quot;__main__&quot;:
+    print(&quot;I prefer to be a module, but I can do some tests for you.&quot;)
+    my_list = [i+1 for i in range(5)]
+    print(suml(my_list) == 15)
+    print(prodl(my_list) == 120)
+</code></pre></div>
+<p>A few elements need some explanation, we think:</p>
+<ul>
+<li>the line starting with <code>#!</code> has many names - it may be called <em>shabang</em>, <em>shebang</em>, <em>hashbang</em>, <em>poundbang</em> or even <em>hashpling</em> (don't ask us why). The name itself means nothing here - its role is more important. From Python's point of view, it's just a <strong>comment</strong> as it starts with <code>#</code>. For Unix and Unix-like OSs (including MacOS) such a line <strong>instructs the OS how to execute the contents of the file</strong> (in other words, what program needs to be launched to interpret the text). In some environments (especially those connected with web servers) the absence of that line will cause trouble;</li>
+<li>a string (maybe a multiline) placed before any module instructions (including imports) is called the <strong>doc-string</strong>, and should briefly explain the purpose and contents of the module;</li>
+<li>the functions defined inside the module (<code>suml()</code> and <code>prodl()</code>) are available for import;</li>
+<li>we've used the <code>__name__</code> variable to detect when the file is run stand-alone, and seized this opportunity to perform some simple tests.</li>
+</ul>
+<h2 id="your-first-module-step-10">Your first module: step 10</h2>
+<p>Now it's possible to use the updated module - this is one way:</p>
+<p><img src="https://raw.githubusercontent.com/d-khan/python/refs/heads/main/modules/Screen%20Shot%202025-03-08%20at%206.21.01%20PM.png" alt="Updating the main.py file" style="zoom:50%;" /></p>
+<div class="highlight"><pre><span></span><code>from module import suml, prodl
+
+zeroes = [0 for i in range(5)]
+
+ones = [1 for i in range(5)]
+
+print(suml(zeroes))
+
+print(prodl(ones))
+</code></pre></div>
+<h1 id="your-first-module-step-11">Your first module: step 11</h1>
+<p>It's time to make our example more complicated - so far we've assumed that the main Python file is located in the same folder/directory as the module to be imported.</p>
+<p>Let's give up this assumption and conduct the following thought experiment:</p>
+<ul>
+<li>we are using Windows ® OS (this assumption is important, as the file name's shape depends on it)</li>
+<li>the main Python script lies in C:\Users\user\py\progs and is named main.py</li>
+<li>the module to import is located in C:\Users\user\py\modules</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/d-khan/python/refs/heads/main/modules/Screen%20Shot%202025-03-08%20at%206.25.12%20PM.png" alt="How Python seeks modules - modules access tree" style="zoom:25%;" /></p>
+<p>How to deal with it?</p>
+<p>To answer this question, we have to talk about <strong>how Python searches for modules</strong>. There's a special variable (actually a list) storing all locations (folders/directories) that are searched in order to find a module which has been requested by the import instruction.</p>
+<p>Python browses these folders in the order in which they are listed in the list - if the module cannot be found in any of these directories, the import fails.</p>
+<p>Otherwise, the first folder containing a module with the desired name will be taken into consideration (if any of the remaining folders contains a module of that name, it will be ignored).</p>
+<p>The variable is named <code>path</code>, and it's accessible through the module named <code>sys</code>. This is how you can check its regular value:</p>
+<div class="highlight"><pre><span></span><code>import sys 
+
+for p in sys.path: 
+    print(p) 
+</code></pre></div>
+<p>We've launched the code inside the C:\User\user folder, and this is what we've got:</p>
+<div class="highlight"><pre><span></span><code>C:\Users\user C:\Users\user\AppData\Local\Programs\Python\Python36-32\python36.zip C:\Users\user\AppData\Local\Programs\Python\Python36-32\DLLs C:\Users\user\AppData\Local\Programs\Python\Python36-32\lib C:\Users\user\AppData\Local\Programs\Python\Python36-32 C:\Users\user\AppData\Local\Programs\Python\Python36-32\lib\site-packages
+</code></pre></div>
+<p>Note: the folder in which the execution starts is listed in the <strong>first path's element</strong>.</p>
+<p>Note once again: there is a zip file listed as one of the path's elements - it's not an error. Python is able to treat zip files as ordinary folders - this can save lots of storage.</p>
+<p>Can you figure out how we can solve our problem now? We can add a folder containing the module to the path variable (it's fully modifiable).</p>
+<h2 id="your-first-module-step-12">Your first module: step 12</h2>
+<p>One of several possible solutions looks like this:</p>
+<p><img src="https://raw.githubusercontent.com/d-khan/python/refs/heads/main/modules/Screen%20Shot%202025-03-08%20at%206.25.39%20PM.png" alt="Updating the main.py file with path.append('..\\modules')" style="zoom:50%;" /></p>
+<div class="highlight"><pre><span></span><code>from sys import path
+
+path.append(&#39;..\\modules&#39;)
+
+import module
+
+zeroes = [0 for i in range(5)]
+ones = [1 for i in range(5)]
+print(module.suml(zeroes))
+print(module.prodl(ones))
+</code></pre></div>
+<p>Note:</p>
+<ul>
+<li>we've doubled the <code>\</code> inside folder name - do you know why?</li>
+</ul>
+<details>
+  <summary> <b>Check for the answer</b>  </summary>
+  <br>
+  <i>Because a backslash is used to escape other characters - if you want to    get just a backslash, you have to escape it.</i>
+  </details>
+
+<ul>
+<li>we've used the relative name of the folder - this will work if you start the main.py file directly from its home folder, and won't work if the current directory doesn't fit the relative path; you can always use an absolute path, like this:</li>
+</ul>
+<p><code>path.append('C:\\Users\\user\\py\\modules')</code></p>
+<ul>
+<li>we've used the <code>append()</code> method - in effect, the new path will occupy the last element in the path list; if you don't like the idea, you can use <code>insert()</code> instead.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/semester.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/faq.js"></script>
+      
+    
+  </body>
+</html>
