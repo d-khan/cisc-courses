@@ -31,7 +31,10 @@ nav:
   - Dashboard: index.md
 
   - CISC 179<br>Python Programming:
+      - Dashboard: python/index.md
       - Syllabus: python/syllabus.md
+      - Lectures & Labs: python/16_weeks_semester.md
+      - Resources: python/resources/index.md
 
   - CISC 187<br>Data Structures in C++:
       - Dashboard: data-structures/index.md
@@ -40,7 +43,10 @@ nav:
       - Resources: data-structures/resources/index.md
 
   - CISC 190<br>Java Programming:
+      - Dashboard: java/index.md
       - Syllabus: java/syllabus.md
+      - Lectures & Labs: java/16_weeks_semester.md
+      - Resources: java/resources/index.md
 
   - CISC 192<br>C/C++ Programming:
       - Dashboard: cpp/index.md

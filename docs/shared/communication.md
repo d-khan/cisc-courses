@@ -12,7 +12,7 @@ __Slack:__ Use Slack for general course questions, programming questions, and di
 
 * [CISC 179 Python Programming](https://cisc-dkhan.slack.com/archives/C0BFDDGV8S0)
 * [CISC 187 Data Structures channel](https://cisc-dkhan.slack.com/archives/C0BF3EAG943)
-* [CISC 191 Intermediate Java Programming](https://cisc-dkhan.slack.com/archives/C0BF3EBLZH9)
+* [CISC 190 Java Programming](https://cisc-dkhan.slack.com/archives/C0BF3EBLZH9)
 * [CISC 192 C/C++ Programming](https://cisc-dkhan.slack.com/archives/C0BF3EDLG5R)
 * [CISC 211 Computer Organization & Assembly Language](https://cisc-dkhan.slack.com/archives/C0BF9MW4LN6)
 

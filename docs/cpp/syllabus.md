@@ -24,7 +24,7 @@ intended for computer science majors and students seeking a solid foundation in 
 
 | Course Information | Details                                                                               |
 |--------------------|---------------------------------------------------------------------------------------|
-| Course name        | CISC-92 C/C++ Programming                                                             |
+| Course name        | CISC-192 C/C++ Programming                                                            |
 | Year               | Fall 2026                                                                             |
 | Class ID           | 43422                                                                                 |
 | Section            | 3002                                                                                  |

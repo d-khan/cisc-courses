@@ -71,13 +71,13 @@
 
 <div class="faq-item">
     <button class="faq-question">
-        Is this course fully online?
+        How are the classes delivered?
         <span class="faq-arrow">⌄</span>
     </button>
 
     <div class="faq-answer">
         <p>
-            <b>Yes</b>. This course is delivered in a 100% asynchronous online format, allowing students to complete coursework according to the published schedule without attending live class sessions.
+            This course is delivered in a 100% asynchronous online format, allowing students to complete coursework according to the published schedule without attending live class sessions.
             Students are expected to remain actively engaged in the course by completing and submitting weekly assignments on time. Regular participation and timely submission of coursework are essential for demonstrating academic progress. Instructors closely monitor student activity and assignment completion. Students who miss multiple assignments without prior communication or approved accommodations may be subject to administrative withdrawal in accordance with college policies.
         </p>
 

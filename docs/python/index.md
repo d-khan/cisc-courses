@@ -1,3 +1,164 @@
-# Python Programming
+---
+hide:
+  - toc
+---
 
-Welcome to CISC 179.
+<script src="../javascripts/course.js"></script>
+
+<div class="course-dashboard">
+
+<!-- ===================================== -->
+<!-- HERO -->
+<!-- ===================================== -->
+
+<div class="course-hero">
+
+<div class="hero-left">
+
+<div>
+
+<div class="course-code">
+                        CISC 179
+</div>
+
+<h1 class="course-title">
+                        Introduction to Python Programming
+</h1>
+
+<div class="course-professor">
+    Professor Danish Khan
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div id="course-date"></div>
+
+</div>
+
+</div>
+
+<!-- ===================================== -->
+<!-- TOPIC SECTION -->
+<!-- ===================================== -->
+
+<div class="topic-section">
+
+<div class="topic-card">
+
+<div class="topic-label"
+     id="current-topic-label">
+    Retrieving...
+</div>
+
+<div class="topic-name"
+     id="current-topic">
+</div>
+
+
+</div>
+
+<div class="topic-divider"></div>
+
+<div class="topic-card">
+
+<div class="topic-label"
+     id="next-topic-label">
+    Retrieving...
+</div>
+
+<div class="topic-name"
+     id="next-topic">
+</div>
+
+
+</div>
+
+</div>
+
+<!-- ===================================== -->
+<!-- ANNOUNCEMENTS -->
+<!-- ===================================== -->
+
+<section
+    id="announcements-card"
+    class="dashboard-card">
+
+<h2 id="announcements-heading">
+    Retrieving...
+</h2>
+
+<div id="announcements"></div>
+
+</section>
+
+<!-- ===================================== -->
+<!-- COMING UP -->
+<!-- ===================================== -->
+
+<section
+    id="upcoming-card"
+    class="dashboard-card">
+
+<h2 id="upcoming-heading">
+    Retrieving...
+</h2>
+
+<div id="upcoming"></div>
+
+</section>
+
+<!-- ===================================== -->
+<!-- QUICK LINKS -->
+<!-- ===================================== -->
+
+<section class="dashboard-card">
+
+<h2>
+ 🔗 Quick Links
+</h2>
+
+<div class="quick-links">
+
+    <a href="./syllabus/" class="quick-link">
+        <div class="quick-link-icon">📄</div>
+        <div class="quick-link-text">Syllabus</div>
+    </a>
+
+    <a href="./16_weeks_semester/" class="quick-link">
+        <div class="quick-link-icon">📚</div>
+        <div class="quick-link-text">Lectures & Labs</div>
+    </a>
+
+    <a href="./resources/" class="quick-link">
+        <div class="quick-link-icon">🧰</div>
+        <div class="quick-link-text">Resources</div>
+    </a>
+
+    <a href="https://sdccd.instructure.com/"
+       target="_blank"
+       class="quick-link">
+        <div class="quick-link-icon">🎓</div>
+        <div class="quick-link-text">Canvas</div>
+    </a>
+
+    <a href="./faqs/" class="quick-link">
+        <div class="quick-link-icon">❓</div>
+        <div class="quick-link-text">FAQs</div>
+    </a>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeSX7r1qqaSyiVZj6h4BM0IBAlMy_GI00cXVCKmV89JZremg/viewform"
+       class="quick-link support-link">
+
+        <div class="quick-link-icon">🎫</div>
+        <div class="quick-link-text">Course Support</div>
+
+    </a>
+
+</div>
+
+</section>
+</div>

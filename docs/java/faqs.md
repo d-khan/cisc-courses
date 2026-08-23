@@ -22,15 +22,17 @@
 
     <div class="faq-answer">
         <p>
-            You will need a <strong>C++ compiler</strong> to compile and run your programs. You may also use an <strong>Integrated Development Environment (IDE)</strong>
-            to write and manage your code.
-            <p>
-            Please check the <strong>Course Resources</strong> page for instructions on setting up a C++ compiler and recommended IDEs.
-            </p>
-            <p>
-            If you are comfortable working in a <strong>command-line (CLI) environment</strong>, you do not need an IDE. However, an IDE can make writing, debugging, and
-            managing your C++ code easier and more efficient.
-            </p>
+           <p>
+            You may use any IDE or development environment you prefer to write and compile your Java programs.
+            I recommend using <a href="https://www.jetbrains.com/idea/" target="_blank">IntelliJ IDEA</a> from JetBrains.
+            <br><br>
+
+            In addition to an IDE, you will need to install the <strong>Java Development Kit (JDK)</strong> on your computer.
+            The following video explains how to install and configure the required Java development environment:
+            <br><br>
+            <a href="https://www.youtube.com/watch?v=yf_fwwB_ueI" target="_blank">
+            Watch the Java Setup Video
+            </a>
         </p>
     </div>
 
@@ -71,31 +73,18 @@
 
 <div class="faq-item">
     <button class="faq-question">
-        How are the classes delivered?
+        Is this course fully online?
         <span class="faq-arrow">⌄</span>
     </button>
 
     <div class="faq-answer">
-    <p>
-     This course is delivered in a <b>HyFlex format</b>, allowing students to attend scheduled class sessions either
-    <b>in person</b> or <b>synchronously online</b> via
-      <a href="https://sdccd-edu.zoom.us/j/81106030496" target="_blank">
-      Join via Zoom.
-      </a>
-    </p>
-    <br>
-    <p>
-      Students are expected to attend and actively participate in class sessions, whether in person or online, and
-      complete and submit assignments according to the published schedule. Regular participation and timely submission
-      of coursework are essential for demonstrating academic progress.
-    </p>
-    <br>
-    <p>
-      Instructors closely monitor student participation and assignment completion. Students who miss multiple class
-      sessions or assignments without prior communication or approved accommodations may be subject to administrative
-      withdrawal in accordance with college policies.
-    </p>
+        <p>
+            <b>Yes</b>. This course is delivered in a 100% asynchronous online format, allowing students to complete coursework according to the published schedule without attending live class sessions.
+            Students are expected to remain actively engaged in the course by completing and submitting weekly assignments on time. Regular participation and timely submission of coursework are essential for demonstrating academic progress. Instructors closely monitor student activity and assignment completion. Students who miss multiple assignments without prior communication or approved accommodations may be subject to administrative withdrawal in accordance with college policies.
+        </p>
+
     </div>
+
 </div>
 
 <div class="faq-item">
@@ -108,8 +97,8 @@
         <p>
             Start by reviewing the course materials, resources, and announcements available on the course website.
             If you still need assistance, you can either submit a support ticket using the <strong>Course Support</strong> link on the course dashboard or join the
-            <a href="https://cisc-dkhan.slack.com/archives/C0BF3EDLG5R">
-            <strong>CISC 192 Slack workspace </strong>
+            <a href="https://cisc-dkhan.slack.com/archives/C0BF3EBLZH9">
+            <strong>CISC 190 Slack workspace </strong>
             </a>
         </p>        
     </div>

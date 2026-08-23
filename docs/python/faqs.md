@@ -22,14 +22,22 @@
 
     <div class="faq-answer">
         <p>
-            You will need a <strong>C++ compiler</strong> to compile and run your programs. You may also use an <strong>Integrated Development Environment (IDE)</strong>
-            to write and manage your code.
-            <p>
-            Please check the <strong>Course Resources</strong> page for instructions on setting up a C++ compiler and recommended IDEs.
-            </p>
-            <p>
-            If you are comfortable working in a <strong>command-line (CLI) environment</strong>, you do not need an IDE. However, an IDE can make writing, debugging, and
-            managing your C++ code easier and more efficient.
+            You may use any IDE (Integrated Development Environment) to write and run Python programs. I recommend <strong>PyCharm</strong>, which can be downloaded from
+            <a href="https://www.jetbrains.com/pycharm/" target="_blank">JetBrains</a>.
+
+            <br><br>
+            You will also need to install <strong>Python</strong> on your computer. Alternatively, if you are comfortable with the command line, you may use a text editor and run Python programs from the terminal.
+
+            <br><br>
+            The following video demonstrates how to install <strong>Python</strong> and <strong>PyCharm Community Edition (CE)</strong> on Windows:
+
+            <a href="https://youtu.be/nFN0JW43GKY" target="_blank">Installation Video</a>
+
+            <br><br>
+            <strong>Do not use online Python compilers for this course.</strong> A local development environment provides essential tools such as debugging,
+
+    package management, project organization, and version control.
+
             </p>
         </p>
     </div>
@@ -77,25 +85,11 @@
 
     <div class="faq-answer">
     <p>
-     This course is delivered in a <b>HyFlex format</b>, allowing students to attend scheduled class sessions either
-    <b>in person</b> or <b>synchronously online</b> via
-      <a href="https://sdccd-edu.zoom.us/j/81106030496" target="_blank">
-      Join via Zoom.
-      </a>
-    </p>
-    <br>
-    <p>
-      Students are expected to attend and actively participate in class sessions, whether in person or online, and
-      complete and submit assignments according to the published schedule. Regular participation and timely submission
-      of coursework are essential for demonstrating academic progress.
-    </p>
-    <br>
-    <p>
-      Instructors closely monitor student participation and assignment completion. Students who miss multiple class
-      sessions or assignments without prior communication or approved accommodations may be subject to administrative
-      withdrawal in accordance with college policies.
+     This course is delivered in a 100% asynchronous online format, allowing students to complete coursework according to the published schedule without attending live class sessions.
+     Students are expected to remain actively engaged in the course by completing and submitting weekly assignments on time. Regular participation and timely submission of coursework are essential for demonstrating academic progress. Instructors closely monitor student activity and assignment completion. Students who miss multiple assignments without prior communication or approved accommodations may be subject to administrative withdrawal in accordance with college policies.
     </p>
     </div>
+
 </div>
 
 <div class="faq-item">
