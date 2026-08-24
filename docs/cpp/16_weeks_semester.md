@@ -14,7 +14,7 @@
 | 11-12 | 2 Nov      | <li> Classes and Data Abstraction <li> Project-2 (_Check Canvas for details_)                             | Apply Classes & Data Abstraction <br><br>__Activities due: Sun 8 Nov at 11:59 pm__                       |
 | 13    | 16 Nov     | Inheritance and Composition                                                                               | Optimize code using Inheritance and Composition<br><br>__Activities due: Sun 22 Nov at 11:59 pm__        |
 | 14    | 23 Nov     | Thanksgiving Week (NO CLASSES)                                                                            |                                                                                                          |
-| 15-16 | 7 Dec      | Pointers, Virutal Functions and Abstract Classes                                                          | __Project-2 due: Sun 6 Dec at 11:59pm__ <br>_Check Canvas for details_                                   
+| 15-16 | 7 Dec      | Pointers, Virutal Functions and Abstract Classes                                                          | __Project-2 due: Sun 6 Dec at 11:59pm__                                   
 | 17    | 14 Dec     | __Project Demonstration__ <br> _More details to come..._                                                  |                                                                                                          |
 
 > **Please note that all times are listed in the Pacific Time Zone (PT). Each assessment will become available in Canvas
