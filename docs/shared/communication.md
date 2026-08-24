@@ -25,7 +25,7 @@ __Email (dkhan@sdccd.edu):__ Use only for confidential or personal matters, such
 __Canvas Messaging:__ You may also contact me through the Canvas Inbox. However, I do not monitor Canvas messages
   regularly, so for the fastest response, please use Slack, the Course Support Ticket system, or email, as appropriate.
 
---8<-- "docs/shared/dates_deadlines_Fall.md"
+--8<-- "docs/shared/office_hours.md"
 
 I typically respond to messages within 24 hours (Monday through Friday). If you do not
 receive a response within these timeframes, please resend your message. Messages sent
