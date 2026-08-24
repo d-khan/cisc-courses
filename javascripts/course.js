@@ -541,29 +541,70 @@ async function loadCourseData() {
 
     console.log("Loading course data...");
 
-    const pathParts =
-        window.location.pathname
-            .split("/")
-            .filter(Boolean);
+    const path =
 
-    const sheetName =
-        pathParts[pathParts.length - 1];
+        window.location.pathname;
 
-    console.log("Course sheet:", sheetName);
+    console.log("Current path:", path);
+
+    let sheetName = "assembly";
+
+    if (path.includes("/python/")) {
+
+        sheetName = "python";
+
+    } else if (path.includes("/data-structures/")) {
+
+        sheetName = "data-structures";
+
+    } else if (path.includes("/java/")) {
+
+        sheetName = "java";
+
+    } else if (path.includes("/cpp/")) {
+
+        sheetName = "cpp";
+
+    } else if (path.includes("/assembly/")) {
+
+        sheetName = "assembly";
+
+    }
+
+    console.log("Selected sheet:", sheetName);
 
     const url =
+
         "https://script.google.com/macros/s/AKfycbz-8FZjJLCCkgNRKlWdVS55Z03DwJrQfNVtE6Xjc9HMuKP2Dl-XEK5QTc18v_XmmrnD/exec"
+
         + "?sheet=" + encodeURIComponent(sheetName);
 
+    console.log("Fetching URL:", url);
+
     const response =
+
         await fetch(url);
 
     console.log("Fetch completed");
 
+    if (!response.ok) {
+
+        throw new Error(
+
+            "Unable to load course data"
+
+        );
+
+    }
+
     const data =
+
         await response.json();
 
     console.log("JSON parsed");
 
+    console.log("Course data:", data);
+
     return data;
+
 }
