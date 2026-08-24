@@ -2,7 +2,7 @@
 
 window.semesterConfig = {
         // make sure the format is yyyy-mm-dd and in string format, enclosed in double quotes
-        semesterStart: "2026-08-23",
+        semesterStart: "2026-08-24",
 
         semesterEnd: "2026-12-21",
 
