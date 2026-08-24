@@ -29,7 +29,6 @@ ability to design, develop, test, and debug your own Python programs.
 | Location           | Online                                                          |
 | Duration           | Aug 24 – Dec 21 (16 weeks)                                      |
 | Professor #1       | Dr Danish Khan                                                  |
-| Office hours #1    |                                                                 |
 | Contact #1         | Room M-107P, Office phone: 619-388-7152, Email: dkhan@sdccd.edu |
 | Professor #2       | Rabb Muhammad                                                   |
 | Office hours #2    |                                                                 |
