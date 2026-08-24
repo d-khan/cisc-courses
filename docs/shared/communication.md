@@ -6,7 +6,7 @@ Please use the following communication channels based on the type of question:
 __Slack:__ Use Slack for general course questions, programming questions, and discussions that may benefit the entire
   class. You are encouraged to post your question in Slack first, as another student may already know the answer or
   benefit from the discussion.<br>
-  [Join the CISC-dkhan workspace](https://join.slack.com/t/cisc-dkhan/shared_invite/zt-4302hj542-T4OwHrPEBMKcqaZZLmC09Q)
+  [Join the CISC-dkhan workspace](https://join.slack.com/t/cisc-dkhan/signup)
 
   After joining the workspace, join the relevant course channel:
 
