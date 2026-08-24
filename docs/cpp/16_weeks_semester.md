@@ -16,7 +16,7 @@
 | 14    | 23 Nov     | Thanksgiving Week (NO CLASSES)                                                                            |                                                                                                                       |
 | 15-16 | 30 Nov     | Pointers, Virutal Functions and Abstract Classes                                                          | Apply Pointers, Virtual Functions and Abstract Classes<br><br>__Activities and Project-2 due: Sun 13 Dec at 11:59pm__ 
 | 17    | 14 Dec     | __Project Demonstration__ <br> _More details to come..._                                                  |                                                                                                                       |
-| 18    | 21 Dec     |                                                                                                           |
+
 
 > **Please note that all times are listed in the Pacific Time Zone (PT). Each assessment will become available in Canvas
 promptly at the scheduled start time indicated above.**
