@@ -1,3 +1,3 @@
-# Office hours of Danish Khan (Fall 2026)
+## **Office hours of Danish Khan (Fall 2026)**
 
 Watch this space...

@@ -1,4 +1,4 @@
-# Office hours of Danish Khan (Fall 2026)
+## **Office hours of Danish Khan (Fall 2026)**
 
 __Please note that office hours are not held on holidays. For a list of holidays, refer to the [Academic Calendar](https://www.sdccd.edu/students/dates-and-deadlines/index.aspx)__
 
