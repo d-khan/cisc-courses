@@ -541,10 +541,22 @@ async function loadCourseData() {
 
     console.log("Loading course data...");
 
+    const pathParts =
+        window.location.pathname
+            .split("/")
+            .filter(Boolean);
+
+    const sheetName =
+        pathParts[pathParts.length - 1];
+
+    console.log("Course sheet:", sheetName);
+
+    const url =
+        "https://script.google.com/macros/s/AKfycbz-8FZjJLCCkgNRKlWdVS55Z03DwJrQfNVtE6Xjc9HMuKP2Dl-XEK5QTc18v_XmmrnD/exec"
+        + "?sheet=" + encodeURIComponent(sheetName);
+
     const response =
-        await fetch(
-            "https://script.google.com/macros/s/AKfycbz-8FZjJLCCkgNRKlWdVS55Z03DwJrQfNVtE6Xjc9HMuKP2Dl-XEK5QTc18v_XmmrnD/exec"
-        );
+        await fetch(url);
 
     console.log("Fetch completed");
 
