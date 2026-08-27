@@ -13,6 +13,8 @@ it directly from the terminal/command line—but this approach is recommended on
 Choose the option that best fits your workflow and learning style. The important part is writing, compiling, and running
 your programs consistently.
 
+You can also watch the [video](https://www.youtube.com/watch?v=yf_fwwB_ueI&ab_channel=DanishKhan) which shows how to install JavA IDE, install JDK and run your very first Java code. 
+
 __Please note__
 
 Do not use online Java compilers. Professional software developers do not rely on such environments because they lack
