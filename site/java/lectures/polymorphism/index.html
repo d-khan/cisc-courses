@@ -1,0 +1,2008 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Polymorphism in Java - Dr. Khan's Computer Science Courses @ San Diego Miramar College</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-5SGJZZD5EZ"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-5SGJZZD5EZ",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-5SGJZZD5EZ",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#polymorphism-in-java" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Dr. Khan&#39;s Computer Science Courses @ San Diego Miramar College" class="md-header__button md-logo" aria-label="Dr. Khan's Computer Science Courses @ San Diego Miramar College" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dr. Khan's Computer Science Courses @ San Diego Miramar College
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Polymorphism in Java
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Dr. Khan&#39;s Computer Science Courses @ San Diego Miramar College" class="md-nav__button md-logo" aria-label="Dr. Khan's Computer Science Courses @ San Diego Miramar College" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Dr. Khan's Computer Science Courses @ San Diego Miramar College
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 179<br>Python Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 179<br>Python Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 187<br>Data Structures in C++
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 187<br>Data Structures in C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-structures/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 190<br>Java Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 190<br>Java Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 192<br>C/C++ Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 192<br>C/C++ Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 211<br>Assembly Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 211<br>Assembly Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/8_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="polymorphism-in-java">Polymorphism in Java</h1>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>By the end of this lecture, you should be able to:</p>
+<ul>
+<li>Explain what <strong>polymorphism</strong> means in Java.</li>
+<li>Explain <strong>why polymorphism is useful</strong> in object-oriented
+    programming.</li>
+<li>Understand the relationship between inheritance, method overriding,
+    and polymorphism.</li>
+<li>Distinguish between a <strong>reference type</strong> and an <strong>object type</strong>.</li>
+<li>Use a superclass reference to refer to subclass objects.</li>
+<li>Understand how Java determines which overridden method executes.</li>
+<li>Use polymorphism with arrays and <code>ArrayList</code>.</li>
+<li>Understand <strong>upcasting</strong> and <strong>downcasting</strong>.</li>
+<li>Use polymorphism with abstract classes and interfaces.</li>
+</ul>
+<hr />
+<h1 id="1-what-is-polymorphism">1. What is Polymorphism?</h1>
+<p>Polymorphism is one of the fundamental concepts of <strong>Object-Oriented
+Programming (OOP)</strong>.</p>
+<p>The word <strong>polymorphism</strong> comes from:</p>
+<ul>
+<li><strong>Poly</strong> → many</li>
+<li><strong>Morph</strong> → forms</li>
+</ul>
+<p>Therefore, polymorphism means:</p>
+<blockquote>
+<p><strong>Many forms</strong></p>
+</blockquote>
+<p>In Java, polymorphism allows a common reference type or method call to
+work with objects that may have different behaviors.</p>
+<p>Consider different animals:</p>
+<div class="highlight"><pre><span></span><code>Animal
+  |
+  +-- Dog
+  |
+  +-- Cat
+  |
+  +-- Cow
+</code></pre></div>
+<p>All of these are animals, and all of them can make a sound. However,
+they do not make the same sound:</p>
+<div class="highlight"><pre><span></span><code>Dog  -&gt; Bark
+Cat  -&gt; Meow
+Cow  -&gt; Moo
+</code></pre></div>
+<p>With polymorphism, we can write:</p>
+<div class="highlight"><pre><span></span><code><span class="n">animal</span><span class="p">.</span><span class="na">makeSound</span><span class="p">();</span>
+</code></pre></div>
+<p>The same statement can produce different results depending on the actual
+object referenced by <code>animal</code>.</p>
+<hr />
+<h1 id="2-why-do-we-use-polymorphism">2. Why Do We Use Polymorphism?</h1>
+<p>Before looking at the Java syntax, it is important to understand <strong>why
+we need polymorphism</strong>.</p>
+<p>Suppose we are developing a program containing different types of
+employees:</p>
+<div class="highlight"><pre><span></span><code>Employee
+   |
+   +-- Programmer
+   |
+   +-- Manager
+   |
+   +-- Designer
+</code></pre></div>
+<p>Each employee performs work differently. A programmer may write code, a
+manager may manage a team, and a designer may create user interfaces.</p>
+<p>Without polymorphism, we might create separate code for every type:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Programmer</span><span class="w"> </span><span class="n">programmer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Programmer</span><span class="p">();</span>
+<span class="n">Manager</span><span class="w"> </span><span class="n">manager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Manager</span><span class="p">();</span>
+<span class="n">Designer</span><span class="w"> </span><span class="n">designer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Designer</span><span class="p">();</span>
+
+<span class="n">programmer</span><span class="p">.</span><span class="na">work</span><span class="p">();</span>
+<span class="n">manager</span><span class="p">.</span><span class="na">work</span><span class="p">();</span>
+<span class="n">designer</span><span class="p">.</span><span class="na">work</span><span class="p">();</span>
+</code></pre></div>
+<p>For a small program, this may seem reasonable. But as more employee
+types are added, our program becomes increasingly dependent on specific
+classes.</p>
+<p>Polymorphism allows us to treat all of these objects as <code>Employee</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Employee</span><span class="w"> </span><span class="n">employee1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Programmer</span><span class="p">();</span>
+<span class="n">Employee</span><span class="w"> </span><span class="n">employee2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Manager</span><span class="p">();</span>
+<span class="n">Employee</span><span class="w"> </span><span class="n">employee3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Designer</span><span class="p">();</span>
+</code></pre></div>
+<p>Now we can use the same operation:</p>
+<div class="highlight"><pre><span></span><code><span class="n">employee1</span><span class="p">.</span><span class="na">work</span><span class="p">();</span>
+<span class="n">employee2</span><span class="p">.</span><span class="na">work</span><span class="p">();</span>
+<span class="n">employee3</span><span class="p">.</span><span class="na">work</span><span class="p">();</span>
+</code></pre></div>
+<p>Each object performs <code>work()</code> differently.</p>
+<blockquote>
+<p><strong>Polymorphism allows us to work with objects through a common type
+while allowing each object to provide its own behavior.</strong></p>
+</blockquote>
+<h2 id="benefits-of-polymorphism">Benefits of Polymorphism</h2>
+<p>Polymorphism helps us:</p>
+<ul>
+<li>reduce repetitive code,</li>
+<li>avoid large type-checking <code>if</code> and <code>switch</code> statements,</li>
+<li>process different objects through a common type,</li>
+<li>create flexible arrays and collections,</li>
+<li>add new subclasses with fewer changes to existing code,</li>
+<li>reduce dependencies on specific implementations,</li>
+<li>build software that is easier to maintain and extend.</li>
+</ul>
+<hr />
+<h1 id="3-polymorphism-requires-a-common-relationship">3. Polymorphism Requires a Common Relationship</h1>
+<p>Consider:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">makeSound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Animal makes a sound&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Create subclasses:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">makeSound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Dog barks&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Cat</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">makeSound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Cat meows&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The inheritance relationship is:</p>
+<div class="highlight"><pre><span></span><code>       Animal
+       /    \
+     Dog    Cat
+</code></pre></div>
+<p>Both <code>Dog</code> and <code>Cat</code> are types of <code>Animal</code>. This allows:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Animal</span><span class="w"> </span><span class="n">animal1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+<span class="n">Animal</span><span class="w"> </span><span class="n">animal2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Cat</span><span class="p">();</span>
+</code></pre></div>
+<hr />
+<h1 id="4-method-overriding">4. Method Overriding</h1>
+<p>Method overriding occurs when a subclass provides its own implementation
+of a method inherited from its superclass.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">makeSound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Animal sound&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">makeSound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Woof!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The <code>Dog</code> class replaces the inherited behavior of <code>makeSound()</code> with
+its own behavior.</p>
+<p>The <code>@Override</code> annotation tells Java that we intend to override an
+inherited method. You should normally use it because the compiler can
+detect mistakes.</p>
+<hr />
+<h1 id="5-the-basic-idea-of-polymorphism">5. The Basic Idea of Polymorphism</h1>
+<p>Normally:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Dog</span><span class="w"> </span><span class="n">dog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+<span class="n">Cat</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Cat</span><span class="p">();</span>
+
+<span class="n">dog</span><span class="p">.</span><span class="na">makeSound</span><span class="p">();</span>
+<span class="n">cat</span><span class="p">.</span><span class="na">makeSound</span><span class="p">();</span>
+</code></pre></div>
+<p>Java also allows:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Animal</span><span class="w"> </span><span class="n">animal1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+<span class="n">Animal</span><span class="w"> </span><span class="n">animal2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Cat</span><span class="p">();</span>
+
+<span class="n">animal1</span><span class="p">.</span><span class="na">makeSound</span><span class="p">();</span>
+<span class="n">animal2</span><span class="p">.</span><span class="na">makeSound</span><span class="p">();</span>
+</code></pre></div>
+<p>Output:</p>
+<div class="highlight"><pre><span></span><code>Dog barks
+Cat meows
+</code></pre></div>
+<p>Even though both variables have the reference type <code>Animal</code>, Java
+executes the overridden method belonging to the actual object.</p>
+<p>This is <strong>runtime polymorphism</strong>.</p>
+<hr />
+<h1 id="6-reference-type-vs-object-type">6. Reference Type vs. Object Type</h1>
+<p>Consider:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Animal</span><span class="w"> </span><span class="n">animal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+</code></pre></div>
+<p>The <strong>reference type</strong> is:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Animal</span>
+</code></pre></div>
+<p>The <strong>actual object type</strong> is:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Dog</span>
+</code></pre></div>
+<p>Visualized:</p>
+<div class="highlight"><pre><span></span><code>Reference Type          Object Type
+
+   Animal      -------&gt;     Dog
+</code></pre></div>
+<p>A precise description is:</p>
+<blockquote>
+<p><code>animal</code> is an <code>Animal</code> reference that refers to a <code>Dog</code> object.</p>
+</blockquote>
+<hr />
+<h1 id="7-which-method-does-java-execute">7. Which Method Does Java Execute?</h1>
+<p>Consider:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Animal</span><span class="w"> </span><span class="n">animal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+<span class="n">animal</span><span class="p">.</span><span class="na">makeSound</span><span class="p">();</span>
+</code></pre></div>
+<p>If <code>Dog</code> overrides <code>makeSound()</code>, the output comes from <code>Dog</code>.</p>
+<p>For overridden instance methods, Java determines which implementation to
+execute based on the <strong>actual object at runtime</strong>.</p>
+<p>This is known as <strong>dynamic method dispatch</strong> or <strong>runtime
+polymorphism</strong>.</p>
+<hr />
+<h1 id="8-one-reference-different-objects">8. One Reference, Different Objects</h1>
+<p>The same reference variable can refer to different subclass objects:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Animal</span><span class="w"> </span><span class="n">animal</span><span class="p">;</span>
+
+<span class="n">animal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+<span class="n">animal</span><span class="p">.</span><span class="na">makeSound</span><span class="p">();</span>
+
+<span class="n">animal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Cat</span><span class="p">();</span>
+<span class="n">animal</span><span class="p">.</span><span class="na">makeSound</span><span class="p">();</span>
+</code></pre></div>
+<p>Output:</p>
+<div class="highlight"><pre><span></span><code>Dog barks
+Cat meows
+</code></pre></div>
+<p>The variable remains an <code>Animal</code> reference, but the object it references
+changes.</p>
+<hr />
+<h1 id="9-polymorphism-with-arrays">9. Polymorphism with Arrays</h1>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Cow</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">makeSound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Moo!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>We can create:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Animal</span><span class="o">[]</span><span class="w"> </span><span class="n">animals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">(),</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Cat</span><span class="p">(),</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Cow</span><span class="p">()</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Then:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Animal</span><span class="w"> </span><span class="n">animal</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">animals</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">animal</span><span class="p">.</span><span class="na">makeSound</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Output:</p>
+<div class="highlight"><pre><span></span><code>Woof!
+Meow!
+Moo!
+</code></pre></div>
+<p>We do not need separate <code>if</code> statements to determine the animal type.
+The actual object determines which overridden method executes.</p>
+<hr />
+<h1 id="10-polymorphic-method-parameters">10. Polymorphic Method Parameters</h1>
+<p>Polymorphism becomes especially useful when passing objects to methods.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">performWork</span><span class="p">(</span><span class="n">Employee</span><span class="w"> </span><span class="n">employee</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">employee</span><span class="p">.</span><span class="na">work</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>We can pass different subclasses:</p>
+<div class="highlight"><pre><span></span><code><span class="n">performWork</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Programmer</span><span class="p">());</span>
+<span class="n">performWork</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Manager</span><span class="p">());</span>
+<span class="n">performWork</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Designer</span><span class="p">());</span>
+</code></pre></div>
+<p>The method does not need to know the exact subclass. The actual object
+determines which <code>work()</code> implementation executes.</p>
+<hr />
+<h1 id="11-adding-new-classes">11. Adding New Classes</h1>
+<p>Suppose later we introduce:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Designer</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">work</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+<span class="w">            </span><span class="s">&quot;Designer is creating a user interface&quot;</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Our existing method:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">performWork</span><span class="p">(</span><span class="n">Employee</span><span class="w"> </span><span class="n">employee</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">employee</span><span class="p">.</span><span class="na">work</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>does not need to change.</p>
+<div class="highlight"><pre><span></span><code><span class="n">performWork</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Designer</span><span class="p">());</span>
+</code></pre></div>
+<blockquote>
+<p><strong>New subclasses can often be added without changing code that already
+works with the superclass.</strong></p>
+</blockquote>
+<hr />
+<h1 id="12-polymorphism-with-arraylist">12. Polymorphism with <code>ArrayList</code></h1>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+</code></pre></div>
+<p>Create:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">&gt;</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</code></pre></div>
+<p>Add different objects:</p>
+<div class="highlight"><pre><span></span><code><span class="n">employees</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Programmer</span><span class="p">());</span>
+<span class="n">employees</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Manager</span><span class="p">());</span>
+<span class="n">employees</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Designer</span><span class="p">());</span>
+</code></pre></div>
+<p>Process them:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Employee</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">employees</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">employee</span><span class="p">.</span><span class="na">work</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The collection contains <code>Employee</code> references, but the actual objects
+can belong to different subclasses.</p>
+<hr />
+<h1 id="13-upcasting">13. Upcasting</h1>
+<p>Consider:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Dog</span><span class="w"> </span><span class="n">dog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+<span class="n">Animal</span><span class="w"> </span><span class="n">animal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dog</span><span class="p">;</span>
+</code></pre></div>
+<p>A <code>Dog</code> reference is being assigned to an <code>Animal</code> reference. This is
+called <strong>upcasting</strong>.</p>
+<div class="highlight"><pre><span></span><code>Animal
+  ^
+  |
+ Dog
+</code></pre></div>
+<p>Java normally performs upcasting automatically:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Animal</span><span class="w"> </span><span class="n">animal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+</code></pre></div>
+<hr />
+<h1 id="14-what-can-the-reference-access">14. What Can the Reference Access?</h1>
+<p>Consider:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">makeSound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Woof!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">fetch</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Dog is fetching&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Now:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Animal</span><span class="w"> </span><span class="n">animal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+</code></pre></div>
+<p>This works:</p>
+<div class="highlight"><pre><span></span><code><span class="n">animal</span><span class="p">.</span><span class="na">makeSound</span><span class="p">();</span>
+</code></pre></div>
+<p>But this does not compile:</p>
+<div class="highlight"><pre><span></span><code><span class="n">animal</span><span class="p">.</span><span class="na">fetch</span><span class="p">();</span>
+</code></pre></div>
+<p>Why? Because the reference type is <code>Animal</code>, and <code>Animal</code> does not
+declare <code>fetch()</code>.</p>
+<blockquote>
+<p><strong>The reference type determines what you can access; the actual object
+determines which overridden instance method executes.</strong></p>
+</blockquote>
+<hr />
+<h1 id="15-compile-time-vs-runtime">15. Compile Time vs. Runtime</h1>
+<p>Consider:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Animal</span><span class="w"> </span><span class="n">animal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+<span class="n">animal</span><span class="p">.</span><span class="na">makeSound</span><span class="p">();</span>
+</code></pre></div>
+<p>At <strong>compile time</strong>, Java checks whether <code>Animal</code> has a <code>makeSound()</code>
+method.</p>
+<p>At <strong>runtime</strong>, Java checks the actual object. Since it is a <code>Dog</code>, Java
+executes the overridden <code>Dog.makeSound()</code> method.</p>
+<hr />
+<h1 id="16-downcasting">16. Downcasting</h1>
+<p>Sometimes we need to access behavior that exists only in a subclass.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Animal</span><span class="w"> </span><span class="n">animal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+</code></pre></div>
+<p>We cannot directly write:</p>
+<div class="highlight"><pre><span></span><code><span class="n">animal</span><span class="p">.</span><span class="na">fetch</span><span class="p">();</span>
+</code></pre></div>
+<p>But we can downcast:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Dog</span><span class="w"> </span><span class="n">dog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Dog</span><span class="p">)</span><span class="w"> </span><span class="n">animal</span><span class="p">;</span>
+<span class="n">dog</span><span class="p">.</span><span class="na">fetch</span><span class="p">();</span>
+</code></pre></div>
+<p>This is called <strong>downcasting</strong>.</p>
+<div class="highlight"><pre><span></span><code>Animal
+  |
+  v
+ Dog
+</code></pre></div>
+<p>Unlike upcasting, downcasting requires an explicit cast.</p>
+<hr />
+<h1 id="17-the-danger-of-downcasting">17. The Danger of Downcasting</h1>
+<p>Consider:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Animal</span><span class="w"> </span><span class="n">animal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Cat</span><span class="p">();</span>
+<span class="n">Dog</span><span class="w"> </span><span class="n">dog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Dog</span><span class="p">)</span><span class="w"> </span><span class="n">animal</span><span class="p">;</span>
+</code></pre></div>
+<p>The code may compile, but the actual object is a <code>Cat</code>, not a <code>Dog</code>.</p>
+<p>At runtime Java throws:</p>
+<div class="highlight"><pre><span></span><code>ClassCastException
+</code></pre></div>
+<p>Therefore, downcasting must be performed carefully.</p>
+<hr />
+<h1 id="18-using-instanceof">18. Using <code>instanceof</code></h1>
+<p>Before downcasting, we can check the object's type:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">animal</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Dog</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">Dog</span><span class="w"> </span><span class="n">dog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Dog</span><span class="p">)</span><span class="w"> </span><span class="n">animal</span><span class="p">;</span>
+<span class="w">    </span><span class="n">dog</span><span class="p">.</span><span class="na">fetch</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Modern Java also supports pattern matching:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">animal</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Dog</span><span class="w"> </span><span class="n">dog</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">dog</span><span class="p">.</span><span class="na">fetch</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h1 id="19-polymorphism-with-abstract-classes">19. Polymorphism with Abstract Classes</h1>
+<p>Consider:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Shape</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">area</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Create:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Circle</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Shape</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Circle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">area</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Rectangle</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Shape</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Rectangle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">height</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">area</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Now:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Shape</span><span class="o">[]</span><span class="w"> </span><span class="n">shapes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Circle</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span>
+<span class="p">};</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Shape</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">shapes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">shape</span><span class="p">.</span><span class="na">area</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The loop does not need to know how each shape calculates its area. Each
+object provides the appropriate implementation.</p>
+<hr />
+<h1 id="20-polymorphism-with-interfaces">20. Polymorphism with Interfaces</h1>
+<p>Polymorphism is also heavily used with interfaces.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">Payment</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">pay</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">amount</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Different classes can implement the interface:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">CreditCardPayment</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Payment</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">pay</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+<span class="w">            </span><span class="s">&quot;Paid $&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; using credit card&quot;</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">PayPalPayment</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Payment</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">pay</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+<span class="w">            </span><span class="s">&quot;Paid $&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; using PayPal&quot;</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Now:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Payment</span><span class="w"> </span><span class="n">payment</span><span class="p">;</span>
+
+<span class="n">payment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CreditCardPayment</span><span class="p">();</span>
+<span class="n">payment</span><span class="p">.</span><span class="na">pay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+
+<span class="n">payment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PayPalPayment</span><span class="p">();</span>
+<span class="n">payment</span><span class="p">.</span><span class="na">pay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+</code></pre></div>
+<p>The same call produces different behavior depending on the actual
+object.</p>
+<hr />
+<h1 id="21-real-world-example-payment-system">21. Real-World Example: Payment System</h1>
+<p>Imagine an online store:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">checkout</span><span class="p">(</span>
+<span class="w">        </span><span class="n">Payment</span><span class="w"> </span><span class="n">payment</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">payment</span><span class="p">.</span><span class="na">pay</span><span class="p">(</span><span class="n">amount</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>We can use:</p>
+<div class="highlight"><pre><span></span><code><span class="n">checkout</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CreditCardPayment</span><span class="p">(),</span><span class="w"> </span><span class="mi">150</span><span class="p">);</span>
+<span class="n">checkout</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">PayPalPayment</span><span class="p">(),</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span>
+</code></pre></div>
+<p>Later we introduce:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">ApplePayPayment</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Payment</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">pay</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+<span class="w">            </span><span class="s">&quot;Paid $&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; using Apple Pay&quot;</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Then:</p>
+<div class="highlight"><pre><span></span><code><span class="n">checkout</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ApplePayPayment</span><span class="p">(),</span><span class="w"> </span><span class="mi">75</span><span class="p">);</span>
+</code></pre></div>
+<p>works without modifying <code>checkout()</code>.</p>
+<p>This is an important reason polymorphism matters: the checkout system
+depends on the common <code>Payment</code> abstraction rather than every specific
+payment implementation.</p>
+<hr />
+<h1 id="22-method-overloading-vs-method-overriding">22. Method Overloading vs. Method Overriding</h1>
+<h2 id="method-overloading">Method Overloading</h2>
+<p>Same method name but different parameter lists:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The compiler determines which method to use based on the arguments.</p>
+<p>This is commonly described as <strong>compile-time polymorphism</strong>.</p>
+<h2 id="method-overriding">Method Overriding</h2>
+<p>A subclass provides a different implementation of an inherited method:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Animal sound&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Woof&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The actual object determines which overridden method executes. This is
+<strong>runtime polymorphism</strong>.</p>
+<hr />
+<h1 id="23-common-mistakes">23. Common Mistakes</h1>
+<p>Consider:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Animal</span><span class="w"> </span><span class="n">animal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+</code></pre></div>
+<p>A common misconception is:</p>
+<blockquote>
+<p><code>animal</code> is an <code>Animal</code> object.</p>
+</blockquote>
+<p>More precisely:</p>
+<blockquote>
+<p><code>animal</code> is an <code>Animal</code> reference that currently refers to a <code>Dog</code>
+object.</p>
+</blockquote>
+<p>Another common mistake is expecting this to work:</p>
+<div class="highlight"><pre><span></span><code><span class="n">animal</span><span class="p">.</span><span class="na">fetch</span><span class="p">();</span>
+</code></pre></div>
+<p>when <code>fetch()</code> exists only in <code>Dog</code>.</p>
+<p>Remember:</p>
+<div class="highlight"><pre><span></span><code>Reference type
+      |
+      v
+Determines what members are accessible
+</code></pre></div>
+<p>while:</p>
+<div class="highlight"><pre><span></span><code>Actual object
+      |
+      v
+Determines which overridden instance method executes
+</code></pre></div>
+<hr />
+<h1 id="24-complete-example">24. Complete Example</h1>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Employee</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">work</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Employee is working&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Programmer</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">work</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+<span class="w">            </span><span class="s">&quot;Programmer is writing Java code&quot;</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">debug</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+<span class="w">            </span><span class="s">&quot;Programmer is debugging&quot;</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Manager</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">work</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+<span class="w">            </span><span class="s">&quot;Manager is managing the project&quot;</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Main program:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="n">Employee</span><span class="o">[]</span><span class="w"> </span><span class="n">employees</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="n">Programmer</span><span class="p">(),</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="n">Manager</span><span class="p">()</span>
+<span class="w">        </span><span class="p">};</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Employee</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">employees</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">            </span><span class="n">employee</span><span class="p">.</span><span class="na">work</span><span class="p">();</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">employee</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Programmer</span><span class="w"> </span><span class="n">programmer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">programmer</span><span class="p">.</span><span class="na">debug</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Output:</p>
+<div class="highlight"><pre><span></span><code>Programmer is writing Java code
+Programmer is debugging
+Manager is managing the project
+</code></pre></div>
+<hr />
+<h1 id="25-check-your-understanding">25. Check Your Understanding</h1>
+<h2 id="question-1">Question 1</h2>
+<p>What is the output?</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Vehicle</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">move</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Vehicle moves&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Car</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Vehicle</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">move</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Car drives&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">Vehicle</span><span class="w"> </span><span class="n">vehicle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Car</span><span class="p">();</span>
+<span class="n">vehicle</span><span class="p">.</span><span class="na">move</span><span class="p">();</span>
+</code></pre></div>
+<h2 id="question-2">Question 2</h2>
+<p>Will this compile?</p>
+<div class="highlight"><pre><span></span><code><span class="n">Animal</span><span class="w"> </span><span class="n">animal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+<span class="n">animal</span><span class="p">.</span><span class="na">fetch</span><span class="p">();</span>
+</code></pre></div>
+<p>Assume <code>fetch()</code> exists only in <code>Dog</code>. Explain why or why not.</p>
+<h2 id="question-3">Question 3</h2>
+<p>Identify the reference type and object type:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Employee</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Programmer</span><span class="p">();</span>
+</code></pre></div>
+<h2 id="question-4">Question 4</h2>
+<p>What happens here?</p>
+<div class="highlight"><pre><span></span><code><span class="n">Animal</span><span class="w"> </span><span class="n">animal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Cat</span><span class="p">();</span>
+<span class="n">Dog</span><span class="w"> </span><span class="n">dog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Dog</span><span class="p">)</span><span class="w"> </span><span class="n">animal</span><span class="p">;</span>
+</code></pre></div>
+<p>Choose one:</p>
+<ol>
+<li>The code fails to compile.</li>
+<li>The code compiles but fails at runtime.</li>
+<li>The code runs successfully.</li>
+</ol>
+<p>Explain your answer.</p>
+<h2 id="question-5">Question 5</h2>
+<p>What will be printed?</p>
+<div class="highlight"><pre><span></span><code><span class="n">Animal</span><span class="o">[]</span><span class="w"> </span><span class="n">animals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">(),</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Cat</span><span class="p">(),</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">()</span>
+<span class="p">};</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Animal</span><span class="w"> </span><span class="n">animal</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">animals</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">animal</span><span class="p">.</span><span class="na">makeSound</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h1 id="26-beginner-practice-exercise">26. Beginner Practice Exercise</h1>
+<p>Create the following hierarchy:</p>
+<div class="highlight"><pre><span></span><code>          Vehicle
+         /       \
+       Car       Bike
+</code></pre></div>
+<p>The <code>Vehicle</code> class should contain:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">move</span><span class="p">()</span>
+</code></pre></div>
+<p>The <code>Car</code> class should override the method and print:</p>
+<div class="highlight"><pre><span></span><code>Car is driving
+</code></pre></div>
+<p>The <code>Bike</code> class should override the method and print:</p>
+<div class="highlight"><pre><span></span><code>Bike is moving
+</code></pre></div>
+<p>Create:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Vehicle</span><span class="o">[]</span><span class="w"> </span><span class="n">vehicles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Car</span><span class="p">(),</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Bike</span><span class="p">(),</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Car</span><span class="p">()</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Use a loop to call <code>move()</code> for every object.</p>
+<p>Expected output:</p>
+<div class="highlight"><pre><span></span><code>Car is driving
+Bike is moving
+Car is driving
+</code></pre></div>
+<hr />
+<h1 id="27-intermediate-challenge">27. Intermediate Challenge</h1>
+<p>Create an abstract class:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Employee</span>
+</code></pre></div>
+<p>with an abstract method:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculatePay</span><span class="p">();</span>
+</code></pre></div>
+<p>Create:</p>
+<div class="highlight"><pre><span></span><code>Employee
+   |
+   +-- SalariedEmployee
+   |
+   +-- HourlyEmployee
+</code></pre></div>
+<p>A <code>SalariedEmployee</code> should calculate pay using a fixed salary.</p>
+<p>An <code>HourlyEmployee</code> should calculate pay using:</p>
+<div class="highlight"><pre><span></span><code>hours worked × hourly rate
+</code></pre></div>
+<p>Create an:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">&gt;</span>
+</code></pre></div>
+<p>containing several employees.</p>
+<p>Use <strong>one loop</strong> to calculate and display the pay for every employee.</p>
+<p>Your solution should demonstrate:</p>
+<ul>
+<li>inheritance,</li>
+<li>method overriding,</li>
+<li>polymorphism,</li>
+<li>abstract classes,</li>
+<li>an <code>ArrayList</code> of superclass references.</li>
+</ul>
+<hr />
+<h1 id="28-key-takeaways">28. Key Takeaways</h1>
+<p>Polymorphism means <strong>many forms</strong>.</p>
+<p>It allows different objects to be treated through a common superclass or
+interface while still providing their own behavior.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Animal</span><span class="w"> </span><span class="n">animal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+</code></pre></div>
+<p>Here:</p>
+<div class="highlight"><pre><span></span><code>Reference type: Animal
+Object type:    Dog
+</code></pre></div>
+<p>For overridden instance methods:</p>
+<div class="highlight"><pre><span></span><code><span class="n">animal</span><span class="p">.</span><span class="na">makeSound</span><span class="p">();</span>
+</code></pre></div>
+<p>the actual object determines which implementation executes.</p>
+<blockquote>
+<p><strong>The reference type determines what you can access; the actual object
+determines which overridden instance method runs.</strong></p>
+</blockquote>
+<p>We use polymorphism because it helps us:</p>
+<ul>
+<li>reduce repetitive code,</li>
+<li>avoid large type-checking <code>if</code> and <code>switch</code> statements,</li>
+<li>process different objects through a common type,</li>
+<li>create flexible arrays and collections,</li>
+<li>add new subclasses with fewer changes to existing code,</li>
+<li>reduce dependencies on specific implementations,</li>
+<li>build software that is easier to maintain and extend.</li>
+</ul>
+<p>Instead of asking:</p>
+<div class="highlight"><pre><span></span><code>What specific type of object is this?
+</code></pre></div>
+<p>and writing different code for every type, polymorphism allows us to
+say:</p>
+<div class="highlight"><pre><span></span><code>You are an Employee -&gt; work()
+You are an Animal   -&gt; makeSound()
+You are a Shape     -&gt; area()
+You are a Payment   -&gt; pay()
+</code></pre></div>
+<p>The individual object decides <strong>how</strong> that operation should be
+performed.</p>
+<p>That is the practical purpose and power of polymorphism in
+object-oriented programming.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/semester.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/faq.js"></script>
+      
+    
+  </body>
+</html>

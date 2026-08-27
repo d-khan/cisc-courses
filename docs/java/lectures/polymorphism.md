@@ -18,7 +18,7 @@ By the end of this lecture, you should be able to:
 
 ------------------------------------------------------------------------
 
-# 1. What is Polymorphism?
+## 1. What is Polymorphism?
 
 Polymorphism is one of the fundamental concepts of **Object-Oriented
 Programming (OOP)**.
@@ -67,7 +67,7 @@ object referenced by `animal`.
 
 ------------------------------------------------------------------------
 
-# 2. Why Do We Use Polymorphism?
+## 2. Why Do We Use Polymorphism?
 
 Before looking at the Java syntax, it is important to understand **why
 we need polymorphism**.
@@ -139,7 +139,7 @@ Polymorphism helps us:
 
 ------------------------------------------------------------------------
 
-# 3. Polymorphism Requires a Common Relationship
+## 3. Polymorphism Requires a Common Relationship
 
 Consider:
 
@@ -191,7 +191,7 @@ Animal animal2 = new Cat();
 
 ------------------------------------------------------------------------
 
-# 4. Method Overriding
+## 4. Method Overriding
 
 Method overriding occurs when a subclass provides its own implementation
 of a method inherited from its superclass.
@@ -224,7 +224,7 @@ detect mistakes.
 
 ------------------------------------------------------------------------
 
-# 5. The Basic Idea of Polymorphism
+## 5. The Basic Idea of Polymorphism
 
 Normally:
 
@@ -260,7 +260,7 @@ This is **runtime polymorphism**.
 
 ------------------------------------------------------------------------
 
-# 6. Reference Type vs. Object Type
+## 6. Reference Type vs. Object Type
 
 Consider:
 
@@ -294,7 +294,7 @@ A precise description is:
 
 ------------------------------------------------------------------------
 
-# 7. Which Method Does Java Execute?
+## 7. Which Method Does Java Execute?
 
 Consider:
 
@@ -313,7 +313,7 @@ polymorphism**.
 
 ------------------------------------------------------------------------
 
-# 8. One Reference, Different Objects
+## 8. One Reference, Different Objects
 
 The same reference variable can refer to different subclass objects:
 
@@ -339,7 +339,7 @@ changes.
 
 ------------------------------------------------------------------------
 
-# 9. Polymorphism with Arrays
+## 9. Polymorphism with Arrays
 
 ``` java
 class Cow extends Animal {
@@ -382,7 +382,7 @@ The actual object determines which overridden method executes.
 
 ------------------------------------------------------------------------
 
-# 10. Polymorphic Method Parameters
+## 10. Polymorphic Method Parameters
 
 Polymorphism becomes especially useful when passing objects to methods.
 
@@ -405,7 +405,7 @@ determines which `work()` implementation executes.
 
 ------------------------------------------------------------------------
 
-# 11. Adding New Classes
+## 11. Adding New Classes
 
 Suppose later we introduce:
 
@@ -440,7 +440,7 @@ performWork(new Designer());
 
 ------------------------------------------------------------------------
 
-# 12. Polymorphism with `ArrayList`
+## 12. Polymorphism with `ArrayList`
 
 ``` java
 import java.util.ArrayList;
@@ -473,7 +473,7 @@ can belong to different subclasses.
 
 ------------------------------------------------------------------------
 
-# 13. Upcasting
+## 13. Upcasting
 
 Consider:
 
@@ -500,7 +500,7 @@ Animal animal = new Dog();
 
 ------------------------------------------------------------------------
 
-# 14. What Can the Reference Access?
+## 14. What Can the Reference Access?
 
 Consider:
 
@@ -544,7 +544,7 @@ declare `fetch()`.
 
 ------------------------------------------------------------------------
 
-# 15. Compile Time vs. Runtime
+## 15. Compile Time vs. Runtime
 
 Consider:
 
@@ -561,7 +561,7 @@ executes the overridden `Dog.makeSound()` method.
 
 ------------------------------------------------------------------------
 
-# 16. Downcasting
+## 16. Downcasting
 
 Sometimes we need to access behavior that exists only in a subclass.
 
@@ -595,7 +595,7 @@ Unlike upcasting, downcasting requires an explicit cast.
 
 ------------------------------------------------------------------------
 
-# 17. The Danger of Downcasting
+## 17. The Danger of Downcasting
 
 Consider:
 
@@ -616,7 +616,7 @@ Therefore, downcasting must be performed carefully.
 
 ------------------------------------------------------------------------
 
-# 18. Using `instanceof`
+## 18. Using `instanceof`
 
 Before downcasting, we can check the object's type:
 
@@ -638,7 +638,7 @@ if (animal instanceof Dog dog) {
 
 ------------------------------------------------------------------------
 
-# 19. Polymorphism with Abstract Classes
+## 19. Polymorphism with Abstract Classes
 
 Consider:
 
@@ -703,7 +703,7 @@ object provides the appropriate implementation.
 
 ------------------------------------------------------------------------
 
-# 20. Polymorphism with Interfaces
+## 20. Polymorphism with Interfaces
 
 Polymorphism is also heavily used with interfaces.
 
@@ -757,7 +757,7 @@ object.
 
 ------------------------------------------------------------------------
 
-# 21. Real-World Example: Payment System
+## 21. Real-World Example: Payment System
 
 Imagine an online store:
 
@@ -805,9 +805,9 @@ payment implementation.
 
 ------------------------------------------------------------------------
 
-# 22. Method Overloading vs. Method Overriding
+## 22. Method Overloading vs. Method Overriding
 
-## Method Overloading
+### Method Overloading
 
 Same method name but different parameter lists:
 
@@ -823,7 +823,7 @@ The compiler determines which method to use based on the arguments.
 
 This is commonly described as **compile-time polymorphism**.
 
-## Method Overriding
+### Method Overriding
 
 A subclass provides a different implementation of an inherited method:
 
@@ -851,7 +851,7 @@ The actual object determines which overridden method executes. This is
 
 ------------------------------------------------------------------------
 
-# 23. Common Mistakes
+## 23. Common Mistakes
 
 Consider:
 
@@ -896,7 +896,7 @@ Determines which overridden instance method executes
 
 ------------------------------------------------------------------------
 
-# 24. Complete Example
+## 24. Complete Example
 
 ``` java
 class Employee {
@@ -971,9 +971,9 @@ Manager is managing the project
 
 ------------------------------------------------------------------------
 
-# 25. Check Your Understanding
+## 25. Check Your Understanding
 
-## Question 1
+### Question 1
 
 What is the output?
 
@@ -997,7 +997,7 @@ Vehicle vehicle = new Car();
 vehicle.move();
 ```
 
-## Question 2
+### Question 2
 
 Will this compile?
 
@@ -1008,7 +1008,7 @@ animal.fetch();
 
 Assume `fetch()` exists only in `Dog`. Explain why or why not.
 
-## Question 3
+### Question 3
 
 Identify the reference type and object type:
 
@@ -1016,7 +1016,7 @@ Identify the reference type and object type:
 Employee employee = new Programmer();
 ```
 
-## Question 4
+### Question 4
 
 What happens here?
 
@@ -1033,7 +1033,7 @@ Choose one:
 
 Explain your answer.
 
-## Question 5
+### Question 5
 
 What will be printed?
 
@@ -1051,7 +1051,7 @@ for (Animal animal : animals) {
 
 ------------------------------------------------------------------------
 
-# 26. Beginner Practice Exercise
+## 26. Beginner Practice Exercise
 
 Create the following hierarchy:
 
@@ -1101,7 +1101,7 @@ Car is driving
 
 ------------------------------------------------------------------------
 
-# 27. Intermediate Challenge
+## 27. Intermediate Challenge
 
 Create an abstract class:
 
@@ -1153,7 +1153,7 @@ Your solution should demonstrate:
 
 ------------------------------------------------------------------------
 
-# 28. Key Takeaways
+## 28. Key Takeaways
 
 Polymorphism means **many forms**.
 
