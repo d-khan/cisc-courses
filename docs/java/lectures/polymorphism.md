@@ -1,147 +1,140 @@
 # Polymorphism in Java
 
+## Beginner to Intermediate Lecture
+
 ## Learning Objectives
 
 By the end of this lecture, you should be able to:
 
--   Explain what **polymorphism** means in Java.
--   Explain **why polymorphism is useful** in object-oriented
-    programming.
--   Understand the relationship between inheritance, method overriding,
-    and polymorphism.
--   Distinguish between a **reference type** and an **object type**.
--   Use a superclass reference to refer to subclass objects.
--   Understand how Java determines which overridden method executes.
--   Use polymorphism with arrays and `ArrayList`.
--   Understand **upcasting** and **downcasting**.
--   Use polymorphism with abstract classes and interfaces.
+-   Explain polymorphism in your own words.
+-   Explain **why** polymorphism is useful instead of only recognizing
+    its syntax.
+-   Explain why a superclass reference can refer to a subclass object.
+-   Distinguish between the **reference type** and the **actual object
+    type**.
+-   Explain why Java executes an overridden subclass method at runtime.
+-   Use polymorphism with method parameters, arrays, and `ArrayList`.
+-   Explain why a superclass reference cannot directly access
+    subclass-only methods.
+-   Understand upcasting, downcasting, and `instanceof`.
+-   Explain how abstract classes and interfaces support polymorphic
+    design.
+-   Recognize situations where polymorphism improves a program and
+    situations where it may be unnecessary.
 
 ------------------------------------------------------------------------
 
-## 1. What is Polymorphism?
+## 1. The Problem Before Polymorphism
 
-Polymorphism is one of the fundamental concepts of **Object-Oriented
-Programming (OOP)**.
+Before learning the syntax of polymorphism, we need to understand the
+problem it is designed to solve.
 
-The word **polymorphism** comes from:
-
--   **Poly** → many
--   **Morph** → forms
-
-Therefore, polymorphism means:
-
-> **Many forms**
-
-In Java, polymorphism allows a common reference type or method call to
-work with objects that may have different behaviors.
-
-Consider different animals:
-
-``` text
-Animal
-  |
-  +-- Dog
-  |
-  +-- Cat
-  |
-  +-- Cow
-```
-
-All of these are animals, and all of them can make a sound. However,
-they do not make the same sound:
-
-``` text
-Dog  -> Bark
-Cat  -> Meow
-Cow  -> Moo
-```
-
-With polymorphism, we can write:
+Suppose we are developing a program for an animal shelter. At first, the
+shelter only works with dogs.
 
 ``` java
-animal.makeSound();
+class Dog {
+
+    public void makeSound() {
+        System.out.println("Woof!");
+    }
+}
 ```
 
-The same statement can produce different results depending on the actual
-object referenced by `animal`.
+We can create a dog and call its method:
+
+``` java
+Dog dog = new Dog();
+dog.makeSound();
+```
+
+This is perfectly reasonable.
+
+There is no reason to introduce polymorphism simply because we created
+an object.
+
+Now suppose the shelter begins accepting cats.
+
+``` java
+class Cat {
+
+    public void makeSound() {
+        System.out.println("Meow!");
+    }
+}
+```
+
+Our program might now contain:
+
+``` java
+Dog dog = new Dog();
+Cat cat = new Cat();
+
+dog.makeSound();
+cat.makeSound();
+```
+
+This still works.
+
+But what happens as the application grows?
+
+We may eventually have:
+
+``` text
+Dog
+Cat
+Bird
+Rabbit
+Horse
+Cow
+```
+
+Now imagine that we need a method that makes any animal produce its
+sound.
+
+Without a common parent type, we might start creating separate methods:
+
+``` java
+public static void makeDogSpeak(Dog dog) {
+    dog.makeSound();
+}
+
+public static void makeCatSpeak(Cat cat) {
+    cat.makeSound();
+}
+```
+
+Then we add a bird:
+
+``` java
+public static void makeBirdSpeak(Bird bird) {
+    bird.makeSound();
+}
+```
+
+And later:
+
+``` java
+makeRabbitSpeak(...)
+makeHorseSpeak(...)
+makeCowSpeak(...)
+```
+
+The important question is:
+
+> Why should we need a different method when all of these objects are
+> performing the same general operation?
+
+They are all animals, and they all make sounds.
+
+This is one of the problems polymorphism helps us solve.
 
 ------------------------------------------------------------------------
 
-## 2. Why Do We Use Polymorphism?
+## 2. Finding What the Objects Have in Common
 
-Before looking at the Java syntax, it is important to understand **why
-we need polymorphism**.
-
-Suppose we are developing a program containing different types of
-employees:
-
-``` text
-Employee
-   |
-   +-- Programmer
-   |
-   +-- Manager
-   |
-   +-- Designer
-```
-
-Each employee performs work differently. A programmer may write code, a
-manager may manage a team, and a designer may create user interfaces.
-
-Without polymorphism, we might create separate code for every type:
-
-``` java
-Programmer programmer = new Programmer();
-Manager manager = new Manager();
-Designer designer = new Designer();
-
-programmer.work();
-manager.work();
-designer.work();
-```
-
-For a small program, this may seem reasonable. But as more employee
-types are added, our program becomes increasingly dependent on specific
-classes.
-
-Polymorphism allows us to treat all of these objects as `Employee`:
-
-``` java
-Employee employee1 = new Programmer();
-Employee employee2 = new Manager();
-Employee employee3 = new Designer();
-```
-
-Now we can use the same operation:
-
-``` java
-employee1.work();
-employee2.work();
-employee3.work();
-```
-
-Each object performs `work()` differently.
-
-> **Polymorphism allows us to work with objects through a common type
-> while allowing each object to provide its own behavior.**
-
-## Benefits of Polymorphism
-
-Polymorphism helps us:
-
--   reduce repetitive code,
--   avoid large type-checking `if` and `switch` statements,
--   process different objects through a common type,
--   create flexible arrays and collections,
--   add new subclasses with fewer changes to existing code,
--   reduce dependencies on specific implementations,
--   build software that is easier to maintain and extend.
-
-------------------------------------------------------------------------
-
-## 3. Polymorphism Requires a Common Relationship
-
-Consider:
+Instead of treating every animal as completely unrelated, we can
+represent their common characteristics using a superclass.
 
 ``` java
 class Animal {
@@ -152,58 +145,7 @@ class Animal {
 }
 ```
 
-Create subclasses:
-
-``` java
-class Dog extends Animal {
-
-    @Override
-    public void makeSound() {
-        System.out.println("Dog barks");
-    }
-}
-```
-
-``` java
-class Cat extends Animal {
-
-    @Override
-    public void makeSound() {
-        System.out.println("Cat meows");
-    }
-}
-```
-
-The inheritance relationship is:
-
-``` text
-       Animal
-       /    \
-     Dog    Cat
-```
-
-Both `Dog` and `Cat` are types of `Animal`. This allows:
-
-``` java
-Animal animal1 = new Dog();
-Animal animal2 = new Cat();
-```
-
-------------------------------------------------------------------------
-
-## 4. Method Overriding
-
-Method overriding occurs when a subclass provides its own implementation
-of a method inherited from its superclass.
-
-``` java
-class Animal {
-
-    public void makeSound() {
-        System.out.println("Animal sound");
-    }
-}
-```
+Now `Dog` can extend `Animal`:
 
 ``` java
 class Dog extends Animal {
@@ -215,107 +157,60 @@ class Dog extends Animal {
 }
 ```
 
-The `Dog` class replaces the inherited behavior of `makeSound()` with
-its own behavior.
-
-The `@Override` annotation tells Java that we intend to override an
-inherited method. You should normally use it because the compiler can
-detect mistakes.
-
-------------------------------------------------------------------------
-
-## 5. The Basic Idea of Polymorphism
-
-Normally:
+And `Cat` can extend `Animal`:
 
 ``` java
-Dog dog = new Dog();
-Cat cat = new Cat();
+class Cat extends Animal {
 
-dog.makeSound();
-cat.makeSound();
+    @Override
+    public void makeSound() {
+        System.out.println("Meow!");
+    }
+}
 ```
 
-Java also allows:
-
-``` java
-Animal animal1 = new Dog();
-Animal animal2 = new Cat();
-
-animal1.makeSound();
-animal2.makeSound();
-```
-
-Output:
+The relationship is:
 
 ``` text
-Dog barks
-Cat meows
+           Animal
+          /      \
+        Dog      Cat
 ```
 
-Even though both variables have the reference type `Animal`, Java
-executes the overridden method belonging to the actual object.
+This tells Java something important:
 
-This is **runtime polymorphism**.
+``` text
+A Dog is an Animal.
+A Cat is an Animal.
+```
 
-------------------------------------------------------------------------
+This is often called an **is-a relationship**.
 
-## 6. Reference Type vs. Object Type
-
-Consider:
+Because a `Dog` is an `Animal`, Java allows us to write:
 
 ``` java
 Animal animal = new Dog();
 ```
 
-The **reference type** is:
-
-``` java
-Animal
-```
-
-The **actual object type** is:
-
-``` java
-Dog
-```
-
-Visualized:
-
-``` text
-Reference Type          Object Type
-
-   Animal      ------->     Dog
-```
-
-A precise description is:
-
-> `animal` is an `Animal` reference that refers to a `Dog` object.
+This statement is the foundation of runtime polymorphism.
 
 ------------------------------------------------------------------------
 
-## 7. Which Method Does Java Execute?
+## 3. What Does Polymorphism Mean?
 
-Consider:
+The word **polymorphism** comes from:
 
-``` java
-Animal animal = new Dog();
-animal.makeSound();
-```
+-   **poly** --- many
+-   **morph** --- forms
 
-If `Dog` overrides `makeSound()`, the output comes from `Dog`.
+Polymorphism means **many forms**.
 
-For overridden instance methods, Java determines which implementation to
-execute based on the **actual object at runtime**.
+In Java, a useful way to think about polymorphism is:
 
-This is known as **dynamic method dispatch** or **runtime
-polymorphism**.
+> A program can work with objects through a common type while each
+> object can provide its own behavior.
 
-------------------------------------------------------------------------
-
-## 8. One Reference, Different Objects
-
-The same reference variable can refer to different subclass objects:
+For example:
 
 ``` java
 Animal animal;
@@ -330,16 +225,60 @@ animal.makeSound();
 Output:
 
 ``` text
-Dog barks
-Cat meows
+Woof!
+Meow!
 ```
 
-The variable remains an `Animal` reference, but the object it references
-changes.
+Notice that the statement:
+
+``` java
+animal.makeSound();
+```
+
+did not change.
+
+What changed was the object referenced by `animal`.
+
+When `animal` refers to a `Dog`, the dog behavior executes.
+
+When `animal` refers to a `Cat`, the cat behavior executes.
+
+This is the central idea of polymorphism.
 
 ------------------------------------------------------------------------
 
-## 9. Polymorphism with Arrays
+## 4. Why Not Just Write `Dog dog = new Dog()`?
+
+This is one of the most important questions to answer.
+
+There is absolutely nothing wrong with:
+
+``` java
+Dog dog = new Dog();
+```
+
+If a section of your program specifically requires a `Dog`, using a
+`Dog` reference is appropriate.
+
+Polymorphism becomes useful when the code does **not need to care about
+the exact subclass**.
+
+Suppose we write:
+
+``` java
+public static void makeAnimalSpeak(Animal animal) {
+    animal.makeSound();
+}
+```
+
+Because the parameter is `Animal`, we can call:
+
+``` java
+makeAnimalSpeak(new Dog());
+makeAnimalSpeak(new Cat());
+```
+
+If we later create:
 
 ``` java
 class Cow extends Animal {
@@ -351,158 +290,322 @@ class Cow extends Animal {
 }
 ```
 
-We can create:
+we can immediately write:
 
 ``` java
-Animal[] animals = {
-    new Dog(),
-    new Cat(),
-    new Cow()
-};
+makeAnimalSpeak(new Cow());
 ```
 
-Then:
+The `makeAnimalSpeak()` method does not need to change.
 
-``` java
-for (Animal animal : animals) {
-    animal.makeSound();
-}
-```
+That is the important reason for using the superclass type.
 
-Output:
+We are saying:
 
-``` text
-Woof!
-Meow!
-Moo!
-```
+> "I do not care whether you give me a Dog, Cat, or Cow. Give me any
+> Animal that knows how to make a sound."
 
-We do not need separate `if` statements to determine the animal type.
-The actual object determines which overridden method executes.
+This makes the code more general and reusable.
 
 ------------------------------------------------------------------------
 
-## 10. Polymorphic Method Parameters
-
-Polymorphism becomes especially useful when passing objects to methods.
-
-``` java
-public static void performWork(Employee employee) {
-    employee.work();
-}
-```
-
-We can pass different subclasses:
-
-``` java
-performWork(new Programmer());
-performWork(new Manager());
-performWork(new Designer());
-```
-
-The method does not need to know the exact subclass. The actual object
-determines which `work()` implementation executes.
-
-------------------------------------------------------------------------
-
-## 11. Adding New Classes
-
-Suppose later we introduce:
-
-``` java
-class Designer extends Employee {
-
-    @Override
-    public void work() {
-        System.out.println(
-            "Designer is creating a user interface"
-        );
-    }
-}
-```
-
-Our existing method:
-
-``` java
-public static void performWork(Employee employee) {
-    employee.work();
-}
-```
-
-does not need to change.
-
-``` java
-performWork(new Designer());
-```
-
-> **New subclasses can often be added without changing code that already
-> works with the superclass.**
-
-------------------------------------------------------------------------
-
-## 12. Polymorphism with `ArrayList`
-
-``` java
-import java.util.ArrayList;
-```
-
-Create:
-
-``` java
-ArrayList<Employee> employees = new ArrayList<>();
-```
-
-Add different objects:
-
-``` java
-employees.add(new Programmer());
-employees.add(new Manager());
-employees.add(new Designer());
-```
-
-Process them:
-
-``` java
-for (Employee employee : employees) {
-    employee.work();
-}
-```
-
-The collection contains `Employee` references, but the actual objects
-can belong to different subclasses.
-
-------------------------------------------------------------------------
-
-## 13. Upcasting
+## 5. Why Does Java Allow `Animal animal = new Dog()`?
 
 Consider:
-
-``` java
-Dog dog = new Dog();
-Animal animal = dog;
-```
-
-A `Dog` reference is being assigned to an `Animal` reference. This is
-called **upcasting**.
-
-``` text
-Animal
-  ^
-  |
- Dog
-```
-
-Java normally performs upcasting automatically:
 
 ``` java
 Animal animal = new Dog();
 ```
 
+At first, this may look strange.
+
+Why are `Animal` and `Dog` both present in the same statement?
+
+The answer comes from inheritance.
+
+If:
+
+``` java
+class Dog extends Animal
+```
+
+then every `Dog` is also an `Animal`.
+
+Therefore, a variable designed to refer to an `Animal` can safely refer
+to a `Dog`.
+
+Think about a real-world example.
+
+If someone asks:
+
+> "Bring me a vehicle."
+
+You could bring:
+
+-   a car,
+-   a truck,
+-   a motorcycle.
+
+A car is more specific than a vehicle, but it is still a vehicle.
+
+Likewise:
+
+``` text
+Dog -> Animal
+Car -> Vehicle
+Programmer -> Employee
+Circle -> Shape
+```
+
+This allows Java programs to operate using general types while still
+creating specialized objects.
+
 ------------------------------------------------------------------------
 
-## 14. What Can the Reference Access?
+## 6. Reference Type vs. Actual Object Type
+
+Consider again:
+
+``` java
+Animal animal = new Dog();
+```
+
+There are two important types involved.
+
+## Reference Type
+
+The variable is declared as:
+
+``` java
+Animal animal
+```
+
+Therefore, its **reference type** is `Animal`.
+
+## Actual Object Type
+
+The object is created with:
+
+``` java
+new Dog()
+```
+
+Therefore, the actual object is a `Dog`.
+
+We can visualize this as:
+
+``` text
+Reference variable              Object
+
+Animal animal  ------------->  Dog object
+```
+
+A precise way to describe the statement is:
+
+> `animal` is an `Animal` reference that currently refers to a `Dog`
+> object.
+
+The object has not stopped being a `Dog`.
+
+The reference simply views that object through the more general `Animal`
+type.
+
+------------------------------------------------------------------------
+
+## 7. Why Do We Need Method Overriding?
+
+Suppose `Animal` contains:
+
+``` java
+class Animal {
+
+    public void makeSound() {
+        System.out.println("Animal sound");
+    }
+}
+```
+
+A dog should behave differently:
+
+``` java
+class Dog extends Animal {
+
+    @Override
+    public void makeSound() {
+        System.out.println("Woof!");
+    }
+}
+```
+
+This is **method overriding**.
+
+The subclass provides its own implementation of a method inherited from
+its superclass.
+
+Why is overriding important for polymorphism?
+
+Because different subclasses often need different implementations of the
+same general operation.
+
+For example:
+
+``` text
+Animal.makeSound()
+
+Dog -> Woof
+Cat -> Meow
+Cow -> Moo
+```
+
+The operation is conceptually the same:
+
+``` java
+makeSound()
+```
+
+but the behavior differs depending on the object.
+
+That is exactly the kind of problem runtime polymorphism is designed to
+handle.
+
+------------------------------------------------------------------------
+
+## 8. Why Use `@Override`?
+
+You should normally write:
+
+``` java
+@Override
+public void makeSound() {
+    System.out.println("Woof!");
+}
+```
+
+The annotation tells the compiler:
+
+> "I intend this method to override a method inherited from a parent
+> class."
+
+Suppose you accidentally write:
+
+``` java
+@Override
+public void makesound() {
+    System.out.println("Woof!");
+}
+```
+
+Java is case-sensitive. `makesound()` and `makeSound()` are different
+method names.
+
+Because `@Override` is present, the compiler can warn you that the
+method does not actually override the parent method.
+
+Therefore, `@Override` helps catch programming mistakes.
+
+------------------------------------------------------------------------
+
+## 9. Why Does the `Dog` Method Execute?
 
 Consider:
+
+``` java
+Animal animal = new Dog();
+animal.makeSound();
+```
+
+Assume both `Animal` and `Dog` define `makeSound()`.
+
+Which version should execute?
+
+The output is:
+
+``` text
+Woof!
+```
+
+To understand why, separate what happens at **compile time** from what
+happens at **runtime**.
+
+## Compile Time
+
+The compiler sees:
+
+``` java
+Animal animal
+```
+
+It asks:
+
+> Does `Animal` have a `makeSound()` method?
+
+Yes.
+
+Therefore:
+
+``` java
+animal.makeSound();
+```
+
+is a valid statement.
+
+## Runtime
+
+When the program runs, Java looks at the actual object referenced by
+`animal`.
+
+The object is:
+
+``` java
+new Dog()
+```
+
+`Dog` overrides `makeSound()`, so Java executes:
+
+``` java
+Dog.makeSound()
+```
+
+This process is called **dynamic method dispatch**.
+
+It is also known as **runtime polymorphism**.
+
+------------------------------------------------------------------------
+
+## 10. The Most Important Rule
+
+For overridden instance methods, remember:
+
+> **The reference type determines what you are allowed to access. The
+> actual object type determines which overridden implementation
+> executes.**
+
+Consider:
+
+``` java
+Animal animal = new Dog();
+```
+
+The reference type is:
+
+``` text
+Animal
+```
+
+The actual object type is:
+
+``` text
+Dog
+```
+
+This distinction explains many questions students have about
+polymorphism.
+
+------------------------------------------------------------------------
+
+## 11. Why Can't an `Animal` Reference Call a Dog-Only Method?
+
+Suppose:
 
 ``` java
 class Dog extends Animal {
@@ -530,52 +633,464 @@ This works:
 animal.makeSound();
 ```
 
-But this does not compile:
+But this does not:
 
 ``` java
 animal.fetch();
 ```
 
-Why? Because the reference type is `Animal`, and `Animal` does not
-declare `fetch()`.
+Why?
 
-> **The reference type determines what you can access; the actual object
-> determines which overridden instance method executes.**
+Students often say:
+
+> "But the object is a Dog!"
+
+That is true at runtime.
+
+However, the compiler only knows that the variable has been declared as:
+
+``` java
+Animal animal
+```
+
+The `Animal` class does not promise that every animal can `fetch()`.
+
+A `Dog` may fetch, but a `Cat`, `Cow`, or `Bird` may not.
+
+Therefore, Java does not allow:
+
+``` java
+animal.fetch();
+```
+
+through an `Animal` reference.
+
+This restriction makes sense because an `Animal` reference could later
+refer to:
+
+``` java
+animal = new Cat();
+```
+
+and a `Cat` may not have a `fetch()` method.
 
 ------------------------------------------------------------------------
 
-## 15. Compile Time vs. Runtime
+## 12. Why Is Polymorphism Useful with Arrays?
+
+Suppose we have:
+
+``` java
+Dog dog1 = new Dog();
+Dog dog2 = new Dog();
+
+Cat cat1 = new Cat();
+Cat cat2 = new Cat();
+```
+
+We could maintain separate arrays:
+
+``` java
+Dog[] dogs = {
+    dog1,
+    dog2
+};
+
+Cat[] cats = {
+    cat1,
+    cat2
+};
+```
+
+But what if we want to process **all animals together**?
+
+Because every `Dog` and `Cat` is an `Animal`, we can create:
+
+``` java
+Animal[] animals = {
+    new Dog(),
+    new Cat(),
+    new Dog(),
+    new Cat()
+};
+```
+
+Then:
+
+``` java
+for (Animal animal : animals) {
+    animal.makeSound();
+}
+```
+
+Output:
+
+``` text
+Woof!
+Meow!
+Woof!
+Meow!
+```
+
+Why is this useful?
+
+The loop does not need to ask:
+
+``` text
+Is this a Dog?
+Is this a Cat?
+Is this a Cow?
+```
+
+It simply says:
+
+``` java
+animal.makeSound();
+```
+
+Each object determines the appropriate behavior.
+
+------------------------------------------------------------------------
+
+## 13. What Would the Code Look Like Without Polymorphism?
+
+Imagine code such as:
+
+``` java
+if (animalType.equals("dog")) {
+
+    System.out.println("Woof!");
+
+} else if (animalType.equals("cat")) {
+
+    System.out.println("Meow!");
+
+} else if (animalType.equals("cow")) {
+
+    System.out.println("Moo!");
+}
+```
+
+Now imagine adding:
+
+``` text
+Horse
+Bird
+Lion
+Tiger
+Elephant
+```
+
+The conditional continues growing.
+
+With polymorphism, each class contains its own behavior:
+
+``` java
+class Dog extends Animal {
+
+    @Override
+    public void makeSound() {
+        System.out.println("Woof!");
+    }
+}
+```
+
+and:
+
+``` java
+class Cat extends Animal {
+
+    @Override
+    public void makeSound() {
+        System.out.println("Meow!");
+    }
+}
+```
+
+The caller only needs:
+
+``` java
+animal.makeSound();
+```
+
+This keeps behavior associated with the object responsible for that
+behavior.
+
+------------------------------------------------------------------------
+
+## 14. Polymorphism with Method Parameters
 
 Consider:
 
 ``` java
-Animal animal = new Dog();
-animal.makeSound();
+public static void makeAnimalSpeak(Animal animal) {
+    animal.makeSound();
+}
 ```
 
-At **compile time**, Java checks whether `Animal` has a `makeSound()`
-method.
+Why declare the parameter as `Animal` rather than `Dog`?
 
-At **runtime**, Java checks the actual object. Since it is a `Dog`, Java
-executes the overridden `Dog.makeSound()` method.
+If we wrote:
+
+``` java
+public static void makeAnimalSpeak(Dog dog) {
+    dog.makeSound();
+}
+```
+
+the method could only accept dogs.
+
+We would need another method for cats:
+
+``` java
+public static void makeAnimalSpeak(Cat cat) {
+    cat.makeSound();
+}
+```
+
+Using:
+
+``` java
+Animal animal
+```
+
+allows the same method to accept any subclass of `Animal`.
+
+``` java
+makeAnimalSpeak(new Dog());
+makeAnimalSpeak(new Cat());
+makeAnimalSpeak(new Cow());
+```
+
+This is a major practical reason for using polymorphism.
 
 ------------------------------------------------------------------------
 
-## 16. Downcasting
+## 15. Adding a New Subclass
 
-Sometimes we need to access behavior that exists only in a subclass.
+Suppose our program currently supports:
+
+``` text
+Dog
+Cat
+Cow
+```
+
+Later we add:
+
+``` java
+class Horse extends Animal {
+
+    @Override
+    public void makeSound() {
+        System.out.println("Neigh!");
+    }
+}
+```
+
+Do we need to modify this method?
+
+``` java
+public static void makeAnimalSpeak(Animal animal) {
+    animal.makeSound();
+}
+```
+
+No.
+
+We can immediately write:
+
+``` java
+makeAnimalSpeak(new Horse());
+```
+
+This demonstrates an important software-design benefit:
+
+> Polymorphic code can often work with future subclasses without being
+> rewritten.
+
+This makes programs easier to extend and maintain.
+
+------------------------------------------------------------------------
+
+## 16. Polymorphism with `ArrayList`
+
+The same idea works with collections.
+
+``` java
+import java.util.ArrayList;
+```
+
+We can create:
+
+``` java
+ArrayList<Animal> animals = new ArrayList<>();
+```
+
+Then:
+
+``` java
+animals.add(new Dog());
+animals.add(new Cat());
+animals.add(new Cow());
+```
+
+Why is Java allowing different objects into the same collection?
+
+Because all of them satisfy the requirement:
+
+``` text
+They are Animals.
+```
+
+Now:
+
+``` java
+for (Animal animal : animals) {
+    animal.makeSound();
+}
+```
+
+can process the entire collection.
+
+This is extremely useful in larger applications where many related
+object types must be processed together.
+
+------------------------------------------------------------------------
+
+## 17. Another Example: Employees
+
+Consider:
+
+``` java
+class Employee {
+
+    public void work() {
+        System.out.println("Employee is working");
+    }
+}
+```
+
+Then:
+
+``` java
+class Programmer extends Employee {
+
+    @Override
+    public void work() {
+        System.out.println("Programmer is writing code");
+    }
+}
+```
+
+And:
+
+``` java
+class Manager extends Employee {
+
+    @Override
+    public void work() {
+        System.out.println("Manager is managing the team");
+    }
+}
+```
+
+Now:
+
+``` java
+Employee employee1 = new Programmer();
+Employee employee2 = new Manager();
+
+employee1.work();
+employee2.work();
+```
+
+Output:
+
+``` text
+Programmer is writing code
+Manager is managing the team
+```
+
+Why use `Employee` references?
+
+Because another part of the application may only care that these objects
+are employees.
+
+For example, a method could be:
+
+``` java
+public static void startWork(Employee employee) {
+    employee.work();
+}
+```
+
+It does not need to know whether the employee is a programmer, manager,
+or some future employee type.
+
+------------------------------------------------------------------------
+
+## 18. Upcasting
+
+Consider:
+
+``` java
+Dog dog = new Dog();
+Animal animal = dog;
+```
+
+The conversion from a more specific type (`Dog`) to a more general type
+(`Animal`) is called **upcasting**.
+
+``` text
+Animal
+  ^
+  |
+ Dog
+```
+
+We can usually write it directly:
 
 ``` java
 Animal animal = new Dog();
 ```
 
-We cannot directly write:
+Java performs this conversion automatically.
+
+## Why Is Upcasting Safe?
+
+Because every `Dog` is guaranteed to be an `Animal`.
+
+If `Dog extends Animal`, then a `Dog` object has the characteristics
+required to be treated as an `Animal`.
+
+Therefore, Java does not require an explicit cast.
+
+------------------------------------------------------------------------
+
+## 19. Downcasting
+
+Now consider:
+
+``` java
+Animal animal = new Dog();
+```
+
+Suppose we specifically need the `Dog` method:
+
+``` java
+fetch()
+```
+
+We cannot call:
 
 ``` java
 animal.fetch();
 ```
 
-But we can downcast:
+because `fetch()` is not part of `Animal`.
+
+We could cast the reference:
 
 ``` java
 Dog dog = (Dog) animal;
@@ -591,34 +1106,61 @@ Animal
  Dog
 ```
 
-Unlike upcasting, downcasting requires an explicit cast.
-
 ------------------------------------------------------------------------
 
-## 17. The Danger of Downcasting
+## 20. Why Isn't Downcasting Automatic?
 
 Consider:
 
 ``` java
 Animal animal = new Cat();
+```
+
+Would this be safe?
+
+``` java
 Dog dog = (Dog) animal;
 ```
 
-The code may compile, but the actual object is a `Cat`, not a `Dog`.
+No.
 
-At runtime Java throws:
+The reference variable is an `Animal`, but the actual object is a `Cat`.
+
+Not every `Animal` is a `Dog`.
+
+That is the key difference:
+
+``` text
+Every Dog is an Animal.       -> Safe assumption
+Every Animal is a Dog.        -> False
+```
+
+Therefore:
+
+-   upcasting is normally automatic,
+-   downcasting requires an explicit cast.
+
+By writing:
+
+``` java
+(Dog) animal
+```
+
+the programmer is telling Java:
+
+> "I believe this Animal actually refers to a Dog."
+
+If that assumption is wrong, the program fails at runtime with:
 
 ``` text
 ClassCastException
 ```
 
-Therefore, downcasting must be performed carefully.
-
 ------------------------------------------------------------------------
 
-## 18. Using `instanceof`
+## 21. Why Use `instanceof`?
 
-Before downcasting, we can check the object's type:
+Because downcasting can fail, we may first check the actual object type.
 
 ``` java
 if (animal instanceof Dog) {
@@ -628,7 +1170,7 @@ if (animal instanceof Dog) {
 }
 ```
 
-Modern Java also supports pattern matching:
+Modern Java allows:
 
 ``` java
 if (animal instanceof Dog dog) {
@@ -636,11 +1178,37 @@ if (animal instanceof Dog dog) {
 }
 ```
 
+Why use `instanceof`?
+
+It protects us from attempting a cast that is not valid for the actual
+object.
+
+However, if your program contains large numbers of `instanceof` checks,
+you should also consider whether the design could make better use of
+polymorphic methods.
+
 ------------------------------------------------------------------------
 
-## 19. Polymorphism with Abstract Classes
+## 22. Polymorphism with Abstract Classes
 
-Consider:
+Sometimes a general superclass represents a concept, but creating a
+generic object of that type does not make sense.
+
+For example:
+
+``` text
+Shape
+```
+
+is a useful general concept.
+
+But what would the area of a generic `Shape` be?
+
+There is not enough information.
+
+A circle calculates area differently from a rectangle.
+
+Therefore, we can create an abstract class:
 
 ``` java
 abstract class Shape {
@@ -649,7 +1217,7 @@ abstract class Shape {
 }
 ```
 
-Create:
+Then:
 
 ``` java
 class Circle extends Shape {
@@ -666,6 +1234,8 @@ class Circle extends Shape {
     }
 }
 ```
+
+And:
 
 ``` java
 class Rectangle extends Shape {
@@ -692,20 +1262,55 @@ Shape[] shapes = {
     new Circle(5),
     new Rectangle(4, 6)
 };
+```
 
+And:
+
+``` java
 for (Shape shape : shapes) {
     System.out.println(shape.area());
 }
 ```
 
-The loop does not need to know how each shape calculates its area. Each
-object provides the appropriate implementation.
+## Why Is This Good Design?
+
+The code processing the shapes does not need to know the formula for
+every shape.
+
+It simply asks each object:
+
+``` java
+shape.area();
+```
+
+Each subclass is responsible for knowing how to calculate its own area.
 
 ------------------------------------------------------------------------
 
-## 20. Polymorphism with Interfaces
+## 23. Polymorphism with Interfaces
 
-Polymorphism is also heavily used with interfaces.
+Polymorphism is also commonly used with interfaces.
+
+Imagine an online store that supports multiple payment methods.
+
+We might have:
+
+``` text
+Credit Card
+PayPal
+Apple Pay
+```
+
+The checkout system should not need completely different checkout logic
+for every payment provider.
+
+All payment methods share one operation:
+
+``` text
+pay
+```
+
+We can represent this using an interface:
 
 ``` java
 interface Payment {
@@ -714,7 +1319,7 @@ interface Payment {
 }
 ```
 
-Different classes can implement the interface:
+Then:
 
 ``` java
 class CreditCardPayment implements Payment {
@@ -728,6 +1333,8 @@ class CreditCardPayment implements Payment {
 }
 ```
 
+And:
+
 ``` java
 class PayPalPayment implements Payment {
 
@@ -740,26 +1347,7 @@ class PayPalPayment implements Payment {
 }
 ```
 
-Now:
-
-``` java
-Payment payment;
-
-payment = new CreditCardPayment();
-payment.pay(100);
-
-payment = new PayPalPayment();
-payment.pay(100);
-```
-
-The same call produces different behavior depending on the actual
-object.
-
-------------------------------------------------------------------------
-
-## 21. Real-World Example: Payment System
-
-Imagine an online store:
+Now our checkout method can be:
 
 ``` java
 public static void checkout(
@@ -770,14 +1358,44 @@ public static void checkout(
 }
 ```
 
-We can use:
+We can call:
 
 ``` java
-checkout(new CreditCardPayment(), 150);
-checkout(new PayPalPayment(), 200);
+checkout(new CreditCardPayment(), 100);
+checkout(new PayPalPayment(), 100);
 ```
 
-Later we introduce:
+------------------------------------------------------------------------
+
+## 24. Why Use the `Payment` Interface?
+
+Why not write:
+
+``` java
+public static void checkout(
+        CreditCardPayment payment,
+        double amount)
+```
+
+Because then the checkout method is specifically tied to credit cards.
+
+It cannot naturally accept PayPal.
+
+We could create another method for PayPal, but then the checkout logic
+becomes dependent on individual payment implementations.
+
+By accepting:
+
+``` java
+Payment payment
+```
+
+the method says:
+
+> "I do not care which payment provider you use. Give me something that
+> satisfies the Payment contract."
+
+Later we could add:
 
 ``` java
 class ApplePayPayment implements Payment {
@@ -791,25 +1409,21 @@ class ApplePayPayment implements Payment {
 }
 ```
 
-Then:
+The existing checkout method does not need to change:
 
 ``` java
-checkout(new ApplePayPayment(), 75);
+checkout(new ApplePayPayment(), 100);
 ```
 
-works without modifying `checkout()`.
-
-This is an important reason polymorphism matters: the checkout system
-depends on the common `Payment` abstraction rather than every specific
-payment implementation.
+This is one of the strongest real-world reasons for polymorphism.
 
 ------------------------------------------------------------------------
 
-## 22. Method Overloading vs. Method Overriding
+## 25. Method Overloading vs. Method Overriding
 
-### Method Overloading
+These two concepts sound similar but solve different problems.
 
-Same method name but different parameter lists:
+## Method Overloading
 
 ``` java
 void print(int value) {
@@ -819,18 +1433,18 @@ void print(String value) {
 }
 ```
 
-The compiler determines which method to use based on the arguments.
+The method name is the same, but the parameter lists are different.
+
+The compiler determines which method to use from the arguments.
 
 This is commonly described as **compile-time polymorphism**.
 
-### Method Overriding
-
-A subclass provides a different implementation of an inherited method:
+## Method Overriding
 
 ``` java
 class Animal {
 
-    public void sound() {
+    public void makeSound() {
         System.out.println("Animal sound");
     }
 }
@@ -840,18 +1454,28 @@ class Animal {
 class Dog extends Animal {
 
     @Override
-    public void sound() {
-        System.out.println("Woof");
+    public void makeSound() {
+        System.out.println("Woof!");
     }
 }
 ```
 
-The actual object determines which overridden method executes. This is
-**runtime polymorphism**.
+The subclass provides a different implementation of an inherited method.
+
+With:
+
+``` java
+Animal animal = new Dog();
+animal.makeSound();
+```
+
+the actual object determines which overridden method executes.
+
+This is **runtime polymorphism**.
 
 ------------------------------------------------------------------------
 
-## 23. Common Mistakes
+## 26. Common Misconception: Does a `Dog` Become an `Animal`?
 
 Consider:
 
@@ -859,44 +1483,107 @@ Consider:
 Animal animal = new Dog();
 ```
 
-A common misconception is:
+The `Dog` object does not transform into a generic `Animal`.
 
-> `animal` is an `Animal` object.
+The actual object remains a `Dog`.
 
-More precisely:
+Only the type of reference being used to access the object is `Animal`.
 
-> `animal` is an `Animal` reference that currently refers to a `Dog`
-> object.
-
-Another common mistake is expecting this to work:
-
-``` java
-animal.fetch();
-```
-
-when `fetch()` exists only in `Dog`.
-
-Remember:
+Think of it as viewing a specialized object through a more general
+reference.
 
 ``` text
-Reference type
+Animal reference
       |
       v
-Determines what members are accessible
-```
-
-while:
-
-``` text
-Actual object
-      |
-      v
-Determines which overridden instance method executes
+   Dog object
 ```
 
 ------------------------------------------------------------------------
 
-## 24. Complete Example
+## 27. Common Misconception: Does Polymorphism Mean We Should Always Use the Parent Type?
+
+No.
+
+Consider:
+
+``` java
+Dog dog = new Dog();
+```
+
+If your code specifically needs dog behavior such as:
+
+``` java
+dog.fetch();
+dog.guardHouse();
+```
+
+then using a `Dog` reference may be appropriate.
+
+Polymorphism is most valuable when code needs to work with **multiple
+related object types through a common abstraction**.
+
+Do not introduce polymorphism merely to make a small program look more
+complicated.
+
+------------------------------------------------------------------------
+
+## 28. When Should We Use Polymorphism?
+
+Polymorphism is particularly useful when:
+
+-   several classes represent related concepts,
+-   the classes perform a common operation differently,
+-   a method should work with several subclasses,
+-   a collection should contain several related object types,
+-   new subclasses may be added later,
+-   the calling code should not need to know every concrete
+    implementation.
+
+Examples include:
+
+``` text
+Animal -> Dog, Cat, Cow
+
+Employee -> Programmer, Manager, Designer
+
+Shape -> Circle, Rectangle, Triangle
+
+Payment -> CreditCard, PayPal, ApplePay
+
+Notification -> Email, SMS, PushNotification
+```
+
+------------------------------------------------------------------------
+
+## 29. When Might Polymorphism Be Unnecessary?
+
+Suppose a program only has:
+
+``` java
+class Calculator
+```
+
+and there is no meaningful family of related object types.
+
+Creating an inheritance hierarchy merely to demonstrate polymorphism may
+make the program harder to understand.
+
+Likewise, if code genuinely needs behavior unique to a specific class,
+using that specific class may be clearer.
+
+The goal is not:
+
+> "Use polymorphism everywhere."
+
+The goal is:
+
+> "Use polymorphism when several related objects should be handled
+> through a common abstraction."
+
+------------------------------------------------------------------------
+
+## 30. Complete Example
 
 ``` java
 class Employee {
@@ -950,12 +1637,7 @@ public class Main {
         };
 
         for (Employee employee : employees) {
-
             employee.work();
-
-            if (employee instanceof Programmer programmer) {
-                programmer.debug();
-            }
         }
     }
 }
@@ -965,83 +1647,150 @@ Output:
 
 ``` text
 Programmer is writing Java code
-Programmer is debugging
 Manager is managing the project
 ```
 
-------------------------------------------------------------------------
+## What Is Happening?
 
-## 25. Check Your Understanding
-
-### Question 1
-
-What is the output?
+The array is declared as:
 
 ``` java
-class Vehicle {
-
-    public void move() {
-        System.out.println("Vehicle moves");
-    }
-}
-
-class Car extends Vehicle {
-
-    @Override
-    public void move() {
-        System.out.println("Car drives");
-    }
-}
-
-Vehicle vehicle = new Car();
-vehicle.move();
+Employee[]
 ```
 
-### Question 2
+so it can contain references to `Employee` objects and objects belonging
+to subclasses of `Employee`.
 
-Will this compile?
+The first actual object is a:
+
+``` java
+Programmer
+```
+
+The second is a:
+
+``` java
+Manager
+```
+
+Inside the loop:
+
+``` java
+Employee employee
+```
+
+is the reference type.
+
+When Java executes:
+
+``` java
+employee.work();
+```
+
+it chooses the overridden implementation based on the actual object.
+
+For the first iteration:
+
+``` text
+Employee reference -> Programmer object -> Programmer.work()
+```
+
+For the second:
+
+``` text
+Employee reference -> Manager object -> Manager.work()
+```
+
+The loop does not need separate logic for programmers and managers.
+
+That is polymorphism in practice.
+
+------------------------------------------------------------------------
+
+## 31. Check Your Understanding
+
+## Question 1
+
+Why might we prefer:
+
+``` java
+public static void processAnimal(Animal animal)
+```
+
+over:
+
+``` java
+public static void processAnimal(Dog dog)
+```
+
+when the method should work with dogs, cats, cows, and other animals?
+
+------------------------------------------------------------------------
+
+## Question 2
+
+Consider:
+
+``` java
+Animal animal = new Dog();
+```
+
+What is the:
+
+1.  reference type?
+2.  actual object type?
+
+------------------------------------------------------------------------
+
+## Question 3
+
+Why does this execute the `Dog` implementation?
+
+``` java
+Animal animal = new Dog();
+animal.makeSound();
+```
+
+Explain both the compile-time check and runtime decision.
+
+------------------------------------------------------------------------
+
+## Question 4
+
+Why does this fail to compile if `fetch()` only exists in `Dog`?
 
 ``` java
 Animal animal = new Dog();
 animal.fetch();
 ```
 
-Assume `fetch()` exists only in `Dog`. Explain why or why not.
+------------------------------------------------------------------------
 
-### Question 3
+## Question 5
 
-Identify the reference type and object type:
+Why is this safe?
 
 ``` java
-Employee employee = new Programmer();
+Animal animal = new Dog();
 ```
 
-### Question 4
-
-What happens here?
+But this may be unsafe?
 
 ``` java
-Animal animal = new Cat();
 Dog dog = (Dog) animal;
 ```
 
-Choose one:
+------------------------------------------------------------------------
 
-1.  The code fails to compile.
-2.  The code compiles but fails at runtime.
-3.  The code runs successfully.
+## Question 6
 
-Explain your answer.
-
-### Question 5
-
-What will be printed?
+What problem does this solve?
 
 ``` java
 Animal[] animals = {
     new Dog(),
     new Cat(),
-    new Dog()
+    new Cow()
 };
 
 for (Animal animal : animals) {
@@ -1049,9 +1798,12 @@ for (Animal animal : animals) {
 }
 ```
 
+Why is this better than writing separate processing logic for each
+animal type?
+
 ------------------------------------------------------------------------
 
-## 26. Beginner Practice Exercise
+## 32. Beginner Practice Exercise
 
 Create the following hierarchy:
 
@@ -1061,25 +1813,25 @@ Create the following hierarchy:
        Car       Bike
 ```
 
-The `Vehicle` class should contain:
+Create a `Vehicle` class containing:
 
 ``` java
 public void move()
 ```
 
-The `Car` class should override the method and print:
+Create a `Car` class that overrides `move()` and displays:
 
 ``` text
 Car is driving
 ```
 
-The `Bike` class should override the method and print:
+Create a `Bike` class that overrides `move()` and displays:
 
 ``` text
 Bike is moving
 ```
 
-Create:
+Then create:
 
 ``` java
 Vehicle[] vehicles = {
@@ -1089,7 +1841,13 @@ Vehicle[] vehicles = {
 };
 ```
 
-Use a loop to call `move()` for every object.
+Use one loop:
+
+``` java
+for (Vehicle vehicle : vehicles) {
+    vehicle.move();
+}
+```
 
 Expected output:
 
@@ -1099,9 +1857,17 @@ Bike is moving
 Car is driving
 ```
 
+After completing the program, answer:
+
+1.  Why can a `Vehicle[]` contain `Car` and `Bike` objects?
+2.  What is the reference type of `vehicle` inside the loop?
+3.  How does Java know whether to execute `Car.move()` or `Bike.move()`?
+4.  What would be less convenient about maintaining separate `Car[]` and
+    `Bike[]` arrays?
+
 ------------------------------------------------------------------------
 
-## 27. Intermediate Challenge
+## 33. Intermediate Challenge
 
 Create an abstract class:
 
@@ -1109,7 +1875,7 @@ Create an abstract class:
 Employee
 ```
 
-with an abstract method:
+with:
 
 ``` java
 public abstract double calculatePay();
@@ -1133,85 +1899,87 @@ An `HourlyEmployee` should calculate pay using:
 hours worked × hourly rate
 ```
 
-Create an:
+Create:
 
 ``` java
-ArrayList<Employee>
+ArrayList<Employee> employees
 ```
 
-containing several employees.
+and add several salaried and hourly employees.
 
-Use **one loop** to calculate and display the pay for every employee.
+Use **one loop** to calculate the pay for every employee.
 
-Your solution should demonstrate:
+After completing the program, explain:
 
--   inheritance,
--   method overriding,
--   polymorphism,
--   abstract classes,
--   an `ArrayList` of superclass references.
+1.  Why is `Employee` an appropriate common type?
+2.  Why should `calculatePay()` be overridden?
+3.  Why can one `ArrayList<Employee>` contain both employee types?
+4.  Why does the loop not need to know which type of employee it is
+    processing?
+5.  What would happen to the processing loop if another subclass such as
+    `CommissionEmployee` were added?
 
 ------------------------------------------------------------------------
 
-## 28. Key Takeaways
+## 34. Key Takeaways
 
-Polymorphism means **many forms**.
-
-It allows different objects to be treated through a common superclass or
-interface while still providing their own behavior.
-
-For example:
+Polymorphism is not primarily about writing:
 
 ``` java
 Animal animal = new Dog();
 ```
 
-Here:
+That is only the syntax.
+
+The more important idea is **why** we do it.
+
+Polymorphism allows us to write code in terms of a general concept:
 
 ``` text
-Reference type: Animal
-Object type:    Dog
+Animal
+Employee
+Shape
+Payment
 ```
 
-For overridden instance methods:
+while allowing specific objects to provide their own behavior:
+
+``` text
+Dog
+Programmer
+Circle
+PayPalPayment
+```
+
+This means one piece of code can work with many related object types.
+
+For example:
 
 ``` java
-animal.makeSound();
+for (Animal animal : animals) {
+    animal.makeSound();
+}
 ```
 
-the actual object determines which implementation executes.
+The loop does not need to know whether each object is a `Dog`, `Cat`, or
+`Cow`.
 
-> **The reference type determines what you can access; the actual object
-> determines which overridden instance method runs.**
+Each object knows how to respond to:
 
-We use polymorphism because it helps us:
-
--   reduce repetitive code,
--   avoid large type-checking `if` and `switch` statements,
--   process different objects through a common type,
--   create flexible arrays and collections,
--   add new subclasses with fewer changes to existing code,
--   reduce dependencies on specific implementations,
--   build software that is easier to maintain and extend.
-
-Instead of asking:
-
-``` text
-What specific type of object is this?
+``` java
+makeSound()
 ```
 
-and writing different code for every type, polymorphism allows us to
-say:
+Remember the central rule:
 
-``` text
-You are an Employee -> work()
-You are an Animal   -> makeSound()
-You are a Shape     -> area()
-You are a Payment   -> pay()
-```
+> **The reference type determines what you are allowed to access; the
+> actual object type determines which overridden instance method
+> executes at runtime.**
 
-The individual object decides **how** that operation should be
-performed.
+And remember the central reason for using polymorphism:
 
-That is the practical purpose and power of polymorphism in
-object-oriented programming.
+> **Polymorphism allows us to program using common abstractions instead
+> of writing separate processing logic for every specific object type.**
+
+This can make object-oriented programs more reusable, extensible, and
+easier to maintain.
