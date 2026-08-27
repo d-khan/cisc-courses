@@ -1104,6 +1104,167 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using-a-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using a class
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using a class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classes-intro-public-member-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classes intro: Public member methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-a-class_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using a class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-example-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Class example: String
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-a-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining a class
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining a class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#private-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Private fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-a-class-public-member-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining a class public member methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bicycle-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example - Bicycle class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-personinfo-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example - PersonInfo class
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mutators-accessors-and-private-helpers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mutators, accessors, and private helpers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mutators, accessors, and private helpers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mutators-and-accessors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mutators and accessors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#private-helper-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Private helper methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1129,21 +1290,21 @@
 <p>Abstraction means to have a user interact with an item at a high-level, with lower-level internal details hidden from the user (aka information hiding or encapsulation). Ex: An oven supports an abstraction of a food compartment and a knob to control heat. An oven's user need not interact with the internal parts of an oven.</p>
 <p>Objects strongly support abstraction, hiding entire groups of methods and variables and exposing only certain methods to a user.</p>
 <p>An abstract data type (ADT) is a data type whose creation and update are constrained to specific well-defined operations. A class can be used to implement an ADT.</p>
-<h1 id="using-a-class">Using a class</h1>
-<h2 id="classes-intro-public-member-methods">Classes intro: Public member methods</h2>
+<h2 id="using-a-class">Using a class</h2>
+<h3 id="classes-intro-public-member-methods">Classes intro: Public member methods</h3>
 <p>The class construct defines a new type that can group data and methods to form an object. A class' public member methods indicate all operations a class user can perform on the object. The power of classes is that a class user need not know how the class' data and methods are implemented but need only understand how each public member method behaves.</p>
 <p><img width="634" alt="class_Restaurant" src="https://user-images.githubusercontent.com/11669149/214719429-4dbbb7a7-1033-467a-a232-530e43ae5964.png"></p>
-<h2 id="using-a-class_1">Using a class</h2>
+<h3 id="using-a-class_1">Using a class</h3>
 <p>A programmer can create one or more objects of the same class. Creating an object consists of two steps: declaring a reference variable of the class type, and assigning the variable with an explicitly allocated instance of the class type. A reference variable can refer to an instance of a class. The new operator explicitly allocates an object of the specified class type. Ex: Restaurant favLunchPlace = new Restaurant(); creates a Restaurant object named favLunchPlace.</p>
 <p>The "." operator, known as the member access operator, is used to invoke a method on an object. Ex: favLunchPlace.setRating(4) calls the setRating() method on the favLunchPlace object, which sets the object's rating to 4.</p>
 <p><img width="640" alt="class_RestaurantFavorites" src="https://user-images.githubusercontent.com/11669149/214719560-cdd1e47a-0559-44f9-934a-64e882e0e604.png"></p>
 <h3 id="class-example-string">Class example: String</h3>
 <p>Java's String object is a class that stores a character string in memory, along with variables indicating the length and other things, but a String's user need not know such details. Instead, the String's user just needs to know what public member methods can be used.</p>
-<h1 id="defining-a-class">Defining a class</h1>
-<h2 id="private-fields">Private fields</h2>
+<h2 id="defining-a-class">Defining a class</h2>
+<h3 id="private-fields">Private fields</h3>
 <p>In addition to public member methods, a class definition has private fields: variables that member methods can access but class users cannot. The private access modifier precedes each private field declaration.</p>
 <p><img width="640" alt="private_fields" src="https://user-images.githubusercontent.com/11669149/214719619-917d46ec-9c3d-47b7-85a3-2c0db619cb42.png"></p>
-<h2 id="defining-a-class-public-member-methods">Defining a class public member methods</h2>
+<h3 id="defining-a-class-public-member-methods">Defining a class public member methods</h3>
 <p>A programmer defining a class first names the class, declares private fields, and defines public member methods. A class' fields and methods are collectively called class members.</p>
 <p>The programmer defines the details of each member method, sometimes called the class' implementation. A method definition provides an access modifier, return type, name, parameters, and the method's statements. A member method can access all private fields.</p>
 <p><img width="637" alt="Restaurant" src="https://user-images.githubusercontent.com/11669149/214719673-e719b4cb-1cab-4bdf-95d8-f62a7e290eb3.png">
@@ -1216,8 +1377,8 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h1 id="mutators-accessors-and-private-helpers">Mutators, accessors, and private helpers</h1>
-<h2 id="mutators-and-accessors">Mutators and accessors</h2>
+<h2 id="mutators-accessors-and-private-helpers">Mutators, accessors, and private helpers</h2>
+<h3 id="mutators-and-accessors">Mutators and accessors</h3>
 <p>A class' public methods are commonly classified as either mutators or accessors.</p>
 <p>A <strong>mutator</strong> method may modify ("mutate") a class' fields.
 An <strong>accessor</strong> method accesses fields but may not modify a class' fields.
@@ -1257,14 +1418,14 @@ Commonly, a field has two associated methods: a mutator for setting the value, a
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="private-helper-methods">Private helper methods</h2>
+<h3 id="private-helper-methods">Private helper methods</h3>
 <p>A programmer commonly creates private methods, known as private helper methods, to help public methods carry out tasks.</p>
 <p><img width="640" alt="private_fields" src="https://user-images.githubusercontent.com/11669149/214719756-a43d59a9-180d-4370-977b-3b858b8f5101.png"></p>
 <h1 id="initialization-and-constructors">Initialization and constructors</h1>
 <blockquote>
 <p>A good practice is to initialize all variables when declared. This section deals with initializing the fields of a class when a variable of the class type is allocated.</p>
 </blockquote>
-<h2 id="field-initialization">Field initialization</h2>
+<h3 id="field-initialization">Field initialization</h3>
 <p>A programmer can initialize fields in the field declaration. Any object created of that class type will initially have those values.</p>
 <h3 id="example-a-class-definition-with-initialized-fields">Example: A class definition with initialized fields</h3>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RestaurantFavorites</span><span class="w"> </span><span class="p">{</span>
@@ -1297,7 +1458,7 @@ Commonly, a field has two associated methods: a mutator for setting the value, a
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="constructors">Constructors</h2>
+<h3 id="constructors">Constructors</h3>
 <p>Java provides a special class member method, known as a constructor, that is called when an object of that class type is created, and which can be used to initialize all fields. The constructor has the same name as the class. The constructor method has no return type, not even void. Ex: public Restaurant() {...} defines a constructor for the Restaurant class.</p>
 <p>A programmer specifies the constructor that should be called when creating an object. Ex: Restaurant favLunchPlace = new Restaurant(); creates a new Restaurant object and calls the constructor Restaurant().</p>
 <p>If a class does not have a programmer-defined constructor, then the Java compiler implicitly defines a default constructor with no arguments. The Java compiler also initializes all fields to their default values.</p>
@@ -1337,8 +1498,8 @@ Commonly, a field has two associated methods: a mutator for setting the value, a
 <p>Further details can be found at:<br />
     - <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/constructors.html">Constructors from Oracle's Java tutorials</a><br />
     - <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/initial.html">Initializing fields from Oracle's Java tutorials</a>  </p>
-<h1 id="choosing-classes-to-create">Choosing classes to create</h1>
-<h2 id="decomposing-into-classes">Decomposing into classes</h2>
+<h2 id="choosing-classes-to-create">Choosing classes to create</h2>
+<h3 id="decomposing-into-classes">Decomposing into classes</h3>
 <p>Creating a program may start by a programmer deciding what "things" exist, and what each thing contains and does.</p>
 <p>Below, the programmer wants to maintain a soccer team. The programmer realizes the team will have people, so decides to sketch a Person class. Each Person class will have private (shown by "-") data like name and age, and public (shown by "+") methods like get/set name, get/set age, and print. The programmer then sketches a Team class, which uses Person objects.</p>
 <p><img width="619" alt="sketch_class_soccer" src="https://user-images.githubusercontent.com/11669149/214720619-566f685f-1efd-4b1b-9aa4-95681d99de1b.png"></p>
@@ -1422,7 +1583,7 @@ Commonly, a field has two associated methods: a mutator for setting the value, a
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h1 id="defining-main-in-a-programmer-defined-class">Defining main() in a programmer-defined class</h1>
+<h2 id="defining-main-in-a-programmer-defined-class">Defining main() in a programmer-defined class</h2>
 <p>The main() method can be defined within a programmer-defined class and create objects of that class type. The BasicCar class defined in the example below represents a car that keeps track of the number of miles driven. BasicCar has a field that maintains the miles driven and three methods that set, retrieve, and modify the object's field.</p>
 <p>main() is a static method that is independent of class objects. main() can access other static methods and static fields of the class, but cannot directly access non-static methods or fields, like BasicCar's checkOdometer() method. So, a programmer must create objects within main() to call non-static methods on those objects. Ex: BasicCar's main() creates two objects of type BasicCar and performs operations on those objects.</p>
 <p>Non-static fields and methods are also called instance variables and instance methods.</p>
@@ -1460,8 +1621,8 @@ Commonly, a field has two associated methods: a mutator for setting the value, a
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h1 id="unit-testing-classes">Unit testing (classes)</h1>
-<h2 id="testbenches">Testbenches</h2>
+<h2 id="unit-testing-classes">Unit testing (classes)</h2>
+<h3 id="testbenches">Testbenches</h3>
 <p>Like a chef who tastes food before serving, a class creator should test a class before allowing use. A testbench is a program whose job is to thoroughly test another program (or portion) via a series of input/output checks known as test cases. Unit testing means to create and run a testbench for a specific item (or "unit") like a method or a class.</p>
 <h3 id="example-unit-testing-of-a-class">Example: Unit testing of a class</h3>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StatsInfoTest</span><span class="w"> </span><span class="p">{</span>
@@ -1534,7 +1695,7 @@ Commonly, a field has two associated methods: a mutator for setting the value, a
 - Independent test cases. Ex: The test case for GetAverage() assigns new values, vs. relying on earlier values.
 - 100% code coverage: Every line of code is executed. A good testbench would have more test cases than below.
 - Includes not just typical values but also border cases: Unusual or extreme test case values like 0, negative numbers, or large numbers.</p>
-<h1 id="constructors-overloading">Constructors overloading</h1>
+<h2 id="constructors-overloading">Constructors overloading</h2>
 <p>Programmers often want to provide different initialization values when creating a new object. A class creator can overload a constructor by defining multiple constructors differing in parameter types. When an object is created with the new operator, arguments can be passed to the constructor. The constructor with matching parameters will be called.</p>
 <p><img width="664" alt="Overload_constructors" src="https://user-images.githubusercontent.com/11669149/214720691-039dc6eb-ba35-48d6-ac2d-347c2e283613.png"></p>
 <p>Creating a new object with no constructor arguments calls the default constructor. In this case, the object gets initialized with NoName and -1.
@@ -1543,16 +1704,16 @@ Passing a String and int argument to the constructor causes the constructor with
 <p>If a programmer defines any constructor, the compiler does not implicitly define a default constructor, so good practice is for the programmer to also explicitly define a default constructor so that an object creation like new MyClass() remains supported.</p>
 </blockquote>
 <p><img width="903" alt="default_constructor" src="https://user-images.githubusercontent.com/11669149/214720732-2ab981b0-2654-4554-a5ad-0f2ddc00b8f8.png"></p>
-<h1 id="objects-and-references">Objects and references</h1>
-<h2 id="references">References</h2>
+<h2 id="objects-and-references">Objects and references</h2>
+<h3 id="references">References</h3>
 <p>A reference is a variable type that refers to an object. A reference may be thought of as storing the memory address of an object. Variables of a class data type (and array types, discussed elsewhere) are reference variables.</p>
 <p><img width="606" alt="Reference_var" src="https://user-images.githubusercontent.com/11669149/214720778-697ba768-10c9-4412-8aee-03c1e5425695.png"></p>
 <p>A statement like TimeHrMin travelTime; declares a reference to an object of type TimeHrMin, while String firstName; declares a reference to an object of type String. The reference variables do not store data for those class types. Instead, the programmer must assign each reference to an object, which can be created using the new operator.</p>
 <p>The statement TimeHrMin travelTime; declares a reference variable with an unknown value. A common error is to attempt to use a reference variable that does not yet refer to a valid object.</p>
 <p>The new operator allocates memory for an object, then returns a reference to the object's location in memory. Thus, travelTime = new TimeHrMin(); sets travelTime to refer to a new TimeHrMin object in memory. travelTime now refers to a valid object and the programmer may use travelTime to access the object's methods. The reference variable declaration and object creation may be combined into a single statement: TimeHrMin travelTime = new TimeHrMin();</p>
 <p>Java does not provide a direct way to determine the memory location of an object, or to determine the exact address to which a reference variable refers. The "value" of a reference variable is unknown to the programmer. </p>
-<h1 id="the-this-implicit-parameter">The 'this' implicit parameter</h1>
-<h2 id="implicit-parameter">Implicit parameter</h2>
+<h2 id="the-this-implicit-parameter">The 'this' implicit parameter</h2>
+<h3 id="implicit-parameter">Implicit parameter</h3>
 <p>An object's member method is called using the syntax objectReference.method(). The object reference before the method name is known as an implicit parameter of the member method because the compiler converts the call syntax objectReference.method(...) into a method call with the object reference implicitly passed as a parameter. Ex: method(objectReference, ...).</p>
 <p>Within a member method, the implicitly-passed object reference is accessible via the keyword this. In particular, a class member can be accessed as this.classMember. The "." is the member access operator.</p>
 <p>Using this makes clear that a class member is being accessed and is essential if a field member and parameter have the same identifier. In the example below, this is necessary to differentiate between the field member sideLength and the parameter sideLength.</p>
@@ -1592,8 +1753,8 @@ Passing a String and int argument to the constructor causes the constructor with
 <p>The "this" keyword can also be used in a constructor to invoke a different (overloaded) constructor. In the default constructor below, this(0, 0); invokes the other constructor to initialize both fields to zero. For this example, a programmer could have just set both fields to zero within the default constructor. However, invoking other constructors is useful when a class' initialization routine is lengthy and avoids rewriting the same code.</p>
 <p>Further details can be found at:<br />
 - <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/thiskey.html">Using the 'this' keyword from Oracle's Java tutorials</a></p>
-<h1 id="primitive-and-reference-types">Primitive and reference types</h1>
-<h2 id="wrapper-classes">Wrapper classes</h2>
+<h2 id="primitive-and-reference-types">Primitive and reference types</h2>
+<h3 id="wrapper-classes">Wrapper classes</h3>
 <p>Java variables are one of two types.</p>
 <ul>
 <li>A primitive type variable directly stores the data for that variable type, such as int, double, or char. Ex: int numStudents = 20; declares an int that directly stores the data 20.  </li>
@@ -1631,7 +1792,7 @@ Passing a String and int argument to the constructor causes the constructor with
 </tr>
 </tbody>
 </table>
-<h2 id="memory-allocation-for-wrapper-class-objects">Memory allocation for wrapper class objects</h2>
+<h3 id="memory-allocation-for-wrapper-class-objects">Memory allocation for wrapper class objects</h3>
 <p>A programmer may use a wrapper class variable in expressions in the same manner as the primitive type int. An expression may even combine Integers, ints, and integer literals.</p>
 <p>A wrapper class object (as well as a String object) is immutable, meaning a programmer cannot change the object via methods or variable assignments after object creation. When the result of an expression is assigned to an Integer reference variable, memory for a new Integer object with the computed value is allocated, and the reference (or address) of this new object is assigned to the reference variable. A new memory allocation occurs every time a new value is assigned to an Integer variable, and the previous memory location to which the variable referred, remains unmodified.</p>
 <p><img width="758" alt="Screen Shot 2023-01-23 at 10 27 40 PM" src="https://user-images.githubusercontent.com/11669149/214225857-bdbc81e7-52db-4cdc-aa4e-f357b7d64eef.png"></p>
@@ -1667,7 +1828,7 @@ Passing a String and int argument to the constructor causes the constructor with
 <blockquote>
 <p>When using a literal for initialization, the programmer must ensure that the literal's value falls within the appropriate numeric range, e.g., -2,147,483,648 to 2,147,483,647 for an integer. The wrapper classes (except for Character and Boolean) declare the MAX_VALUE and MIN_VALUE fields, which are static fields initialized with the maximum and minimum values a type may represent, respectively. A programmer may access these fields to check the supported numeric range by typing the wrapper class' name followed by a dot and the field name, as in Integer.MIN_VALUE, which returns -2,147,483,648.</p>
 </blockquote>
-<h2 id="comparing-wrapper-class-objects">Comparing wrapper class objects</h2>
+<h3 id="comparing-wrapper-class-objects">Comparing wrapper class objects</h3>
 <p>For reference variables of wrapper classes (e.g., Integer, Double, Boolean), a common error is to use the equality operators == and != when comparing values, which does not work as expected. Using the equality operators on any two reference variables evaluates to either true or false depending on each operand's referenced object. For example, given two Integers num1 and num2, the expression num1 == num2 compares if both num1 and num2 reference the same Integer object, but does not compare the Integers' contents. Because those references will (usually) be different, num1 == num2 will evaluate to false. This is not a syntax error, but clearly a logic error.</p>
 <p>Although a programmer should never compare two reference variables of wrapper classes using the equality operators, a programmer may use the equality operators when comparing a wrapper class object with a primitive variable or a literal constant. The relational operators &lt;, &lt;=, &gt;, and &gt;= may be used to compare wrapper class objects. However, note that relational operators are not typically valid for other reference types. The following table summarizes allowable comparisons.</p>
 <h3 id="comparing-wrapper-class-objects-using-relational-operators">Comparing wrapper class objects using relational operators</h3>
@@ -1675,8 +1836,8 @@ Passing a String and int argument to the constructor causes the constructor with
 <p>Reference variables of wrapper classes can also be compared using the equals() and compareTo() methods. These method descriptions are presented for the Integer class, but apply equally well to the other wrapper classes. Although the use of comparison methods is slightly cumbersome in comparison to relational operators, these comparison methods may be preferred by programmers who do not wish to memorize exactly which comparison operators work as expected.</p>
 <h3 id="equals-and-compareto-methods-for-wrapper-class-types">equals() and compareTo() methods for wrapper class types</h3>
 <p><img width="963" alt="Screen Shot 2023-01-23 at 10 52 57 PM" src="https://user-images.githubusercontent.com/11669149/214229574-987edfbd-83bc-4ffc-85e3-81e6de6714a0.png"></p>
-<h1 id="wrapper-class-conversions">Wrapper class conversions</h1>
-<h2 id="autoboxing-and-unboxing">Autoboxing and unboxing</h2>
+<h2 id="wrapper-class-conversions">Wrapper class conversions</h2>
+<h3 id="autoboxing-and-unboxing">Autoboxing and unboxing</h3>
 <p>Java allows statements to combine primitive and wrapper class variables by automatically converting between primitive types and wrapper classes. <strong>Autoboxing</strong> is the automatic conversion of primitive types to the corresponding wrapper classes. <strong>Unboxing</strong> is the automatic conversion of wrapper class objects to the corresponding primitive types.</p>
 <h3 id="common-autoboxing-scenarios">Common autoboxing scenarios</h3>
 <p><img width="959" alt="Screen Shot 2023-01-24 at 8 13 23 AM" src="https://user-images.githubusercontent.com/11669149/214346849-8c9b8bcc-c120-41f4-a2ac-5416a7b283ce.png"></p>
@@ -1709,8 +1870,8 @@ Passing a String and int argument to the constructor causes the constructor with
 <span class="w">   </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h1 id="arrayslist">ArraysList</h1>
-<h2 id="introduction">Introduction</h2>
+<h2 id="arrayslist">ArraysList</h2>
+<h3 id="introduction">Introduction</h3>
 <p>Sometimes a programmer wishes to maintain a list of items, like a grocery list, or a course roster. An ArrayList is an ordered list of reference type items that comes with Java. Each item in an ArrayList is known as an element. The statement import java.util.ArrayList; enables use of an ArrayList.</p>
 <p>The declaration ArrayList\&lt;Integer&gt; vals = new ArrayList\&lt;Integer&gt;() creates reference variable vals that refers to a new ArrayList object consisting of Integer objects. The ArrayList list size can grow to contain the desired elements. ArrayList does not support primitive types like int, but rather reference types like Integer. A common error among beginners is to declare an ArrayList of a primitive type like int, as in ArrayList\&lt;int&gt; myVals, yielding a compilation error: "unexpected type, found : int, required: reference."</p>
 <p><img width="665" alt="Screen Shot 2023-01-24 at 9 31 04 PM" src="https://user-images.githubusercontent.com/11669149/214487464-b4e41fcf-628b-4fea-85d8-a80a1949ce37.png"></p>
@@ -1756,7 +1917,7 @@ Passing a String and int argument to the constructor causes the constructor with
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="iterating-through-arraylists">Iterating through ArrayLists</h2>
+<h3 id="iterating-through-arraylists">Iterating through ArrayLists</h3>
 <p>The program below allows a user to enter 8 numbers, then prints the average of those 8 numbers. The first loop uses the add() method to add each user-specified number to the ArrayList userNums. After adding the numbers to userNums, the size() method can be used to determine the number of elements in userNums. Thus, size() is used in the second for loop to calculate the sum, and in the statement that computes the average.</p>
 <p>With an ArrayList and loops, the program could easily be changed to support say 100 numbers; the code would be the same, and only the value of NUM_ELEMENTS would be changed to 100.</p>
 <h3 id="example-arraylists-with-loops">Example - ArrayLists with loops</h3>
@@ -1794,10 +1955,10 @@ Passing a String and int argument to the constructor causes the constructor with
 <blockquote>
 <p>An ArrayList is one of several Collections supported by Java for keeping groups of items. Other collections include LinkedList, Set, Queue, Map, and many more. A programmer selects the collection whose features best suit the desired task. For example, an ArrayList can efficiently access elements at any valid index but inserts are expensive, whereas a LinkedList supports efficient inserts but access requires iterating through elements. So a program that will do many accesses and few inserts might use an ArrayList.</p>
 </blockquote>
-<h1 id="classes-and-arraylists">Classes and ArrayLists</h1>
-<h2 id="arraylist-of-objects-a-reviews-program">ArrayList of objects: A reviews program</h2>
+<h2 id="classes-and-arraylists">Classes and ArrayLists</h2>
+<h3 id="arraylist-of-objects-a-reviews-program">ArrayList of objects: A reviews program</h3>
 <p>A programmer commonly uses classes and ArrayLists together. The program below creates a Review class (reviews might be for a restaurant, movie, etc.), then manages an ArrayList of Review objects.</p>
-<h1 id="java-documentation-for-classes">Java documentation for classes</h1>
+<h2 id="java-documentation-for-classes">Java documentation for classes</h2>
 <p>The Javadoc tool parses source code along with specially formatted comments to generate documentation. The documentation generated by Javadoc is known as an API for classes and class members. API is short for application programming interface.</p>
 <p>The specially formatted comments for Javadoc are called Doc comments, which are multi-line comments consisting of all text enclosed between the /*<em> and */ characters. Importantly, Doc comments are distinguished by the opening characters /*</em>, which include two asterisks. The following illustrates.</p>
 <h3 id="example-using-javadoc-comments-to-document-the-elapsedtime-and-timedifference-classes">Example - Using Javadoc comments to document the ElapsedTime and TimeDifference classes</h3>
@@ -1916,14 +2077,14 @@ Passing a String and int argument to the constructor causes the constructor with
 <p><img width="721" alt="Screen Shot 2023-01-25 at 12 15 03 AM" src="https://user-images.githubusercontent.com/11669149/214512141-946bd5aa-460f-4b0c-82d5-61b788c7dd6f.png"></p>
 <p>Private class members are not included by default in the API documentation generated by the Javadoc tool. API documentation is meant to provide a summary of all functionality available to external applications interfacing with the described classes. Thus, private class members, which cannot be accessed by other classes, are not typically included in the documentation. The Java Scanner class specification, for example, only describes the public class members available to programmers using the class.</p>
 <p>Similarly, the resulting API documentation for the above classes need only include information that enables their use by other programmers. However, if a programmer needs to document a class's complete structure, the Javadoc tool can be executed with the -private flag, as in javadoc -private -d destination class1.java class2.java, to enable the documentation of private class members.</p>
-<h1 id="parameters-of-reference-types">Parameters of reference types</h1>
-<h2 id="methods-with-reference-variables-as-parameters">Methods with reference variables as parameters</h2>
+<h2 id="parameters-of-reference-types">Parameters of reference types</h2>
+<h3 id="methods-with-reference-variables-as-parameters">Methods with reference variables as parameters</h3>
 <p>A reference variable is a variable that points to, or refers to, an object or array. Internally, a reference variable stores a reference, or the memory location, of the object to which it refers. A programmer can only access the data or functionality provided by objects through the use of reference variables. Because reference variables store object locations and not the object data itself, passing a reference variable as a method argument assigns the argument's stored reference to the corresponding method parameter. Similarly, returning a reference variable returns an object reference.</p>
 <p><img width="811" alt="Screen Shot 2023-01-25 at 12 19 25 AM" src="https://user-images.githubusercontent.com/11669149/214512934-b77306f1-4636-4a37-a433-b021c5bf9ad8.png"></p>
-<h2 id="methods-with-wrapper-class-parameters">Methods with wrapper class parameters</h2>
+<h3 id="methods-with-wrapper-class-parameters">Methods with wrapper class parameters</h3>
 <p>Instances of wrapper classes, such as Integer and Double, and the String class are defined as immutable, meaning that a programmer cannot modify the object's contents after initialization; new objects must be created instead. The statement Integer travelTime = 10; initializes the variable travelTime with a reference to a new Integer object. Assigning the variable travelTime later with another value, such as travelTime = 11;, creates a completely new object and assigns travelTime to refer to the new object's reference. Note that for convenience, a programmer can assign a literal to reference variables of type String, Integer, Double, or other wrapper classes, and the Java compiler will automatically convert the assigned literal to a new object of the correct type.</p>
-<h1 id="static-fields-and-methods">Static fields and methods</h1>
-<h2 id="static-fields">Static fields</h2>
+<h2 id="static-fields-and-methods">Static fields and methods</h2>
+<h3 id="static-fields">Static fields</h3>
 <p>The keyword <strong>static</strong> indicates a variable is allocated in memory only once during a program's execution. Static variables reside in the program's static memory region and have a global scope. Thus, static variables can be accessed from anywhere in a program.</p>
 <p>In a class, a <strong>static</strong> field is a field of the class instead of a field of each class object. Thus, static fields are independent of any class object, and can be accessed without creating a class object. Static fields are declared and initialized in the class definition. Within a class method, a static field is accessed using the field name. A public static field can be accessed outside the class using dot notation: ClassName.fieldName.</p>
 <blockquote>
@@ -1936,7 +2097,7 @@ Passing a String and int argument to the constructor causes the constructor with
 <li>The constructor assigns an object's id with nextId, and then increments nextId. Each time an object is created, nextId is incremented. Thus, each object will have a unique id.   </li>
 <li>Any class method can access or mutate a static field. Because nextId is public, nextId can also be accessed outside the class using the member access operator (.)</li>
 </ol>
-<h2 id="static-member-methods">Static member methods</h2>
+<h3 id="static-member-methods">Static member methods</h3>
 <p>A static member method is a class method that is independent of class objects. Static member methods are typically used to access and mutate private static fields from outside the class. Since static methods are independent of class objects, the this parameter is not passed to a static member method. So, a static member method can only access a class' static fields.</p>
 <h3 id="example-static-member-method-used-to-access-a-private-static-field">Example - Static member method used to access a private static field</h3>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Store</span><span class="w"> </span><span class="p">{</span><span class="w">   </span>
@@ -1978,12 +2139,12 @@ Passing a String and int argument to the constructor causes the constructor with
 <span class="w">   </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h1 id="using-packages">Using packages</h1>
-<h2 id="built-in-java-packages">Built-in Java packages</h2>
+<h2 id="using-packages">Using packages</h2>
+<h3 id="built-in-java-packages">Built-in Java packages</h3>
 <p>Java provides a variety of built-in classes, such as Scanner, ArrayList, File, and many others, that programmers can use to write programs. Given the large number of built-in classes, Java organizes related classes into groupings called packages.</p>
 <p>A package is a grouping of related types, classes, interfaces, and subpackage. The types, classes, and interfaces in a package are called package members. The following table lists several built-in Java packages and sample package members.</p>
 <p><img width="960" alt="Screen Shot 2023-01-25 at 7 46 50 AM" src="https://user-images.githubusercontent.com/11669149/214608820-51d8fd6a-5b85-4b50-8c67-55cb405d9ead.png"></p>
-<h2 id="using-package-members-in-a-program">Using package members in a program</h2>
+<h3 id="using-package-members-in-a-program">Using package members in a program</h3>
 <p>A programmer can use a package member using one of the following methods.</p>
 <p>Using a package member's fully qualified name: A class' fully qualified name is the concatenation of the package name with the class name using a period. Ex: java.util.Scanner is the fully qualified name for the Scanner class in the java.util package.</p>
 <ul>
