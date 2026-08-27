@@ -1,67 +1,71 @@
+
 # Inheritance
 
-Inheritance is one of the core concepts of object-oriented programming
-(OOP). It is a mechanism that allows one class to derive from another
-class, creating a hierarchy of classes that share attributes and
-methods.
+Inheritance is one of the core concepts of object-oriented programming (OOP). It is a mechanism that allows one class to derive from another class, creating a hierarchy of classes that share a set of attributes and methods.
 
 ## Derived classes
 
 ### Concepts
 
--   The main idea is **code reuse and specialization**. A derived class
-    can reuse accessible behavior from a base class and add or override
-    behavior when needed.
--   Inheritance works like building blocks.
--   One class is similar to another class but with some additions or
-    variations.
+- The main idea is **code reuse and specialization**. Reuse the base code and specialize it in the derived class when needed.
+- Inheritance works like building blocks.
+- One class is similar to another class but with some additions or variations.
 
 ![inheritance_i1](https://raw.githubusercontent.com/d-khan/java/main/images/inheritance-i1.png)
 
 ### Inheritance
 
--   A **derived class** (or **subclass**) is a class that is derived
-    from another class, called a **base class** (or **superclass**).
--   The derived class is said to inherit the properties of the base
-    class, a concept called **inheritance**.
--   A derived class is declared by placing the keyword **extends** after
-    the derived class name, followed by the base class name.
+- A **derived class** (or **subclass**) is a class that is derived from another class, called a **base class** (or **superclass**).
+- The derived class is said to inherit the properties of the base class, a concept called **inheritance**.
+- A derived class is declared by placing the keyword **extends** after the derived class name, followed by the base class name. 
 
 #### Example code - base & derived classes
 
-**GenericItem.java - base class**
+__GenericItem.java - base class__
 
-\`\`\`{java .numberLines} public class GenericItem { private String
-itemName; private int itemQuantity;
+```{java .numberLines}
+public class GenericItem {
+   private String itemName;
+   private int itemQuantity;
 
-public void setName(String newName) { itemName = newName; }
+   public void setName(String newName) {
+      itemName = newName;
+   }
 
-public void setQuantity(int newQty) { itemQuantity = newQty; }
+   public void setQuantity(int newQty) {
+      itemQuantity = newQty;
+   }
 
-public void printItem() { System.out.println(itemName + " " +
-itemQuantity); } }
+   public void printItem() {
+      System.out.println(itemName + " " + itemQuantity);
+   }
+}
 
+```
 
-    __ProduceItem.java - derived class__
+__ProduceItem.java - derived class__
 
-    ```{java .numberLines}
-    public class ProduceItem extends GenericItem { 
-       private String expirationDate;
+```{java .numberLines}
+public class ProduceItem extends GenericItem { 
+   private String expirationDate;
 
-       public void setExpiration(String newDate) {
-          expirationDate = newDate;
-       }
+   public void setExpiration(String newDate) {
+      expirationDate = newDate;
+   }
 
-       public String getExpiration() {
-          return expirationDate;
-       }  
-    }
+   public String getExpiration() {
+      return expirationDate;
+   }  
+}
+```
 
-**Main ClassDerivationEx.java - main**
+__Main ClassDerivationEx.java - main__
 
-\`\`\`{java .numberLines} public class ClassDerivationEx { public static
-void main(String\[\] args) { GenericItem miscItem = new GenericItem();
-ProduceItem perishItem = new ProduceItem();
+```{java .numberLines}
+public class ClassDerivationEx {
+   public static void main(String[] args) {
+      GenericItem miscItem = new GenericItem();
+      ProduceItem perishItem = new ProduceItem();
 
       miscItem.setName("Crunchy Cereal");
       miscItem.setQuantity(9);
@@ -74,96 +78,101 @@ ProduceItem perishItem = new ProduceItem();
 
       System.out.println("  (Expires: "
          + perishItem.getExpiration() + ")");
+   }
+}
+```
 
-} }
+### Inheritance scenarios
 
+- A derived class can serve as a base class for another class.
+- A class can serve as a base class for multiple derived classes.
+- A Java class can only be derived from **one base class directly**. Java does not support multiple inheritance of classes.
 
-    ### Inheritance scenarios
+![inheritance_i1](https://raw.githubusercontent.com/d-khan/java/main/images/inheritance-i2.png)
 
-    - A derived class can serve as a base class for another class.
-    - A class can serve as a base class for multiple derived classes.
-    - A Java class can directly extend only **one superclass**. Java does not support multiple inheritance of classes.
+```public class TextbookItem extends BookItem```
 
-    ![inheritance_i1](https://raw.githubusercontent.com/d-khan/java/main/images/inheritance-i2.png)
+```public class AudiobookItem extends BookItem```
 
-    ```public class TextbookItem extends BookItem```
+```public class BookItem extends GenericItem```
 
-    ```public class AudiobookItem extends BookItem```
+```public class GenericItem```
 
-    ```public class BookItem extends GenericItem```
+The other left half works similarly, as shown in the example above.
 
-    ```public class GenericItem```
+#### Example code - base & multiple derived classes
 
-    The other left half works similarly, as shown in the example above.
+__Business.java - base class__
 
-    #### Example code - base & multiple derived classes
+```{java .numberLines}
+public class Business {
+   private String name;
+   private String address;
+   
+   public void setName(String busName) { 
+      name = busName; 
+   }
+   
+   public void setAddress(String busAddress) {
+      address = busAddress; 
+   }
+   
+   public String getDescription() {
+      return name + " -- " + address;
+   }
+}
+```
 
-    __Business.java - base class__
+__Business.java - derived class__
 
-    ```{java .numberLines}
-    public class Business {
-       private String name;
-       private String address;
-       
-       public void setName(String busName) { 
-          name = busName; 
-       }
-       
-       public void setAddress(String busAddress) {
-          address = busAddress; 
-       }
-       
-       public String getDescription() {
-          return name + " -- " + address;
-       }
-    }
+```{java .numberLines}
+public class Restaurant extends Business {
+   private int rating;
+   
+   public void setRating(int userRating) {
+      rating = userRating;
+   }
+   
+   public int getRating() {
+      return rating;
+   }
+}
+```
 
-**Business.java - derived class**
+__InheritanceExample.java - main__
 
-\`\`\`{java .numberLines} public class Restaurant extends Business {
-private int rating;
+```{java .numberLines}
+public class InheritanceExample {
+   public static void main(String[] args) {
+      Business someBusiness = new Business();
+      Restaurant favoritePlace = new Restaurant();
 
-public void setRating(int userRating) { rating = userRating; }
+      someBusiness.setName("ACME");
+      someBusiness.setAddress("4 Main St");
 
-public int getRating() { return rating; } }
+      favoritePlace.setName("Friends Cafe");
+      favoritePlace.setAddress("500 W 2nd Ave");
+      favoritePlace.setRating(5);
 
+      System.out.println(someBusiness.getDescription());
+      System.out.println(favoritePlace.getDescription());
+      System.out.println("  Rating: " + favoritePlace.getRating());
+   }
+}
+```
 
-    __InheritanceExample.java - main__
-
-    ```{java .numberLines}
-    public class InheritanceExample {
-       public static void main(String[] args) {
-          Business someBusiness = new Business();
-          Restaurant favoritePlace = new Restaurant();
-
-          someBusiness.setName("ACME");
-          someBusiness.setAddress("4 Main St");
-
-          favoritePlace.setName("Friends Cafe");
-          favoritePlace.setAddress("500 W 2nd Ave");
-          favoritePlace.setRating(5);
-
-          System.out.println(someBusiness.getDescription());
-          System.out.println(favoritePlace.getDescription());
-          System.out.println("  Rating: " + favoritePlace.getRating());
-       }
-    }
-
-## Access by members of derived classes
+##  Access by members of derived classes
 
 ### Member access
 
--   Member methods of a derived class cannot access private members of
-    the base class.
--   Private is private. It defeats the purpose of a private variable if
-    the private variable is accessible outside of the class.
+- Member methods of a derived class cannot access private members of the base class.
+- Private is private. It defeats the purpose of a private variable if the private variable is accessible outside of the class.
 
 ![inheritance_i1](https://raw.githubusercontent.com/d-khan/java/main/images/inheritance-i3.png)
 
 ### Protected member access
 
--   Provides access to derived classes and all classes in the same
-    **package** but not by anyone else.
+-  Provides access to derived classes and all classes in the same **package** but not by anyone else.
 
 ![inheritance_i1](https://raw.githubusercontent.com/d-khan/java/main/images/inheritance-i4.png)
 
@@ -171,236 +180,250 @@ public int getRating() { return rating; } }
 
 Access specifiers for class members
 
-  -----------------------------------------------------------------------
-  Specifier   Description
-  ----------- -----------------------------------------------------------
-  private     Accessible by self
-
-  protected   Accessible by self, derived classes, and other classes in
-              the same package
-
-  public      Accessible from any class where the declaring class is
-              visible
-
-  no          Accessible by self and other classes in the same package
-  specifier   
-  -----------------------------------------------------------------------
+| Specifier    | Description                                                  |
+| ------------ | ------------------------------------------------------------ |
+| private      | Accessible by self                                           |
+| protected    | Accessible by self, derived classes, and other classes in the same package |
+| public       | Accessible by self, and derived classes      |
+| no specifier | Accessible by self and other classes in the same package     |
 
 ### Class definitions
 
-Separately, the keyword "public" in a class definition like public class
-DerivedClass {...} specifies a class's visibility in other classes in
-the program:
+Separately, the keyword "public" in a class definition like public class DerivedClass {...} specifies a class's visibility in other classes in the program:
 
--   *public* : A class can be used by every class in the program
-    regardless of the package in which either is defined.
+- *public* : A class can be used by every class in the program regardless of the package in which either is defined.
 
--   no specifier\* : A class can be used only in other classes within
-    the same package, known as **package- private**.
+- no specifier* : A class can be used only in other classes within the same package, known as **package- private**.
 
 ## Overriding member methods
 
 ### Overriding
 
--   When a derived class defines a member method that has the same name
-    and parameters as a base class's method, the member method is said
-    to **override** the base class's method.
+- When a derived class defines a member method that has the same name and parameters as a base class's method, the member method is said to **override** the base class's method.
 
--   The **@Override** annotation is placed above a method that overrides
-    a base class method so the compiler verifies that an identical base
-    class method exists.
+- The **@Override** annotation is placed above a method that overrides a base class method so the compiler verifies that an identical base class method exists.
 
--   An **annotation** is an optional command beginning with the "@"
-    symbol that can provide the compiler with information that helps the
-    compiler detect errors better.
+- An **annotation** is an optional command beginning with the "@" symbol that can provide the compiler with information that helps the compiler detect errors better.
+
 
 #### Example code - overriding member method
 
-**Business.java - base class**
+__Business.java - base class__
 
-`{java .numberLines} public class Business {     protected String name;     protected String address;     public void setName(String busName) {         name = busName;         }     public void setAddress(String busAddress) {         address = busAddress;         }     public String getDescription() {         return name + " -- " + address;         }  } //Same method as in Restaurant class`
+```{java .numberLines}
+public class Business {
+    protected String name;
+    protected String address;
+    public void setName(String busName) {
+        name = busName;
+		}
+    public void setAddress(String busAddress) {
+        address = busAddress;
+		}
+    public String getDescription() {
+        return name + " -- " + address;
+		} 
+}
+//Same method as in Restaurant class
+```
 
-**Restaurant.java - derived class**
+__Restaurant.java - derived class__
 
-`{java .numberLines} public class Restaurant extends Business {     private int rating;     public void setRating(int userRating) {         rating = userRating;         }     public int getRating() {         return rating;         } @Override     public String getDescription() {         return name + " -- " + address + " 96422";         }  }`
-**OverridingExample.java - main**
+```{java .numberLines}
+public class Restaurant extends Business {
+    private int rating;
+    public void setRating(int userRating) {
+        rating = userRating;
+		}
+    public int getRating() {
+        return rating;
+		}
+@Override
+    public String getDescription() {
+        return name + " -- " + address + " 96422";
+		} 
+}
+```
+__OverridingExample.java - main__
 
-\`\`\`{java .numberLines} public class InheritanceExample { public
-static void main(String\[\] args) { Business someBusiness = new
-Business(); Restaurant favoritePlace = new Restaurant();
-
-        someBusiness.setName("ACME");
+```{java .numberLines}
+public class InheritanceExample {
+    public static void main(String[] args) {
+	Business someBusiness = new Business();
+        Restaurant favoritePlace = new Restaurant();
+ 
+      	someBusiness.setName("ACME");
         someBusiness.setAddress("4 Main St");
         
-        favoritePlace.setName("Friends Cafe");
+      	favoritePlace.setName("Friends Cafe");
         favoritePlace.setAddress("500 W 2nd Ave");
         favoritePlace.setRating(5);
         
-        System.out.println(someBusiness.getDescription());
+      	System.out.println(someBusiness.getDescription());
         System.out.println(favoritePlace.getDescription());
         System.out.println("  Rating: " + favoritePlace.getRating());
     }
+}
+```
+## Overloading member methods
+Method overloading is the process that can create multiple methods of the same name in the same class, and all the methods work in different ways. Method overloading occurs when there is more than one method of the same name in the class.
 
+#### Example code - overloading member method
+```{java .numberLines}
+class Shapes {
+    public void area() {
+        System.out.println("Find area ");
+    }
+    public void area(int r) {
+        System.out.println("Circle area = "+3.14*r*r);
+    }
+
+    public void area(double b, double h) {
+        System.out.println("Triangle area="+0.5*b*h);
+    }
+    public void area(int l, int b) {
+        System.out.println("Rectangle area="+l*b);
+    }
 }
 
-    ## Overloading member methods
-    Method overloading is the process that can create multiple methods of the same name in the same class, and all the methods work in different ways. Method overloading occurs when there is more than one method of the same name in the class.
+class Main {
+    public static void main(String[] args) {
+        Shapes myShape = new Shapes();  // Create a Shapes object
 
-    #### Example code - overloading member method
-    ```{java .numberLines}
-    class Shapes {
-        public void area() {
-            System.out.println("Find area ");
-        }
-        public void area(int r) {
-            System.out.println("Circle area = "+3.14*r*r);
-        }
+        myShape.area();
+        myShape.area(5);
+        myShape.area(6.0,1.2);
+        myShape.area(6,2);
 
-        public void area(double b, double h) {
-            System.out.println("Triangle area="+0.5*b*h);
-        }
-        public void area(int l, int b) {
-            System.out.println("Rectangle area="+l*b);
-        }
     }
+}
+```
 
-    class Main {
-        public static void main(String[] args) {
-            Shapes myShape = new Shapes();  // Create a Shapes object
-
-            myShape.area();
-            myShape.area(5);
-            myShape.area(6.0,1.2);
-            myShape.area(6,2);
-
-        }
-    }
-
-> **Overriding vs. Overloading**
+> **Overriding vs. Overloading**
 >
-> Overriding differs from overloading. In **overloading**, methods have
-> the same name but different parameter lists. Changing only the return
-> type is not enough to overload a method. In **overriding**, a derived
-> class provides a new implementation of an inherited instance method
-> with the same method signature and a compatible return type.
+> Overriding differs from overloading. In overloading, methods with the same name must have different parameter lists (different number, types, or order of parameters). Changing only the return type is not enough to overload a method. In overriding, a derived class provides a new implementation of an inherited method with the same method signature and a compatible return type.
 
-------------------------------------------------------------------------
+___
 
 ## Hands-on group exercise - Overloading (NOT GRADED)
+1. Design a class with two methods; one takes two integer arguments and returns the sum of the integer arguments; the second takes two double arguments and returns the sum of the double arguments. You might need to discuss with the other members of the group.
+2. Implement the design, and use the main to execute the class and supply correct inputs.
+3. Verify that the class is working by printing the result on the screen.
 
-1.  Design a class with two methods; one takes two integer arguments and
-    returns the sum of the integer arguments; the second takes two
-    double arguments and returns the sum of the double arguments. You
-    might need to discuss with the other members of the group.
-2.  Implement the design, and use the main to execute the class and
-    supply correct inputs.
-3.  Verify that the class is working by printing the result on the
-    screen.
+____
 
-------------------------------------------------------------------------
 
 ### Calling a base class method
+An overriding method can call the overridden method by using the super keyword ```super.getDescription()``` . The __super__ keyword is a reference variable used to call the parent class's methods or constructors.
 
-An overriding method can call the overridden method by using the super
-keyword `super.getDescription()` . The **super** keyword is a reference
-variable used to call the parent class's methods or constructors.
-
-**Restaurant.java - base class** \`\`\`{java .numberLines} public class
-Restaurant extends Business { private int rating; public void
-setRating(int userRating) { rating = userRating; } public int
-getRating() { return rating; }
-
-    @Override
+__Restaurant.java - base class__
+```{java .numberLines}
+public class Restaurant extends Business {
+    private int rating;
+    public void setRating(int userRating) {
+        rating = userRating;
+		}
+    public int getRating() {
+        return rating;
+    }
+  	
+  	@Override
     public String getDescription() { //same method as in Business class
         return super.getDescription();
         //return name + " -- " + address + " 96422";  //Zip code added
-        } 
-
+		} 
 }
+  
+```
+
+## The Object class
+
+### Using Object class
+- The built-in Object class serves as the base class for all other classes and does not have a base class.
+- __It is a hidden base/parent class__
+- All classes, including user-defined classes, are derived from Object and implement Object's methods.
+- Two common methods defined within the Object class are toString() and equals().
+  - The **toString()** method returns a String representation of the Object. By default, toString() returns a String containing the object's class name followed by the object's hash code in hexadecimal form. Ex: java.lang.Object@372f7a8d.
+  - The **equals(otherObject)** method compares an Object to otherObject and returns true if both variables reference the same object. Otherwise, equals() returns false. By default, equals() tests the equality of the two Object references, not the equality of the Objects' contents.
 
 
-    ## The Object class
+> __"Object class" and the generic term "object", are two different terms. Object refers to the instance of any class.__
 
-    ### Using Object class
-    - The built-in Object class serves as the base class for all other classes and does not have a base class.
-    - __It is a hidden base/parent class__
-    - All classes, including user-defined classes, are derived from Object and implement Object's methods.
-    - Two common methods defined within the Object class are toString() and equals().
-      - The **toString()** method returns a String representation of the Object. By default, toString() returns a String containing the object's class name followed by the object's hash code in hexadecimal form. Ex: java.lang.Object@372f7a8d.
-      - The **equals(otherObject)** method compares an Object to otherObject and returns true if both variables reference the same object. Otherwise, equals() returns false. By default, equals() tests the equality of the two Object references, not the equality of the Objects' contents.
+#### Example code - Behavior of ```toString()``` method
 
+__Business.java__
+```{java .numberLines}
+public class Business {
+    protected String name;
+    protected String address;
 
-    > __"Object class" and the generic term "object", are two different terms. Object refers to the instance of any class.__
-
-    #### Example code - Behavior of ```toString()``` method
-
-    __Business.java__
-    ```{java .numberLines}
-    public class Business {
-        protected String name;
-        protected String address;
-
-        void setName(String busName) {
-            name = busName;
-        }
-
-        void setAddress(String busAddress) {
-            address = busAddress;
-        }
-
-        String getDescription() {
-            return name + " -- " + address;
-        }
+    void setName(String busName) {
+        name = busName;
     }
 
-**ObjectPrinter - main** \`\`\`{java .numberLines} public class
-ObjectPrinter { public static void main(String\[\] args) { Object myObj
-= new Object(); Integer num = Integer.valueOf(100); Business
-someBusiness = new Business();
+    void setAddress(String busAddress) {
+        address = busAddress;
+    }
+
+    String getDescription() {
+        return name + " -- " + address;
+    }
+}
+```
+
+__ObjectPrinter - main__
+```{java .numberLines}
+public class ObjectPrinter {
+    public static void main(String[] args) {
+        Object myObj = new Object();
+        Integer num = Integer.valueOf(100);
+        Business someBusiness = new Business();
 
         // Call toString() on each object and print result
         System.out.println("myObj = " + myObj.toString());
         System.out.println("num = " + num.toString());
         System.out.println("someBusiness = " + someBusiness.toString());
     }
-
 }
+```
 
+- The Object class is the base class for all other classes.
+- Java's Integer class overrides the Object's toString() method, but the user-defined Business class does not.
+- Object's toString() returns a string consisting of the object's class name (java.lang.Object), the '@' character, and an unsigned hexadecimal representation of the object's hash code (1148ab5c).
+- Integer's toString() method returns the object's associated integer value.
+- Business does not override toString() so Object's toString() method is called and outputs the object's class name (Business), the '@' character, and an unsigned hexadecimal representation of the object's hash code (19469ea2).
 
-    - The Object class is the base class for all other classes.
-    - Java's Integer class overrides the Object's toString() method, but the user-defined Business class does not.
-    - Object's toString() returns a string consisting of the object's class name (java.lang.Object), the '@' character, and an unsigned hexadecimal representation of the object's hash code (1148ab5c).
-    - Integer's toString() method returns the object's associated integer value.
-    - Business does not override toString() so Object's toString() method is called and outputs the object's class name (Business), the '@' character, and an unsigned hexadecimal representation of the object's hash code (19469ea2).
+### Overriding toString() in the base class
+- The code below shows a Business class that overrides Object's toString() method and returns a String containing the business name and address.
+- The Restaurant class derives from Business but does not override toString().
+- When a Restaurant object's toString() method is called, the Business class's toString() method executes.
 
-    ### Overriding toString() in the base class
-    - The code below shows a Business class that overrides Object's toString() method and returns a String containing the business name and address.
-    - The Restaurant class derives from Business but does not override toString().
-    - When a Restaurant object's toString() method is called, the Business class's toString() method executes.
+#### Example code - Base class Business overrides ```toString()```
+__Business.java base class__
+```{java .numberLines}
+public class Business {
+    protected String name;
+    protected String address;
 
-    #### Example code - Base class Business overrides ```toString()```
-    __Business.java base class__
-    ```{java .numberLines}
-    public class Business {
-        protected String name;
-        protected String address;
-
-        void setName(String busName) {
-            name = busName;
-        }
-
-        void setAddress(String busAddress) {
-            address = busAddress;
-        }
-
-        @Override
-        public String toString() {
-            return name + " -- " + address;
-        }
+    void setName(String busName) {
+        name = busName;
     }
 
-**Restaurant.java sub class** \`\`\`{java .numberLines} public class
-Restaurant extends Business { private int rating;
+    void setAddress(String busAddress) {
+        address = busAddress;
+    }
+
+    @Override
+    public String toString() {
+        return name + " -- " + address;
+    }
+}
+```
+
+__Restaurant.java sub class__
+```{java .numberLines}
+public class Restaurant extends Business {
+    private int rating;
 
     public void setRating(int userRating) {
         rating = userRating;
@@ -409,98 +432,92 @@ Restaurant extends Business { private int rating;
     public int getRating() {
         return rating;
     }
-
 }
+```
+__ObjectPrinter.java - main__
+```{java .numberLines}
+public class ObjectPrinter {
+    public static void main(String[] args) {
+        Business aaaBus = new Business();
+        Restaurant tacoRest = new Restaurant();
 
-    __ObjectPrinter.java - main__
-    ```{java .numberLines}
-    public class ObjectPrinter {
-        public static void main(String[] args) {
-            Business aaaBus = new Business();
-            Restaurant tacoRest = new Restaurant();
+        aaaBus.setName("AAA Business");
+        aaaBus.setAddress("5 Race St");
 
-            aaaBus.setName("AAA Business");
-            aaaBus.setAddress("5 Race St");
+        tacoRest.setName("Tom's Tacos");
+        tacoRest.setAddress("600 Pleasure Ave");
+        tacoRest.setRating(5);
 
-            tacoRest.setName("Tom's Tacos");
-            tacoRest.setAddress("600 Pleasure Ave");
-            tacoRest.setRating(5);
-
-            System.out.println(aaaBus.toString());
-        }
+        System.out.println(aaaBus.toString());
     }
-
-> **The `toString()` method is called automatically by the compiler when
-> an object is concatenated to a string or when `print()` or `println()`
-> is called. Ex: `System.out.println(someObj)` calls
-> `someObj.toString()` automatically.**
+}
+```
+> __The ```toString()``` method is called automatically by the compiler when an object is concatenated to a string or when ```print()``` or ```println()``` is called. Ex: ```System.out.println(someObj)``` calls ```someObj.toString()``` automatically.__
 
 #### Practice task
-
-**Objective:** Overriding `toString()` in the derived class Re-use the
-business, restaurant, objectprinter classes. Display user rating when
-`tacoRest.toString()` is called.
+__Objective:__ Overriding ```toString()``` in the derived class
+Re-use the business, restaurant, objectprinter classes. Display user rating when ```tacoRest.toString()``` is called.
 
 ## Polymorphism
 
--   Polymorphism allows code to work with objects through a common type
-    while the actual object can provide its own implementation of an
-    overridden method.
+- Polymorphism is the ability of an object to take on different forms. In Java, polymorphism refers to the ability of a class to provide different implementations of a method, depending on the type of object that is passed to the method.
 
--   In Java, polymorphism allows the same method call to produce
-    different behavior depending on the actual object involved.
+- **Polymorphism in Java** is the task that performs a single action in different ways.
 
-    Polymorphism is one of Java's important object-oriented programming
-    features.
+  So, languages that do not support polymorphism are not ‘Object-Oriented Languages’, but ‘Object-Based Languages’. Since Java supports polymorphism, it is an OOP.
 
-    Runtime polymorphism commonly relies on inheritance or interface
-    implementation together with method overriding.
+  Polymorphism occurs when there is inheritance, i.e., many classes are related to each other.
 
 ### Types of Polymorphism
 
-You can perform Polymorphism in Java in two ways: a) Method overloading,
-b) Method overriding. Also, Polymorphism in Java can be classified into
-two types, i.e:
+You can perform Polymorphism in Java in two ways: a) Method overloading, b) Method overriding. Also, Polymorphism in Java can be classified into two types, i.e:
 
-1.  Static/compile-time polymorphism
-2.  Dynamic/runtime polymorphism
+1. Static/compile-time polymorphism
+2. Dynamic/runtime polymorphism
 
 #### Compile-time polymorphism
-
--   Compile Time Polymorphism In Java is also known as Static
-    Polymorphism.
--   Furthermore, the call to the method is resolved at compile time.
--   Compile-Time polymorphism is achieved through **Method
-    Overloading**.
--   Java does not provide user-defined operator overloading. Java does,
-    however, define built-in behavior for operators such as `+`,
-    including string concatenation.
+- Compile Time Polymorphism In Java is also known as Static Polymorphism.
+-  Furthermore, the call to the method is resolved at compile time.
+-  Compile-Time polymorphism is achieved through **Method Overloading**. 
+- Java does not support user-defined operator overloading. Java does provide built-in behavior for operators such as `+`, including string concatenation.
 
 #### Example of compile-time polymorphism
-
-`{java .numberLines} package staticPolymorphism; public class Test {     void sum(int a, int b) //method overloading     {         int c = a+b;         System.out.println("Addition of two numbers :" +c); }     void sum(int a, int b, int e) //method overloading     {         int c = a+b+e;         System.out.println("Addition of three numbers :" +c); }     public static void main(String[] args)     {         Test obj = new Test();         obj.sum ( 30,90);         obj.sum (45, 80, 22);     } }`
+```{java .numberLines}
+package staticPolymorphism;
+public class Test
+{
+    void sum(int a, int b) //method overloading
+    {
+        int c = a+b;
+        System.out.println("Addition of two numbers :" +c); }
+    void sum(int a, int b, int e) //method overloading
+    {
+        int c = a+b+e;
+        System.out.println("Addition of three numbers :" +c); }
+    public static void main(String[] args)
+    {
+        Test obj = new Test();
+        obj.sum ( 30,90);
+        obj.sum (45, 80, 22);
+    }
+}
+```
 
 #### Runtime polymorphism
 
--   **Runtime polymorphism** in Java is also popularly known as
-    **Dynamic Binding or Dynamic Method Dispatch.** In this process, the
-    call to an overridden method is resolved dynamically at runtime
-    rather than at compile-time. You can achieve Runtime polymorphism
-    via **Method Overriding**.
+- **Runtime polymorphism** in Java is also popularly known as **Dynamic Binding or Dynamic Method Dispatch.** In this process, the call to an overridden method is resolved dynamically at runtime rather than at compile-time. You can achieve Runtime polymorphism via **Method Overriding**.
 
 ## ArrayLists of Objects
 
-Because all classes are derived from the Object class, programmers can
-take advantage of runtime polymorphism in order to create a collection
-(e.g., ArrayList) of objects of various class types and perform
-operations on the elements.
+Because all classes are derived from the Object class, programmers can take advantage of runtime polymorphism in order to create a collection (e.g., ArrayList) of objects of various class types and perform operations on the elements.
 
-#### Example of runtime polymorphism with `ArrayList<Object>`
-
+#### Example of runtime polymorphism
 **Business.java**
 
-\`\`\`{java .numberLines} public class Business { protected String name;
-protected String address;
+```{java .numberLines}
+public class Business {
+    protected String name;
+    protected String address;
 
     public Business() {}
 
@@ -513,189 +530,162 @@ protected String address;
     public String toString() {
         return name + " -- " + address;
     }
-
 }
+```
+**ArrayListPrinter.java**
+```{java .numberLines}
+import java.util.ArrayList;
+public class ArrayListPrinter {
 
-    **ArrayListPrinter.java**
-    ```{java .numberLines}
-    import java.util.ArrayList;
-    public class ArrayListPrinter {
+    // Method prints an ArrayList of Objects
+    public static void printArrayList(ArrayList<Object> objList) {
+        int i;
 
-        // Method prints an ArrayList of Objects
-        public static void printArrayList(ArrayList<Object> objList) {
-            int i;
-
-            for (i = 0; i < objList.size(); ++i) {
-                System.out.println(objList.get(i));
-            }
-        }
-
-        public static void main(String[] args) {
-            ArrayList<Object> objList = new ArrayList<Object>();
-
-            // Add new instances of various classes to objList
-            objList.add(new Object());
-            objList.add(12);
-            objList.add(3.14);
-            objList.add(new String("Hello!"));
-            objList.add(new Business("ACME", "5 Main St"));
-
-            // Print list of Objects
-            printArrayList(objList);
+        for (i = 0; i < objList.size(); ++i) {
+            System.out.println(objList.get(i));
         }
     }
 
--   objList is an ArrayList of Object elements. All objects derive from
-    Object, so objList can store any type of object.
+    public static void main(String[] args) {
+        ArrayList<Object> objList = new ArrayList<Object>();
 
--   Five new objects of various class types are added to the ArrayList.
-    Each derived class reference is automatically converted to a base
-    class (Object) reference.
+        // Add new instances of various classes to objList
+        objList.add(new Object());
+        objList.add(12);
+        objList.add(3.14);
+        objList.add(new String("Hello!"));
+        objList.add(new Business("ACME", "5 Main St"));
 
--   printArrayList() takes an ArrayList of Objects as an argument and
-    outputs every element of the ArrayList.
+        // Print list of Objects
+        printArrayList(objList);
+    }
+}
+```
 
--   get(i) returns each Object element. Runtime polymorphism allows the
-    correct version of toString() to be called based on the actual class
-    type of each element.
+- objList is an ArrayList of Object elements. All objects derive from Object, so objList can store any type of object.
+
+- Five new objects of various class types are added to the ArrayList. Each derived class reference is automatically converted to a base class (Object) reference.
+
+- printArrayList() takes an ArrayList of Objects as an argument and outputs every element of the ArrayList.
+
+- get(i) returns each Object element. Runtime polymorphism allows the correct version of toString() to be called based on the actual class type of each element.
 
 ## Abstract classes: Introduction (generic)
+Object-oriented programming (OOP) is a powerful programming paradigm, consisting of several features. Three key features include:
 
-Object-oriented programming (OOP) is a powerful programming paradigm,
-consisting of several features. Three key features include:
-
--   **Classes:** A class encapsulates data and behavior to create
-    objects.
--   **Inheritance:** Inheritance allows one class (a subclass) to be
-    based on another class (a base class or superclass).
--   **Abstract classes:** An abstract class is a class that guides the
-    design of subclasses but cannot itself be instantiated as an object.
-    Ex: An abstract Shape class might also specify that any subclass
-    must define a computeArea() method.
+- **Classes:** A class encapsulates data and behavior to create objects.
+- **Inheritance:** Inheritance allows one class (a subclass) to be based on another class (a base class or superclass). 
+- **Abstract classes:** An abstract class is a class that guides the design of subclasses but cannot itself be instantiated as an object. Ex: An abstract Shape class might also specify that any subclass must define a computeArea() method.
 
 ![abstract](https://raw.githubusercontent.com/d-khan/java/main/images/inheritance-i6.png)
 
-1.  A class provides data/behaviors for objects.
-2.  Inheritance creates a Circle subclass that implements behaviors
-    specific to a circle.
-3.  The abstract Shape class specifies "Compute area" is a required
-    behavior of a subclass. Shape does not implement "Compute area", so
-    a Shape object cannot be created.
-4.  The Circle class implements "Compute area". The Circle class is
-    non-abstract, which is also called a **concrete class**, so Circle
-    objects can be created.
+1. A class provides data/behaviors for objects.
+2. Inheritance creates a Circle subclass that implements behaviors specific to a circle.
+3. The abstract Shape class specifies "Compute area" is a required behavior of a subclass. Shape does not implement "Compute area", so a Shape object cannot be created.
+4. The Circle class implements "Compute area". The Circle class is non-abstract, which is also called a concrete class, and Circle objects can be created.
 
 #### Example of Abstract classes
+**Person.java**
+```{java .numberLines}
+public abstract class Person {
+   protected String name; 
+   protected int age; 
 
-**Person.java** \`\`\`{java .numberLines} public abstract class Person {
-protected String name; protected int age;
+   abstract void printInfo();
 
-abstract void printInfo();
+   public String getNameAndAge() { 
+      return this.age + " years, " + name;
+   }
+}
+```
+**Student.java**
+```{java .numberLines}
+public class Student extends Person {
+   private double gpa; 
 
-public String getNameAndAge() { return this.age + " years, " + name; } }
+   public Student(String studentName, int studentAge, double studentGPA) {
+      this.name = studentName;
+      this.age = studentAge;
+      this.gpa = studentGPA;
+   }
 
-    **Student.java**
-    ```{java .numberLines}
-    public class Student extends Person {
-       private double gpa; 
+   public void printInfo() {
+      String nameAndAge = this.getNameAndAge();
 
-       public Student(String studentName, int studentAge, double studentGPA) {
-          this.name = studentName;
-          this.age = studentAge;
-          this.gpa = studentGPA;
-       }
+      System.out.println(nameAndAge);
+      System.out.println("GPA: " + this.gpa);
+   }
+}
+```
+**Teacher.java**
+```{java .numberLines}
+public class Teacher extends Person {
+   private String subject; 
 
-       public void printInfo() {
-          String nameAndAge = this.getNameAndAge();
+   public Teacher(String teacherName, int teacherAge, String teacherSubject) {
+      this.name = teacherName;
+      this.age = teacherAge;
+      this.subject = teacherSubject;
+   }
 
-          System.out.println(nameAndAge);
-          System.out.println("GPA: " + this.gpa);
-       }
-    }
-
-**Teacher.java** \`\`\`{java .numberLines} public class Teacher extends
-Person { private String subject;
-
-public Teacher(String teacherName, int teacherAge, String
-teacherSubject) { this.name = teacherName; this.age = teacherAge;
-this.subject = teacherSubject; }
-
-public void printInfo() { String nameAndAge = this.getNameAndAge();
+   public void printInfo() {
+      String nameAndAge = this.getNameAndAge();
 
       System.out.println(nameAndAge);
       System.out.println("Subject: " + this.subject);
+   }
+}
+```
+**TestPerson.java**
+```{java .numberLines}
+public class TestPerson {
+   public static void main(String[] args) {
+      Student myStudent = new Student("Mike", 16, 2.3);
+      Teacher myTeacher = new Teacher("Orwell", 23, "English");
 
-} }
-
-    **TestPerson.java**
-    ```{java .numberLines}
-    public class TestPerson {
-       public static void main(String[] args) {
-          Student myStudent = new Student("Mike", 16, 2.3);
-          Teacher myTeacher = new Teacher("Orwell", 23, "English");
-
-          myStudent.printInfo();
-          System.out.println();
-          myTeacher.printInfo();
-       }
-    }
+      myStudent.printInfo();
+      System.out.println();
+      myTeacher.printInfo();
+   }
+}
+```
 
 ## UML class diagrams
 
--   The **Unified Modeling Language** (**UML**) is a language for
-    software design that uses different types of diagrams to visualize
-    the structure and behavior of programs.
--   A **structural diagram** visualizes static elements of software,
-    such as the variables and methods used in the program.
--   A **behavioral diagram** visualizes dynamic behavior of software,
-    such as the flow of an algorithm.
+- The **Unified Modeling Language** (**UML**) is a language for software design that uses different types of diagrams to visualize the structure and behavior of programs. 
+- A **structural diagram** visualizes static elements of software, such as the variables and methods used in the program. 
+- A **behavioral diagram** visualizes dynamic behavior of software, such as the flow of an algorithm.
 
-A UML **class diagram** is a structural diagram that can be used to
-visually model the classes of a computer program, including member
-variables and methods.
+A UML **class diagram** is a structural diagram that can be used to visually model the classes of a computer program, including member variables and methods.
 
 ![uml](https://raw.githubusercontent.com/d-khan/java/main/images/inheritance-i7.png)
 
--   One box exists for each class. The class name is centered at the
-    top.
--   Class members are listed in the box below. Member variables have a
-    name followed by a colon and the type.
--   Each member method's name and return type is listed similarly.
--   Private and public access is noted to the left of each member. A
-    minus (-) indicates private and a plus (+) indicates public.
+- One box exists for each class. The class name is centered at the top.
+- Class members are listed in the box below. Member variables have a name followed by a colon and the type.
+- Each member method's name and return type is listed similarly.
+- Private and public access is noted to the left of each member. A minus (-) indicates private and a plus (+) indicates public.
 
 ### UML for inheritance
-
--   UML uses an arrow with a solid line and an unfilled arrow head to
-    indicate that one class inherits from another. The arrow points
-    toward the superclass.
--   UML uses italics to denote abstract classes. In particular, UML uses
-    italics for the abstract class' name, and for each abstract method
-    in the class. As a reminder, a superclass does not have to be
-    abstract. Also, any class with an abstract method must be abstract.
+- UML uses an arrow with a solid line and an unfilled arrow head to indicate that one class inherits from another. The arrow points toward the superclass.
+- UML uses italics to denote abstract classes. In particular, UML uses italics for the abstract class' name, and for each abstract method in the class. As a reminder, a superclass does not have to be abstract. Also, any class with an abstract method must be abstract.
 
 ![uml-inheritance](https://raw.githubusercontent.com/d-khan/java/main/images/inheritance-i8.png)
 
--   Shape is an abstract class, so the class name and abstract method
-    are in italics.
--   The solid-lined arrow with an unfilled arrow head indicates that the
-    Circle class inherits from Shape.
--   Circle is a concrete class, so the class name is shown in regular
-    font. Note that Circle implements computeArea().
+- Shape is an abstract class, so the class name and abstract method are in italics.
+- The solid-lined arrow with an unfilled arrow head indicates that the Circle class inherits from Shape.
+- Circle is a concrete class, so the class name is shown in regular font. Note that Circle implements computeArea().
 
 ## Interfaces
 
-Interfaces provide another way to define a common type in Java. Unlike
-class inheritance, a class can implement multiple interfaces.
+Interfaces provide another way to define a common type in Java. A class uses the `implements` keyword to implement an interface.
 
-For example:
-
-``` java
+```{java .numberLines}
 interface Printable {
     void print();
 }
 
 class Report implements Printable {
+
     @Override
     public void print() {
         System.out.println("Printing report");
@@ -703,74 +693,102 @@ class Report implements Printable {
 }
 ```
 
-The interface defines a contract, while the implementing class provides
-the behavior. Interfaces are especially useful when unrelated classes
-need to share a common capability.
+Unlike class inheritance, where a Java class can directly extend only one superclass, a class can implement multiple interfaces.
+
+Interfaces are useful when different classes need to share a common capability or contract without requiring them to inherit from the same superclass.
+
+For example:
+
+```text
+Printable
+   |
+   +-- Report
+   +-- Invoice
+   +-- Receipt
+```
+
+Each class can provide its own implementation of `print()`.
 
 ------------------------------------------------------------------------
 
 ## Summary
 
-Inheritance allows a Java class to reuse and specialize the behavior of
-another class. A **superclass** contains common attributes and methods,
-while a **subclass** extends that class and can add new members or
-override inherited methods.
+Inheritance allows one Java class to reuse and specialize the attributes and behaviors of another class.
 
-Key ideas from this lecture include:
+The class being inherited from is the **base class** or **superclass**, while the class that inherits from it is the **derived class** or **subclass**.
 
--   Use `extends` to create an inheritance relationship between classes.
--   A subclass inherits accessible members from its superclass.
--   `private` members are not directly accessible from a subclass;
-    access is normally provided through methods such as getters and
-    setters.
--   `protected` members are accessible within the same package and from
-    subclasses, subject to Java's protected-access rules.
--   Method **overriding** allows a subclass to provide a specialized
-    implementation of an inherited method.
--   `@Override` helps the compiler verify that a method is actually
-    overriding an inherited method.
--   The `super` keyword can be used to call superclass constructors or
-    methods.
--   Method **overloading** uses the same method name with different
-    parameter lists; it is different from overriding.
--   Every Java class ultimately derives from `Object`, whose methods
-    include `toString()` and `equals()`.
--   Runtime polymorphism allows a superclass or interface reference to
-    refer to different concrete object types and invoke the appropriate
-    overridden behavior.
--   Abstract classes provide a common base design that cannot be
-    instantiated directly.
--   Interfaces define contracts that classes can implement.
--   UML class diagrams visually represent classes, members, inheritance
-    relationships, and abstract elements.
+The main ideas covered in this lecture are:
 
-### Central Idea
+- Use `extends` to create an inheritance relationship between Java classes.
+- A subclass inherits accessible attributes and methods from its superclass.
+- Java supports **single inheritance of classes**, meaning a class can directly extend only one superclass.
+- `private` members cannot be accessed directly from a subclass. Getters and setters can be used when access is required.
+- `protected` members can be accessed by subclasses and classes in the same package.
+- Method **overriding** allows a subclass to provide its own implementation of an inherited method.
+- The `@Override` annotation helps the compiler verify that a method is actually overriding an inherited method.
+- The `super` keyword can be used to call a superclass constructor or access superclass behavior.
+- Method **overloading** and method **overriding** are different. Overloading uses the same method name with different parameter lists, while overriding replaces inherited behavior in a subclass.
+- Every Java class ultimately inherits from the `Object` class.
+- Methods such as `toString()` and `equals()` come from `Object` and can be overridden.
+- Inheritance and method overriding provide the foundation for **runtime polymorphism**.
+- Abstract classes can define common behavior while requiring subclasses to implement specific abstract methods.
+- Interfaces define a common contract that different classes can implement.
+- UML class diagrams provide a visual way to represent classes, attributes, methods, inheritance, and abstract classes.
 
-The most important reason to use inheritance is not simply to avoid
-rewriting code. It is to model a meaningful **is-a relationship** and
-place shared behavior in a common superclass.
+### Why Do We Use Inheritance?
+
+The purpose of inheritance is not simply to make programs shorter.
+
+Inheritance is useful when classes have a meaningful **is-a relationship** and share common attributes or behaviors.
 
 For example:
 
-``` text
+```text
 Restaurant is a Business
 Student is a Person
 Circle is a Shape
 ```
 
-When inheritance is combined with method overriding, it also provides
-the foundation for runtime polymorphism:
+Instead of repeating the same code in every related class, common behavior can be placed in the superclass and reused by subclasses.
 
-``` java
-Person person = new Student(...);
+The subclass can then specialize the behavior when necessary.
+
+For example:
+
+```java
+class Person {
+    public void display() {
+        System.out.println("Person");
+    }
+}
+
+class Student extends Person {
+
+    @Override
+    public void display() {
+        System.out.println("Student");
+    }
+}
 ```
 
-The reference uses the general type (`Person`), while the actual object
-(`Student`) can provide specialized behavior.
+Inheritance establishes the relationship:
 
-> **Inheritance provides the relationship; overriding provides
-> specialized behavior; polymorphism allows code to use that behavior
-> through a common type.**
+```text
+Student is a Person
+```
+
+Method overriding allows `Student` to provide specialized behavior.
+
+This relationship also enables polymorphism:
+
+```java
+Person person = new Student();
+person.display();
+```
+
+The reference type is `Person`, but the actual object is a `Student`, so the overridden `Student` version of `display()` executes.
+
+> **Inheritance provides the relationship, overriding provides specialized behavior, and polymorphism allows the program to use that behavior through a common type.**
 
 ------------------------------------------------------------------------
 
