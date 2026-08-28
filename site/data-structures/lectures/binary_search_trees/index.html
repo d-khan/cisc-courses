@@ -1,0 +1,3258 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Chapter: Binary Search Trees - Dr. Khan's Computer Science Courses @ San Diego Miramar College</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/course.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-5SGJZZD5EZ"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-5SGJZZD5EZ",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-5SGJZZD5EZ",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-binary-search-trees" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Dr. Khan&#39;s Computer Science Courses @ San Diego Miramar College" class="md-header__button md-logo" aria-label="Dr. Khan's Computer Science Courses @ San Diego Miramar College" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dr. Khan's Computer Science Courses @ San Diego Miramar College
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter: Binary Search Trees
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Dr. Khan&#39;s Computer Science Courses @ San Diego Miramar College" class="md-nav__button md-logo" aria-label="Dr. Khan's Computer Science Courses @ San Diego Miramar College" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Dr. Khan's Computer Science Courses @ San Diego Miramar College
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 179<br>Python Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 179<br>Python Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 187<br>Data Structures in C++
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 187<br>Data Structures in C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 190<br>Java Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 190<br>Java Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 192<br>C/C++ Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 192<br>C/C++ Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/16_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpp/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CISC 211<br>Assembly Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CISC 211<br>Assembly Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/8_weeks_semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures & Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assembly/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-binary-trees-the-structural-foundation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Binary Trees: The Structural Foundation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-binary-search-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The Binary Search Tree
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Binary Search Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-bst-invariant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The BST Invariant
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-binary-trees-and-binary-search-trees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Binary Trees and Binary Search Trees
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-tree-terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Tree Terminology
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Tree Terminology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#child" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Child
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leaf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leaf
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtree
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#depth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#height" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Height
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-why-binary-search-trees-are-useful" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Why Binary Search Trees Are Useful
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-representing-a-bst-node-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Representing a BST Node in C++
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-constructing-a-small-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Constructing a Small Tree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-searching-a-binary-search-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Searching a Binary Search Tree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-the-search-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. The Search Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-iterative-search-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Iterative Search in C++
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-recursive-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Recursive Search
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Recursive Search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-the-search-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the Search Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-space-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search Space Reduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-inserting-a-new-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Inserting a New Key
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-insertion-order-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Insertion Order Matters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-recursive-insertion-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Recursive Insertion in C++
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-handling-duplicate-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Handling Duplicate Keys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-traversing-a-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Traversing a Tree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-inorder-traversal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. Inorder Traversal
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. Inorder Traversal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++ Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-preorder-traversal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. Preorder Traversal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-postorder-traversal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. Postorder Traversal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-remembering-the-traversals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20. Remembering the Traversals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="20. Remembering the Traversals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preorder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preorder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inorder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inorder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postorder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Postorder
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-finding-the-minimum-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21. Finding the Minimum Value
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-finding-the-maximum-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22. Finding the Maximum Value
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-deleting-from-a-bst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        23. Deleting from a BST
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="23. Deleting from a BST">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#case-1-node-has-no-children" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case 1: Node Has No Children
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-2-node-has-one-child" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case 2: Node Has One Child
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-3-node-has-two-children" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case 3: Node Has Two Children
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-bst-deletion-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24. BST Deletion in C++
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-bst-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25. BST Performance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-balanced-bst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26. Balanced BST
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-unbalanced-or-skewed-bst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        27. Unbalanced or Skewed BST
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28-best-average-and-worst-case-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        28. Best, Average, and Worst-Case Complexity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#29-bst-vs-binary-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        29. BST vs. Binary Search
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="29. BST vs. Binary Search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binary-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Binary Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binary-search-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Binary Search Tree
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30-where-are-binary-search-trees-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30. Where Are Binary Search Trees Used?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="30. Where Are Binary Search Trees Used?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#301-ordered-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.1 Ordered Sets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#302-ordered-key-value-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.2 Ordered Key-Value Maps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#303-range-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.3 Range Queries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#304-minimum-and-maximum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.4 Minimum and Maximum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#305-predecessor-and-successor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.5 Predecessor and Successor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#306-scheduling-and-time-ordered-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.6 Scheduling and Time-Ordered Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#307-symbol-tables-and-ordered-dictionaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.7 Symbol Tables and Ordered Dictionaries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#308-database-and-file-system-indexing-related-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.8 Database and File-System Indexing: Related Structures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#309-why-not-just-use-a-sorted-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.9 Why Not Just Use a Sorted Array?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3010-when-is-a-bst-a-good-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.10 When Is a BST a Good Choice?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31-bsts-and-the-c-standard-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        31. BSTs and the C++ Standard Library
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-bst-vs-hash-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        32. BST vs. Hash Table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-bst-vs-linked-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        33. BST vs. Linked List
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-implementation-considerations-pointers-recursion-and-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        32. Implementation Considerations: Pointers, Recursion, and Memory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-a-complete-c-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        33. A Complete C++ Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-tracing-the-complete-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        34. Tracing the Complete Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-the-limitation-of-an-unbalanced-bst" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        35. The Limitation of an Unbalanced BST
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#351-complexity-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        35.1 Complexity Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        36. Chapter Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#review-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-binary-search-trees">Chapter: Binary Search Trees</h1>
+<p>A binary search tree (BST) is an ordered, node-based data structure that organizes keys hierarchically. Unlike an ordinary binary tree, a BST imposes a relationship between each node and the keys stored in its left and right subtrees. This ordering allows a program to decide which part of the tree can contain a requested key and which part can be ignored.</p>
+<p>Binary search trees are important because they combine dynamic storage with ordered access. Values can be inserted and removed without shifting a large block of elements, as may be necessary in an array, while the ordering of the keys supports searching, sorted traversal, minimum and maximum queries, and range-based operations. The actual efficiency of these operations depends on the shape of the tree. A relatively balanced BST can perform many common operations in <code>O(log N)</code> time, whereas a highly unbalanced tree can degrade to <code>O(N)</code>.</p>
+<p>BSTs are also an important foundation for more advanced data structures. Self-balancing trees such as AVL trees and Red-Black trees address the performance problems caused by an unbalanced BST. The same general idea of maintaining ordered keys in a tree also helps students understand indexing structures such as B-trees and B+ trees.</p>
+<p>This chapter develops the BST gradually, beginning with binary-tree structure and terminology before examining searching, insertion, traversal, deletion, performance, C++ implementation, and practical applications.</p>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>By the end of this lecture, students should be able to:</p>
+<ul>
+<li>Explain what a <strong>Binary Search Tree (BST)</strong> is.</li>
+<li>Describe how a BST differs from a regular binary tree.</li>
+<li>Identify the root, parent, child, leaf, subtree, depth, and height of a tree.</li>
+<li>Explain the <strong>BST ordering property</strong>.</li>
+<li>Search for values in a BST.</li>
+<li>Insert new values into a BST.</li>
+<li>Delete values from a BST.</li>
+<li>Perform inorder, preorder, and postorder traversals.</li>
+<li>Analyze BST operations using <strong>Big O notation</strong>.</li>
+<li>Explain why a balanced BST is more efficient than a highly unbalanced BST.</li>
+<li>Identify practical applications of BSTs and explain when a BST is preferable to a hash table or linear structure.</li>
+<li>Explain how BSTs support ordered operations such as range search, predecessor, successor, minimum, and maximum.</li>
+<li>Implement basic BST operations in C++ using pointers and recursion.</li>
+</ul>
+<h2 id="1-binary-trees-the-structural-foundation">1. Binary Trees: The Structural Foundation</h2>
+<p>A <strong>binary tree</strong> is a hierarchical data structure in which each node can have <strong>at most two children</strong>.</p>
+<p>These children are normally called:</p>
+<ul>
+<li><strong>Left child</strong></li>
+<li><strong>Right child</strong></li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>        10
+       /  \
+      5    20
+     / \
+    2   8
+</code></pre></div>
+<p>Each value represents a <strong>node</strong>.</p>
+<p>The node <code>10</code> has two children:</p>
+<div class="highlight"><pre><span></span><code>Left child  = 5
+Right child = 20
+</code></pre></div>
+<p>The node <code>5</code> also has two children:</p>
+<div class="highlight"><pre><span></span><code>Left child  = 2
+Right child = 8
+</code></pre></div>
+<p>Nodes <code>2</code>, <code>8</code>, and <code>20</code> have no children. They are called <strong>leaf nodes</strong>.</p>
+<h2 id="2-the-binary-search-tree">2. The Binary Search Tree</h2>
+<p>A <strong>Binary Search Tree</strong>, usually abbreviated as <strong>BST</strong>, is a binary tree that follows an ordering rule.</p>
+<p>For every node:</p>
+<div class="highlight"><pre><span></span><code>Values smaller than the node -&gt; Left subtree
+Values larger than the node  -&gt; Right subtree
+</code></pre></div>
+<p>For this lecture, we will assume that duplicate values are not stored.</p>
+<p>Consider:</p>
+<div class="highlight"><pre><span></span><code>        50
+       /  \
+     30    70
+    / \    / \
+   20 40  60 80
+</code></pre></div>
+<p>Everything in the left subtree of <code>50</code> is smaller than <code>50</code>:</p>
+<div class="highlight"><pre><span></span><code>20, 30, 40
+</code></pre></div>
+<p>Everything in the right subtree is larger than <code>50</code>:</p>
+<div class="highlight"><pre><span></span><code>60, 70, 80
+</code></pre></div>
+<p>The same rule must be true for <strong>every node and its entire subtrees</strong>, not just its immediate children.</p>
+<p>For node <code>30</code>:</p>
+<div class="highlight"><pre><span></span><code>20 &lt; 30 &lt; 40
+</code></pre></div>
+<p>For node <code>70</code>:</p>
+<div class="highlight"><pre><span></span><code>60 &lt; 70 &lt; 80
+</code></pre></div>
+<p>Therefore, this tree is a Binary Search Tree.</p>
+<h3 id="the-bst-invariant">The BST Invariant</h3>
+<p>The ordering rule is often called the <strong>BST invariant</strong>. For a node <code>x</code>:</p>
+<div class="highlight"><pre><span></span><code>Every key in x&#39;s left subtree  &lt; x&#39;s key
+Every key in x&#39;s right subtree &gt; x&#39;s key
+</code></pre></div>
+<p>This rule is <strong>recursive</strong>. It must hold for every node in the tree.</p>
+<p>For example, this is <strong>not</strong> a valid BST:</p>
+<div class="highlight"><pre><span></span><code>        50
+       /  \
+     30    70
+       \
+        60
+</code></pre></div>
+<p>Although <code>60</code> is greater than its parent <code>30</code>, it is inside the <strong>left subtree of 50</strong>. Every value in that subtree must be less than <code>50</code>, so the BST invariant is violated.</p>
+<p>This invariant is what makes efficient searching possible: after one comparison, an entire subtree can be eliminated from consideration.</p>
+<h2 id="3-binary-trees-and-binary-search-trees">3. Binary Trees and Binary Search Trees</h2>
+<p>A binary tree only restricts the number of children. Each node can have at most two children.</p>
+<p>It does <strong>not</strong> require the values to be ordered.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>        50
+       /  \
+      90   10
+</code></pre></div>
+<p>This is a valid binary tree, but it is <strong>not</strong> a BST because <code>90</code> is greater than <code>50</code> but appears in the left subtree.</p>
+<p>A BST requires the ordering property:</p>
+<div class="highlight"><pre><span></span><code>Left subtree values &lt; Node &lt; Right subtree values
+</code></pre></div>
+<p>So this is a BST:</p>
+<div class="highlight"><pre><span></span><code>        50
+       /  \
+      30   70
+</code></pre></div>
+<h2 id="4-tree-terminology">4. Tree Terminology</h2>
+<p>Consider:</p>
+<div class="highlight"><pre><span></span><code>           50
+          /  \
+        30    70
+       / \    / \
+     20  40  60  80
+</code></pre></div>
+<h3 id="root">Root</h3>
+<p>The top node in the tree.</p>
+<div class="highlight"><pre><span></span><code>50
+</code></pre></div>
+<h3 id="parent">Parent</h3>
+<p>A node that has one or more children.</p>
+<p>For example, <code>30</code> is the parent of <code>20</code> and <code>40</code>.</p>
+<h3 id="child">Child</h3>
+<p>A node directly connected below another node.</p>
+<p>For example, <code>60</code> is a child of <code>70</code>.</p>
+<h3 id="leaf">Leaf</h3>
+<p>A node with no children.</p>
+<p>In our example:</p>
+<div class="highlight"><pre><span></span><code>20, 40, 60, 80
+</code></pre></div>
+<p>are leaf nodes.</p>
+<h3 id="subtree">Subtree</h3>
+<p>A node together with all of its descendants forms a subtree.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>       30
+      /  \
+    20    40
+</code></pre></div>
+<p>is the left subtree of <code>50</code>.</p>
+<h3 id="depth">Depth</h3>
+<p>The <strong>depth</strong> of a node is the number of edges from the root to that node.</p>
+<p>Using a root depth of <code>0</code>:</p>
+<div class="highlight"><pre><span></span><code>Depth of 50 = 0
+Depth of 30 = 1
+Depth of 20 = 2
+</code></pre></div>
+<h3 id="height">Height</h3>
+<p>In this lecture, the <strong>height of a node</strong> is the number of edges on the longest downward path from that node to a leaf.</p>
+<p>A leaf therefore has height <code>0</code>.</p>
+<p>The <strong>height of the tree</strong> is the height of its root.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>        50
+       /  \
+      30   70
+</code></pre></div>
+<p>has height <code>1</code>.</p>
+<p>Height is especially important because the performance of many BST operations depends on it.</p>
+<h2 id="5-why-binary-search-trees-are-useful">5. Why Binary Search Trees Are Useful</h2>
+<p>Suppose values are stored in an unsorted array:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">numbers</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">70</span><span class="p">};</span>
+</code></pre></div>
+<p>Searching for a particular value may require examining every element.</p>
+<p>In the worst case:</p>
+<div class="highlight"><pre><span></span><code>O(N)
+</code></pre></div>
+<p>A BST organizes values so that each comparison tells us which direction to continue searching.</p>
+<p>Consider:</p>
+<div class="highlight"><pre><span></span><code>           50
+          /  \
+        30    70
+       / \    / \
+     20  40  60  80
+</code></pre></div>
+<p>Suppose we search for <code>60</code>.</p>
+<p>Start at <code>50</code>:</p>
+<div class="highlight"><pre><span></span><code>60 &gt; 50
+</code></pre></div>
+<p>Go right to <code>70</code>:</p>
+<div class="highlight"><pre><span></span><code>60 &lt; 70
+</code></pre></div>
+<p>Go left to <code>60</code>.</p>
+<p>The value has been found.</p>
+<p>Search path:</p>
+<div class="highlight"><pre><span></span><code>50 -&gt; 70 -&gt; 60
+</code></pre></div>
+<p>We did not have to examine every node.</p>
+<h2 id="6-representing-a-bst-node-in-c">6. Representing a BST Node in C++</h2>
+<p>A simple BST node can be represented using a <code>struct</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">left</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">right</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">Node</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="w">        </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
+<span class="w">        </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Each node contains:</p>
+<div class="highlight"><pre><span></span><code>data
+left pointer
+right pointer
+</code></pre></div>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+</code></pre></div>
+<p>creates a node whose two child pointers initially contain <code>nullptr</code>:</p>
+<div class="highlight"><pre><span></span><code>        50
+       /  \
+   nullptr nullptr
+</code></pre></div>
+<h2 id="7-constructing-a-small-tree">7. Constructing a Small Tree</h2>
+<p>We could manually connect nodes:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+
+<span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+<span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="mi">70</span><span class="p">);</span>
+</code></pre></div>
+<p>Now we have:</p>
+<div class="highlight"><pre><span></span><code>        50
+       /  \
+     30    70
+</code></pre></div>
+<p>We could continue:</p>
+<div class="highlight"><pre><span></span><code><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+<span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span>
+
+<span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
+<span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="mi">80</span><span class="p">);</span>
+</code></pre></div>
+<p>Result:</p>
+<div class="highlight"><pre><span></span><code>           50
+          /  \
+        30    70
+       / \    / \
+     20  40  60  80
+</code></pre></div>
+<p>Manually connecting every node is not practical. Instead, BST implementations normally provide an <strong>insert operation</strong>.</p>
+<h2 id="8-searching-a-binary-search-tree">8. Searching a Binary Search Tree</h2>
+<p>Suppose we want to find <code>40</code>:</p>
+<div class="highlight"><pre><span></span><code>           50
+          /  \
+        30    70
+       / \    / \
+     20  40  60  80
+</code></pre></div>
+<p>Start at <code>50</code>:</p>
+<div class="highlight"><pre><span></span><code>40 &lt; 50
+</code></pre></div>
+<p>Move left to <code>30</code>:</p>
+<div class="highlight"><pre><span></span><code>40 &gt; 30
+</code></pre></div>
+<p>Move right to <code>40</code>.</p>
+<p>The value has been found.</p>
+<p>Search path:</p>
+<div class="highlight"><pre><span></span><code>50 -&gt; 30 -&gt; 40
+</code></pre></div>
+<p>The search does not need to visit the other branches.</p>
+<h2 id="9-the-search-algorithm">9. The Search Algorithm</h2>
+<p>The basic search algorithm is:</p>
+<div class="highlight"><pre><span></span><code>Start at the root
+
+while the current node exists:
+
+    if target == current value
+        found
+
+    else if target &lt; current value
+        go left
+
+    else
+        go right
+
+If nullptr is reached:
+    not found
+</code></pre></div>
+<h2 id="10-iterative-search-in-c">10. Iterative Search in C++</h2>
+<p>An iterative implementation:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">target</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">current</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">target</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">current</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">)</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">target</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">current</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">)</span>
+<span class="w">            </span><span class="n">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">current</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">            </span><span class="n">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">current</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">search</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">))</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Found</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Not found</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="11-recursive-search">11. Recursive Search</h2>
+<p>BSTs naturally support recursion because every subtree is itself a binary search tree.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">target</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">target</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">target</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">search</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">search</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The recursive idea is:</p>
+<div class="highlight"><pre><span></span><code>Check current node
+
+If target is smaller:
+    search left subtree
+
+If target is larger:
+    search right subtree
+</code></pre></div>
+<h3 id="why-the-search-works">Why the Search Works</h3>
+<p>Suppose the current node contains key <code>k</code> and the target is <code>t</code>.</p>
+<p>If:</p>
+<div class="highlight"><pre><span></span><code>t &lt; k
+</code></pre></div>
+<p>then the BST invariant guarantees that every key in the right subtree is greater than <code>k</code>, and therefore cannot equal <code>t</code>. The right subtree can be discarded.</p>
+<p>Similarly, if:</p>
+<div class="highlight"><pre><span></span><code>t &gt; k
+</code></pre></div>
+<p>the entire left subtree can be discarded.</p>
+<p>Because a search follows only one path through the tree, its cost depends on the height of the tree. In a reasonably balanced BST, the height grows approximately with <code>log N</code>, so search is typically described as <code>O(log N)</code>. In a severely unbalanced tree, the search path may contain nearly every node, giving a worst-case cost of <code>O(N)</code>.</p>
+<h3 id="search-space-reduction">Search Space Reduction</h3>
+<p>A common misconception is that a BST always removes exactly half of the remaining keys, as binary search does on a sorted array. That is not guaranteed. A BST chooses one <strong>subtree</strong>, and the sizes of the two subtrees may be very different. This is why tree balance matters.</p>
+<h2 id="12-inserting-a-new-key">12. Inserting a New Key</h2>
+<p>Suppose our BST is:</p>
+<div class="highlight"><pre><span></span><code>        50
+       /  \
+     30    70
+</code></pre></div>
+<p>Now insert <code>40</code>.</p>
+<p>Compare with <code>50</code>:</p>
+<div class="highlight"><pre><span></span><code>40 &lt; 50
+</code></pre></div>
+<p>Move left.</p>
+<p>Compare with <code>30</code>:</p>
+<div class="highlight"><pre><span></span><code>40 &gt; 30
+</code></pre></div>
+<p>Move right.</p>
+<p>The right child of <code>30</code> is empty, so insert <code>40</code> there:</p>
+<div class="highlight"><pre><span></span><code>        50
+       /  \
+     30    70
+       \
+        40
+</code></pre></div>
+<h2 id="13-insertion-order-matters">13. Insertion Order Matters</h2>
+<p>Insert these values in order:</p>
+<div class="highlight"><pre><span></span><code>50, 30, 70, 20, 40, 60, 80
+</code></pre></div>
+<p>The resulting BST is:</p>
+<div class="highlight"><pre><span></span><code>           50
+          /  \
+        30    70
+       / \    / \
+     20  40  60  80
+</code></pre></div>
+<p>The <strong>order of insertion affects the shape of the BST</strong>.</p>
+<p>This becomes important when we discuss performance.</p>
+<h2 id="14-recursive-insertion-in-c">14. Recursive Insertion in C++</h2>
+<div class="highlight"><pre><span></span><code><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">)</span>
+<span class="w">        </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">)</span>
+<span class="w">        </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">root</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
+
+<span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">);</span>
+<span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span>
+<span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="mi">70</span><span class="p">);</span>
+<span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span>
+<span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">);</span>
+</code></pre></div>
+<p>Result:</p>
+<div class="highlight"><pre><span></span><code>        50
+       /  \
+     30    70
+    / \
+   20 40
+</code></pre></div>
+<p>Notice that the function returns a <code>Node*</code>. This is important because inserting into an empty tree creates a new root, and recursive calls may create new subtree roots.</p>
+<h2 id="15-handling-duplicate-keys">15. Handling Duplicate Keys</h2>
+<p>Suppose we have:</p>
+<div class="highlight"><pre><span></span><code>        50
+       /  \
+     30    70
+</code></pre></div>
+<p>What happens if we insert another <code>50</code>?</p>
+<p>There is no universal rule. An implementation may:</p>
+<ul>
+<li>Reject or ignore duplicates.</li>
+<li>Store duplicates consistently on one side.</li>
+<li>Keep a count inside each node.</li>
+</ul>
+<p>For this lecture, duplicates are ignored.</p>
+<p>The insertion function does this because it handles only:</p>
+<div class="highlight"><pre><span></span><code><span class="n">value</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span>
+</code></pre></div>
+<p>and:</p>
+<div class="highlight"><pre><span></span><code><span class="n">value</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span>
+</code></pre></div>
+<p>No insertion occurs when the values are equal.</p>
+<h2 id="16-traversing-a-tree">16. Traversing a Tree</h2>
+<p>A tree is not organized sequentially like an array. Therefore, we need systematic ways of visiting its nodes.</p>
+<p>These are called <strong>tree traversals</strong>.</p>
+<p>Three important depth-first traversals are:</p>
+<ul>
+<li><strong>Inorder</strong></li>
+<li><strong>Preorder</strong></li>
+<li><strong>Postorder</strong></li>
+</ul>
+<h2 id="17-inorder-traversal">17. Inorder Traversal</h2>
+<p>Inorder traversal follows:</p>
+<div class="highlight"><pre><span></span><code>Left -&gt; Root -&gt; Right
+</code></pre></div>
+<p>Consider:</p>
+<div class="highlight"><pre><span></span><code>           50
+          /  \
+        30    70
+       / \    / \
+     20  40  60  80
+</code></pre></div>
+<p>The traversal produces:</p>
+<div class="highlight"><pre><span></span><code>20 30 40 50 60 70 80
+</code></pre></div>
+<p>An important property is:</p>
+<blockquote>
+<p><strong>Inorder traversal of a BST visits the values in sorted order.</strong></p>
+</blockquote>
+<h3 id="c-example">C++ Example</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">inorder</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">inorder</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">inorder</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="18-preorder-traversal">18. Preorder Traversal</h2>
+<p>Preorder follows:</p>
+<div class="highlight"><pre><span></span><code>Root -&gt; Left -&gt; Right
+</code></pre></div>
+<p>For our tree:</p>
+<div class="highlight"><pre><span></span><code>50 30 20 40 70 60 80
+</code></pre></div>
+<p>C++:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">preorder</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">preorder</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+<span class="w">    </span><span class="n">preorder</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Preorder is useful when a node needs to be processed before its descendants.</p>
+<h2 id="19-postorder-traversal">19. Postorder Traversal</h2>
+<p>Postorder follows:</p>
+<div class="highlight"><pre><span></span><code>Left -&gt; Right -&gt; Root
+</code></pre></div>
+<p>For our tree:</p>
+<div class="highlight"><pre><span></span><code>20 40 30 60 80 70 50
+</code></pre></div>
+<p>C++:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">postorder</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">postorder</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+<span class="w">    </span><span class="n">postorder</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Postorder is useful when descendants need to be processed before their parent. One example is deleting an entire tree.</p>
+<h2 id="20-remembering-the-traversals">20. Remembering the Traversals</h2>
+<p>Look at where <strong>Root</strong> appears.</p>
+<h3 id="preorder">Preorder</h3>
+<div class="highlight"><pre><span></span><code>Root Left Right
+</code></pre></div>
+<p>Root comes <strong>before</strong> the subtrees.</p>
+<h3 id="inorder">Inorder</h3>
+<div class="highlight"><pre><span></span><code>Left Root Right
+</code></pre></div>
+<p>Root comes <strong>in between</strong> the subtrees.</p>
+<h3 id="postorder">Postorder</h3>
+<div class="highlight"><pre><span></span><code>Left Right Root
+</code></pre></div>
+<p>Root comes <strong>after</strong> the subtrees.</p>
+<h2 id="21-finding-the-minimum-value">21. Finding the Minimum Value</h2>
+<p>Because smaller values are stored to the left, the minimum value in a BST is found by following left pointers until no further left child exists.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>           50
+          /
+        30
+       /
+     20
+     /
+   10
+</code></pre></div>
+<p>Minimum value:</p>
+<div class="highlight"><pre><span></span><code>10
+</code></pre></div>
+<p>C++:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="nf">findMin</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span>
+<span class="w">        </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">root</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="22-finding-the-maximum-value">22. Finding the Maximum Value</h2>
+<p>The maximum value is found by following right pointers until no further right child exists.</p>
+<div class="highlight"><pre><span></span><code>50
+  \
+   70
+     \
+      80
+        \
+         90
+</code></pre></div>
+<p>Maximum value:</p>
+<div class="highlight"><pre><span></span><code>90
+</code></pre></div>
+<p>C++:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="nf">findMax</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span>
+<span class="w">        </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">root</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="23-deleting-from-a-bst">23. Deleting from a BST</h2>
+<p>Deletion is more complicated than insertion or searching because removing a node must preserve the BST ordering property.</p>
+<p>There are <strong>three cases</strong>.</p>
+<h3 id="case-1-node-has-no-children">Case 1: Node Has No Children</h3>
+<p>Consider:</p>
+<div class="highlight"><pre><span></span><code>        50
+       /  \
+     30    70
+</code></pre></div>
+<p>Delete <code>30</code>.</p>
+<p>Because <code>30</code> is a leaf, it can simply be removed:</p>
+<div class="highlight"><pre><span></span><code>        50
+          \
+           70
+</code></pre></div>
+<h3 id="case-2-node-has-one-child">Case 2: Node Has One Child</h3>
+<p>Consider:</p>
+<div class="highlight"><pre><span></span><code>        50
+       /
+      30
+     /
+    20
+</code></pre></div>
+<p>Delete <code>30</code>.</p>
+<p>Connect its child directly to its parent:</p>
+<div class="highlight"><pre><span></span><code>        50
+       /
+      20
+</code></pre></div>
+<h3 id="case-3-node-has-two-children">Case 3: Node Has Two Children</h3>
+<p>Consider:</p>
+<div class="highlight"><pre><span></span><code>           50
+          /  \
+        30    70
+       / \    / \
+     20  40  60  80
+</code></pre></div>
+<p>Suppose we delete <code>50</code>.</p>
+<p>A common approach is to use the node's <strong>inorder successor</strong>, which is the smallest value in its right subtree.</p>
+<p>The right subtree is:</p>
+<div class="highlight"><pre><span></span><code>        70
+       /  \
+      60   80
+</code></pre></div>
+<p>Its minimum is <code>60</code>.</p>
+<p>Replace <code>50</code> with <code>60</code>, and then remove the original <code>60</code> node:</p>
+<div class="highlight"><pre><span></span><code>           60
+          /  \
+        30    70
+       / \      \
+     20  40      80
+</code></pre></div>
+<p>The BST ordering property remains valid.</p>
+<p>Another valid strategy is to use the <strong>inorder predecessor</strong>, the largest value in the left subtree.</p>
+<h2 id="24-bst-deletion-in-c">24. BST Deletion in C++</h2>
+<div class="highlight"><pre><span></span><code><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="nf">remove</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">remove</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">remove</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Case 1 or Case 2: no left child</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
+<span class="w">            </span><span class="k">delete</span><span class="w"> </span><span class="n">root</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Case 2: no right child</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
+<span class="w">            </span><span class="k">delete</span><span class="w"> </span><span class="n">root</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Case 3: two children</span>
+<span class="w">        </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findMin</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+<span class="w">        </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+<span class="w">        </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">remove</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">temp</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">root</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The function first searches for the value and then handles the appropriate deletion case.</p>
+<h2 id="25-bst-performance">25. BST Performance</h2>
+<p>BST performance depends primarily on the <strong>height of the tree</strong>.</p>
+<p>For search, insertion, deletion, minimum, and maximum operations, a useful general bound is:</p>
+<div class="highlight"><pre><span></span><code>O(H)
+</code></pre></div>
+<p>where <code>h</code> is the height of the tree.</p>
+<p>For a reasonably balanced BST:</p>
+<div class="highlight"><pre><span></span><code>h = O(log N)
+</code></pre></div>
+<p>so these operations are:</p>
+<div class="highlight"><pre><span></span><code>O(log N)
+</code></pre></div>
+<p>Traversal must visit every node, so it takes:</p>
+<div class="highlight"><pre><span></span><code>O(N)
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th style="text-align: right;">Balanced BST</th>
+<th style="text-align: right;">Worst-case skewed BST</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Search</td>
+<td style="text-align: right;">O(log N)</td>
+<td style="text-align: right;">O(N)</td>
+</tr>
+<tr>
+<td>Insert</td>
+<td style="text-align: right;">O(log N)</td>
+<td style="text-align: right;">O(N)</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td style="text-align: right;">O(log N)</td>
+<td style="text-align: right;">O(N)</td>
+</tr>
+<tr>
+<td>Find minimum</td>
+<td style="text-align: right;">O(log N)</td>
+<td style="text-align: right;">O(N)</td>
+</tr>
+<tr>
+<td>Find maximum</td>
+<td style="text-align: right;">O(log N)</td>
+<td style="text-align: right;">O(N)</td>
+</tr>
+<tr>
+<td>Traversal</td>
+<td style="text-align: right;">O(N)</td>
+<td style="text-align: right;">O(N)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="26-balanced-bst">26. Balanced BST</h2>
+<p>Consider:</p>
+<div class="highlight"><pre><span></span><code>           50
+          /  \
+        30    70
+       / \    / \
+     20  40  60  80
+</code></pre></div>
+<p>The values are distributed relatively evenly between the left and right subtrees.</p>
+<p>Searching for <code>80</code> requires visiting only:</p>
+<div class="highlight"><pre><span></span><code>50 -&gt; 70 -&gt; 80
+</code></pre></div>
+<p>As the number of nodes grows, a balanced tree keeps its height relatively small.</p>
+<h2 id="27-unbalanced-or-skewed-bst">27. Unbalanced or Skewed BST</h2>
+<p>Suppose we insert:</p>
+<div class="highlight"><pre><span></span><code>10, 20, 30, 40, 50
+</code></pre></div>
+<p>in that exact order.</p>
+<p>The resulting BST is:</p>
+<div class="highlight"><pre><span></span><code>10
+  \
+   20
+     \
+      30
+        \
+         40
+           \
+            50
+</code></pre></div>
+<p>This is still a valid BST, but structurally it behaves almost like a linked list.</p>
+<p>Searching for <code>50</code> requires:</p>
+<div class="highlight"><pre><span></span><code>10 -&gt; 20 -&gt; 30 -&gt; 40 -&gt; 50
+</code></pre></div>
+<p>The height is proportional to the number of nodes, so operations can degrade to:</p>
+<div class="highlight"><pre><span></span><code>O(N)
+</code></pre></div>
+<h2 id="28-best-average-and-worst-case-complexity">28. Best, Average, and Worst-Case Complexity</h2>
+<p>A useful way to describe BST operations is:</p>
+<div class="highlight"><pre><span></span><code>Search = O(H)
+Insert = O(H)
+Delete = O(H)
+</code></pre></div>
+<p>where <code>h</code> is the tree height.</p>
+<p>For a balanced tree:</p>
+<div class="highlight"><pre><span></span><code>h = O(log N)
+</code></pre></div>
+<p>Therefore:</p>
+<div class="highlight"><pre><span></span><code>Search = O(log N)
+Insert = O(log N)
+Delete = O(log N)
+</code></pre></div>
+<p>For a completely skewed tree:</p>
+<div class="highlight"><pre><span></span><code>h = O(N)
+</code></pre></div>
+<p>Therefore:</p>
+<div class="highlight"><pre><span></span><code>Search = O(N)
+Insert = O(N)
+Delete = O(N)
+</code></pre></div>
+<p>So the statement:</p>
+<blockquote>
+<p>BST search is always <code>O(log N)</code>.</p>
+</blockquote>
+<p>is incorrect for a basic, unbalanced BST.</p>
+<h2 id="29-bst-vs-binary-search">29. BST vs. Binary Search</h2>
+<p>Students sometimes confuse <strong>Binary Search</strong> with a <strong>Binary Search Tree</strong>.</p>
+<p>They are related ideas, but they are not the same thing.</p>
+<h3 id="binary-search">Binary Search</h3>
+<p>Binary search is an algorithm commonly applied to sorted, random-access data such as an array or vector.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">numbers</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">};</span>
+</code></pre></div>
+<p>It repeatedly examines a middle position and reduces the search interval.</p>
+<h3 id="binary-search-tree">Binary Search Tree</h3>
+<p>A BST is a linked hierarchical data structure:</p>
+<div class="highlight"><pre><span></span><code>        30
+       /  \
+     20    40
+    /        \
+   10         50
+</code></pre></div>
+<p>Both use comparisons to reduce the search space, but the data is organized differently.</p>
+<h2 id="30-where-are-binary-search-trees-used">30. Where Are Binary Search Trees Used?</h2>
+<p>A BST is most useful when an application needs a collection that changes over time while still preserving the ordering relationship among its keys. This requirement is different from simply asking whether a particular key exists. A hash table is often an excellent choice for exact-key lookup, but it does not naturally maintain keys in sorted order. An ordered search tree is more appropriate when the application also needs operations such as finding the next larger key, the previous smaller key, the minimum or maximum key, or all keys within a particular range.</p>
+<h3 id="301-ordered-sets">30.1 Ordered Sets</h3>
+<p>Suppose an application maintains unique IDs:</p>
+<div class="highlight"><pre><span></span><code>42, 17, 65, 10, 31, 50, 90
+</code></pre></div>
+<p>A search tree can support operations such as:</p>
+<div class="highlight"><pre><span></span><code>insert(31)
+search(50)
+remove(17)
+findMin()
+findMax()
+</code></pre></div>
+<p>while keeping the keys logically ordered.</p>
+<p>In C++, this type of behavior is provided by <code>std::set</code>.</p>
+<p>Practical examples include maintaining an ordered collection of unique event IDs, reservation numbers, scores, or numeric records.</p>
+<h3 id="302-ordered-key-value-maps">30.2 Ordered Key-Value Maps</h3>
+<p>Instead of storing only a key, a node can store a key together with associated data.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Student</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Conceptually:</p>
+<div class="highlight"><pre><span></span><code>Student ID -&gt; Student record
+</code></pre></div>
+<p>The tree can be ordered using the student ID:</p>
+<div class="highlight"><pre><span></span><code>             1050
+            /    \
+         1020    1090
+</code></pre></div>
+<p>This allows the application to search by ID while retaining key order.</p>
+<p>In C++, the corresponding ordered key-value abstraction is <code>std::map</code>.</p>
+<h3 id="303-range-queries">30.3 Range Queries</h3>
+<p>One major advantage of an ordered search tree is the ability to search for a <strong>range</strong> of values.</p>
+<p>Suppose a system stores prices:</p>
+<div class="highlight"><pre><span></span><code>10, 18, 25, 32, 40, 55, 70
+</code></pre></div>
+<p>A query might ask:</p>
+<div class="highlight"><pre><span></span><code>Find all prices from $20 through $50.
+</code></pre></div>
+<p>Because the tree is ordered, branches that cannot contain values in the requested range can be skipped.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">printRange</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">low</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">high</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">low</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printRange</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">low</span><span class="p">,</span><span class="w"> </span><span class="n">high</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">low</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">high</span><span class="p">)</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">high</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printRange</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">low</span><span class="p">,</span><span class="w"> </span><span class="n">high</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This type of operation is less natural with a hash table because hashing does not preserve key order.</p>
+<h3 id="304-minimum-and-maximum">30.4 Minimum and Maximum</h3>
+<p>A BST provides structural access to extreme values:</p>
+<div class="highlight"><pre><span></span><code>Minimum -&gt; leftmost node
+Maximum -&gt; rightmost node
+</code></pre></div>
+<p>Applications may use this to find:</p>
+<ul>
+<li>The earliest or latest timestamp.</li>
+<li>The lowest or highest stored score.</li>
+<li>The smallest or largest key currently present.</li>
+</ul>
+<p>For a tree of height <code>h</code>, finding an extreme value takes <code>O(H)</code>.</p>
+<h3 id="305-predecessor-and-successor">30.5 Predecessor and Successor</h3>
+<p>BSTs can answer questions about neighboring keys.</p>
+<p>For a key <code>x</code>:</p>
+<div class="highlight"><pre><span></span><code>Predecessor = largest key smaller than x
+Successor   = smallest key larger than x
+</code></pre></div>
+<p>Suppose the stored values are:</p>
+<div class="highlight"><pre><span></span><code>10, 20, 30, 40, 50
+</code></pre></div>
+<p>For <code>x = 30</code>:</p>
+<div class="highlight"><pre><span></span><code>Predecessor = 20
+Successor   = 40
+</code></pre></div>
+<p>These operations are useful in ordered scheduling, nearest-key lookup, and navigation through sorted records.</p>
+<h3 id="306-scheduling-and-time-ordered-data">30.6 Scheduling and Time-Ordered Data</h3>
+<p>Suppose a program stores events using timestamps as keys:</p>
+<div class="highlight"><pre><span></span><code>09:00
+10:30
+13:00
+15:45
+</code></pre></div>
+<p>An ordered search tree naturally supports questions such as:</p>
+<div class="highlight"><pre><span></span><code>What is the next event after 11:00?
+What was the most recent event before 14:00?
+What events occur between 10:00 and 14:00?
+</code></pre></div>
+<p>These correspond to:</p>
+<div class="highlight"><pre><span></span><code>successor
+predecessor
+range query
+</code></pre></div>
+<h3 id="307-symbol-tables-and-ordered-dictionaries">30.7 Symbol Tables and Ordered Dictionaries</h3>
+<p>Compilers, interpreters, and other software systems often need <strong>symbol tables</strong> that associate identifiers with information.</p>
+<p>Conceptually:</p>
+<div class="highlight"><pre><span></span><code>identifier -&gt; metadata
+</code></pre></div>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>count   -&gt; variable information
+display -&gt; function information
+Student -&gt; class information
+</code></pre></div>
+<p>Symbol tables can be implemented using different structures, including hash tables and balanced search trees. A search tree is useful when ordered traversal or ordered-key operations are required.</p>
+<h3 id="308-database-and-file-system-indexing-related-structures">30.8 Database and File-System Indexing: Related Structures</h3>
+<p>Database indexes must support both exact-key searches and ordered operations. For example, a database may need to find the record associated with key <code>500</code>, retrieve all records whose keys fall between <code>500</code> and <code>900</code>, insert a new key, or remove an existing one. The idea of organizing keys in an ordered tree is therefore fundamental to database indexing.</p>
+<p>Production databases generally do <strong>not</strong> use a simple in-memory BST for their main indexes. They commonly use structures such as:</p>
+<div class="highlight"><pre><span></span><code>B-Tree
+B+ Tree
+</code></pre></div>
+<p>These trees allow many children per node and are designed to reduce storage-page or disk accesses.</p>
+<p>A BST is an important conceptual stepping stone toward understanding these more advanced indexing structures.</p>
+<h3 id="309-why-not-just-use-a-sorted-array">30.9 Why Not Just Use a Sorted Array?</h3>
+<p>A sorted array supports efficient binary search:</p>
+<div class="highlight"><pre><span></span><code>Search -&gt; O(log N)
+</code></pre></div>
+<p>However, inserting or deleting in the middle may require shifting many elements:</p>
+<div class="highlight"><pre><span></span><code>Insert -&gt; O(N)
+Delete -&gt; O(N)
+</code></pre></div>
+<p>A balanced search tree can provide:</p>
+<div class="highlight"><pre><span></span><code>Search -&gt; O(log N)
+Insert -&gt; O(log N)
+Delete -&gt; O(log N)
+</code></pre></div>
+<p>This makes balanced search trees useful for <strong>dynamic ordered collections</strong> where values change frequently.</p>
+<h3 id="3010-when-is-a-bst-a-good-choice">30.10 When Is a BST a Good Choice?</h3>
+<p>A BST—or more commonly a <strong>self-balancing BST</strong>—is a strong choice when an application needs several of these operations together:</p>
+<div class="highlight"><pre><span></span><code>Exact-key search
+Insertion
+Deletion
+Sorted traversal
+Minimum / maximum
+Predecessor / successor
+Range queries
+</code></pre></div>
+<p>If an application only needs very fast exact-key lookup and does not care about ordering, a hash table may be a better choice.</p>
+<h2 id="31-bsts-and-the-c-standard-library">31. BSTs and the C++ Standard Library</h2>
+<p>In real C++ applications, programmers often use standard containers rather than implementing their own search tree.</p>
+<p>Examples include:</p>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">set</span>
+<span class="n">std</span><span class="o">::</span><span class="n">map</span>
+<span class="n">std</span><span class="o">::</span><span class="n">multiset</span>
+<span class="n">std</span><span class="o">::</span><span class="n">multimap</span>
+</code></pre></div>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;set&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numbers</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">numbers</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+<span class="w">    </span><span class="n">numbers</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+<span class="w">    </span><span class="n">numbers</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">70</span><span class="p">);</span>
+<span class="w">    </span><span class="n">numbers</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">numbers</span><span class="p">)</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Output:</p>
+<div class="highlight"><pre><span></span><code>20 30 50 70
+</code></pre></div>
+<p>The C++ standard specifies the behavior and complexity requirements of these containers, not a particular internal tree implementation. In practice, implementations commonly use a self-balancing search tree such as a Red-Black Tree.</p>
+<h2 id="32-bst-vs-hash-table">32. BST vs. Hash Table</h2>
+<p>BSTs and hash tables can both provide efficient searching, but they have different strengths.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Balanced BST</th>
+<th>Hash Table</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Typical search</td>
+<td>O(log N)</td>
+<td>O(1) average</td>
+</tr>
+<tr>
+<td>Maintains sorted order</td>
+<td>Yes</td>
+<td>No inherent ordering</td>
+</tr>
+<tr>
+<td>Range queries</td>
+<td>Efficient</td>
+<td>Poor fit</td>
+</tr>
+<tr>
+<td>Minimum/maximum</td>
+<td>Efficient</td>
+<td>Usually requires scanning</td>
+</tr>
+<tr>
+<td>Sorted traversal</td>
+<td>Yes</td>
+<td>No inherent sorted traversal</td>
+</tr>
+<tr>
+<td>Worst-case search</td>
+<td>O(log N) for common self-balancing BSTs</td>
+<td>O(N) in the general case</td>
+</tr>
+</tbody>
+</table>
+<p>A hash table is particularly useful when the main requirement is:</p>
+<div class="highlight"><pre><span></span><code>Find this exact key quickly.
+</code></pre></div>
+<p>An ordered search tree is especially useful when we also need:</p>
+<div class="highlight"><pre><span></span><code>ordering
+minimum
+maximum
+ranges
+predecessor
+successor
+</code></pre></div>
+<h2 id="33-bst-vs-linked-list">33. BST vs. Linked List</h2>
+<p>Consider searching for <code>80</code>.</p>
+<p>A linked list might require visiting:</p>
+<div class="highlight"><pre><span></span><code>20 -&gt; 30 -&gt; 40 -&gt; 50 -&gt; 60 -&gt; 70 -&gt; 80
+</code></pre></div>
+<p>Search is generally:</p>
+<div class="highlight"><pre><span></span><code>O(N)
+</code></pre></div>
+<p>A balanced BST might look like:</p>
+<div class="highlight"><pre><span></span><code>           50
+          /  \
+        30    70
+       / \    / \
+     20  40  60  80
+</code></pre></div>
+<p>Search path:</p>
+<div class="highlight"><pre><span></span><code>50 -&gt; 70 -&gt; 80
+</code></pre></div>
+<p>This takes approximately:</p>
+<div class="highlight"><pre><span></span><code>O(log N)
+</code></pre></div>
+<p>The tradeoff is that the BST has more structural complexity and must maintain its ordering property.</p>
+<h2 id="32-implementation-considerations-pointers-recursion-and-memory">32. Implementation Considerations: Pointers, Recursion, and Memory</h2>
+<p>A node-based BST is a <strong>dynamic data structure</strong>. Nodes are typically allocated as they are inserted, and pointers connect the nodes.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">left</span><span class="p">;</span>
+<span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">right</span><span class="p">;</span>
+</code></pre></div>
+<p>represent the roots of the two subtrees.</p>
+<p>Recursive operations work naturally because each subtree has the same structure as the complete tree:</p>
+<div class="highlight"><pre><span></span><code>Tree
+ |
+ +-- Left subtree  -&gt; also a tree
+ |
+ +-- Right subtree -&gt; also a tree
+</code></pre></div>
+<p>The recursive call stack has depth proportional to tree height:</p>
+<div class="highlight"><pre><span></span><code>O(H)
+</code></pre></div>
+<p>For a balanced tree, the recursion depth is generally <code>O(log N)</code>. For a highly skewed tree, it can grow to <code>O(N)</code>.</p>
+<p>This matters because a skewed BST not only slows search, insertion, and deletion; deep recursive operations also use more call-stack space.</p>
+<p>The examples in this lecture use raw pointers to expose the underlying data-structure mechanics. In production C++, ownership can instead be managed with smart pointers or standard-library containers.</p>
+<h2 id="33-a-complete-c-example">33. A Complete C++ Example</h2>
+<p>The following program brings together the central ideas developed in the chapter. It defines a node, inserts keys recursively, searches for a key, and performs an inorder traversal. The example intentionally uses raw pointers so that the relationships between nodes remain visible to students.</p>
+<p>The following example combines insertion, searching, and inorder traversal:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">left</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">right</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">Node</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="w">        </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
+<span class="w">        </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">)</span>
+<span class="w">        </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">)</span>
+<span class="w">        </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">root</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">target</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">target</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">target</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">search</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">search</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">inorder</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">inorder</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">inorder</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">deleteTree</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">deleteTree</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+<span class="w">    </span><span class="n">deleteTree</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">root</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">);</span>
+<span class="w">    </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span>
+<span class="w">    </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="mi">70</span><span class="p">);</span>
+<span class="w">    </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span>
+<span class="w">    </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">);</span>
+<span class="w">    </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">);</span>
+<span class="w">    </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insert</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Inorder: &quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">inorder</span><span class="p">(</span><span class="n">root</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">search</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">))</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;60 was found</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;60 was not found</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">deleteTree</span><span class="p">(</span><span class="n">root</span><span class="p">);</span>
+<span class="w">    </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Output:</p>
+<div class="highlight"><pre><span></span><code>Inorder: 20 30 40 50 60 70 80
+60 was found
+</code></pre></div>
+<h2 id="34-tracing-the-complete-example">34. Tracing the Complete Example</h2>
+<p>The insertion sequence:</p>
+<div class="highlight"><pre><span></span><code>50, 30, 70, 20, 40, 60, 80
+</code></pre></div>
+<p>creates:</p>
+<div class="highlight"><pre><span></span><code>                 50
+              /      \
+            30        70
+           /  \      /  \
+         20   40    60   80
+</code></pre></div>
+<p>Calling:</p>
+<div class="highlight"><pre><span></span><code><span class="n">search</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">);</span>
+</code></pre></div>
+<p>follows:</p>
+<div class="highlight"><pre><span></span><code>50 -&gt; 70 -&gt; 60
+</code></pre></div>
+<p>Calling:</p>
+<div class="highlight"><pre><span></span><code><span class="n">inorder</span><span class="p">(</span><span class="n">root</span><span class="p">);</span>
+</code></pre></div>
+<p>uses:</p>
+<div class="highlight"><pre><span></span><code>Left -&gt; Root -&gt; Right
+</code></pre></div>
+<p>and produces:</p>
+<div class="highlight"><pre><span></span><code>20 30 40 50 60 70 80
+</code></pre></div>
+<h2 id="35-the-limitation-of-an-unbalanced-bst">35. The Limitation of an Unbalanced BST</h2>
+<p>A basic BST does <strong>not</strong> automatically remain balanced.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>Insert: 10, 20, 30, 40, 50
+</code></pre></div>
+<p>can produce:</p>
+<div class="highlight"><pre><span></span><code>10
+  \
+   20
+     \
+      30
+        \
+         40
+           \
+            50
+</code></pre></div>
+<p>This is a valid BST but a poor search structure because its height is large.</p>
+<p>This limitation motivates <strong>self-balancing Binary Search Trees</strong>, including:</p>
+<ul>
+<li><strong>AVL Trees</strong></li>
+<li><strong>Red-Black Trees</strong></li>
+</ul>
+<p>These structures automatically reorganize themselves so their height remains <code>O(log N)</code>.</p>
+<h2 id="351-complexity-summary">35.1 Complexity Summary</h2>
+<p>The performance of a BST depends strongly on its shape. For classroom analysis, it is useful to compare a reasonably balanced BST with a highly unbalanced BST.</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th style="text-align: right;">Balanced BST</th>
+<th style="text-align: right;">Highly Unbalanced BST</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Search</td>
+<td style="text-align: right;"><code>O(log N)</code></td>
+<td style="text-align: right;"><code>O(N)</code></td>
+</tr>
+<tr>
+<td>Insert</td>
+<td style="text-align: right;"><code>O(log N)</code></td>
+<td style="text-align: right;"><code>O(N)</code></td>
+</tr>
+<tr>
+<td>Delete</td>
+<td style="text-align: right;"><code>O(log N)</code></td>
+<td style="text-align: right;"><code>O(N)</code></td>
+</tr>
+<tr>
+<td>Find minimum</td>
+<td style="text-align: right;"><code>O(log N)</code></td>
+<td style="text-align: right;"><code>O(N)</code></td>
+</tr>
+<tr>
+<td>Find maximum</td>
+<td style="text-align: right;"><code>O(log N)</code></td>
+<td style="text-align: right;"><code>O(N)</code></td>
+</tr>
+<tr>
+<td>Predecessor / successor</td>
+<td style="text-align: right;"><code>O(log N)</code></td>
+<td style="text-align: right;"><code>O(N)</code></td>
+</tr>
+<tr>
+<td>Full traversal</td>
+<td style="text-align: right;"><code>O(N)</code></td>
+<td style="text-align: right;"><code>O(N)</code></td>
+</tr>
+<tr>
+<td>BST validation</td>
+<td style="text-align: right;"><code>O(N)</code></td>
+<td style="text-align: right;"><code>O(N)</code></td>
+</tr>
+</tbody>
+</table>
+<p>A traversal remains <code>O(N)</code> even when the tree is balanced because every node must be visited. Balancing primarily improves operations that follow a path from the root toward a particular location in the tree.</p>
+<h2 id="36-chapter-summary">36. Chapter Summary</h2>
+<p>A binary search tree is a binary tree whose keys are maintained according to an ordering rule. For each node, smaller keys belong in the left subtree and larger keys belong in the right subtree. The rule applies to entire subtrees, not merely to immediate children.</p>
+<p>This ordering makes directed searching possible. At each node, a comparison determines whether the search should continue to the left or to the right. Insertion uses the same decision process to locate an appropriate null child position. Deletion is more involved because the tree must remain connected and ordered after a node is removed. A leaf can be removed directly, a node with one child can be replaced by that child, and a node with two children can be replaced using an inorder successor or predecessor.</p>
+<p>Tree traversal provides a systematic way to visit all nodes. Inorder traversal is particularly important for BSTs because it visits the keys in sorted order. Preorder and postorder traversals use different processing orders and are useful for other tree-processing tasks.</p>
+<p>BST performance depends on tree height. In a reasonably balanced tree, search, insertion, and deletion are generally <code>O(log N)</code>. In a highly skewed tree, these operations can degrade to <code>O(N)</code>. A full traversal remains <code>O(N)</code> because every node must be visited. This dependence on tree shape motivates self-balancing structures such as AVL and Red-Black trees.</p>
+<p>The practical strength of an ordered search tree is that it supports more than exact-key lookup. It can maintain dynamically changing data while supporting sorted traversal, minimum and maximum queries, predecessor and successor operations, and range searches. These capabilities explain why balanced search trees are useful for ordered sets and maps and why related tree structures play an important role in indexing systems.</p>
+<h2 id="review-questions">Review Questions</h2>
+<ol>
+<li>What condition must be true for every node in a binary search tree?</li>
+<li>Why is checking only a node and its immediate children insufficient when validating a BST?</li>
+<li>Why does inorder traversal of a BST produce keys in sorted order?</li>
+<li>What is the running time of search in terms of tree height <code>H</code>?</li>
+<li>How can insertion order cause a BST to become skewed?</li>
+<li>Describe the three structural cases that must be considered when deleting a node.</li>
+<li>Why are range queries more natural in an ordered search tree than in a hash table?</li>
+<li>When might <code>std::map</code> or <code>std::set</code> be preferable to an unordered container?</li>
+<li>Why do database systems commonly use B-trees or B+ trees rather than a basic binary search tree for disk-based indexes?</li>
+<li>What problem do AVL and Red-Black trees solve?</li>
+</ol>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/semester.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/faq.js"></script>
+      
+    
+  </body>
+</html>
