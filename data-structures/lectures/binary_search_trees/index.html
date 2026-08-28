@@ -19,7 +19,7 @@
     
     
       
-        <title>Binary Search Trees (BST) - Dr. Khan's Computer Science Courses @ San Diego Miramar College</title>
+        <title>Chapter: Binary Search Trees - Dr. Khan's Computer Science Courses @ San Diego Miramar College</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#binary-search-trees-bst" class="md-skip">
+        <a href="#chapter-binary-search-trees" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Binary Search Trees (BST)
+              Chapter: Binary Search Trees
             
           </span>
         </div>
@@ -1094,10 +1094,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-what-is-a-binary-tree" class="md-nav__link">
+  <a href="#1-binary-trees-the-structural-foundation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. What is a Binary Tree?
+        1. Binary Trees: The Structural Foundation
       
     </span>
   </a>
@@ -1105,10 +1105,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-what-is-a-binary-search-tree" class="md-nav__link">
+  <a href="#2-the-binary-search-tree" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. What is a Binary Search Tree?
+        2. The Binary Search Tree
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Binary Search Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-bst-invariant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The BST Invariant
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-binary-trees-and-binary-search-trees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Binary Trees and Binary Search Trees
       
     </span>
   </a>
@@ -1116,26 +1144,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-binary-tree-vs-binary-search-tree" class="md-nav__link">
+  <a href="#4-tree-terminology" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Binary Tree vs. Binary Search Tree
+        4. Tree Terminology
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-important-bst-terminology" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Important BST Terminology
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Important BST Terminology">
+    <nav class="md-nav" aria-label="4. Tree Terminology">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1221,10 +1238,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-why-do-we-need-a-bst" class="md-nav__link">
+  <a href="#5-why-binary-search-trees-are-useful" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Why Do We Need a BST?
+        5. Why Binary Search Trees Are Useful
       
     </span>
   </a>
@@ -1232,10 +1249,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-creating-a-bst-node-in-c" class="md-nav__link">
+  <a href="#6-representing-a-bst-node-in-c" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Creating a BST Node in C++
+        6. Representing a BST Node in C++
       
     </span>
   </a>
@@ -1243,10 +1260,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-manually-creating-a-small-bst" class="md-nav__link">
+  <a href="#7-constructing-a-small-tree" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Manually Creating a Small BST
+        7. Constructing a Small Tree
       
     </span>
   </a>
@@ -1254,10 +1271,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-searching-a-bst" class="md-nav__link">
+  <a href="#8-searching-a-binary-search-tree" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8. Searching a BST
+        8. Searching a Binary Search Tree
       
     </span>
   </a>
@@ -1265,10 +1282,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#9-bst-search-algorithm" class="md-nav__link">
+  <a href="#9-the-search-algorithm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9. BST Search Algorithm
+        9. The Search Algorithm
       
     </span>
   </a>
@@ -1276,10 +1293,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#10-searching-a-bst-in-c" class="md-nav__link">
+  <a href="#10-iterative-search-in-c" class="md-nav__link">
     <span class="md-ellipsis">
       
-        10. Searching a BST in C++
+        10. Iterative Search in C++
       
     </span>
   </a>
@@ -1287,21 +1304,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#11-recursive-bst-search" class="md-nav__link">
+  <a href="#11-recursive-search" class="md-nav__link">
     <span class="md-ellipsis">
       
-        11. Recursive BST Search
+        11. Recursive Search
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Recursive Search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-the-search-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the Search Works
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#12-inserting-into-a-bst" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#search-space-reduction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        12. Inserting into a BST
+        Search Space Reduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-inserting-a-new-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Inserting a New Key
       
     </span>
   </a>
@@ -1320,10 +1365,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#14-recursive-bst-insertion-in-c" class="md-nav__link">
+  <a href="#14-recursive-insertion-in-c" class="md-nav__link">
     <span class="md-ellipsis">
       
-        14. Recursive BST Insertion in C++
+        14. Recursive Insertion in C++
       
     </span>
   </a>
@@ -1331,10 +1376,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#15-what-about-duplicate-values" class="md-nav__link">
+  <a href="#15-handling-duplicate-keys" class="md-nav__link">
     <span class="md-ellipsis">
       
-        15. What About Duplicate Values?
+        15. Handling Duplicate Keys
       
     </span>
   </a>
@@ -1342,10 +1387,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#16-tree-traversal" class="md-nav__link">
+  <a href="#16-traversing-a-tree" class="md-nav__link">
     <span class="md-ellipsis">
       
-        16. Tree Traversal
+        16. Traversing a Tree
       
     </span>
   </a>
@@ -1631,10 +1676,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ordered-collections" class="md-nav__link">
+  <a href="#301-ordered-sets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ordered Collections
+        30.1 Ordered Sets
       
     </span>
   </a>
@@ -1642,10 +1687,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#maps-and-sets" class="md-nav__link">
+  <a href="#302-ordered-key-value-maps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Maps and Sets
+        30.2 Ordered Key-Value Maps
       
     </span>
   </a>
@@ -1653,10 +1698,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#range-queries" class="md-nav__link">
+  <a href="#303-range-queries" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Range Queries
+        30.3 Range Queries
       
     </span>
   </a>
@@ -1664,10 +1709,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#predecessor-and-successor-queries" class="md-nav__link">
+  <a href="#304-minimum-and-maximum" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Predecessor and Successor Queries
+        30.4 Minimum and Maximum
       
     </span>
   </a>
@@ -1675,10 +1720,65 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#foundation-for-other-tree-structures" class="md-nav__link">
+  <a href="#305-predecessor-and-successor" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Foundation for Other Tree Structures
+        30.5 Predecessor and Successor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#306-scheduling-and-time-ordered-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.6 Scheduling and Time-Ordered Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#307-symbol-tables-and-ordered-dictionaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.7 Symbol Tables and Ordered Dictionaries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#308-database-and-file-system-indexing-related-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.8 Database and File-System Indexing: Related Structures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#309-why-not-just-use-a-sorted-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.9 Why Not Just Use a Sorted Array?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3010-when-is-a-bst-a-good-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.10 When Is a BST a Good Choice?
       
     </span>
   </a>
@@ -1724,10 +1824,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#34-complete-short-c-example" class="md-nav__link">
+  <a href="#32-implementation-considerations-pointers-recursion-and-memory" class="md-nav__link">
     <span class="md-ellipsis">
       
-        34. Complete Short C++ Example
+        32. Implementation Considerations: Pointers, Recursion, and Memory
       
     </span>
   </a>
@@ -1735,10 +1835,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#35-visualizing-the-example" class="md-nav__link">
+  <a href="#33-a-complete-c-example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        35. Visualizing the Example
+        33. A Complete C++ Example
       
     </span>
   </a>
@@ -1746,10 +1846,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#36-an-important-limitation-of-a-basic-bst" class="md-nav__link">
+  <a href="#34-tracing-the-complete-example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        36. An Important Limitation of a Basic BST
+        34. Tracing the Complete Example
       
     </span>
   </a>
@@ -1757,10 +1857,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#37-summary" class="md-nav__link">
+  <a href="#35-the-limitation-of-an-unbalanced-bst" class="md-nav__link">
     <span class="md-ellipsis">
       
-        37. Summary
+        35. The Limitation of an Unbalanced BST
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#351-complexity-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        35.1 Complexity Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        36. Chapter Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#review-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review Questions
       
     </span>
   </a>
@@ -1784,7 +1917,11 @@
 
 
 
-<h1 id="binary-search-trees-bst">Binary Search Trees (BST)</h1>
+<h1 id="chapter-binary-search-trees">Chapter: Binary Search Trees</h1>
+<p>A binary search tree (BST) is an ordered, node-based data structure that organizes keys hierarchically. Unlike an ordinary binary tree, a BST imposes a relationship between each node and the keys stored in its left and right subtrees. This ordering allows a program to decide which part of the tree can contain a requested key and which part can be ignored.</p>
+<p>Binary search trees are important because they combine dynamic storage with ordered access. Values can be inserted and removed without shifting a large block of elements, as may be necessary in an array, while the ordering of the keys supports searching, sorted traversal, minimum and maximum queries, and range-based operations. The actual efficiency of these operations depends on the shape of the tree. A relatively balanced BST can perform many common operations in <code>O(log N)</code> time, whereas a highly unbalanced tree can degrade to <code>O(N)</code>.</p>
+<p>BSTs are also an important foundation for more advanced data structures. Self-balancing trees such as AVL trees and Red-Black trees address the performance problems caused by an unbalanced BST. The same general idea of maintaining ordered keys in a tree also helps students understand indexing structures such as B-trees and B+ trees.</p>
+<p>This chapter develops the BST gradually, beginning with binary-tree structure and terminology before examining searching, insertion, traversal, deletion, performance, C++ implementation, and practical applications.</p>
 <h2 id="learning-objectives">Learning Objectives</h2>
 <p>By the end of this lecture, students should be able to:</p>
 <ul>
@@ -1798,11 +1935,11 @@
 <li>Perform inorder, preorder, and postorder traversals.</li>
 <li>Analyze BST operations using <strong>Big O notation</strong>.</li>
 <li>Explain why a balanced BST is more efficient than a highly unbalanced BST.</li>
-<li>Identify practical applications of BSTs.</li>
-<li>Implement basic BST operations in C++.</li>
+<li>Identify practical applications of BSTs and explain when a BST is preferable to a hash table or linear structure.</li>
+<li>Explain how BSTs support ordered operations such as range search, predecessor, successor, minimum, and maximum.</li>
+<li>Implement basic BST operations in C++ using pointers and recursion.</li>
 </ul>
-<hr />
-<h2 id="1-what-is-a-binary-tree">1. What is a Binary Tree?</h2>
+<h2 id="1-binary-trees-the-structural-foundation">1. Binary Trees: The Structural Foundation</h2>
 <p>A <strong>binary tree</strong> is a hierarchical data structure in which each node can have <strong>at most two children</strong>.</p>
 <p>These children are normally called:</p>
 <ul>
@@ -1826,8 +1963,7 @@ Right child = 20
 Right child = 8
 </code></pre></div>
 <p>Nodes <code>2</code>, <code>8</code>, and <code>20</code> have no children. They are called <strong>leaf nodes</strong>.</p>
-<hr />
-<h2 id="2-what-is-a-binary-search-tree">2. What is a Binary Search Tree?</h2>
+<h2 id="2-the-binary-search-tree">2. The Binary Search Tree</h2>
 <p>A <strong>Binary Search Tree</strong>, usually abbreviated as <strong>BST</strong>, is a binary tree that follows an ordering rule.</p>
 <p>For every node:</p>
 <div class="highlight"><pre><span></span><code>Values smaller than the node -&gt; Left subtree
@@ -1855,8 +1991,22 @@ Values larger than the node  -&gt; Right subtree
 <div class="highlight"><pre><span></span><code>60 &lt; 70 &lt; 80
 </code></pre></div>
 <p>Therefore, this tree is a Binary Search Tree.</p>
-<hr />
-<h2 id="3-binary-tree-vs-binary-search-tree">3. Binary Tree vs. Binary Search Tree</h2>
+<h3 id="the-bst-invariant">The BST Invariant</h3>
+<p>The ordering rule is often called the <strong>BST invariant</strong>. For a node <code>x</code>:</p>
+<div class="highlight"><pre><span></span><code>Every key in x&#39;s left subtree  &lt; x&#39;s key
+Every key in x&#39;s right subtree &gt; x&#39;s key
+</code></pre></div>
+<p>This rule is <strong>recursive</strong>. It must hold for every node in the tree.</p>
+<p>For example, this is <strong>not</strong> a valid BST:</p>
+<div class="highlight"><pre><span></span><code>        50
+       /  \
+     30    70
+       \
+        60
+</code></pre></div>
+<p>Although <code>60</code> is greater than its parent <code>30</code>, it is inside the <strong>left subtree of 50</strong>. Every value in that subtree must be less than <code>50</code>, so the BST invariant is violated.</p>
+<p>This invariant is what makes efficient searching possible: after one comparison, an entire subtree can be eliminated from consideration.</p>
+<h2 id="3-binary-trees-and-binary-search-trees">3. Binary Trees and Binary Search Trees</h2>
 <p>A binary tree only restricts the number of children. Each node can have at most two children.</p>
 <p>It does <strong>not</strong> require the values to be ordered.</p>
 <p>For example:</p>
@@ -1873,8 +2023,7 @@ Values larger than the node  -&gt; Right subtree
        /  \
       30   70
 </code></pre></div>
-<hr />
-<h2 id="4-important-bst-terminology">4. Important BST Terminology</h2>
+<h2 id="4-tree-terminology">4. Tree Terminology</h2>
 <p>Consider:</p>
 <div class="highlight"><pre><span></span><code>           50
           /  \
@@ -1924,14 +2073,13 @@ Depth of 20 = 2
 </code></pre></div>
 <p>has height <code>1</code>.</p>
 <p>Height is especially important because the performance of many BST operations depends on it.</p>
-<hr />
-<h2 id="5-why-do-we-need-a-bst">5. Why Do We Need a BST?</h2>
+<h2 id="5-why-binary-search-trees-are-useful">5. Why Binary Search Trees Are Useful</h2>
 <p>Suppose values are stored in an unsorted array:</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">numbers</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">70</span><span class="p">};</span>
 </code></pre></div>
 <p>Searching for a particular value may require examining every element.</p>
 <p>In the worst case:</p>
-<div class="highlight"><pre><span></span><code>O(n)
+<div class="highlight"><pre><span></span><code>O(N)
 </code></pre></div>
 <p>A BST organizes values so that each comparison tells us which direction to continue searching.</p>
 <p>Consider:</p>
@@ -1954,8 +2102,7 @@ Depth of 20 = 2
 <div class="highlight"><pre><span></span><code>50 -&gt; 70 -&gt; 60
 </code></pre></div>
 <p>We did not have to examine every node.</p>
-<hr />
-<h2 id="6-creating-a-bst-node-in-c">6. Creating a BST Node in C++</h2>
+<h2 id="6-representing-a-bst-node-in-c">6. Representing a BST Node in C++</h2>
 <p>A simple BST node can be represented using a <code>struct</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
@@ -1982,8 +2129,7 @@ right pointer
        /  \
    nullptr nullptr
 </code></pre></div>
-<hr />
-<h2 id="7-manually-creating-a-small-bst">7. Manually Creating a Small BST</h2>
+<h2 id="7-constructing-a-small-tree">7. Constructing a Small Tree</h2>
 <p>We could manually connect nodes:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
 
@@ -2010,8 +2156,7 @@ right pointer
      20  40  60  80
 </code></pre></div>
 <p>Manually connecting every node is not practical. Instead, BST implementations normally provide an <strong>insert operation</strong>.</p>
-<hr />
-<h2 id="8-searching-a-bst">8. Searching a BST</h2>
+<h2 id="8-searching-a-binary-search-tree">8. Searching a Binary Search Tree</h2>
 <p>Suppose we want to find <code>40</code>:</p>
 <div class="highlight"><pre><span></span><code>           50
           /  \
@@ -2031,8 +2176,7 @@ right pointer
 <div class="highlight"><pre><span></span><code>50 -&gt; 30 -&gt; 40
 </code></pre></div>
 <p>The search does not need to visit the other branches.</p>
-<hr />
-<h2 id="9-bst-search-algorithm">9. BST Search Algorithm</h2>
+<h2 id="9-the-search-algorithm">9. The Search Algorithm</h2>
 <p>The basic search algorithm is:</p>
 <div class="highlight"><pre><span></span><code>Start at the root
 
@@ -2050,8 +2194,7 @@ while the current node exists:
 If nullptr is reached:
     not found
 </code></pre></div>
-<hr />
-<h2 id="10-searching-a-bst-in-c">10. Searching a BST in C++</h2>
+<h2 id="10-iterative-search-in-c">10. Iterative Search in C++</h2>
 <p>An iterative implementation:</p>
 <div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">target</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root</span><span class="p">;</span>
@@ -2075,8 +2218,7 @@ If nullptr is reached:
 <span class="k">else</span>
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Not found</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
 </code></pre></div>
-<hr />
-<h2 id="11-recursive-bst-search">11. Recursive BST Search</h2>
+<h2 id="11-recursive-search">11. Recursive Search</h2>
 <p>BSTs naturally support recursion because every subtree is itself a binary search tree.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">target</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span>
@@ -2100,8 +2242,20 @@ If target is smaller:
 If target is larger:
     search right subtree
 </code></pre></div>
-<hr />
-<h2 id="12-inserting-into-a-bst">12. Inserting into a BST</h2>
+<h3 id="why-the-search-works">Why the Search Works</h3>
+<p>Suppose the current node contains key <code>k</code> and the target is <code>t</code>.</p>
+<p>If:</p>
+<div class="highlight"><pre><span></span><code>t &lt; k
+</code></pre></div>
+<p>then the BST invariant guarantees that every key in the right subtree is greater than <code>k</code>, and therefore cannot equal <code>t</code>. The right subtree can be discarded.</p>
+<p>Similarly, if:</p>
+<div class="highlight"><pre><span></span><code>t &gt; k
+</code></pre></div>
+<p>the entire left subtree can be discarded.</p>
+<p>Because a search follows only one path through the tree, its cost depends on the height of the tree. In a reasonably balanced BST, the height grows approximately with <code>log N</code>, so search is typically described as <code>O(log N)</code>. In a severely unbalanced tree, the search path may contain nearly every node, giving a worst-case cost of <code>O(N)</code>.</p>
+<h3 id="search-space-reduction">Search Space Reduction</h3>
+<p>A common misconception is that a BST always removes exactly half of the remaining keys, as binary search does on a sorted array. That is not guaranteed. A BST chooses one <strong>subtree</strong>, and the sizes of the two subtrees may be very different. This is why tree balance matters.</p>
+<h2 id="12-inserting-a-new-key">12. Inserting a New Key</h2>
 <p>Suppose our BST is:</p>
 <div class="highlight"><pre><span></span><code>        50
        /  \
@@ -2123,7 +2277,6 @@ If target is larger:
        \
         40
 </code></pre></div>
-<hr />
 <h2 id="13-insertion-order-matters">13. Insertion Order Matters</h2>
 <p>Insert these values in order:</p>
 <div class="highlight"><pre><span></span><code>50, 30, 70, 20, 40, 60, 80
@@ -2137,8 +2290,7 @@ If target is larger:
 </code></pre></div>
 <p>The <strong>order of insertion affects the shape of the BST</strong>.</p>
 <p>This becomes important when we discuss performance.</p>
-<hr />
-<h2 id="14-recursive-bst-insertion-in-c">14. Recursive BST Insertion in C++</h2>
+<h2 id="14-recursive-insertion-in-c">14. Recursive Insertion in C++</h2>
 <div class="highlight"><pre><span></span><code><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
@@ -2168,8 +2320,7 @@ If target is larger:
    20 40
 </code></pre></div>
 <p>Notice that the function returns a <code>Node*</code>. This is important because inserting into an empty tree creates a new root, and recursive calls may create new subtree roots.</p>
-<hr />
-<h2 id="15-what-about-duplicate-values">15. What About Duplicate Values?</h2>
+<h2 id="15-handling-duplicate-keys">15. Handling Duplicate Keys</h2>
 <p>Suppose we have:</p>
 <div class="highlight"><pre><span></span><code>        50
        /  \
@@ -2190,8 +2341,7 @@ If target is larger:
 <div class="highlight"><pre><span></span><code><span class="n">value</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span>
 </code></pre></div>
 <p>No insertion occurs when the values are equal.</p>
-<hr />
-<h2 id="16-tree-traversal">16. Tree Traversal</h2>
+<h2 id="16-traversing-a-tree">16. Traversing a Tree</h2>
 <p>A tree is not organized sequentially like an array. Therefore, we need systematic ways of visiting its nodes.</p>
 <p>These are called <strong>tree traversals</strong>.</p>
 <p>Three important depth-first traversals are:</p>
@@ -2200,7 +2350,6 @@ If target is larger:
 <li><strong>Preorder</strong></li>
 <li><strong>Postorder</strong></li>
 </ul>
-<hr />
 <h2 id="17-inorder-traversal">17. Inorder Traversal</h2>
 <p>Inorder traversal follows:</p>
 <div class="highlight"><pre><span></span><code>Left -&gt; Root -&gt; Right
@@ -2229,7 +2378,6 @@ If target is larger:
 <span class="w">    </span><span class="n">inorder</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<hr />
 <h2 id="18-preorder-traversal">18. Preorder Traversal</h2>
 <p>Preorder follows:</p>
 <div class="highlight"><pre><span></span><code>Root -&gt; Left -&gt; Right
@@ -2248,7 +2396,6 @@ If target is larger:
 <span class="p">}</span>
 </code></pre></div>
 <p>Preorder is useful when a node needs to be processed before its descendants.</p>
-<hr />
 <h2 id="19-postorder-traversal">19. Postorder Traversal</h2>
 <p>Postorder follows:</p>
 <div class="highlight"><pre><span></span><code>Left -&gt; Right -&gt; Root
@@ -2267,7 +2414,6 @@ If target is larger:
 <span class="p">}</span>
 </code></pre></div>
 <p>Postorder is useful when descendants need to be processed before their parent. One example is deleting an entire tree.</p>
-<hr />
 <h2 id="20-remembering-the-traversals">20. Remembering the Traversals</h2>
 <p>Look at where <strong>Root</strong> appears.</p>
 <h3 id="preorder">Preorder</h3>
@@ -2282,7 +2428,6 @@ If target is larger:
 <div class="highlight"><pre><span></span><code>Left Right Root
 </code></pre></div>
 <p>Root comes <strong>after</strong> the subtrees.</p>
-<hr />
 <h2 id="21-finding-the-minimum-value">21. Finding the Minimum Value</h2>
 <p>Because smaller values are stored to the left, the minimum value in a BST is found by following left pointers until no further left child exists.</p>
 <p>Example:</p>
@@ -2308,7 +2453,6 @@ If target is larger:
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">root</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<hr />
 <h2 id="22-finding-the-maximum-value">22. Finding the Maximum Value</h2>
 <p>The maximum value is found by following right pointers until no further right child exists.</p>
 <div class="highlight"><pre><span></span><code>50
@@ -2333,7 +2477,6 @@ If target is larger:
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">root</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<hr />
 <h2 id="23-deleting-from-a-bst">23. Deleting from a BST</h2>
 <p>Deletion is more complicated than insertion or searching because removing a node must preserve the BST ordering property.</p>
 <p>There are <strong>three cases</strong>.</p>
@@ -2388,7 +2531,6 @@ If target is larger:
 </code></pre></div>
 <p>The BST ordering property remains valid.</p>
 <p>Another valid strategy is to use the <strong>inorder predecessor</strong>, the largest value in the left subtree.</p>
-<hr />
 <h2 id="24-bst-deletion-in-c">24. BST Deletion in C++</h2>
 <div class="highlight"><pre><span></span><code><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="nf">remove</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span>
@@ -2425,21 +2567,20 @@ If target is larger:
 <span class="p">}</span>
 </code></pre></div>
 <p>The function first searches for the value and then handles the appropriate deletion case.</p>
-<hr />
 <h2 id="25-bst-performance">25. BST Performance</h2>
 <p>BST performance depends primarily on the <strong>height of the tree</strong>.</p>
 <p>For search, insertion, deletion, minimum, and maximum operations, a useful general bound is:</p>
-<div class="highlight"><pre><span></span><code>O(h)
+<div class="highlight"><pre><span></span><code>O(H)
 </code></pre></div>
 <p>where <code>h</code> is the height of the tree.</p>
 <p>For a reasonably balanced BST:</p>
-<div class="highlight"><pre><span></span><code>h = O(log n)
+<div class="highlight"><pre><span></span><code>h = O(log N)
 </code></pre></div>
 <p>so these operations are:</p>
-<div class="highlight"><pre><span></span><code>O(log n)
+<div class="highlight"><pre><span></span><code>O(log N)
 </code></pre></div>
 <p>Traversal must visit every node, so it takes:</p>
-<div class="highlight"><pre><span></span><code>O(n)
+<div class="highlight"><pre><span></span><code>O(N)
 </code></pre></div>
 <table>
 <thead>
@@ -2452,37 +2593,36 @@ If target is larger:
 <tbody>
 <tr>
 <td>Search</td>
-<td style="text-align: right;">O(log n)</td>
-<td style="text-align: right;">O(n)</td>
+<td style="text-align: right;">O(log N)</td>
+<td style="text-align: right;">O(N)</td>
 </tr>
 <tr>
 <td>Insert</td>
-<td style="text-align: right;">O(log n)</td>
-<td style="text-align: right;">O(n)</td>
+<td style="text-align: right;">O(log N)</td>
+<td style="text-align: right;">O(N)</td>
 </tr>
 <tr>
 <td>Delete</td>
-<td style="text-align: right;">O(log n)</td>
-<td style="text-align: right;">O(n)</td>
+<td style="text-align: right;">O(log N)</td>
+<td style="text-align: right;">O(N)</td>
 </tr>
 <tr>
 <td>Find minimum</td>
-<td style="text-align: right;">O(log n)</td>
-<td style="text-align: right;">O(n)</td>
+<td style="text-align: right;">O(log N)</td>
+<td style="text-align: right;">O(N)</td>
 </tr>
 <tr>
 <td>Find maximum</td>
-<td style="text-align: right;">O(log n)</td>
-<td style="text-align: right;">O(n)</td>
+<td style="text-align: right;">O(log N)</td>
+<td style="text-align: right;">O(N)</td>
 </tr>
 <tr>
 <td>Traversal</td>
-<td style="text-align: right;">O(n)</td>
-<td style="text-align: right;">O(n)</td>
+<td style="text-align: right;">O(N)</td>
+<td style="text-align: right;">O(N)</td>
 </tr>
 </tbody>
 </table>
-<hr />
 <h2 id="26-balanced-bst">26. Balanced BST</h2>
 <p>Consider:</p>
 <div class="highlight"><pre><span></span><code>           50
@@ -2496,7 +2636,6 @@ If target is larger:
 <div class="highlight"><pre><span></span><code>50 -&gt; 70 -&gt; 80
 </code></pre></div>
 <p>As the number of nodes grows, a balanced tree keeps its height relatively small.</p>
-<hr />
 <h2 id="27-unbalanced-or-skewed-bst">27. Unbalanced or Skewed BST</h2>
 <p>Suppose we insert:</p>
 <div class="highlight"><pre><span></span><code>10, 20, 30, 40, 50
@@ -2518,38 +2657,36 @@ If target is larger:
 <div class="highlight"><pre><span></span><code>10 -&gt; 20 -&gt; 30 -&gt; 40 -&gt; 50
 </code></pre></div>
 <p>The height is proportional to the number of nodes, so operations can degrade to:</p>
-<div class="highlight"><pre><span></span><code>O(n)
+<div class="highlight"><pre><span></span><code>O(N)
 </code></pre></div>
-<hr />
 <h2 id="28-best-average-and-worst-case-complexity">28. Best, Average, and Worst-Case Complexity</h2>
 <p>A useful way to describe BST operations is:</p>
-<div class="highlight"><pre><span></span><code>Search = O(h)
-Insert = O(h)
-Delete = O(h)
+<div class="highlight"><pre><span></span><code>Search = O(H)
+Insert = O(H)
+Delete = O(H)
 </code></pre></div>
 <p>where <code>h</code> is the tree height.</p>
 <p>For a balanced tree:</p>
-<div class="highlight"><pre><span></span><code>h = O(log n)
+<div class="highlight"><pre><span></span><code>h = O(log N)
 </code></pre></div>
 <p>Therefore:</p>
-<div class="highlight"><pre><span></span><code>Search = O(log n)
-Insert = O(log n)
-Delete = O(log n)
+<div class="highlight"><pre><span></span><code>Search = O(log N)
+Insert = O(log N)
+Delete = O(log N)
 </code></pre></div>
 <p>For a completely skewed tree:</p>
-<div class="highlight"><pre><span></span><code>h = O(n)
+<div class="highlight"><pre><span></span><code>h = O(N)
 </code></pre></div>
 <p>Therefore:</p>
-<div class="highlight"><pre><span></span><code>Search = O(n)
-Insert = O(n)
-Delete = O(n)
+<div class="highlight"><pre><span></span><code>Search = O(N)
+Insert = O(N)
+Delete = O(N)
 </code></pre></div>
 <p>So the statement:</p>
 <blockquote>
-<p>BST search is always <code>O(log n)</code>.</p>
+<p>BST search is always <code>O(log N)</code>.</p>
 </blockquote>
 <p>is incorrect for a basic, unbalanced BST.</p>
-<hr />
 <h2 id="29-bst-vs-binary-search">29. BST vs. Binary Search</h2>
 <p>Students sometimes confuse <strong>Binary Search</strong> with a <strong>Binary Search Tree</strong>.</p>
 <p>They are related ideas, but they are not the same thing.</p>
@@ -2567,44 +2704,151 @@ Delete = O(n)
    10         50
 </code></pre></div>
 <p>Both use comparisons to reduce the search space, but the data is organized differently.</p>
-<hr />
 <h2 id="30-where-are-binary-search-trees-used">30. Where Are Binary Search Trees Used?</h2>
-<p>BSTs are useful when data needs to remain <strong>ordered</strong> while also supporting searching, insertion, and deletion.</p>
-<h3 id="ordered-collections">Ordered Collections</h3>
-<p>A BST naturally maintains an ordering relationship among its values.</p>
-<p>An inorder traversal produces:</p>
-<div class="highlight"><pre><span></span><code>smallest -&gt; largest
+<p>A BST is most useful when an application needs a collection that changes over time while still preserving the ordering relationship among its keys. This requirement is different from simply asking whether a particular key exists. A hash table is often an excellent choice for exact-key lookup, but it does not naturally maintain keys in sorted order. An ordered search tree is more appropriate when the application also needs operations such as finding the next larger key, the previous smaller key, the minimum or maximum key, or all keys within a particular range.</p>
+<h3 id="301-ordered-sets">30.1 Ordered Sets</h3>
+<p>Suppose an application maintains unique IDs:</p>
+<div class="highlight"><pre><span></span><code>42, 17, 65, 10, 31, 50, 90
 </code></pre></div>
-<h3 id="maps-and-sets">Maps and Sets</h3>
-<p>Search trees can be used to associate keys with values or maintain collections of unique ordered keys.</p>
-<p>Examples:</p>
-<div class="highlight"><pre><span></span><code>Student ID -&gt; Student information
-Username   -&gt; Account information
+<p>A search tree can support operations such as:</p>
+<div class="highlight"><pre><span></span><code>insert(31)
+search(50)
+remove(17)
+findMin()
+findMax()
 </code></pre></div>
-<p>Balanced search trees are commonly used to implement ordered maps and sets.</p>
-<h3 id="range-queries">Range Queries</h3>
-<p>Suppose values represent prices:</p>
-<div class="highlight"><pre><span></span><code>10, 20, 25, 30, 40, 50
+<p>while keeping the keys logically ordered.</p>
+<p>In C++, this type of behavior is provided by <code>std::set</code>.</p>
+<p>Practical examples include maintaining an ordered collection of unique event IDs, reservation numbers, scores, or numeric records.</p>
+<h3 id="302-ordered-key-value-maps">30.2 Ordered Key-Value Maps</h3>
+<p>Instead of storing only a key, a node can store a key together with associated data.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Student</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="p">};</span>
 </code></pre></div>
-<p>An ordered search tree can efficiently help locate values within a range such as:</p>
-<div class="highlight"><pre><span></span><code>20 &lt;= price &lt;= 40
+<p>Conceptually:</p>
+<div class="highlight"><pre><span></span><code>Student ID -&gt; Student record
 </code></pre></div>
-<h3 id="predecessor-and-successor-queries">Predecessor and Successor Queries</h3>
-<p>Ordered trees can support operations such as:</p>
-<div class="highlight"><pre><span></span><code>Find the largest value smaller than x
-Find the smallest value larger than x
+<p>The tree can be ordered using the student ID:</p>
+<div class="highlight"><pre><span></span><code>             1050
+            /    \
+         1020    1090
 </code></pre></div>
-<p>These are known as <strong>predecessor</strong> and <strong>successor</strong> queries.</p>
-<h3 id="foundation-for-other-tree-structures">Foundation for Other Tree Structures</h3>
-<p>BST concepts are important for understanding more advanced search trees such as:</p>
+<p>This allows the application to search by ID while retaining key order.</p>
+<p>In C++, the corresponding ordered key-value abstraction is <code>std::map</code>.</p>
+<h3 id="303-range-queries">30.3 Range Queries</h3>
+<p>One major advantage of an ordered search tree is the ability to search for a <strong>range</strong> of values.</p>
+<p>Suppose a system stores prices:</p>
+<div class="highlight"><pre><span></span><code>10, 18, 25, 32, 40, 55, 70
+</code></pre></div>
+<p>A query might ask:</p>
+<div class="highlight"><pre><span></span><code>Find all prices from $20 through $50.
+</code></pre></div>
+<p>Because the tree is ordered, branches that cannot contain values in the requested range can be skipped.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">printRange</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">low</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">high</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">low</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printRange</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">low</span><span class="p">,</span><span class="w"> </span><span class="n">high</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">low</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">high</span><span class="p">)</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">high</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printRange</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">low</span><span class="p">,</span><span class="w"> </span><span class="n">high</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This type of operation is less natural with a hash table because hashing does not preserve key order.</p>
+<h3 id="304-minimum-and-maximum">30.4 Minimum and Maximum</h3>
+<p>A BST provides structural access to extreme values:</p>
+<div class="highlight"><pre><span></span><code>Minimum -&gt; leftmost node
+Maximum -&gt; rightmost node
+</code></pre></div>
+<p>Applications may use this to find:</p>
 <ul>
-<li>AVL Trees</li>
-<li>Red-Black Trees</li>
-<li>B-Trees</li>
-<li>B+ Trees</li>
+<li>The earliest or latest timestamp.</li>
+<li>The lowest or highest stored score.</li>
+<li>The smallest or largest key currently present.</li>
 </ul>
-<p>Database systems and file systems commonly use B-tree-family structures rather than simple BSTs because those structures are designed for efficient storage access.</p>
-<hr />
+<p>For a tree of height <code>h</code>, finding an extreme value takes <code>O(H)</code>.</p>
+<h3 id="305-predecessor-and-successor">30.5 Predecessor and Successor</h3>
+<p>BSTs can answer questions about neighboring keys.</p>
+<p>For a key <code>x</code>:</p>
+<div class="highlight"><pre><span></span><code>Predecessor = largest key smaller than x
+Successor   = smallest key larger than x
+</code></pre></div>
+<p>Suppose the stored values are:</p>
+<div class="highlight"><pre><span></span><code>10, 20, 30, 40, 50
+</code></pre></div>
+<p>For <code>x = 30</code>:</p>
+<div class="highlight"><pre><span></span><code>Predecessor = 20
+Successor   = 40
+</code></pre></div>
+<p>These operations are useful in ordered scheduling, nearest-key lookup, and navigation through sorted records.</p>
+<h3 id="306-scheduling-and-time-ordered-data">30.6 Scheduling and Time-Ordered Data</h3>
+<p>Suppose a program stores events using timestamps as keys:</p>
+<div class="highlight"><pre><span></span><code>09:00
+10:30
+13:00
+15:45
+</code></pre></div>
+<p>An ordered search tree naturally supports questions such as:</p>
+<div class="highlight"><pre><span></span><code>What is the next event after 11:00?
+What was the most recent event before 14:00?
+What events occur between 10:00 and 14:00?
+</code></pre></div>
+<p>These correspond to:</p>
+<div class="highlight"><pre><span></span><code>successor
+predecessor
+range query
+</code></pre></div>
+<h3 id="307-symbol-tables-and-ordered-dictionaries">30.7 Symbol Tables and Ordered Dictionaries</h3>
+<p>Compilers, interpreters, and other software systems often need <strong>symbol tables</strong> that associate identifiers with information.</p>
+<p>Conceptually:</p>
+<div class="highlight"><pre><span></span><code>identifier -&gt; metadata
+</code></pre></div>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>count   -&gt; variable information
+display -&gt; function information
+Student -&gt; class information
+</code></pre></div>
+<p>Symbol tables can be implemented using different structures, including hash tables and balanced search trees. A search tree is useful when ordered traversal or ordered-key operations are required.</p>
+<h3 id="308-database-and-file-system-indexing-related-structures">30.8 Database and File-System Indexing: Related Structures</h3>
+<p>Database indexes must support both exact-key searches and ordered operations. For example, a database may need to find the record associated with key <code>500</code>, retrieve all records whose keys fall between <code>500</code> and <code>900</code>, insert a new key, or remove an existing one. The idea of organizing keys in an ordered tree is therefore fundamental to database indexing.</p>
+<p>Production databases generally do <strong>not</strong> use a simple in-memory BST for their main indexes. They commonly use structures such as:</p>
+<div class="highlight"><pre><span></span><code>B-Tree
+B+ Tree
+</code></pre></div>
+<p>These trees allow many children per node and are designed to reduce storage-page or disk accesses.</p>
+<p>A BST is an important conceptual stepping stone toward understanding these more advanced indexing structures.</p>
+<h3 id="309-why-not-just-use-a-sorted-array">30.9 Why Not Just Use a Sorted Array?</h3>
+<p>A sorted array supports efficient binary search:</p>
+<div class="highlight"><pre><span></span><code>Search -&gt; O(log N)
+</code></pre></div>
+<p>However, inserting or deleting in the middle may require shifting many elements:</p>
+<div class="highlight"><pre><span></span><code>Insert -&gt; O(N)
+Delete -&gt; O(N)
+</code></pre></div>
+<p>A balanced search tree can provide:</p>
+<div class="highlight"><pre><span></span><code>Search -&gt; O(log N)
+Insert -&gt; O(log N)
+Delete -&gt; O(log N)
+</code></pre></div>
+<p>This makes balanced search trees useful for <strong>dynamic ordered collections</strong> where values change frequently.</p>
+<h3 id="3010-when-is-a-bst-a-good-choice">30.10 When Is a BST a Good Choice?</h3>
+<p>A BST—or more commonly a <strong>self-balancing BST</strong>—is a strong choice when an application needs several of these operations together:</p>
+<div class="highlight"><pre><span></span><code>Exact-key search
+Insertion
+Deletion
+Sorted traversal
+Minimum / maximum
+Predecessor / successor
+Range queries
+</code></pre></div>
+<p>If an application only needs very fast exact-key lookup and does not care about ordering, a hash table may be a better choice.</p>
 <h2 id="31-bsts-and-the-c-standard-library">31. BSTs and the C++ Standard Library</h2>
 <p>In real C++ applications, programmers often use standard containers rather than implementing their own search tree.</p>
 <p>Examples include:</p>
@@ -2636,7 +2880,6 @@ Find the smallest value larger than x
 <div class="highlight"><pre><span></span><code>20 30 50 70
 </code></pre></div>
 <p>The C++ standard specifies the behavior and complexity requirements of these containers, not a particular internal tree implementation. In practice, implementations commonly use a self-balancing search tree such as a Red-Black Tree.</p>
-<hr />
 <h2 id="32-bst-vs-hash-table">32. BST vs. Hash Table</h2>
 <p>BSTs and hash tables can both provide efficient searching, but they have different strengths.</p>
 <table>
@@ -2650,7 +2893,7 @@ Find the smallest value larger than x
 <tbody>
 <tr>
 <td>Typical search</td>
-<td>O(log n)</td>
+<td>O(log N)</td>
 <td>O(1) average</td>
 </tr>
 <tr>
@@ -2675,8 +2918,8 @@ Find the smallest value larger than x
 </tr>
 <tr>
 <td>Worst-case search</td>
-<td>O(log n) for common self-balancing BSTs</td>
-<td>O(n) in the general case</td>
+<td>O(log N) for common self-balancing BSTs</td>
+<td>O(N) in the general case</td>
 </tr>
 </tbody>
 </table>
@@ -2691,14 +2934,13 @@ ranges
 predecessor
 successor
 </code></pre></div>
-<hr />
 <h2 id="33-bst-vs-linked-list">33. BST vs. Linked List</h2>
 <p>Consider searching for <code>80</code>.</p>
 <p>A linked list might require visiting:</p>
 <div class="highlight"><pre><span></span><code>20 -&gt; 30 -&gt; 40 -&gt; 50 -&gt; 60 -&gt; 70 -&gt; 80
 </code></pre></div>
 <p>Search is generally:</p>
-<div class="highlight"><pre><span></span><code>O(n)
+<div class="highlight"><pre><span></span><code>O(N)
 </code></pre></div>
 <p>A balanced BST might look like:</p>
 <div class="highlight"><pre><span></span><code>           50
@@ -2711,11 +2953,30 @@ successor
 <div class="highlight"><pre><span></span><code>50 -&gt; 70 -&gt; 80
 </code></pre></div>
 <p>This takes approximately:</p>
-<div class="highlight"><pre><span></span><code>O(log n)
+<div class="highlight"><pre><span></span><code>O(log N)
 </code></pre></div>
 <p>The tradeoff is that the BST has more structural complexity and must maintain its ordering property.</p>
-<hr />
-<h2 id="34-complete-short-c-example">34. Complete Short C++ Example</h2>
+<h2 id="32-implementation-considerations-pointers-recursion-and-memory">32. Implementation Considerations: Pointers, Recursion, and Memory</h2>
+<p>A node-based BST is a <strong>dynamic data structure</strong>. Nodes are typically allocated as they are inserted, and pointers connect the nodes.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">left</span><span class="p">;</span>
+<span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">right</span><span class="p">;</span>
+</code></pre></div>
+<p>represent the roots of the two subtrees.</p>
+<p>Recursive operations work naturally because each subtree has the same structure as the complete tree:</p>
+<div class="highlight"><pre><span></span><code>Tree
+ |
+ +-- Left subtree  -&gt; also a tree
+ |
+ +-- Right subtree -&gt; also a tree
+</code></pre></div>
+<p>The recursive call stack has depth proportional to tree height:</p>
+<div class="highlight"><pre><span></span><code>O(H)
+</code></pre></div>
+<p>For a balanced tree, the recursion depth is generally <code>O(log N)</code>. For a highly skewed tree, it can grow to <code>O(N)</code>.</p>
+<p>This matters because a skewed BST not only slows search, insertion, and deletion; deep recursive operations also use more call-stack space.</p>
+<p>The examples in this lecture use raw pointers to expose the underlying data-structure mechanics. In production C++, ownership can instead be managed with smart pointers or standard-library containers.</p>
+<h2 id="33-a-complete-c-example">33. A Complete C++ Example</h2>
+<p>The following program brings together the central ideas developed in the chapter. It defines a node, inserts keys recursively, searches for a key, and performs an inorder traversal. The example intentionally uses raw pointers so that the relationships between nodes remain visible to students.</p>
 <p>The following example combines insertion, searching, and inorder traversal:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
@@ -2806,8 +3067,7 @@ successor
 <div class="highlight"><pre><span></span><code>Inorder: 20 30 40 50 60 70 80
 60 was found
 </code></pre></div>
-<hr />
-<h2 id="35-visualizing-the-example">35. Visualizing the Example</h2>
+<h2 id="34-tracing-the-complete-example">34. Tracing the Complete Example</h2>
 <p>The insertion sequence:</p>
 <div class="highlight"><pre><span></span><code>50, 30, 70, 20, 40, 60, 80
 </code></pre></div>
@@ -2833,8 +3093,7 @@ successor
 <p>and produces:</p>
 <div class="highlight"><pre><span></span><code>20 30 40 50 60 70 80
 </code></pre></div>
-<hr />
-<h2 id="36-an-important-limitation-of-a-basic-bst">36. An Important Limitation of a Basic BST</h2>
+<h2 id="35-the-limitation-of-an-unbalanced-bst">35. The Limitation of an Unbalanced BST</h2>
 <p>A basic BST does <strong>not</strong> automatically remain balanced.</p>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code>Insert: 10, 20, 30, 40, 50
@@ -2856,45 +3115,80 @@ successor
 <li><strong>AVL Trees</strong></li>
 <li><strong>Red-Black Trees</strong></li>
 </ul>
-<p>These structures automatically reorganize themselves so their height remains <code>O(log n)</code>.</p>
-<hr />
-<h2 id="37-summary">37. Summary</h2>
-<p>A <strong>Binary Search Tree</strong> is a binary tree with an ordering property:</p>
-<div class="highlight"><pre><span></span><code>Left subtree values &lt; Node &lt; Right subtree values
-</code></pre></div>
-<p>Major BST operations include:</p>
-<ul>
-<li>Search</li>
-<li>Insert</li>
-<li>Delete</li>
-<li>Traversal</li>
-<li>Find minimum</li>
-<li>Find maximum</li>
-</ul>
-<p>The running time of search, insertion, and deletion depends on tree height:</p>
-<div class="highlight"><pre><span></span><code>O(h)
-</code></pre></div>
-<p>For a balanced BST:</p>
-<div class="highlight"><pre><span></span><code>h = O(log n)
-</code></pre></div>
-<p>so these operations take:</p>
-<div class="highlight"><pre><span></span><code>O(log n)
-</code></pre></div>
-<p>For a highly unbalanced BST:</p>
-<div class="highlight"><pre><span></span><code>h = O(n)
-</code></pre></div>
-<p>so operations may take:</p>
-<div class="highlight"><pre><span></span><code>O(n)
-</code></pre></div>
-<p>Inorder traversal follows:</p>
-<div class="highlight"><pre><span></span><code>Left -&gt; Root -&gt; Right
-</code></pre></div>
-<p>and, for a BST, visits values in sorted order.</p>
-<p>The central idea to remember is:</p>
-<blockquote>
-<p><strong>A Binary Search Tree organizes data so that each comparison determines whether the search should continue to the left or to the right.</strong></p>
-</blockquote>
-<p>BSTs also provide the conceptual foundation for more advanced ordered tree structures such as AVL Trees, Red-Black Trees, B-Trees, and B+ Trees.</p>
+<p>These structures automatically reorganize themselves so their height remains <code>O(log N)</code>.</p>
+<h2 id="351-complexity-summary">35.1 Complexity Summary</h2>
+<p>The performance of a BST depends strongly on its shape. For classroom analysis, it is useful to compare a reasonably balanced BST with a highly unbalanced BST.</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th style="text-align: right;">Balanced BST</th>
+<th style="text-align: right;">Highly Unbalanced BST</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Search</td>
+<td style="text-align: right;"><code>O(log N)</code></td>
+<td style="text-align: right;"><code>O(N)</code></td>
+</tr>
+<tr>
+<td>Insert</td>
+<td style="text-align: right;"><code>O(log N)</code></td>
+<td style="text-align: right;"><code>O(N)</code></td>
+</tr>
+<tr>
+<td>Delete</td>
+<td style="text-align: right;"><code>O(log N)</code></td>
+<td style="text-align: right;"><code>O(N)</code></td>
+</tr>
+<tr>
+<td>Find minimum</td>
+<td style="text-align: right;"><code>O(log N)</code></td>
+<td style="text-align: right;"><code>O(N)</code></td>
+</tr>
+<tr>
+<td>Find maximum</td>
+<td style="text-align: right;"><code>O(log N)</code></td>
+<td style="text-align: right;"><code>O(N)</code></td>
+</tr>
+<tr>
+<td>Predecessor / successor</td>
+<td style="text-align: right;"><code>O(log N)</code></td>
+<td style="text-align: right;"><code>O(N)</code></td>
+</tr>
+<tr>
+<td>Full traversal</td>
+<td style="text-align: right;"><code>O(N)</code></td>
+<td style="text-align: right;"><code>O(N)</code></td>
+</tr>
+<tr>
+<td>BST validation</td>
+<td style="text-align: right;"><code>O(N)</code></td>
+<td style="text-align: right;"><code>O(N)</code></td>
+</tr>
+</tbody>
+</table>
+<p>A traversal remains <code>O(N)</code> even when the tree is balanced because every node must be visited. Balancing primarily improves operations that follow a path from the root toward a particular location in the tree.</p>
+<h2 id="36-chapter-summary">36. Chapter Summary</h2>
+<p>A binary search tree is a binary tree whose keys are maintained according to an ordering rule. For each node, smaller keys belong in the left subtree and larger keys belong in the right subtree. The rule applies to entire subtrees, not merely to immediate children.</p>
+<p>This ordering makes directed searching possible. At each node, a comparison determines whether the search should continue to the left or to the right. Insertion uses the same decision process to locate an appropriate null child position. Deletion is more involved because the tree must remain connected and ordered after a node is removed. A leaf can be removed directly, a node with one child can be replaced by that child, and a node with two children can be replaced using an inorder successor or predecessor.</p>
+<p>Tree traversal provides a systematic way to visit all nodes. Inorder traversal is particularly important for BSTs because it visits the keys in sorted order. Preorder and postorder traversals use different processing orders and are useful for other tree-processing tasks.</p>
+<p>BST performance depends on tree height. In a reasonably balanced tree, search, insertion, and deletion are generally <code>O(log N)</code>. In a highly skewed tree, these operations can degrade to <code>O(N)</code>. A full traversal remains <code>O(N)</code> because every node must be visited. This dependence on tree shape motivates self-balancing structures such as AVL and Red-Black trees.</p>
+<p>The practical strength of an ordered search tree is that it supports more than exact-key lookup. It can maintain dynamically changing data while supporting sorted traversal, minimum and maximum queries, predecessor and successor operations, and range searches. These capabilities explain why balanced search trees are useful for ordered sets and maps and why related tree structures play an important role in indexing systems.</p>
+<h2 id="review-questions">Review Questions</h2>
+<ol>
+<li>What condition must be true for every node in a binary search tree?</li>
+<li>Why is checking only a node and its immediate children insufficient when validating a BST?</li>
+<li>Why does inorder traversal of a BST produce keys in sorted order?</li>
+<li>What is the running time of search in terms of tree height <code>H</code>?</li>
+<li>How can insertion order cause a BST to become skewed?</li>
+<li>Describe the three structural cases that must be considered when deleting a node.</li>
+<li>Why are range queries more natural in an ordered search tree than in a hash table?</li>
+<li>When might <code>std::map</code> or <code>std::set</code> be preferable to an unordered container?</li>
+<li>Why do database systems commonly use B-trees or B+ trees rather than a basic binary search tree for disk-based indexes?</li>
+<li>What problem do AVL and Red-Black trees solve?</li>
+</ol>
 
 
 
