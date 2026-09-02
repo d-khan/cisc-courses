@@ -22,13 +22,12 @@ __Course Support Ticket:__ Use for technical issues, course access problems, Git
 __Email (dkhan@sdccd.edu):__ Use only for confidential or personal matters, such as grades, accommodations, or
   individual circumstances. Please include your course code in the subject line so I can identify your course quickly.
 
-__Canvas Messaging:__ You may also contact me through the Canvas Inbox. However, I do not monitor Canvas messages
-  regularly, so for the fastest response, please use Slack, the Course Support Ticket system, or email, as appropriate.
+__Canvas Messaging:__ You may also contact me through the Canvas Inbox. 
 
 > I typically respond to messages within 24 hours (Monday through Friday). If you do not
 receive a response within these timeframes, please resend your message. Messages sent
 on Friday evening, Saturday, Sunday, or during college holidays may require additional response time.
 
---8<-- "docs/shared/office_hours.md"
+
 
 

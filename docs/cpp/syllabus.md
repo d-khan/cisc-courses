@@ -42,6 +42,10 @@ intended for computer science majors and students seeking a solid foundation in 
 
 --8<-- "docs/shared/communication.md"
 
+## **Office hours**
+
+--8<-- "docs/shared/office_hours.md"
+
 ## **Course topics**
 
 | Topics                                                           | Hands-on activities                                                                                                                                |

@@ -45,6 +45,10 @@ ability to design, develop, test, and debug your own Python programs.
 
 --8<-- "docs/shared/communication.md"
 
+## **Office hours**
+
+--8<-- "docs/shared/office_hours.md"
+
 ## **Course topics**
 
 | Topics                                                                                                 | Hands-on activities                                   |

@@ -40,6 +40,11 @@ Information Systems and for programmers seeking to strengthen or refresh their C
 
 --8<-- "docs/shared/communication.md"
 
+## **Office hours**
+
+--8<-- "docs/shared/office_hours.md"
+
+
 ## **Course topics**
 
 | Topics                                         | Hands-on activities                                                    |
