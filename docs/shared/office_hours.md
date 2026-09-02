@@ -2,13 +2,9 @@
 
 All office hours are listed in **Pacific Time (PT)**.
 
-## Office Hours Schedule
-
-- **Mondays:** 1:00 PM - 2:00 PM
-- **Wednesdays:** 1:00 PM - 2:00 PM
-- **Wednesdays:** 4:00 PM - 5:00 PM
-
-## Zoom Office Hours
+- **Mondays:** 1:00 PM - 2:00 PM (online or inperson Room M-107P)
+- **Wednesdays:** 1:00 PM - 2:00 PM (online or inperson Room M-107P
+- **Wednesdays:** 4:00 PM - 5:00 PM (online only))
 
 **Zoom:** <https://sdccd-edu.zoom.us/j/87461850848>
 
@@ -26,7 +22,7 @@ If you are joining office hours for technical assistance:
 
 Being prepared to share your screen will make troubleshooting programming and technical issues much easier.
 
-## Office Hours Preparation Checklist
+### Office Hours Preparation Checklist
 
 Before joining office hours, make sure you:
 
