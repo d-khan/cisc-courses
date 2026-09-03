@@ -4,7 +4,7 @@ All office hours are listed in **Pacific Time (PT)**.
 
 - **Mondays:** 1:00 PM - 2:00 PM (online or inperson Room M-107P)
 - **Wednesdays:** 1:00 PM - 2:00 PM (online or inperson Room M-107P
-- **Wednesdays:** 4:00 PM - 5:00 PM (online only))
+- **Wednesdays:** 4:00 PM - 5:00 PM (online only)
 
 **Zoom:** <https://sdccd-edu.zoom.us/j/87461850848>
 
