@@ -1143,24 +1143,98 @@ of other resources available online.</p>
 <h1 id="installing-a-c-compiler">Installing a C++ Compiler</h1>
 <p>This section will help you install a C++ compiler on <strong>Windows, macOS, or Linux</strong>.<br />
 Follow the steps for your operating system. At the end, you’ll test your compiler with a simple program.</p>
-<hr />
-<h2 id="windows-msys2">Windows (MSYS2)</h2>
+<h2 id="installing-g-on-windows">Installing g++ on Windows</h2>
+<p>This guide explains how to install the <strong>g++ C++ compiler</strong> on Windows
+using <strong>MSYS2</strong>.</p>
+<h3 id="step-1-download-and-install-msys2">Step 1: Download and Install MSYS2</h3>
 <ol>
-<li>Go to the <a href="https://www.msys2.org/">MSYS2</a> and follow the installation steps (1-7) posted on the website.</li>
-<li>Add <code>C:\msys64\mingw64\bin</code> path in Windows<ul>
-<li>Go to Windows search and type "System Variables". Select "Edit the system environment variables" -&gt; Environment
-  Variables -&gt; System variables -&gt; Highlight Path -&gt; Edit -&gt; New -&gt; Then paste <code>C:\msys64\mingw64\bin</code> -&gt; select OK
-  several times -&gt; Restart your computer</li>
-</ul>
-</li>
-<li>After restart -&gt; Go to command prompt -&gt; type <code>g++ --version</code> -&gt; the following output will display</li>
+<li>Visit the <a href="https://www.msys2.org/">MSYS2 website</a>.</li>
+<li>Download the MSYS2 installer.</li>
+<li>Run the installer and complete the installation using the default
+    settings.</li>
 </ol>
-<div class="highlight"><pre><span></span><code>g++ (Rev8, Built by MSYS2 project) 15.2.0
-Copyright (C) 2025 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+<h3 id="step-2-open-the-msys2-ucrt64-terminal">Step 2: Open the MSYS2 UCRT64 Terminal</h3>
+<p>After installation:</p>
+<ol>
+<li>Open the <strong>Start menu</strong>.</li>
+<li>Search for <strong>MSYS2 UCRT64</strong>.</li>
+<li>Open the <strong>MSYS2 UCRT64</strong> terminal.</li>
+</ol>
+<blockquote>
+<p>Make sure you open <strong>UCRT64</strong>, not one of the other MSYS2 terminals.</p>
+</blockquote>
+<h3 id="step-3-update-msys2">Step 3: Update MSYS2</h3>
+<p>In the <strong>MSYS2 UCRT64</strong> terminal, run:</p>
+<div class="highlight"><pre><span></span><code>pacman<span class="w"> </span>-Syu
 </code></pre></div>
-<p>If you see the above output, you’re done!</p>
+<p>If MSYS2 asks you to close the terminal:</p>
+<ol>
+<li>Close the terminal.</li>
+<li>Open <strong>MSYS2 UCRT64</strong> again.</li>
+<li>Run the update command again. If prompted to continue, enter <strong>Y</strong> and press <strong>Enter</strong>.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>pacman<span class="w"> </span>-Syu
+</code></pre></div>
+<h3 id="step-4-install-gcc-and-g">Step 4: Install GCC and g++</h3>
+<p>Run the following command in the <strong>MSYS2 UCRT64</strong> terminal:</p>
+<div class="highlight"><pre><span></span><code>pacman<span class="w"> </span>-S<span class="w"> </span>mingw-w64-ucrt-x86_64-gcc
+</code></pre></div>
+<p>When prompted to continue, press <strong>Y</strong> and then <strong>Enter</strong>.</p>
+<p>This installs GCC, including the <strong>g++ C++ compiler</strong>.</p>
+<h3 id="step-5-verify-the-installation">Step 5: Verify the Installation</h3>
+<p>In the MSYS2 UCRT64 terminal, run:</p>
+<div class="highlight"><pre><span></span><code>g++<span class="w"> </span>--version
+</code></pre></div>
+<p>If the installation was successful, you should see the installed version
+of g++.</p>
+<h3 id="step-6-add-g-to-the-windows-path">Step 6: Add g++ to the Windows PATH</h3>
+<p>To use <code>g++</code> from Windows Command Prompt, PowerShell, VS Code, or other
+development tools, add the following folder to the Windows PATH:</p>
+<div class="highlight"><pre><span></span><code>C:\msys64\ucrt64\bin
+</code></pre></div>
+<h3 id="add-the-folder-to-path">Add the Folder to PATH</h3>
+<ol>
+<li>
+<p>Open the <strong>Start menu</strong>.</p>
+</li>
+<li>
+<p>Type <strong>Environment Variables</strong> in the search bar</p>
+</li>
+<li>
+<p>Select <strong>edit the system environment variables</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Environment Variables</strong>.</p>
+</li>
+<li>
+<p>Under <strong>System variables</strong> --&gt;<strong>Variables</strong>, select <strong>Path</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Edit</strong>.</p>
+</li>
+<li>
+<p>Click <strong>New</strong>.</p>
+</li>
+<li>
+<p>Enter:</p>
+<div class="highlight"><pre><span></span><code>C:\msys64\ucrt64\bin
+</code></pre></div>
+</li>
+<li>
+<p>Click <strong>OK</strong> several times to save the changes.</p>
+</li>
+<li>
+<p>Close and reopen Command Prompt, PowerShell, VS Code, or your IDE.</p>
+</li>
+</ol>
+<h3 id="step-7-verify-g-from-windows">Step 7: Verify g++ from Windows</h3>
+<p>Open <strong>Command Prompt</strong> or <strong>PowerShell</strong> and run:</p>
+<div class="highlight"><pre><span></span><code>g++<span class="w"> </span>--version
+</code></pre></div>
+<p>You should now see the installed g++ version.</p>
+<h3 id="installation-complete">Installation Complete</h3>
+<p>You now have the <strong>g++ compiler</strong> installed on Windows and can use it to
+compile C++ programs.</p>
 <h2 id="macos">macOS</h2>
 <ol>
 <li>
@@ -1198,7 +1272,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 <hr />
 <h2 id="test-your-compiler">Test Your Compiler</h2>
 <ol>
-<li>Create a file named <strong>hello.cpp</strong> with the following code:</li>
+<li>Create a file named <strong>hello.cpp</strong> using any with the following code:</li>
 </ol>
 <div class="highlight"><pre><span></span><code>#include &lt;iostream&gt;
 using namespace std;
