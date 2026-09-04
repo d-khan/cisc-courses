@@ -45,7 +45,7 @@ of other resources available online.
 This section will help you install a C++ compiler on **Windows, macOS, or Linux**.  
 Follow the steps for your operating system. At the end, you’ll test your compiler with a simple program.
 
-## Installing g++ on Windows
+## __Installing g++ on Windows__
 
 This guide explains how to install the **g++ C++ compiler** on Windows
 using **MSYS2**.
@@ -159,7 +159,7 @@ You now have the **g++ compiler** installed on Windows and can use it to
 compile C++ programs.
 
 
-## macOS
+## __Installing on macOS__
 
 1. Open **Terminal**.
 
@@ -177,7 +177,7 @@ compile C++ programs.
 
 You should see Apple Clang listed.
 
-## Linux (Ubuntu/Debian)
+## __Installting on Linux (Ubuntu/Debian)__
 
 1. Update packages:
 
