@@ -159,7 +159,7 @@ You now have the **g++ compiler** installed on Windows and can use it to
 compile C++ programs.
 
 
-## __Installing on macOS__
+## __Installing g++ on macOS__
 
 1. Open **Terminal**.
 
@@ -177,7 +177,7 @@ compile C++ programs.
 
 You should see Apple Clang listed.
 
-## __Installting on Linux (Ubuntu/Debian)__
+## __Installing g++ on Linux (Ubuntu/Debian)__
 
 1. Update packages:
 
