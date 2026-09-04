@@ -19,7 +19,7 @@
     
     
       
-        <title>C++ recap - Dr. Khan's Computer Science Courses @ San Diego Miramar College</title>
+        <title>Installing a C++ Compiler - Dr. Khan's Computer Science Courses @ San Diego Miramar College</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#c-recap" class="md-skip">
+        <a href="#installing-a-c-compiler" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              C++ recap
+              Installing a C++ Compiler
             
           </span>
         </div>
@@ -1076,6 +1076,163 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installing-g-on-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing g++ on Windows
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing g++ on Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-download-and-install-msys2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Download and Install MSYS2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-open-the-msys2-ucrt64-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Open the MSYS2 UCRT64 Terminal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-update-msys2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Update MSYS2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-install-gcc-and-g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Install GCC and g++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-verify-the-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Verify the Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-add-g-to-the-windows-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Add g++ to the Windows PATH
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-the-folder-to-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add the Folder to PATH
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-verify-g-from-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Verify g++ from Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Complete
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-g-on-macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing g++ on macOS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-g-on-linux-ubuntudebian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing g++ on Linux (Ubuntu/Debian)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-your-compiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Your Compiler
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1091,55 +1248,6 @@
 
 
 
-<h1 id="c-recap">C++ recap</h1>
-<p>If you’re looking for a quick recap, you can watch the following videos that I created. Alternatively, there are plenty
-of other resources available online.</p>
-<ol>
-<li><a href="https://youtu.be/xJH_UHZmmcw">C++ basic</a></li>
-<li><a href="https://youtu.be/797pXmL1qcM">Input and Output in C++</a></li>
-<li><a href="https://youtu.be/Of7LR_AJmCk">Decision and Switch Statements</a></li>
-<li><a href="https://youtu.be/Pzzudvx_Z9o">Loops in C++</a></li>
-<li>Functions<ul>
-<li><a href="https://youtu.be/0LzYAKss-yA">Functions-1</a></li>
-<li><a href="https://youtu.be/CXWeTzpHuTc">Functions-2</a></li>
-<li><a href="https://youtu.be/YasirZZgDzk">Functions-3</a></li>
-<li><a href="https://youtu.be/ukEQwFIwADc">Functions-4</a></li>
-<li><a href="https://youtu.be/VtStrvwrZgs">Functions-5</a></li>
-<li><a href="https://youtu.be/MuAQT_BUgMA">Functions-6</a></li>
-</ul>
-</li>
-<li><a href="https://youtu.be/KDBfRYmUQ2I">Enum and Namespaces</a></li>
-<li><a href="https://youtu.be/lPWS2jfZmmE">Strings in C++</a></li>
-<li>Arrays<ul>
-<li><a href="https://youtu.be/ppFvK_SKQVY">Arrays-1</a></li>
-<li><a href="https://youtu.be/PNbsdJ4qHsg">Arrays-2</a></li>
-</ul>
-</li>
-<li><a href="https://youtu.be/iBFID_PcrWI">Structures in C++</a></li>
-<li>Classes<ul>
-<li><a href="https://youtu.be/wytzyX4SFHw">Classes-1</a></li>
-<li><a href="https://youtu.be/VzDwDSryaEk">Classes-2</a></li>
-<li><a href="https://youtu.be/O_ZEOoynoFM">Classes-3</a></li>
-<li><a href="https://youtu.be/HjPdYeVmybg">Classes-4</a></li>
-<li><a href="https://youtu.be/Q2yjmoTMZgc">Classes-5</a></li>
-</ul>
-</li>
-<li><a href="https://youtu.be/OFQgaJix3dE">Inheritance</a></li>
-<li>Pointers<ul>
-<li><a href="https://youtu.be/WPPkS3QXQwc">Pointers-1</a></li>
-<li><a href="https://youtu.be/Wk4WGorihN0">Pointers-2</a></li>
-<li><a href="https://youtu.be/17V8jcSjf8U">Pointers-3</a></li>
-<li><a href="https://youtu.be/o-U3Tp4QZzk">Pointers-4</a></li>
-<li><a href="https://youtu.be/pBt96yt-WaM">Pointers-5</a></li>
-<li><a href="https://youtu.be/iEiiY7WwpD0">Pointers-6</a></li>
-<li><a href="https://youtu.be/6Y88V3yLGoE">Review of pointers</a></li>
-<li><a href="https://youtu.be/KQ281Y_P9a4">Practice pointers-1</a></li>
-<li><a href="https://youtu.be/YYzHAi0RAPI">Practice pointers-2</a></li>
-<li><a href="https://youtu.be/T0MQslEhe44">Practice pointers-3</a></li>
-<li><a href="https://youtu.be/HfO-bK_-RKI">Practice pointers-4</a></li>
-</ul>
-</li>
-</ol>
 <h1 id="installing-a-c-compiler">Installing a C++ Compiler</h1>
 <p>This section will help you install a C++ compiler on <strong>Windows, macOS, or Linux</strong>.<br />
 Follow the steps for your operating system. At the end, you’ll test your compiler with a simple program.</p>
