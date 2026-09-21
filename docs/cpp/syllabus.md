@@ -59,9 +59,6 @@ intended for computer science majors and students seeking a solid foundation in 
 | User defined simple data types                                   | Enumeration type, namespaces and string type                                                                                                       |
 | Arrays and Strings                                               | Single, multidimensional and character arrays                                                                                                      |
 | Records (structs)                                                | Accessing struct members, and arrays vs structs                                                                                                    |
-| Classes and data abstraction                                     | Data abstraction, classes, and abstract data types                                                                                                 |
-| Inheritance and composition                                      | Apply classes, objects and operations                                                                                                              |
-| Pointers, classes, virtual functions, abstract classes and lists | Apply pointer data type, pointer variables, dynamic variables and arrays, abstract classes and pure virtual                                        |
 
 **Detailed Course Roadmap:** The semester-specific schedule, including the order of topics, lecture materials, hands-on
 activities, quizzes, and due dates, is available on the [course website](). Students are responsible for following the
