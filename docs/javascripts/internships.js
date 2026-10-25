@@ -250,7 +250,7 @@
         table.appendChild(make("caption", "io-sr-only", "Internship and opportunity listings"));
         const thead = make("thead");
         const headerRow = make("tr");
-        const headings = ["Organization", "Opportunity", "Eligibility", "Location", "Deadline", "Time Left"];
+        const headings = ["Organization", "Opportunity", "Eligibility", "Location", "Deadline", "Days Left"];
         headings.forEach(h => headerRow.appendChild(make("th", "", h)));
         thead.appendChild(headerRow);
         table.appendChild(thead);
