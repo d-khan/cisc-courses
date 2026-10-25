@@ -11,6 +11,7 @@ extra:
 extra_css:
   - stylesheets/extra.css
   - stylesheets/course.css
+  - stylesheets/internships.css
 
 markdown_extensions:
   - admonition
@@ -26,9 +27,12 @@ extra_javascript:
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - javascripts/faq.js
+  - javascripts/internships.js
 
 nav:
   - Dashboard: index.md
+
+  - Internships & Opportunities: internships/index.md
 
   - CISC 179<br>Python Programming:
       - Dashboard: python/index.md
